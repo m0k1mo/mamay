@@ -1,0 +1,108 @@
+# Formlab Tester — built here from the private code (m0k1mo/Formlab), its checks run inside the app on a Mac, the app is published here
+# (release «tester», never «latest»); the reports go to the private code's branch «tester-reports» — never into this public repository.
+# Started after every Formlab build here, by m0k1mo/Formlab (its tester.yml → repository_dispatch) or by hand (Run workflow).
+name: Formlab Tester
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: branch, tag or commit of m0k1mo/Formlab
+        default: main
+      level:
+        description: quick (minutes) or deep (hours)
+        default: quick
+      mode:
+        description: architect, artist, brush, model or all
+        default: all
+      count:
+        description: Architect scenarios / Model classes; 0 = the basics
+        default: '1000'
+      zone:
+        description: Model — all, nodes, brushes, keys, mouse or sheet
+        default: all
+  repository_dispatch:
+    types: [formlab-tester]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: formlab-tester
+  cancel-in-progress: false
+
+jobs:
+  tester:
+    runs-on: macos-latest
+    timeout-minutes: 300
+    env:
+      FT_REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || 'main' }}
+      LEVEL: ${{ github.event.inputs.level || github.event.client_payload.level || 'quick' }}
+      MODE: ${{ github.event.inputs.mode || github.event.client_payload.mode || 'all' }}
+      COUNT: ${{ github.event.inputs.count || github.event.client_payload.count || '1000' }}
+      ZONE: ${{ github.event.inputs.zone || github.event.client_payload.zone || 'all' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: m0k1mo/Formlab
+          ref: ${{ env.FT_REF }}
+          token: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          fetch-depth: 1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+      - run: npm ci
+      - name: Build Formlab Tester
+        # its own version: Formlab's major.minor + 100 + the run number (the Testers built in m0k1mo/Formlab went up to .3x — this one is always newer)
+        env:
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ''
+        run: |
+          V="$(node -p "require('./package.json').version.split('.').slice(0,2).join('.')").$((GITHUB_RUN_NUMBER+100))"; echo "FT_VERSION=$V" >> "$GITHUB_ENV"; echo "Tester $V"
+          FL="$(node -p "require('./package.json').version")"; echo "FT_FORMLAB=$FL" >> "$GITHUB_ENV"; echo "FT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          export FT_VERSION="$V" FT_COMMIT="$(git rev-parse HEAD)"
+          node -e "const f='src-tauri/tester.conf.json',c=JSON.parse(require('fs').readFileSync(f));c.version='$V';if(!process.env.TAURI_SIGNING_PRIVATE_KEY){c.bundle.createUpdaterArtifacts=false;delete c.plugins}require('fs').writeFileSync(f,JSON.stringify(c,null,2))"
+          npx tauri build --config src-tauri/tester.conf.json --bundles app,dmg
+      - name: Run the checks inside the app
+        run: |
+          APP="$(find src-tauri/target -path '*bundle/macos/Formlab Tester.app' -maxdepth 6 | head -1)"; EXE="$APP/Contents/MacOS/$(ls "$APP/Contents/MacOS" | head -1)"
+          D="$HOME/Library/Application Support/Formlab Tester"; mkdir -p "$D/reports"
+          if [ "$COUNT" != "0" ]; then C=",\"count\":$COUNT"; else C=""; fi
+          echo "{\"mode\":\"$MODE\",\"level\":\"$LEVEL\",\"quit\":true,\"pause\":0$C,\"zone\":\"${ZONE:-all}\"}" > "$D/autorun.json"
+          for i in 1 2 3 4 5 6; do
+            "$EXE" >> app.log 2>&1 & P=$!
+            T=0; while kill -0 $P 2>/dev/null; do sleep 10; T=$((T+10))
+              F="$D/reports/ft.prog.json"; if [ $T -ge 60 ] && [ -f "$F" ] && [ $(( $(date +%s) - $(stat -f %m "$F") )) -ge 60 ]; then echo "frozen — restarting"; kill -9 $P; break; fi
+              if [ $T -ge 14400 ]; then kill -9 $P; break; fi; done
+            grep -q '"level"' "$D/autorun.json" || break
+          done
+          mkdir -p reports; cp -R "$D/reports/." reports/ 2>/dev/null; cp app.log reports/app.log 2>/dev/null
+          # this repository is public: no report in the log, only how many files were written (the reports are read in the private branch)
+          echo "reports: $(ls reports | wc -l | tr -d ' ') files → m0k1mo/Formlab, branch tester-reports"
+      - name: Keep the report in the private code (branch tester-reports)
+        if: always()
+        run: |
+          git config user.name "Formlab Tester"; git config user.email "tester@users.noreply.github.com"
+          if git fetch origin tester-reports; then git worktree add -B tester-reports /tmp/rep origin/tester-reports; else git worktree add --detach /tmp/rep && git -C /tmp/rep switch --orphan tester-reports; fi
+          cd /tmp/rep; mkdir -p "runs/$GITHUB_RUN_ID"; cp -R "$GITHUB_WORKSPACE/reports/." "runs/$GITHUB_RUN_ID/" || true; echo "$GITHUB_RUN_ID" > latest
+          git add runs latest; git commit -q -m "Tester report $GITHUB_RUN_ID ($MODE · $LEVEL · Tester $FT_VERSION · Formlab $FT_FORMLAB ${FT_COMMIT:0:7})"; git push -q origin tester-reports
+      - name: The Tester to download (a pre-release, never «latest», so Formlab never updates to it)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          export R="$GITHUB_REPOSITORY"; F="$(ls src-tauri/target/release/bundle/dmg/*.dmg | head -1)"; cp "$F" "Formlab-Tester.dmg"
+          N="Formlab Tester $FT_VERSION — tests Formlab $FT_FORMLAB. Open the .dmg, drag it to Applications, right-click → Open the first time; after that it updates itself (Update in its panel)."
+          gh release view tester -R "$R" >/dev/null 2>&1 || gh release create tester -R "$R" --prerelease --latest=false --target main --title "Formlab Tester" --notes "$N"
+          gh release edit tester -R "$R" --prerelease --latest=false --notes "$N"
+          gh release upload tester -R "$R" "Formlab-Tester.dmg" --clobber
+          G="$(ls src-tauri/target/release/bundle/macos/*.app.tar.gz 2>/dev/null | head -1)"
+          if [ -n "$G" ] && [ -f "$G.sig" ]; then
+            cp "$G" Formlab-Tester.app.tar.gz
+            node -e "const fs=require('fs');fs.writeFileSync('latest-tester.json',JSON.stringify({version:process.env.FT_VERSION,notes:'Formlab Tester '+process.env.FT_VERSION+' · tests Formlab '+process.env.FT_FORMLAB,formlab:process.env.FT_FORMLAB,pub_date:new Date().toISOString(),platforms:{'darwin-aarch64':{signature:fs.readFileSync(process.argv[1],'utf8').trim(),url:'https://github.com/'+process.env.R+'/releases/download/tester/Formlab-Tester.app.tar.gz'}}},null,2))" "$G.sig"
+            gh release upload tester -R "$R" Formlab-Tester.app.tar.gz latest-tester.json --clobber
+          else echo "no signed update archive"; fi

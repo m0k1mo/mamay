@@ -1,0 +1,70 @@
+# Formlab for Mac — built here from the private code (m0k1mo/Formlab) and published here, so the .dmg and the updates stay public
+# while the code does not. Started by m0k1mo/Formlab (a push to its «release» branch → repository_dispatch) or by hand (Run workflow).
+# Secrets of this repository: FORMLAB_CODE_TOKEN (reads the private code, writes the Tester reports there), TAURI_SIGNING_PRIVATE_KEY (signs the updates).
+name: Build Formlab for Mac
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: branch, tag or commit of m0k1mo/Formlab
+        default: release
+  repository_dispatch:
+    types: [formlab-release]
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: formlab-build
+  cancel-in-progress: false
+
+jobs:
+  mac:
+    runs-on: macos-latest
+    env:
+      REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || 'release' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: m0k1mo/Formlab
+          ref: ${{ env.REF }}
+          token: ${{ secrets.FORMLAB_CODE_TOKEN }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-apple-darwin,x86_64-apple-darwin
+      - uses: swatinem/rust-cache@v2
+        with:
+          workspaces: src-tauri -> target
+      - run: npm ci
+      - id: cfg
+        name: Updates are signed only when the signing key is set
+        env:
+          K: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+        run: |
+          if [ -z "$K" ]; then echo "extra=--config ./src-tauri/no-updater.json" >> "$GITHUB_OUTPUT"; fi
+          echo "commit=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
+          TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ''
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.event.repository.name }}
+          commitish: ${{ github.sha }}
+          tagName: v__VERSION__
+          releaseName: Formlab __VERSION__
+          releaseBody: Download the .dmg below, open it and drag Formlab to Applications. The app updates itself after that.
+          releaseDraft: false
+          prerelease: false
+          args: --target universal-apple-darwin ${{ steps.cfg.outputs.extra }}
+      - name: The Tester of the same code, after every release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run tester.yml -R "$GITHUB_REPOSITORY" -f ref="${{ steps.cfg.outputs.commit }}" -f mode=architect -f count=50
