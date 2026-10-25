@@ -5,7 +5,7 @@ on:
     branches: [work/dev1-gpu-probe]
   workflow_dispatch:
 permissions:
-  contents: read
+  contents: write
 jobs:
   probe:
     strategy:
@@ -15,19 +15,20 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - name: Versions
-        run: sw_vers; xcodebuild -version; swift --version; sysctl -n machdep.cpu.brand_string hw.memsize hw.ncpu
-      - name: Metal toolchain
+      - name: Probe (everything into one report file)
         run: |
-          xcodebuild -showComponent MetalToolchain || true
-          xcodebuild -downloadComponent MetalToolchain || true
-          echo 'kernel void z(device float* o [[buffer(0)]], uint i [[thread_position_in_grid]]) { o[i] = float(i); }' > z.metal
-          xcrun -sdk macosx metal -c z.metal -o z.air && xcrun -sdk macosx metallib z.air -o z.metallib && echo "OFFLINE METAL COMPILE: OK" || echo "OFFLINE METAL COMPILE: FAILED"
-      - name: GPU probe
+          R=report-${{ matrix.os }}.txt
+          { echo "== versions"; sw_vers; xcodebuild -version; swift --version; sysctl -n machdep.cpu.brand_string hw.memsize hw.ncpu
+            echo "== metal toolchain"; xcodebuild -showComponent MetalToolchain 2>&1 | tail -5
+            xcodebuild -downloadComponent MetalToolchain 2>&1 | tail -3
+            echo 'kernel void z(device float* o [[buffer(0)]], uint i [[thread_position_in_grid]]) { o[i] = float(i); }' > z.metal
+            (xcrun -sdk macosx metal -c z.metal -o z.air && xcrun -sdk macosx metallib z.air -o z.metallib && echo "OFFLINE METAL COMPILE: OK") 2>&1 || echo "OFFLINE METAL COMPILE: FAILED"
+            echo "== swiftc"; swiftc -O probe/probe.swift -o probe/probe -framework Metal 2>&1 | tail -30
+            echo "== probe"; ./probe/probe 2>&1 || echo "probe exit $?"; } > $R 2>&1
+          cat $R
+      - name: Publish report to branch
         run: |
-          swiftc -O probe/probe.swift -o probe/probe -framework Metal
-          ./probe/probe | tee probe-${{ matrix.os }}.txt
-      - uses: actions/upload-artifact@v4
-        with:
-          name: probe-${{ matrix.os }}
-          path: probe-${{ matrix.os }}.txt
+          B=work/dev1-gpu-probe-out-${{ matrix.os }}
+          git config user.name probe; git config user.email probe@users.noreply.github.com
+          git checkout --orphan $B; git rm -rqf . ; git add report-${{ matrix.os }}.txt
+          git commit -qm "probe report ${{ matrix.os }}"; git push -f origin $B
