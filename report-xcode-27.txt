@@ -1,0 +1,68 @@
+== versions
+ProductName:		macOS
+ProductVersion:		27.0.1
+BuildVersion:		26A434
+Xcode 27.1
+Build version 27A9275
+swift-driver version: 1.168.6 Apple Swift version 6.4 (swiftlang-6.4.0.34.1 clang-2100.3.34.1)
+Target: arm64-apple-macosx27.0.0
+Apple M1 (Virtual)
+7516192768
+3
+== metal toolchain
+Asset Path: /System/Library/AssetsV2/com_apple_MobileAsset_MetalToolchain/389a215aea89fda945178f9fb8bcdc6aa0e20570.asset/AssetData
+Build Version: 27A266a
+Status: installed
+Toolchain Identifier: com.apple.dt.toolchain.Metal.32023.921.5
+Toolchain Search Path: /private/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v27.1.266.1.DM3XWR
+Beginning asset download...
+Downloaded asset to: /System/Library/AssetsV2/com_apple_MobileAsset_MetalToolchain/389a215aea89fda945178f9fb8bcdc6aa0e20570.asset/AssetData/Restore/022-20184-410.dmg
+Done downloading: Metal Toolchain 27A266a.
+OFFLINE METAL COMPILE: OK
+== swiftc
+probe/probe.swift:8:71: warning: 'isLowPower' was deprecated in macOS 27.0: Not applicable on Apple Silicon [#DeprecatedDeclaration]
+ 6 | out("macOS: \(ProcessInfo.processInfo.operatingSystemVersionString)")
+ 7 | guard let d = MTLCreateSystemDefaultDevice() else { out("RESULT: NO METAL DEVICE"); exit(0) }
+ 8 | out("device: \(d.name)  unified: \(d.hasUnifiedMemory)  lowPower: \(d.isLowPower)")
+   |                                                                       `- warning: 'isLowPower' was deprecated in macOS 27.0: Not applicable on Apple Silicon [#DeprecatedDeclaration]
+ 9 | let fams: [(String, MTLGPUFamily)] = [("apple5", .apple5), ("apple6", .apple6), ("apple7", .apple7), ("apple8", .apple8),
+10 |   ("apple9", .apple9), ("apple10", .apple10), ("mac2", .mac2), ("metal3", .metal3)]
+
+probe/probe.swift:10:57: warning: 'mac2' was deprecated in macOS 27.0: renamed to 'MTLGPUFamily.apple7' [#DeprecatedDeclaration]
+ 8 | out("device: \(d.name)  unified: \(d.hasUnifiedMemory)  lowPower: \(d.isLowPower)")
+ 9 | let fams: [(String, MTLGPUFamily)] = [("apple5", .apple5), ("apple6", .apple6), ("apple7", .apple7), ("apple8", .apple8),
+10 |   ("apple9", .apple9), ("apple10", .apple10), ("mac2", .mac2), ("metal3", .metal3)]
+   |                                                         |- warning: 'mac2' was deprecated in macOS 27.0: renamed to 'MTLGPUFamily.apple7' [#DeprecatedDeclaration]
+   |                                                         `- note: use 'MTLGPUFamily.apple7' instead
+11 | for (n, f) in fams { out("family \(n): \(d.supportsFamily(f))") }
+12 | if #available(macOS 26.0, *) { out("family metal4: \(d.supportsFamily(.metal4))") }
+
+[#DeprecatedDeclaration]: <https://docs.swift.org/compiler/documentation/diagnostics/deprecated-declaration>
+== probe
+macOS: Version 27.0.1 (Build 26A434)
+device: Apple Paravirtual device  unified: true  lowPower: false
+family apple5: true
+family apple6: false
+family apple7: false
+family apple8: false
+family apple9: false
+family apple10: false
+family mac2: true
+family metal3: false
+family metal4: false
+maxThreadgroupMemory: 32768
+maxThreadsPerThreadgroup: MTLSize(width: 1024, height: 1024, depth: 1024)
+readWriteTextureTier: 2
+recommendedMaxWorkingSet MB: 4778
+maxBufferLength MB: 3584
+sparseTileSizeInBytes: 16384
+supports32BitFloatFiltering: true
+supportsRaytracing: false
+timestampAtStageBoundary: false
+supportsPlacementSparse: false
+MTL4CommandQueue: nil
+pso: threadExecutionWidth 32 maxTotal 1024
+compute status: 4 error: nil time ms: 6 gpu ms: 5.741708333061979
+compute vs CPU max error: 1.6186386e-06
+simd_sum: status 4 first 496.0 (expect 496) second-group 1520.0 (expect 1520)
+RESULT: done
