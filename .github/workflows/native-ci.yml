@@ -1,0 +1,110 @@
+# Mamay Native — build and test on GitHub macOS (ROAD §7.1). Started by m0k1mo/Formlab (push to native/** → repository_dispatch)
+# or by hand (Run workflow). The code is private: it is checked out with FORMLAB_CODE_TOKEN; nothing from it stays here.
+# Reports (test summary, first errors) are pushed to the PRIVATE repo, branch native-ci-reports — never published here.
+name: Native CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: branch, tag or commit of m0k1mo/Formlab
+        default: native/main
+  repository_dispatch:
+    types: [native-ci]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-ci-${{ github.event.inputs.ref || github.event.client_payload.ref || 'native/main' }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        runner: [xcode-27, macos-26]
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 60
+    env:
+      REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || 'native/main' }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: m0k1mo/Formlab
+          ref: ${{ env.REF }}
+          token: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          path: src
+          lfs: false
+      - name: Tools
+        run: |
+          brew install xcodegen >/dev/null 2>&1 || brew install xcodegen
+          xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
+          { sw_vers; xcodebuild -version; swift --version; } > env.txt 2>&1
+      - name: Swift tests (packages)
+        id: tests
+        working-directory: src/native
+        run: |
+          set -o pipefail
+          swift test 2>&1 | tee ../../test.log
+        continue-on-error: true
+      - name: Build apps
+        id: apps
+        working-directory: src/native
+        run: |
+          set -o pipefail
+          xcodegen generate --quiet
+          ok=1
+          for s in Mamay-Mac MamayTester-Mac; do
+            xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
+              -derivedDataPath dd CODE_SIGN_IDENTITY=- build > "../../build-$s.log" 2>&1 || ok=0
+          done
+          xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO build > ../../build-Mamay-iPad.log 2>&1 || ok=0
+          [ $ok = 1 ]
+        continue-on-error: true
+      - name: Package (xcode-27 only)
+        if: matrix.runner == 'xcode-27' && steps.apps.outcome == 'success'
+        working-directory: src/native
+        run: |
+          mkdir -p ../../out
+          P=dd/Build/Products/Release
+          ditto -c -k --keepParent "$P/Mamay Native.app" "../../out/Mamay-Native-mac.zip"
+          ditto -c -k --keepParent "$P/Mamay Native Tester.app" "../../out/Mamay-Native-Tester-mac.zip"
+          ls -la ../../out
+      - uses: actions/upload-artifact@v4
+        if: matrix.runner == 'xcode-27' && steps.apps.outcome == 'success'
+        with:
+          name: mamay-native-${{ github.run_number }}
+          path: out/*.zip
+          retention-days: 14
+      - name: Report to the private repo
+        if: always()
+        env:
+          TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          SHA=$(git -C src rev-parse --short HEAD)
+          R=report.md
+          {
+            echo "# Native CI · ${{ matrix.runner }} · $REF @ $SHA · run ${{ github.run_number }}"
+            echo; echo "tests: ${{ steps.tests.outcome }} · apps: ${{ steps.apps.outcome }}"; echo
+            echo '## env'; echo '```'; cat env.txt; echo '```'
+            echo '## swift test (failures and summary)'; echo '```'
+            grep -E "error:|✘|failed|passed after|Test run|warning: unre|fatal" test.log | grep -v "✔ Test" | tail -80 || true
+            tail -3 test.log; echo '```'
+            for f in build-*.log; do
+              [ -f "$f" ] || continue
+              echo "## $f"; echo '```'
+              grep -E "error:|BUILD (SUCCEEDED|FAILED)|\*\* " "$f" | sort -u | head -60 || true
+              echo '```'
+            done
+          } > $R
+          git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep 2>/dev/null || {
+            git init -q rep && git -C rep checkout -q --orphan native-ci-reports && git -C rep remote add origin "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git"; }
+          mkdir -p rep/native-ci
+          cp $R "rep/native-ci/latest-${{ matrix.runner }}.md"
+          cp $R "rep/native-ci/$SHA-${{ matrix.runner }}.md"
+          cd rep && git config user.name "native-ci" && git config user.email "native-ci@users.noreply.github.com"
+          git add -A && git commit -qm "native-ci ${{ matrix.runner }} $SHA" || exit 0
+          for i in 1 2 3 4 5; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || true; sleep 3; done
