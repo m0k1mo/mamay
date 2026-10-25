@@ -47,7 +47,8 @@ jobs:
         working-directory: src/native
         run: |
           set -o pipefail
-          swift test 2>&1 | tee ../../test.log
+          mkdir -p "$GITHUB_WORKSPACE/ci-out"
+          MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" swift test 2>&1 | tee ../../test.log
         continue-on-error: true
       - name: Build apps
         id: apps
@@ -106,6 +107,11 @@ jobs:
           B=$(echo "${{ github.event.client_payload.branch || github.event.inputs.ref || 'manual' }}" | tr '/:' '__' | cut -c1-60)
           cp $R "rep/native-ci/latest-$B-${{ matrix.runner }}.md"
           cp $R "rep/native-ci/$SHA-${{ matrix.runner }}.md"
+          # files the tests wrote for the lead (golden tables, side-by-side pictures): native-ci/out/<branch>-<runner>/
+          if [ -d ci-out ] && [ -n "$(ls -A ci-out)" ]; then
+            O="rep/native-ci/out/$B-${{ matrix.runner }}"; rm -rf "$O"; mkdir -p "$O"
+            find ci-out -type f -size -3M | head -300 | while read -r x; do mkdir -p "$O/$(dirname "${x#ci-out/}")"; cp "$x" "$O/${x#ci-out/}"; done
+          fi
           cd rep && git config user.name "native-ci" && git config user.email "native-ci@users.noreply.github.com"
           git add -A && git commit -qm "native-ci ${{ matrix.runner }} $SHA" || exit 0
           for i in 1 2 3 4 5; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || true; sleep 3; done
