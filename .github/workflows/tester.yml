@@ -71,7 +71,7 @@ jobs:
           npx tauri build --config src-tauri/tester.conf.json --bundles app,dmg
       - name: Run the checks inside the app
         run: |
-          APP="$(find src-tauri/target -path '*bundle/macos/Formlab Tester.app' -maxdepth 6 | head -1)"; EXE="$APP/Contents/MacOS/$(ls "$APP/Contents/MacOS" | head -1)"
+          APP="$(find src-tauri/target -path '*bundle/macos/*Tester.app' -maxdepth 6 | head -1)"; EXE="$APP/Contents/MacOS/$(ls "$APP/Contents/MacOS" | head -1)"
           D="$HOME/Library/Application Support/Formlab Tester"; mkdir -p "$D/reports"
           if [ "$COUNT" != "0" ]; then C=",\"count\":$COUNT"; else C=""; fi
           echo "{\"mode\":\"$MODE\",\"level\":\"$LEVEL\",\"quit\":true,\"pause\":0$C,\"zone\":\"${ZONE:-all}\"}" > "$D/autorun.json"
