@@ -60,6 +60,7 @@ jobs:
       - name: Build Formlab Tester
         # its own version: Formlab's major.minor + 100 + the run number (the Testers built in m0k1mo/Formlab went up to .3x — this one is always newer)
         env:
+          PROTECT: '1'
           TAURI_SIGNING_PRIVATE_KEY: ${{ secrets.TAURI_SIGNING_PRIVATE_KEY }}
           TAURI_SIGNING_PRIVATE_KEY_PASSWORD: ''
         run: |
@@ -96,13 +97,13 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           export R="$GITHUB_REPOSITORY"; F="$(ls src-tauri/target/release/bundle/dmg/*.dmg | head -1)"; cp "$F" "Formlab-Tester.dmg"
-          N="Formlab Tester $FT_VERSION — tests Formlab $FT_FORMLAB. Open the .dmg, drag it to Applications, right-click → Open the first time; after that it updates itself (Update in its panel)."
-          gh release view tester -R "$R" >/dev/null 2>&1 || gh release create tester -R "$R" --prerelease --latest=false --target main --title "Formlab Tester" --notes "$N"
+          N="Mamay Tester $FT_VERSION — tests Formlab $FT_FORMLAB. Open the .dmg, drag it to Applications, right-click → Open the first time; after that it updates itself (Update in its panel)."
+          gh release view tester -R "$R" >/dev/null 2>&1 || gh release create tester -R "$R" --prerelease --latest=false --target main --title "Mamay Tester" --notes "$N"
           gh release edit tester -R "$R" --prerelease --latest=false --notes "$N"
           gh release upload tester -R "$R" "Formlab-Tester.dmg" --clobber
           G="$(ls src-tauri/target/release/bundle/macos/*.app.tar.gz 2>/dev/null | head -1)"
           if [ -n "$G" ] && [ -f "$G.sig" ]; then
             cp "$G" Formlab-Tester.app.tar.gz
-            node -e "const fs=require('fs');fs.writeFileSync('latest-tester.json',JSON.stringify({version:process.env.FT_VERSION,notes:'Formlab Tester '+process.env.FT_VERSION+' · tests Formlab '+process.env.FT_FORMLAB,formlab:process.env.FT_FORMLAB,pub_date:new Date().toISOString(),platforms:{'darwin-aarch64':{signature:fs.readFileSync(process.argv[1],'utf8').trim(),url:'https://github.com/'+process.env.R+'/releases/download/tester/Formlab-Tester.app.tar.gz'}}},null,2))" "$G.sig"
+            node -e "const fs=require('fs');fs.writeFileSync('latest-tester.json',JSON.stringify({version:process.env.FT_VERSION,notes:'Mamay Tester '+process.env.FT_VERSION+' · tests Formlab '+process.env.FT_FORMLAB,formlab:process.env.FT_FORMLAB,pub_date:new Date().toISOString(),platforms:{'darwin-aarch64':{signature:fs.readFileSync(process.argv[1],'utf8').trim(),url:'https://github.com/'+process.env.R+'/releases/download/tester/Formlab-Tester.app.tar.gz'}}},null,2))" "$G.sig"
             gh release upload tester -R "$R" Formlab-Tester.app.tar.gz latest-tester.json --clobber
           else echo "no signed update archive"; fi
