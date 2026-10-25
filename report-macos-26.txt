@@ -1,0 +1,56 @@
+== versions
+ProductName:		macOS
+ProductVersion:		26.6.2
+BuildVersion:		25G83
+Xcode 26.6
+Build version 17F113
+swift-driver version: 1.148.6 Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
+Target: arm64-apple-macosx26.0
+Apple M1 (Virtual)
+7516192768
+3
+== metal toolchain
+Asset Path: /System/Library/AssetsV2/com_apple_MobileAsset_MetalToolchain/5f4a441a6d0a11f2e9b28c67384263afe92320f7.asset/AssetData
+Build Version: 17F109
+Status: installed
+Toolchain Identifier: com.apple.dt.toolchain.Metal.32023.883
+Toolchain Search Path: /private/var/run/com.apple.security.cryptexd/mnt/com.apple.MobileAsset.MetalToolchain-v17.6.109.0.7Nz2F0
+Beginning asset download...
+Downloaded asset to: /System/Library/AssetsV2/com_apple_MobileAsset_MetalToolchain/5f4a441a6d0a11f2e9b28c67384263afe92320f7.asset/AssetData/Restore/022-21788-058.dmg
+Done downloading: Metal Toolchain 17F109.
+OFFLINE METAL COMPILE: OK
+== swiftc
+== probe
+macOS: Version 26.6.2 (Build 25G83)
+device: Apple Paravirtual device  unified: true  lowPower: false
+family apple5: true
+family apple6: false
+family apple7: false
+family apple8: false
+family apple9: false
+family apple10: false
+family mac2: true
+family metal3: false
+family metal4: false
+maxThreadgroupMemory: 32768
+maxThreadsPerThreadgroup: MTLSize(width: 1024, height: 1024, depth: 1024)
+readWriteTextureTier: 2
+recommendedMaxWorkingSet MB: 4778
+maxBufferLength MB: 3584
+sparseTileSizeInBytes: 16384
+supports32BitFloatFiltering: true
+supportsRaytracing: false
+timestampAtStageBoundary: false
+*** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[AppleParavirtDevice supportsPlacementSparse]: unrecognized selector sent to instance 0x104bcae00'
+*** First throw call stack:
+(
+	0   CoreFoundation                      0x00000001855cb1f0 __exceptionPreprocess + 176
+	1   libobjc.A.dylib                     0x000000018504691c objc_exception_throw + 88
+	2   CoreFoundation                      0x000000018568c3b4 -[NSObject(NSObject) __retain_OA] + 0
+	3   Metal                               0x0000000191c19b64 -[_MTLDevice supportsPlacementSparse] + 20
+	4   probe                               0x0000000104479a18 main + 2936
+	5   dyld                                0x00000001850d44e4 start + 6992
+)
+libc++abi: terminating due to uncaught exception of type NSException
+/Users/runner/work/_temp/11f5c4cb-b1d0-4c98-968b-bfa5984a9c87.sh: line 8:  1993 Abort trap: 6           ./probe/probe 2>&1
+probe exit 134
