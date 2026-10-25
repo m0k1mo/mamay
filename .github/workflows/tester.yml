@@ -78,7 +78,8 @@ jobs:
           for i in 1 2 3 4 5 6; do
             "$EXE" >> app.log 2>&1 & P=$!
             T=0; while kill -0 $P 2>/dev/null; do sleep 10; T=$((T+10))
-              F="$D/reports/ft.prog.json"; if [ $T -ge 60 ] && [ -f "$F" ] && [ $(( $(date +%s) - $(stat -f %m "$F") )) -ge 60 ]; then echo "frozen — restarting"; kill -9 $P; break; fi
+              # the page refreshes ft.beat.json every 5 s while a run goes on (a Hard case may last minutes, so ft.prog.json is not the sign); the app's own watchdog (lib.rs) closes a real freeze — this is only the backstop
+              F="$D/reports/ft.beat.json"; if [ $T -ge 120 ] && [ -f "$F" ] && [ $(( $(date +%s) - $(stat -f %m "$F") )) -ge 300 ]; then echo "frozen — restarting"; kill -9 $P; break; fi
               if [ $T -ge 14400 ]; then kill -9 $P; break; fi; done
             grep -q '"level"' "$D/autorun.json" || break
           done
