@@ -20,7 +20,7 @@ out("supports32BitFloatFiltering: \(d.supports32BitFloatFiltering)")
 out("supportsRaytracing: \(d.supportsRaytracing)")
 out("timestampAtStageBoundary: \(d.supportsCounterSampling(.atStageBoundary))")
 if #available(macOS 26.0, *) {
-  out("supportsPlacementSparse: \(d.supportsPlacementSparse)")
+  if #available(macOS 26.4, *) { out("supportsPlacementSparse: \(d.supportsPlacementSparse)") }
   if let q = d.makeMTL4CommandQueue() { out("MTL4CommandQueue: OK \(q)") } else { out("MTL4CommandQueue: nil") }
 }
 
@@ -33,7 +33,7 @@ kernel void k(texture2d<float, access::write> o [[texture(0)]], uint2 g [[thread
   float v = sin(float(g.x) * 0.05) * cos(float(g.y) * 0.07);
   o.write(float4(v, v * 0.5, 1.0 - v, 1.0), g);
 }
-kernel void simd(device float* o [[buffer(0)]], uint i [[thread_position_in_grid]]) {
+kernel void ssum(device float* o [[buffer(0)]], uint i [[thread_position_in_grid]]) {
   o[i] = simd_sum(float(i));
 }
 """
@@ -59,7 +59,7 @@ do {
   for y in 0..<W { for x in 0..<W { let v = sin(Float(x) * 0.05) * cos(Float(y) * 0.07); maxErr = max(maxErr, abs(px[(y * W + x) * 4] - v)) } }
   out("compute vs CPU max error: \(maxErr)")
   do {
-    let p2 = try d.makeComputePipelineState(function: lib.makeFunction(name: "simd")!)
+    let p2 = try d.makeComputePipelineState(function: lib.makeFunction(name: "ssum")!)
     let b = d.makeBuffer(length: 64 * 4, options: .storageModeShared)!
     let c2 = q.makeCommandBuffer()!; let e2 = c2.makeComputeCommandEncoder()!
     e2.setComputePipelineState(p2); e2.setBuffer(b, offset: 0, index: 0)
