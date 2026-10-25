@@ -1,0 +1,33 @@
+# Mamay Native — one-off GPU probe (Розробка #1). Runs only on pushes to work/dev1-gpu-probe; does not touch releases.
+name: Native GPU probe
+on:
+  push:
+    branches: [work/dev1-gpu-probe]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  probe:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-26, xcode-27]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Versions
+        run: sw_vers; xcodebuild -version; swift --version; sysctl -n machdep.cpu.brand_string hw.memsize hw.ncpu
+      - name: Metal toolchain
+        run: |
+          xcodebuild -showComponent MetalToolchain || true
+          xcodebuild -downloadComponent MetalToolchain || true
+          echo 'kernel void z(device float* o [[buffer(0)]], uint i [[thread_position_in_grid]]) { o[i] = float(i); }' > z.metal
+          xcrun -sdk macosx metal -c z.metal -o z.air && xcrun -sdk macosx metallib z.air -o z.metallib && echo "OFFLINE METAL COMPILE: OK" || echo "OFFLINE METAL COMPILE: FAILED"
+      - name: GPU probe
+        run: |
+          swiftc -O probe/probe.swift -o probe/probe -framework Metal
+          ./probe/probe | tee probe-${{ matrix.os }}.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe-${{ matrix.os }}
+          path: probe-${{ matrix.os }}.txt
