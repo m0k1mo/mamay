@@ -103,7 +103,8 @@ jobs:
           git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep 2>/dev/null || {
             git init -q rep && git -C rep checkout -q --orphan native-ci-reports && git -C rep remote add origin "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git"; }
           mkdir -p rep/native-ci
-          cp $R "rep/native-ci/latest-${{ matrix.runner }}.md"
+          B=$(echo "$REF" | tr '/:' '__' | cut -c1-60)
+          cp $R "rep/native-ci/latest-$B-${{ matrix.runner }}.md"
           cp $R "rep/native-ci/$SHA-${{ matrix.runner }}.md"
           cd rep && git config user.name "native-ci" && git config user.email "native-ci@users.noreply.github.com"
           git add -A && git commit -qm "native-ci ${{ matrix.runner }} $SHA" || exit 0
