@@ -1,0 +1,79 @@
+# Mamay Native — publish a build for Artem (ROAD §7.1–7.3). Only by hand (Run workflow) and only after Artem's «так».
+# Builds from the private code at `ref`, ad-hoc signs, makes DMGs for the Mac app and the Tester and an unsigned .ipa for iPad
+# (installed with Sideloadly / AltStore / SideStore under a free Apple ID), and publishes a PRERELEASE `native-v<version>` here.
+# The 0.45 channel (`v0.45.x`, latest.json) is not touched: Native is a new app installed next to it.
+name: Native release
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: commit or branch of m0k1mo/Formlab
+        default: native/main
+      version:
+        description: version, e.g. 0.1.0
+        required: true
+      notes:
+        description: release notes (Ukrainian, plain words for Artem)
+        default: "Перша збірка Mamay Native."
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: xcode-27
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: m0k1mo/Formlab
+          ref: ${{ github.event.inputs.ref }}
+          token: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          path: src
+      - name: Tools
+        run: |
+          brew install xcodegen create-dmg >/dev/null 2>&1 || brew install xcodegen create-dmg
+          xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
+      - name: Build
+        working-directory: src/native
+        env:
+          V: ${{ github.event.inputs.version }}
+        run: |
+          set -eo pipefail
+          sed -i '' "s/MARKETING_VERSION: \".*\"/MARKETING_VERSION: \"$V\"/; s/CURRENT_PROJECT_VERSION: \".*\"/CURRENT_PROJECT_VERSION: \"${{ github.run_number }}\"/" project.yml
+          xcodegen generate --quiet
+          for s in Mamay-Mac MamayTester-Mac; do
+            xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
+              -derivedDataPath dd CODE_SIGN_IDENTITY=- build | tail -3
+          done
+          xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
+            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO build | tail -3
+      - name: Package
+        working-directory: src/native
+        env:
+          V: ${{ github.event.inputs.version }}
+        run: |
+          set -eo pipefail
+          mkdir -p ../../out
+          M=dd/Build/Products/Release
+          codesign --force --deep -s - "$M/Mamay Native.app"
+          codesign --force --deep -s - "$M/Mamay Native Tester.app"
+          create-dmg --volname "Mamay Native $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native.app" 160 160 \
+            "../../out/Mamay-Native-$V.dmg" "$M/Mamay Native.app" || hdiutil create -volname "Mamay Native" -srcfolder "$M/Mamay Native.app" -ov -format UDZO "../../out/Mamay-Native-$V.dmg"
+          create-dmg --volname "Mamay Tester $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native Tester.app" 160 160 \
+            "../../out/Mamay-Native-Tester-$V.dmg" "$M/Mamay Native Tester.app" || hdiutil create -volname "Mamay Tester" -srcfolder "$M/Mamay Native Tester.app" -ov -format UDZO "../../out/Mamay-Native-Tester-$V.dmg"
+          I=dd/Build/Products/Release-iphoneos
+          mkdir -p Payload && cp -R "$I/Mamay.app" Payload/ && ditto -c -k --keepParent Payload "../../out/Mamay-Native-iPad-$V.ipa"
+          ls -la ../../out
+      - name: Publish prerelease
+        env:
+          GH_TOKEN: ${{ github.token }}
+          V: ${{ github.event.inputs.version }}
+        run: |
+          gh release create "native-v$V" out/* --repo ${{ github.repository }} --prerelease --title "Mamay Native $V" \
+            --notes "${{ github.event.inputs.notes }}
+
+          **Як поставити на Мак:** відкрий DMG → перетягни Mamay Native у Applications → перший раз: правий клік → Open, потім System Settings → Privacy & Security → Open Anyway. Поставиться поруч із Mamay 0.45 і нічого в ній не змінить.
+          **Тестер:** так само з другого DMG; натисни Test mode → Start.
+          **iPad:** .ipa ставиться через Sideloadly (безкоштовний Apple ID), раз на 7 днів."
