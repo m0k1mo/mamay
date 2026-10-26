@@ -48,7 +48,7 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$GITHUB_WORKSPACE/ci-out"
-          MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" swift test 2>&1 | tee ../../test.log
+          MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
         continue-on-error: true
       - name: Build apps
         id: apps
