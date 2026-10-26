@@ -92,7 +92,7 @@ jobs:
             echo; echo "tests: ${{ steps.tests.outcome }} · apps: ${{ steps.apps.outcome }}"; echo
             echo '## env'; echo '```'; cat env.txt; echo '```'
             echo '## swift test (failures and summary)'; echo '```'
-            grep -E "error:|✘|failed|passed after|Test run|warning: unre|fatal" test.log | grep -v "✔ Test" | tail -80 || true
+            grep -E "error:|✘|failed|passed after|Test run|warning: unre|fatal" test.log | grep -v "✔ Test" | grep -v "known issue" | tail -80 || true
             tail -3 test.log; echo '```'
             for f in build-*.log; do
               [ -f "$f" ] || continue
