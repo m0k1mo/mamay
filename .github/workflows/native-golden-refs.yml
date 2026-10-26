@@ -4,6 +4,8 @@
 # PRIVATE repo only, branch native/golden-refs-mac (on top of the input ref), for the lead to merge — never published here.
 #   dev/golden/ref-mac/<sheet>.json + .png|.webp   golden_make.py --only real --refs-only on the base build (94307e6), as dev/golden/ref
 #   dev/golden/ref-nopaint-mac/<sheet>.json + .png  golden_nopaint.py on the 0.45 page of the input ref, as dev/golden/ref-nopaint
+#   dev/golden/ref-mac/probe/                       golden_probe.py: how this Chrome rounds (blend, blur, AA), when the ref has it
+# A match text that names no sheet (e.g. probe-only) makes the probe alone.
 name: Native golden references (macOS)
 
 on:
@@ -65,6 +67,10 @@ jobs:
           (cd fl-base && python dev/build.py)
           (cd src && python dev/build.py)
           ls -la fl-base/dev/out/formlab.html src/dev/out/formlab.html
+      - name: Probe (how this Chrome rounds — for the painter; dev/golden/ref-mac/probe)
+        working-directory: src
+        run: |
+          if [ -f dev/tests/golden_probe.py ]; then python dev/tests/golden_probe.py --out dev/golden/ref-mac/probe; else echo "no golden_probe.py on this ref"; fi
       - name: References of the real sheets (ref-mac)
         working-directory: src
         env:
