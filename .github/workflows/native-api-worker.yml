@@ -17,7 +17,7 @@ on:
         description: branch the worker pushes to (native/api-*)
         default: native/api-1
       model:
-        default: claude-sonnet-5-5
+        default: claude-opus-5-5
       max_turns:
         default: "400"
 
