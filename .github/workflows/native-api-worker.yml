@@ -9,7 +9,7 @@ on:
     inputs:
       task:
         description: "path of the task file in m0k1mo/Formlab (on branch `base`), or `ping` to test the key"
-        default: ping
+        default: native/tasks/api-01.md
       base:
         description: branch of m0k1mo/Formlab the worker starts from
         default: native/main
