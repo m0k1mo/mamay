@@ -9,13 +9,13 @@ on:
     inputs:
       task:
         description: "path of the task file in m0k1mo/Formlab (on branch `base`), or `ping` to test the key"
-        default: native/tasks/api-02.md
+        default: native/tasks/api-03.md
       base:
         description: branch of m0k1mo/Formlab the worker starts from
-        default: native/main
+        default: native/lead-0111
       branch:
         description: branch the worker pushes to (native/api-*)
-        default: native/api-2
+        default: native/api-3b
       model:
         default: claude-opus-5-5
       max_turns:
@@ -25,7 +25,8 @@ permissions:
   contents: read
 
 concurrency:
-  group: native-api-worker
+  # one run per target branch: two different tasks may run side by side (≤ 2, the lead's rule); the $90 console limit stays the hard stop
+  group: native-api-worker-${{ github.event.inputs.branch }}
   cancel-in-progress: false
 
 jobs:
