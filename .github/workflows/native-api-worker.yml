@@ -72,7 +72,7 @@ jobs:
           claude -p "$(cat "$TASK")
 
           You work in this checkout (branch $BR). Commit small green steps and push them: git push origin $BR. Never push to any other branch." \
-            --model "$MODEL" --max-turns "$TURNS" --dangerously-skip-permissions --output-format json > ../result.json 2> ../stderr.txt
+            --model "$MODEL" --max-turns "$TURNS" --permission-mode acceptEdits --allowedTools "Read,Edit,Write,Glob,Grep,Bash(git add:*),Bash(git commit:*),Bash(git push origin $BR),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(swift build:*),Bash(swift test:*),Bash(xcodegen:*),Bash(xcodebuild:*),Bash(node native/scripts/*),Bash(bash -n:*),Bash(bash native/scripts/*),Bash(ls:*),Bash(mkdir:*)" --output-format json > ../result.json 2> ../stderr.txt
           echo "claude exit $?"
           git push -q origin "$BR" 2>/dev/null
           true
