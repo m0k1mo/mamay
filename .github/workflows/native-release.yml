@@ -13,7 +13,7 @@ on:
       version:
         description: version, e.g. 0.1.0
         required: true
-        default: 0.1.0-test
+        default: 0.1.1-test
       notes:
         description: release notes (Ukrainian, plain words for Artem)
         default: "ТЕСТОВА збірка Mamay Native + Mamay Tester (аркуші ще не ідеальні — це для нічних тестів, не для роботи). Увечері: Tester → Test mode → Sheets folder… (твоя папка з аркушами) → Night run — till 7:30. Звіти — на Google Диск, «Formlab Reports / Mamay Native»."
