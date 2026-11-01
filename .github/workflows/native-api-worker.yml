@@ -1,10 +1,15 @@
 # Mamay Native — an extra helper on Artem's API credit (his rule 01.11: spend ≤ $90, keep $10; console spend limit $90 too).
+# Started by hand (Run workflow) or by the lead: a push to main that changes native-api-queue/<lane>.json
+# ({"task": ..., "base": ..., "branch": ...}) starts one run with those values (Artem 01.11 18:27: «щоб ти сам run workflow робив»).
 # Started by hand / by the lead. Runs on a GitHub macOS runner (Artem's Mac stays free for CI).
 # The task is a FILE in the private repo (inputs.task = its path), so nothing private shows in this public repo's logs:
 # every step's output goes to files that are pushed only to the private branch native-ci-reports (api-worker/).
 name: Native API worker
 
 on:
+  push:
+    branches: [main]
+    paths: ['native-api-queue/*.json']
   workflow_dispatch:
     inputs:
       task:
@@ -26,7 +31,7 @@ permissions:
 
 concurrency:
   # one run per target branch: two different tasks may run side by side (≤ 2, the lead's rule); the $90 console limit stays the hard stop
-  group: native-api-worker-${{ github.event.inputs.branch }}
+  group: native-api-worker-${{ github.event.inputs.branch || github.sha }}
   cancel-in-progress: false
 
 jobs:
@@ -39,10 +44,23 @@ jobs:
       TASK: ${{ github.event.inputs.task }}
       BASE: ${{ github.event.inputs.base }}
       BR: ${{ github.event.inputs.branch }}
-      MODEL: ${{ github.event.inputs.model }}
-      TURNS: ${{ github.event.inputs.max_turns }}
+      MODEL: ${{ github.event.inputs.model || 'claude-opus-5-5' }}
+      TURNS: ${{ github.event.inputs.max_turns || '400' }}
       LIMIT_USD: "88"
     steps:
+      - name: Task from the queue file (push)
+        if: github.event_name == 'push'
+        uses: actions/checkout@v4
+        with: { path: q, sparse-checkout: native-api-queue }
+      - name: Read the queue file
+        if: github.event_name == 'push'
+        env:
+          CHANGED: ${{ join(github.event.head_commit.modified, ' ') }} ${{ join(github.event.head_commit.added, ' ') }}
+        run: |
+          F=$(for f in $CHANGED; do case "$f" in native-api-queue/*.json) echo "$f";; esac; done | head -1)
+          [ -n "$F" ] || { echo "no queue file in this push"; exit 1; }
+          python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print('TASK='+d['task']); print('BASE='+d.get('base','native/main')); print('BR='+d['branch'])" "q/$F" >> "$GITHUB_ENV"
+          cat "q/$F"
       - name: Reports branch and spend so far
         run: |
           git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep
