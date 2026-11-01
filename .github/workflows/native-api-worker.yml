@@ -9,13 +9,13 @@ on:
     inputs:
       task:
         description: "path of the task file in m0k1mo/Formlab (on branch `base`), or `ping` to test the key"
-        default: native/tasks/api-03.md
+        default: native/tasks/api-06.md
       base:
         description: branch of m0k1mo/Formlab the worker starts from
         default: native/lead-0111
       branch:
         description: branch the worker pushes to (native/api-*)
-        default: native/api-3b
+        default: native/api-6
       model:
         default: claude-opus-5-5
       max_turns:
