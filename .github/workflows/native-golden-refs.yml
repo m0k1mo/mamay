@@ -1,5 +1,6 @@
-# Mamay Native — golden references made on macOS (by hand: Run workflow). The 0.45 page draws the real sheets in Google Chrome on
-# a Mac, with the real Mac fonts (Gill Sans, Arial…); the Linux references (dev/golden/ref, ref-nopaint) fell back to other fonts.
+# Mamay Native — golden references made on macOS (by hand: Run workflow). The 0.45 page draws the real sheets on a Mac, with the
+# real Mac fonts (Gill Sans, Arial…), in WebKit (engine webkit, the default: Tauri's WKWebView, where Artem sees 0.45) → ref-mac /
+# ref-nopaint-mac, or in Google Chrome (engine chrome) → ref-mac-chrome / ref-nopaint-mac-chrome.
 # The code is private: it is checked out with FORMLAB_CODE_TOKEN; nothing from it stays here. The references are committed to the
 # PRIVATE repo only, branch native/golden-refs-mac (on top of the input ref), for the lead to merge — never published here.
 #   dev/golden/ref-mac/<sheet>.json + .png|.webp   golden_make.py --only real --refs-only on the base build (94307e6), as dev/golden/ref
@@ -22,6 +23,11 @@ on:
       match:
         description: only the sheets whose name has this text (empty = all real sheets)
         default: ''
+      engine:
+        description: browser engine
+        type: choice
+        options: [webkit, chrome]
+        default: webkit
   repository_dispatch:
     types: [native-golden-refs]
 
@@ -41,8 +47,7 @@ jobs:
       MATCH: ${{ github.event.inputs.match || github.event.client_payload.match || '' }}
       BASE_SHA: 94307e6878eea61edfde4794d2d86db7fd8bc8dd
       OUT_BRANCH: native/golden-refs-mac
-      # software canvas and sRGB output, like the Linux references and the painter's AA model (no GPU raster, no display profile)
-      GOLDEN_ARGS: --disable-gpu --disable-accelerated-2d-canvas --force-color-profile=srgb
+      ENGINE: ${{ github.event.inputs.engine || github.event.client_payload.engine || 'webkit' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -54,11 +59,18 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Tools (Playwright on the installed Google Chrome; Playwright's Chromium only if there is no Chrome)
+      - name: Tools (Playwright WebKit; or the installed Google Chrome, Playwright's Chromium only if there is no Chrome)
         run: |
           python -m pip install -q playwright pillow
-          if [ -d "/Applications/Google Chrome.app" ]; then echo "GOLDEN_CHANNEL=chrome" >> "$GITHUB_ENV"; else python -m playwright install chromium; fi
-          { sw_vers; python --version; "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version 2>/dev/null || echo "no Google Chrome"; } | tee env.txt
+          if [ "$ENGINE" = webkit ]; then
+            python -m playwright install webkit
+            { echo "GOLDEN_ENGINE=webkit"; echo "R=ref-mac"; echo "N=ref-nopaint-mac"; } >> "$GITHUB_ENV"
+          else
+            # software canvas and sRGB output (no GPU raster, no display profile)
+            { echo "GOLDEN_ARGS=--disable-gpu --disable-accelerated-2d-canvas --force-color-profile=srgb"; echo "R=ref-mac-chrome"; echo "N=ref-nopaint-mac-chrome"; } >> "$GITHUB_ENV"
+            if [ -d "/Applications/Google Chrome.app" ]; then echo "GOLDEN_CHANNEL=chrome" >> "$GITHUB_ENV"; else python -m playwright install chromium; fi
+          fi
+          { sw_vers; python --version; echo "engine $ENGINE"; python -c "import playwright, importlib.metadata as m; print('playwright', m.version('playwright'))"; "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --version 2>/dev/null || true; } | tee env.txt
           system_profiler SPFontsDataType 2>/dev/null | grep -E "Full Name: (Gill Sans|Arial|Helvetica)" | sort -u | head -30 | tee -a env.txt || true
       - name: Build the pages (base 94307e6 for ref-mac, the input ref for ref-nopaint-mac)
         run: |
@@ -67,37 +79,38 @@ jobs:
           (cd fl-base && python dev/build.py)
           (cd src && python dev/build.py)
           ls -la fl-base/dev/out/formlab.html src/dev/out/formlab.html
-      - name: Probe (how this Chrome rounds — for the painter; dev/golden/ref-mac/probe)
+          # a full run starts from empty folders (no references of another engine or an older run left in them)
+          if [ -z "$MATCH" ]; then rm -rf "src/dev/golden/$R" "src/dev/golden/$N"; fi
+      - name: Probe (how this browser rounds — for the painter; dev/golden/<R>/probe)
         working-directory: src
         run: |
-          if [ -f dev/tests/golden_probe.py ]; then python dev/tests/golden_probe.py --out dev/golden/ref-mac/probe; else echo "no golden_probe.py on this ref"; fi
-      - name: References of the real sheets (ref-mac)
+          if [ -f dev/tests/golden_probe.py ]; then python dev/tests/golden_probe.py --out "dev/golden/$R/probe"; else echo "no golden_probe.py on this ref"; fi
+      - name: References of the real sheets (<R>)
         working-directory: src
-        env:
-          GOLDEN_REF_DIR: dev/golden/ref-mac
         run: |
           set -o pipefail
+          export GOLDEN_REF_DIR="dev/golden/$R"
           python dev/tests/golden_make.py --only real --refs-only --force --uploads /nonexistent --base-dir "$GITHUB_WORKSPACE/fl-base" \
             --timeout 600 ${MATCH:+--match "$MATCH"} 2>&1 | tee ../make.log
-      - name: References with the paint layers hidden (ref-nopaint-mac)
+      - name: References with the paint layers hidden (<N>)
         working-directory: src
         run: |
           set -o pipefail
-          python dev/tests/golden_nopaint.py --out dev/golden/ref-nopaint-mac ${MATCH:+--match "$MATCH"} 2>&1 | tee ../nopaint.log
+          python dev/tests/golden_nopaint.py --out "dev/golden/$N" ${MATCH:+--match "$MATCH"} 2>&1 | tee ../nopaint.log
       - name: Commit to the private repo (branch native/golden-refs-mac)
         run: |
           SHA=$(git -C src rev-parse --short HEAD)
-          mkdir -p made && cp -R src/dev/golden/ref-mac src/dev/golden/ref-nopaint-mac made/
-          cp env.txt made/ref-mac/ENV.txt
+          mkdir -p made "src/dev/golden/$R" "src/dev/golden/$N" && cp -R "src/dev/golden/$R" "src/dev/golden/$N" made/
+          cp env.txt "made/$R/ENV.txt"
           cd src
           git config user.name "native-golden-refs" && git config user.email "native-ci@users.noreply.github.com"
-          rm -rf dev/golden/ref-mac dev/golden/ref-nopaint-mac
+          rm -rf "dev/golden/$R" "dev/golden/$N"
           if git fetch -q --depth 1 origin "$OUT_BRANCH" 2>/dev/null; then git checkout -q -B golden-out FETCH_HEAD; else git checkout -q -B golden-out; fi
           # a run with `match` only replaces those sheets; a full run replaces the folders
-          if [ -n "$MATCH" ]; then mkdir -p dev/golden/ref-mac dev/golden/ref-nopaint-mac
-            cp -R ../made/ref-mac/. dev/golden/ref-mac/; cp -R ../made/ref-nopaint-mac/. dev/golden/ref-nopaint-mac/
-          else rm -rf dev/golden/ref-mac dev/golden/ref-nopaint-mac; cp -R ../made/ref-mac ../made/ref-nopaint-mac dev/golden/; fi
-          git add -A dev/golden/ref-mac dev/golden/ref-nopaint-mac
-          git commit -qm "Golden references on macOS (Google Chrome, Mac fonts): ref-mac + ref-nopaint-mac from $REF @ $SHA, run ${{ github.run_number }}" || { echo "nothing new"; exit 0; }
+          if [ -n "$MATCH" ]; then mkdir -p "dev/golden/$R" "dev/golden/$N"
+            cp -R "../made/$R/." "dev/golden/$R/"; cp -R "../made/$N/." "dev/golden/$N/"
+          else rm -rf "dev/golden/$R" "dev/golden/$N"; cp -R "../made/$R" "../made/$N" dev/golden/; fi
+          git add -A "dev/golden/$R" "dev/golden/$N"
+          git commit -qm "Golden references on macOS ($ENGINE, Mac fonts): $R + $N from $REF @ $SHA, run ${{ github.run_number }}" || { echo "nothing new"; exit 0; }
           for i in 1 2 3; do git push -q origin "HEAD:refs/heads/$OUT_BRANCH" && break; sleep 5; done
           git log --oneline -1
