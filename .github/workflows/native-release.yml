@@ -16,14 +16,19 @@ on:
         default: 0.1.1-test
       notes:
         description: release notes (Ukrainian, plain words for Artem)
-        default: "ТЕСТОВА збірка Mamay Native + Mamay Tester (аркуші ще не ідеальні — це для нічних тестів, не для роботи). Увечері: Tester → Test mode → Sheets folder… (твоя папка з аркушами) → Night run — till 7:30. Звіти — на Google Диск, «Formlab Reports / Mamay Native»."
+        default: "ТЕСТОВА збірка Mamay Native + Mamay Tester (аркуші ще не ідеальні — це для тестів, не для роботи). Тестер: Start — перевіряє все по черзі, Pause — зупиняє, звіти самі йдуть на Google Диск «Formlab Reports / Mamay Native». Нові збірки тепер приходять у самому Тестері — кнопка Update."
+      runner:
+        description: where to build (artem-mac = Artem's Mac, xcode-27 = GitHub)
+        type: choice
+        options: [artem-mac, xcode-27]
+        default: artem-mac
 
 permissions:
   contents: write
 
 jobs:
   release:
-    runs-on: xcode-27
+    runs-on: ${{ github.event.inputs.runner || 'artem-mac' }}
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
@@ -56,13 +61,16 @@ jobs:
           V: ${{ github.event.inputs.version }}
         run: |
           set -eo pipefail
+          # on Artem's Mac: no Finder windows while the DMG is made (create-dmg would open one to lay out the icons)
+          SKIP=""; [ "${{ github.event.inputs.runner }}" = "artem-mac" ] && SKIP="--skip-jenkins"
+          rm -rf ../../out Payload
           mkdir -p ../../out
           M=dd/Build/Products/Release
           codesign --force --deep -s - "$M/Mamay Native.app"
           codesign --force --deep -s - "$M/Mamay Native Tester.app"
-          create-dmg --volname "Mamay Native $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native.app" 160 160 \
+          create-dmg $SKIP --volname "Mamay Native $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native.app" 160 160 \
             "../../out/Mamay-Native-$V.dmg" "$M/Mamay Native.app" || hdiutil create -volname "Mamay Native" -srcfolder "$M/Mamay Native.app" -ov -format UDZO "../../out/Mamay-Native-$V.dmg"
-          create-dmg --volname "Mamay Tester $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native Tester.app" 160 160 \
+          create-dmg $SKIP --volname "Mamay Tester $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native Tester.app" 160 160 \
             "../../out/Mamay-Native-Tester-$V.dmg" "$M/Mamay Native Tester.app" || hdiutil create -volname "Mamay Tester" -srcfolder "$M/Mamay Native Tester.app" -ov -format UDZO "../../out/Mamay-Native-Tester-$V.dmg"
           I=dd/Build/Products/Release-iphoneos
           mkdir -p Payload && cp -R "$I/Mamay.app" Payload/ && ditto -c -k --keepParent Payload "../../out/Mamay-Native-iPad-$V.ipa"
@@ -72,9 +80,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           V: ${{ github.event.inputs.version }}
         run: |
+          # a second run of the same version (e.g. one left waiting on GitHub) does not publish twice
+          if gh release view "native-v$V" --repo ${{ github.repository }} >/dev/null 2>&1; then echo "native-v$V is already out"; exit 0; fi
           gh release create "native-v$V" out/* --repo ${{ github.repository }} --prerelease --title "Mamay Native $V" \
             --notes "${{ github.event.inputs.notes }}
 
           **Як поставити на Мак:** відкрий DMG → перетягни Mamay Native у Applications → перший раз: правий клік → Open, потім System Settings → Privacy & Security → Open Anyway. Поставиться поруч із Mamay 0.45 і нічого в ній не змінить.
-          **Тестер:** так само з другого DMG; Test mode → Sheets folder… → Night run — till 7:30.
+          **Тестер:** так само з другого DMG; далі — Start. Наступні збірки — кнопка Update у Тестері.
           **iPad:** .ipa ставиться через Sideloadly (безкоштовний Apple ID), раз на 7 днів."
