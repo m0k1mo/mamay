@@ -1,0 +1,93 @@
+# Mamay Native — an extra helper on Artem's API credit (his rule 01.11: spend ≤ $90, keep $10; console spend limit $90 too).
+# Started by hand / by the lead. Runs on a GitHub macOS runner (Artem's Mac stays free for CI).
+# The task is a FILE in the private repo (inputs.task = its path), so nothing private shows in this public repo's logs:
+# every step's output goes to files that are pushed only to the private branch native-ci-reports (api-worker/).
+name: Native API worker
+
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: "path of the task file in m0k1mo/Formlab (on branch `base`), or `ping` to test the key"
+        default: ping
+      base:
+        description: branch of m0k1mo/Formlab the worker starts from
+        default: native/main
+      branch:
+        description: branch the worker pushes to (native/api-*)
+        default: native/api-1
+      model:
+        default: claude-sonnet-5-5
+      max_turns:
+        default: "150"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-api-worker
+  cancel-in-progress: false
+
+jobs:
+  work:
+    runs-on: macos-26
+    timeout-minutes: 300
+    env:
+      TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      TASK: ${{ github.event.inputs.task }}
+      BASE: ${{ github.event.inputs.base }}
+      BR: ${{ github.event.inputs.branch }}
+      MODEL: ${{ github.event.inputs.model }}
+      TURNS: ${{ github.event.inputs.max_turns }}
+      LIMIT_USD: "88"
+    steps:
+      - name: Reports branch and spend so far
+        run: |
+          git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep
+          mkdir -p rep/api-worker; touch rep/api-worker/ledger.tsv
+          SPENT=$(awk -F'\t' '{s+=$3} END {printf "%.2f", s+0}' rep/api-worker/ledger.tsv)
+          echo "SPENT=$SPENT" >> "$GITHUB_ENV"
+          echo "spent so far: \$$SPENT of \$$LIMIT_USD"
+          awk -v s="$SPENT" -v l="$LIMIT_USD" 'BEGIN { exit !(s+0 < l+0) }' || { echo "budget reached — stop"; exit 1; }
+      - name: Key check
+        run: |
+          [ -n "$ANTHROPIC_API_KEY" ] || { echo "ANTHROPIC_API_KEY secret is missing"; exit 1; }
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://api.anthropic.com/v1/messages \
+            -H "x-api-key: $ANTHROPIC_API_KEY" -H "anthropic-version: 2023-06-01" -H "content-type: application/json" \
+            -d '{"model":"claude-haiku-5-5","max_tokens":5,"messages":[{"role":"user","content":"ok"}]}')
+          echo "API answered HTTP $code"
+          echo "KEYCODE=$code" >> "$GITHUB_ENV"
+          [ "$code" = 200 ]
+      - name: Work
+        if: env.TASK != 'ping'
+        run: |
+          set +e
+          git clone -q --branch "$BASE" "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" src
+          cd src && git checkout -q -B "$BR"
+          git config user.name "mamay-api-worker"; git config user.email "api-worker@users.noreply.github.com"
+          [ -f "$TASK" ] || { echo "task file not found"; exit 1; }
+          npm i -g @anthropic-ai/claude-code >/dev/null 2>&1
+          brew install xcodegen >/dev/null 2>&1
+          claude -p "$(cat "$TASK")
+
+          You work in this checkout (branch $BR). Commit small green steps and push them: git push origin $BR. Never push to any other branch." \
+            --model "$MODEL" --max-turns "$TURNS" --dangerously-skip-permissions --output-format json > ../result.json 2> ../stderr.txt
+          echo "claude exit $?"
+          git push -q origin "$BR" 2>/dev/null
+          true
+      - name: Report (private repo only)
+        if: always()
+        run: |
+          R=rep/api-worker/${{ github.run_number }}.md
+          COST=$(python3 -c "import json;print(json.load(open('result.json')).get('total_cost_usd',0))" 2>/dev/null || echo 0)
+          {
+            echo "# API worker run ${{ github.run_number }} · task $TASK · $MODEL · branch $BR"
+            echo; echo "key: HTTP ${KEYCODE:-?} · cost \$$COST · spent before \$$SPENT"; echo
+            echo '## result'; python3 -c "import json;print(json.load(open('result.json')).get('result',''))" 2>/dev/null | head -200
+            echo; echo '## stderr (tail)'; echo '```'; tail -40 stderr.txt 2>/dev/null; echo '```'
+          } > "$R"
+          printf '%s\t%s\t%s\t%s\n' "${{ github.run_number }}" "$(date -u +%FT%TZ)" "$COST" "$TASK" >> rep/api-worker/ledger.tsv
+          cd rep && git config user.name "native-ci" && git config user.email "native-ci@users.noreply.github.com"
+          git add -A && git commit -qm "api-worker run ${{ github.run_number }}" || exit 0
+          for i in 1 2 3 4 5; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || true; sleep 3; done
