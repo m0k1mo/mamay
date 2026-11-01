@@ -24,7 +24,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [artem-mac, xcode-27, macos-26]   # artem-mac = Artem's M5 (self-hosted, fast path); GitHub runners = fallback + iPad + Swift 6.3
+        runner: [xcode-27, macos-26]   # artem-mac OFF until ~22:00 01.11 (Artem away; put it back as the first entry) — artem-mac = Artem's M5 (self-hosted, fast path); GitHub runners = fallback + iPad + Swift 6.3
     runs-on: ${{ matrix.runner == 'artem-mac' && fromJSON('["self-hosted","artem-mac"]') || matrix.runner }}
     timeout-minutes: 60
     env:
