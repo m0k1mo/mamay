@@ -1,10 +1,16 @@
-# Mamay Native — publish a build for Artem (ROAD §7.1–7.3). Only by hand (Run workflow) and only after Artem's «так».
+# Mamay Native — publish a test build for Artem (ROAD §7.1–7.3).
+# Artem 02.11, 00:33: «не хочу постійно бігати і нажимати кнопки, максимум кнопка оновити програму» — so the lead publishes test builds
+# himself by pushing native-release-queue/next.json ({"version","ref","notes"}); Artem only presses Update inside the Tester.
+# Run workflow by hand still works. The real (non-test) release stays only after Artem's «так».
 # Builds from the private code at `ref`, ad-hoc signs, makes DMGs for the Mac app and the Tester and an unsigned .ipa for iPad
 # (installed with Sideloadly / AltStore / SideStore under a free Apple ID), and publishes a PRERELEASE `native-v<version>` here.
 # The 0.45 channel (`v0.45.x`, latest.json) is not touched: Native is a new app installed next to it.
 name: Native release
 
 on:
+  push:
+    branches: [main]
+    paths: ['native-release-queue/*.json']
   workflow_dispatch:
     inputs:
       ref:
@@ -31,10 +37,28 @@ jobs:
     runs-on: ${{ github.event.inputs.runner || 'artem-mac' }}
     timeout-minutes: 60
     steps:
+      - name: What to build
+        id: p
+        env:
+          IN_REF: ${{ github.event.inputs.ref }}
+          IN_V: ${{ steps.p.outputs.version }}
+          IN_NOTES: ${{ steps.p.outputs.notes }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            curl -fsSL "https://raw.githubusercontent.com/$REPO/$SHA/native-release-queue/next.json" -o q.json
+            IN_REF=$(python3 -c "import json;print(json.load(open('q.json')).get('ref','native/lead-0111'))")
+            IN_V=$(python3 -c "import json;print(json.load(open('q.json'))['version'])")
+            IN_NOTES=$(python3 -c "import json;print(json.load(open('q.json')).get('notes',''))")
+          fi
+          [ -n "$IN_NOTES" ] || IN_NOTES="ТЕСТОВА збірка Mamay Native + Mamay Tester (для тестів, не для роботи). Нові збірки приходять у самому Тестері — кнопка Update."
+          echo "ref=$IN_REF" >> "$GITHUB_OUTPUT"; echo "version=$IN_V" >> "$GITHUB_OUTPUT"
+          { echo "notes<<EOF_NOTES"; echo "$IN_NOTES"; echo "EOF_NOTES"; } >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
           repository: m0k1mo/Formlab
-          ref: ${{ github.event.inputs.ref }}
+          ref: ${{ steps.p.outputs.ref }}
           token: ${{ secrets.FORMLAB_CODE_TOKEN }}
           path: src
       - name: Tools
@@ -44,7 +68,7 @@ jobs:
       - name: Build
         working-directory: src/native
         env:
-          V: ${{ github.event.inputs.version }}
+          V: ${{ steps.p.outputs.version }}
         run: |
           set -eo pipefail
           sed -i '' "s/MARKETING_VERSION: \".*\"/MARKETING_VERSION: \"$V\"/; s/CURRENT_PROJECT_VERSION: \".*\"/CURRENT_PROJECT_VERSION: \"${{ github.run_number }}\"/" project.yml
@@ -58,11 +82,11 @@ jobs:
       - name: Package
         working-directory: src/native
         env:
-          V: ${{ github.event.inputs.version }}
+          V: ${{ steps.p.outputs.version }}
         run: |
           set -eo pipefail
           # on Artem's Mac: no Finder windows while the DMG is made (create-dmg would open one to lay out the icons)
-          SKIP=""; [ "${{ github.event.inputs.runner }}" = "artem-mac" ] && SKIP="--skip-jenkins"
+          SKIP=""; [ "${{ github.event.inputs.runner || 'artem-mac' }}" = "artem-mac" ] && SKIP="--skip-jenkins"
           rm -rf ../../out Payload
           mkdir -p ../../out
           M=dd/Build/Products/Release
@@ -78,14 +102,14 @@ jobs:
       - name: Publish prerelease
         env:
           GH_TOKEN: ${{ github.token }}
-          V: ${{ github.event.inputs.version }}
+          V: ${{ steps.p.outputs.version }}
         run: |
           # Artem's Mac has no GitHub CLI yet — install it once (brew is there: the Tools step uses it)
           command -v gh >/dev/null 2>&1 || brew install gh >/dev/null 2>&1 || brew install gh
           # a second run of the same version (e.g. one left waiting on GitHub) does not publish twice
           if gh release view "native-v$V" --repo ${{ github.repository }} >/dev/null 2>&1; then echo "native-v$V is already out"; exit 0; fi
           gh release create "native-v$V" out/* --repo ${{ github.repository }} --prerelease --title "Mamay Native $V" \
-            --notes "${{ github.event.inputs.notes }}
+            --notes "${{ steps.p.outputs.notes }}
 
           **Як поставити на Мак:** відкрий DMG → перетягни Mamay Native у Applications → перший раз: правий клік → Open, потім System Settings → Privacy & Security → Open Anyway. Поставиться поруч із Mamay 0.45 і нічого в ній не змінить.
           **Тестер:** так само з другого DMG; далі — Start. Наступні збірки — кнопка Update у Тестері.
