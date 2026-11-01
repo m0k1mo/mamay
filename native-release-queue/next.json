@@ -1,1 +1,1 @@
-{"version": "0.1.1-test", "ref": "native/lead-0111"}
+{"version": "0.1.2-test", "ref": "native/lead-0111", "notes": "ТЕСТОВА збірка. Тестер у стилі Apple: прогрес по категоріях (Core functions, Your sheets, Every node and setting, Big mixed sheets), кнопка Start / Pause зверху. Нові збірки — кнопка Update Now у Тестері."}
