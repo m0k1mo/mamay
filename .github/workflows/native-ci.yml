@@ -103,10 +103,18 @@ jobs:
           {
             echo "# Native CI · ${{ matrix.runner }} · $REF @ $SHA · run ${{ github.run_number }}"
             echo; echo "tests: ${{ steps.tests.outcome }} · apps: ${{ steps.apps.outcome }}"; echo
-            echo '## env'; echo '```'; cat env.txt; echo '```'
-            echo '## swift test (failures and summary)'; echo '```'
-            grep -E "error:|✘|failed|passed after|Test run|warning: unre|fatal" test.log | grep -v "✔ Test" | grep -v "known issue" | tail -80 || true
-            tail -3 test.log; echo '```'
+            echo "env: $(grep -m1 ProductVersion env.txt | awk '{print $2}') · $(grep -m1 '^Xcode' env.txt) · $(grep -m1 'Apple Swift version' env.txt | sed -E 's/.*(Apple Swift version [0-9.]+).*/\1/')"
+            # errors only: compile errors, failed tests (not ✔, not known issues, not the golden table — that lives in out/golden/real.md)
+            echo '## swift test — errors'; echo '```'
+            grep -E "error:|✘|fatal" test.log | grep -vE "✔|known issue|^\| " | sort -u | head -60 || true
+            tail -1 test.log; echo '```'
+            # golden: only the sheets that fail, and what changed against the last report of this branch
+            if [ -f ci-out/golden/real.md ]; then
+              echo '## golden (✘ rows; Δ vs previous)'; echo '```'
+              grep -E "^\| .* ✘ \|$" ci-out/golden/real.md | cut -d'|' -f2,5,6,7 | head -30
+              grep -E "^Without paint" ci-out/golden/real.md || true
+              echo '```'
+            fi
             for f in build-*.log; do
               [ -f "$f" ] || continue
               echo "## $f"; echo '```'
@@ -118,6 +126,12 @@ jobs:
             git init -q rep && git -C rep checkout -q --orphan native-ci-reports && git -C rep remote add origin "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git"; }
           mkdir -p rep/native-ci
           B=$(echo "${{ github.event.client_payload.branch || github.event.inputs.ref || 'manual' }}" | tr '/:' '__' | cut -c1-60)
+          P="rep/native-ci/out/$B-${{ matrix.runner }}/golden/real.md"
+          if [ -f ci-out/golden/real.md ] && [ -f "$P" ]; then
+            { echo '## golden Δ vs previous run of this branch'; echo '```'
+              diff <(grep -E "^\| " "$P" | cut -d'|' -f2,5,6) <(grep -E "^\| " ci-out/golden/real.md | cut -d'|' -f2,5,6) | grep -E "^[<>]" | head -40 || echo "(no change)"
+              echo '```'; } >> $R
+          fi
           cp $R "rep/native-ci/latest-$B-${{ matrix.runner }}.md"
           cp $R "rep/native-ci/$SHA-${{ matrix.runner }}.md"
           # files the tests wrote for the lead (golden tables, side-by-side pictures): native-ci/out/<branch>-<runner>/
