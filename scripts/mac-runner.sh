@@ -29,15 +29,15 @@ echo "▸ Підключаю до github.com/m0k1mo/mamay…"
   --name "artem-mac" --labels "artem-mac" --work "_work"
 ./svc.sh install >/dev/null && ./svc.sh start >/dev/null
 
-# keep the Mac awake while on the charger (screen may still turn off); removed with: launchctl unload ~/Library/LaunchAgents/ua.mamay.awake.plist
+# keep the Mac awake (also on battery; screen may still turn off); removed with: launchctl unload ~/Library/LaunchAgents/ua.mamay.awake.plist
 A="$HOME/Library/LaunchAgents/ua.mamay.awake.plist"
 cat > "$A" <<P
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0"><dict><key>Label</key><string>ua.mamay.awake</string>
-<key>ProgramArguments</key><array><string>/usr/bin/caffeinate</string><string>-s</string></array>
+<key>ProgramArguments</key><array><string>/usr/bin/caffeinate</string><string>-i</string></array>
 <key>RunAtLoad</key><true/><key>KeepAlive</key><true/></dict></plist>
 P
 launchctl unload "$A" 2>/dev/null || true; launchctl load "$A"
 echo
 echo "✅ Готово. Збирач працює на фоні й сам запускається після входу в систему."
-echo "   На зарядці Мак не засинатиме (екран гасне як завжди). Кришку не закривай."
+echo "   Мак не засинатиме (екран гасне як завжди). Кришку не закривай."

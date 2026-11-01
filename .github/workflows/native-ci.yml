@@ -24,8 +24,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        runner: [xcode-27, macos-26]
-    runs-on: ${{ matrix.runner }}
+        runner: [artem-mac, xcode-27, macos-26]   # artem-mac = Artem's M5 (self-hosted, fast path); GitHub runners = fallback + iPad + Swift 6.3
+    runs-on: ${{ matrix.runner == 'artem-mac' && fromJSON('["self-hosted","artem-mac"]') || matrix.runner }}
     timeout-minutes: 60
     env:
       REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || 'native/main' }}
@@ -39,7 +39,7 @@ jobs:
           lfs: false
       - name: Tools
         run: |
-          brew install xcodegen >/dev/null 2>&1 || brew install xcodegen
+          command -v xcodegen >/dev/null || brew install xcodegen >/dev/null 2>&1 || brew install xcodegen
           xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
           { sw_vers; xcodebuild -version; swift --version; } > env.txt 2>&1
       - name: Swift tests (packages)
@@ -48,7 +48,9 @@ jobs:
         run: |
           set -o pipefail
           mkdir -p "$GITHUB_WORKSPACE/ci-out"
-          MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
+          # on Artem's Mac: lowest priority (his apps first) and no sleep while building
+          W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i nice -n 15"
+          MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
         continue-on-error: true
       - name: Build apps
         id: apps
@@ -57,11 +59,13 @@ jobs:
           set -o pipefail
           xcodegen generate --quiet
           ok=1
+          W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i nice -n 15"
           for s in Mamay-Mac MamayTester-Mac; do
-            xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
+            $W xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
               -derivedDataPath dd CODE_SIGN_IDENTITY=- build > "../../build-$s.log" 2>&1 || ok=0
           done
-          xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
+          # iPad needs the iOS platform (~8 GB) — built on GitHub runners only
+          [ "${{ matrix.runner }}" = artem-mac ] || xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
             -derivedDataPath dd CODE_SIGNING_ALLOWED=NO build > ../../build-Mamay-iPad.log 2>&1 || ok=0
           [ $ok = 1 ]
         continue-on-error: true
