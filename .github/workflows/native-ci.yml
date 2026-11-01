@@ -42,6 +42,14 @@ jobs:
           command -v xcodegen >/dev/null || brew install xcodegen >/dev/null 2>&1 || brew install xcodegen
           xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
           { sw_vers; xcodebuild -version; swift --version; } > env.txt 2>&1
+      - name: Golden baseline (the last native/main of this runner)
+        env:
+          TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          # the golden ratchet: no sheet may get worse than on the last green native/main (GoldenRatchet in MamayScene tests)
+          curl -fsSL -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github.raw" \
+            "https://api.github.com/repos/m0k1mo/Formlab/contents/native-ci/golden-last-${{ matrix.runner }}.json?ref=native-ci-reports" \
+            -o golden-last.json && echo "baseline: $(wc -c < golden-last.json) bytes" || { rm -f golden-last.json; echo "no baseline yet"; }
       - name: Swift tests (packages)
         id: tests
         working-directory: src/native
@@ -50,7 +58,8 @@ jobs:
           mkdir -p "$GITHUB_WORKSPACE/ci-out"
           # on Artem's Mac: lowest priority (his apps first) and no sleep while building
           W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i nice -n 15"
-          MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
+          GL=""; [ -f "$GITHUB_WORKSPACE/golden-last.json" ] && GL="$GITHUB_WORKSPACE/golden-last.json"
+          MAMAY_GOLDEN_LAST="$GL" MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
         continue-on-error: true
       - name: Build apps
         id: apps
@@ -115,6 +124,10 @@ jobs:
           if [ -d ci-out ] && [ -n "$(ls -A ci-out)" ]; then
             O="rep/native-ci/out/$B-${{ matrix.runner }}"; rm -rf "$O"; mkdir -p "$O"
             find ci-out -type f -size -3M | head -300 | while read -r x; do mkdir -p "$O/$(dirname "${x#ci-out/}")"; cp "$x" "$O/${x#ci-out/}"; done
+          fi
+          # native/main and nothing worse: this run's numbers (the better of last and now) are the next baseline of the ratchet
+          if [ "${{ github.event.client_payload.branch || github.event.inputs.ref }}" = "native/main" ] && [ -f ci-out/golden/golden-next.json ]; then
+            cp ci-out/golden/golden-next.json "rep/native-ci/golden-last-${{ matrix.runner }}.json"
           fi
           cd rep && git config user.name "native-ci" && git config user.email "native-ci@users.noreply.github.com"
           git add -A && git commit -qm "native-ci ${{ matrix.runner }} $SHA" || exit 0
