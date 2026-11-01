@@ -79,6 +79,7 @@ jobs:
       - name: Report (private repo only)
         if: always()
         run: |
+          set +e
           R=rep/api-worker/${{ github.run_number }}.md
           COST=$(python3 -c "import json;print(json.load(open('result.json')).get('total_cost_usd',0))" 2>/dev/null || echo 0)
           {
