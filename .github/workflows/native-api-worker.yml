@@ -1,7 +1,7 @@
 # Mamay Native — an extra helper on Artem's API credit (his rule 01.11: spend ≤ $90, keep $10; console spend limit $90 too).
 # Started by hand (Run workflow) or by the lead: a push to main that changes native-api-queue/<lane>.json
 # ({"task": ..., "base": ..., "branch": ...}) starts one run with those values (Artem 01.11 18:27: «щоб ти сам run workflow робив»).
-# Started by hand / by the lead. Runs on a GitHub macOS runner (Artem's Mac stays free for CI).
+# Started by hand / by the lead. Tools (Artem 01.11 19:47 «роби якісно»): the worker may build and test natively and run the golden scripts. Runs on a GitHub macOS runner (Artem's Mac stays free for CI).
 # The task is a FILE in the private repo (inputs.task = its path), so nothing private shows in this public repo's logs:
 # every step's output goes to files that are pushed only to the private branch native-ci-reports (api-worker/).
 name: Native API worker
@@ -89,7 +89,7 @@ jobs:
           claude -p "$(cat "$TASK")
 
           You work in this checkout (branch $BR). Commit small green steps and push them: git push origin $BR. Never push to any other branch." \
-            --model "$MODEL" --max-turns "$TURNS" --permission-mode acceptEdits --allowedTools "Read,Edit,Write,Glob,Grep,Bash(git add:*),Bash(git commit:*),Bash(git push origin $BR),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(swift build:*),Bash(swift test:*),Bash(xcodegen:*),Bash(xcodebuild:*),Bash(node native/scripts/*),Bash(bash -n:*),Bash(bash native/scripts/*),Bash(ls:*),Bash(mkdir:*)" --output-format json > ../result.json 2> ../stderr.txt
+            --model "$MODEL" --max-turns "$TURNS" --permission-mode acceptEdits --allowedTools "Read,Edit,Write,Glob,Grep,Bash(git add:*),Bash(git commit:*),Bash(git push origin $BR),Bash(git status:*),Bash(git diff:*),Bash(git log:*),Bash(swift build:*),Bash(swift test:*),Bash(xcodegen:*),Bash(xcodebuild:*),Bash(node native/scripts/*),Bash(bash -n:*),Bash(bash native/scripts/*),Bash(ls:*),Bash(mkdir:*),Bash(cd native && swift build:*),Bash(cd native && swift test:*),Bash(MAMAY_GOLDEN_ONLY=* swift test:*),Bash(cd native && MAMAY_GOLDEN_ONLY=* swift test:*),Bash(python3 dev/build.py),Bash(python3 dev/tests/golden_make.py:*),Bash(python3 dev/tests/golden_nopaint.py:*),Bash(GOLDEN_ENGINE=webkit python3 dev/tests/golden_make.py:*),Bash(GOLDEN_ENGINE=webkit python3 dev/tests/golden_nopaint.py:*),Bash(python3 -m playwright install webkit)" --output-format json > ../result.json 2> ../stderr.txt
           echo "claude exit $?"
           git push -q origin "$BR" 2>/dev/null
           true
