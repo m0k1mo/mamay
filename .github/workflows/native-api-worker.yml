@@ -57,7 +57,7 @@ jobs:
         env:
           CHANGED: ${{ join(github.event.head_commit.modified, ' ') }} ${{ join(github.event.head_commit.added, ' ') }}
         run: |
-          F=$(for f in $CHANGED; do case "$f" in native-api-queue/*.json) echo "$f";; esac; done | head -1)
+          F=$(printf '%s\n' $CHANGED | grep -E '^native-api-queue/[^/]+\.json$' | head -1)
           [ -n "$F" ] || { echo "no queue file in this push"; exit 1; }
           python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print('TASK='+d['task']); print('BASE='+d.get('base','native/main')); print('BR='+d['branch'])" "q/$F" >> "$GITHUB_ENV"
           cat "q/$F"
