@@ -19,7 +19,7 @@ on:
       model:
         default: claude-sonnet-5-5
       max_turns:
-        default: "150"
+        default: "400"
 
 permissions:
   contents: read
