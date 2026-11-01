@@ -18,8 +18,8 @@ on:
       runner:
         description: macOS runner
         type: choice
-        options: [macos-26, xcode-27]
-        default: macos-26
+        options: [xcode-27, macos-26]
+        default: xcode-27   # macOS 27 = Artem's system (01.11: CoreGraphics differs between 26 and 27)
       match:
         description: only the sheets whose name has this text (empty = all real sheets)
         default: ''
@@ -40,7 +40,7 @@ concurrency:
 
 jobs:
   refs:
-    runs-on: ${{ github.event.inputs.runner || github.event.client_payload.runner || 'macos-26' }}
+    runs-on: ${{ github.event.inputs.runner || github.event.client_payload.runner || 'xcode-27' }}
     timeout-minutes: 120
     env:
       REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || 'native/m1-scene' }}

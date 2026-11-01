@@ -63,7 +63,7 @@ jobs:
         run: |
           git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep
           mkdir -p rep/api-worker; touch rep/api-worker/ledger.tsv
-          SPENT=$(awk -F'\t' '{s+=$3} END {printf "%.2f", s+0}' rep/api-worker/ledger.tsv)
+          mkdir -p rep/api-worker/ledger; SPENT=$(cat rep/api-worker/ledger.tsv rep/api-worker/ledger/*.tsv 2>/dev/null | awk -F'\t' '{s+=$3} END {printf "%.2f", s+0}')
           echo "SPENT=$SPENT" >> "$GITHUB_ENV"
           echo "spent so far: \$$SPENT of \$$LIMIT_USD"
           awk -v s="$SPENT" -v l="$LIMIT_USD" 'BEGIN { exit !(s+0 < l+0) }' || { echo "budget reached — stop"; exit 1; }
@@ -105,7 +105,9 @@ jobs:
             echo '## result'; python3 -c "import json;print(json.load(open('result.json')).get('result',''))" 2>/dev/null | head -200
             echo; echo '## stderr (tail)'; echo '```'; tail -40 stderr.txt 2>/dev/null; echo '```'
           } > "$R"
-          printf '%s\t%s\t%s\t%s\n' "${{ github.run_number }}" "$(date -u +%FT%TZ)" "$COST" "$TASK" >> rep/api-worker/ledger.tsv
+          # one ledger file per run: two runs side by side never conflict (ledger.tsv keeps runs ≤ 8)
+          mkdir -p rep/api-worker/ledger
+          printf '%s\t%s\t%s\t%s\n' "${{ github.run_number }}" "$(date -u +%FT%TZ)" "$COST" "$TASK" > "rep/api-worker/ledger/${{ github.run_number }}.tsv"
           cd rep && git config user.name "native-ci" && git config user.email "native-ci@users.noreply.github.com"
           git add -A && git commit -qm "api-worker run ${{ github.run_number }}" || exit 0
-          for i in 1 2 3 4 5; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || true; sleep 3; done
+          for i in 1 2 3 4 5; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || git rebase --abort; sleep 3; done
