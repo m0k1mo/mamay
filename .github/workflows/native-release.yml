@@ -80,6 +80,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           V: ${{ github.event.inputs.version }}
         run: |
+          # Artem's Mac has no GitHub CLI yet — install it once (brew is there: the Tools step uses it)
+          command -v gh >/dev/null 2>&1 || brew install gh >/dev/null 2>&1 || brew install gh
           # a second run of the same version (e.g. one left waiting on GitHub) does not publish twice
           if gh release view "native-v$V" --repo ${{ github.repository }} >/dev/null 2>&1; then echo "native-v$V is already out"; exit 0; fi
           gh release create "native-v$V" out/* --repo ${{ github.repository }} --prerelease --title "Mamay Native $V" \
