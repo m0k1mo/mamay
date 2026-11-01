@@ -9,13 +9,14 @@ on:
     inputs:
       ref:
         description: commit or branch of m0k1mo/Formlab
-        default: native/main
+        default: native/lead-0111
       version:
         description: version, e.g. 0.1.0
         required: true
+        default: 0.1.0-test
       notes:
         description: release notes (Ukrainian, plain words for Artem)
-        default: "Перша збірка Mamay Native."
+        default: "ТЕСТОВА збірка Mamay Native + Mamay Tester (аркуші ще не ідеальні — це для нічних тестів, не для роботи). Увечері: Tester → Test mode → Sheets folder… (твоя папка з аркушами) → Night run — till 7:30. Звіти — на Google Диск, «Formlab Reports / Mamay Native»."
 
 permissions:
   contents: write
@@ -75,5 +76,5 @@ jobs:
             --notes "${{ github.event.inputs.notes }}
 
           **Як поставити на Мак:** відкрий DMG → перетягни Mamay Native у Applications → перший раз: правий клік → Open, потім System Settings → Privacy & Security → Open Anyway. Поставиться поруч із Mamay 0.45 і нічого в ній не змінить.
-          **Тестер:** так само з другого DMG; натисни Test mode → Start.
+          **Тестер:** так само з другого DMG; Test mode → Sheets folder… → Night run — till 7:30.
           **iPad:** .ipa ставиться через Sideloadly (безкоштовний Apple ID), раз на 7 днів."
