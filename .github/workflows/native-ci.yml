@@ -20,11 +20,27 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  where:
+    # Artem 03.11: his Mac when it is online, GitHub's Mac only when it is not (scripts/which-mac.sh)
+    runs-on: ubuntu-latest
+    outputs:
+      runner: ${{ steps.r.outputs.runner }}
+    steps:
+      - id: r
+        env:
+          GH_TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          R=""
+          if [ -z "$R" ]; then
+            R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/scripts/which-mac.sh" | bash)
+          fi
+          echo "runner=$R" >> "$GITHUB_OUTPUT"; echo "→ $R"
   build:
+    needs: where
     strategy:
       fail-fast: false
       matrix:
-        runner: [xcode-27]   # 03.11: Artem's Mac travels — GitHub only. When it is home again: [artem-mac, xcode-27, macos-26] (artem-mac = his M5, self-hosted, fast path)
+        runner: ['${{ needs.where.outputs.runner }}']   # artem-mac = Artem's M5 (self-hosted, fast path); xcode-27 = GitHub's Mac when his is offline
     runs-on: ${{ matrix.runner == 'artem-mac' && fromJSON('["self-hosted","artem-mac"]') || matrix.runner }}
     timeout-minutes: 60
     env:

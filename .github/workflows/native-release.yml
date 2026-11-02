@@ -24,29 +24,35 @@ on:
         description: release notes (Ukrainian, plain words for Artem)
         default: "ТЕСТОВА збірка Mamay Native + Mamay Tester (аркуші ще не ідеальні — це для тестів, не для роботи). Тестер: Start — перевіряє все по черзі, Pause — зупиняє, звіти самі йдуть на Google Диск «Formlab Reports / Mamay Native». Нові збірки тепер приходять у самому Тестері — кнопка Update."
       runner:
-        description: where to build (artem-mac = Artem's Mac, xcode-27 = GitHub)
+        description: where to build (empty = Artem's Mac when online, else GitHub)
         type: choice
-        options: [artem-mac, xcode-27]
-        default: artem-mac
+        options: ['', artem-mac, xcode-27]
+        default: ''
+        required: false
 
 permissions:
   contents: write
 
 jobs:
   where:
-    # the queue file may name the runner (Artem 03.11: the Mac travels — test builds go to GitHub's Mac): {"runner": "xcode-27"}
+    # Artem 03.11: his Mac when it is online, GitHub's Mac only when it is not (scripts/which-mac.sh)
     runs-on: ubuntu-latest
     outputs:
       runner: ${{ steps.r.outputs.runner }}
     steps:
       - id: r
+        env:
+          GH_TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
         run: |
           R="${{ github.event.inputs.runner }}"
-          if [ -z "$R" ]; then
+          if [ -z "$R" ] && [ "${{ github.event_name }}" = push ]; then   # the queue file may name it: {"runner": "xcode-27"}
             R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/native-release-queue/next.json" \
-                | python3 -c "import json,sys;print(json.load(sys.stdin).get('runner','artem-mac'))" || echo artem-mac)
+                | python3 -c "import json,sys;print(json.load(sys.stdin).get('runner',''))" || true)
           fi
-          echo "runner=$R" >> "$GITHUB_OUTPUT"
+          if [ -z "$R" ]; then
+            R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/scripts/which-mac.sh" | bash)
+          fi
+          echo "runner=$R" >> "$GITHUB_OUTPUT"; echo "→ $R"
   release:
     needs: where
     runs-on: ${{ needs.where.outputs.runner }}

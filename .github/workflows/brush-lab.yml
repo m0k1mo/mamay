@@ -63,10 +63,25 @@ jobs:
             git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:main
           fi
 
+  where:
+    # Artem 03.11: his Mac when it is online, GitHub's Mac only when it is not (scripts/which-mac.sh)
+    runs-on: ubuntu-latest
+    outputs:
+      runner: ${{ steps.r.outputs.runner }}
+    steps:
+      - id: r
+        env:
+          GH_TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          R=""
+          if [ -z "$R" ]; then
+            R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/scripts/which-mac.sh" | bash)
+          fi
+          echo "runner=$R" >> "$GITHUB_OUTPUT"; echo "→ $R"
   lab:
-    needs: drive
+    needs: [drive, where]
     if: github.event_name != 'schedule' || needs.drive.outputs.changed == '1'
-    runs-on: xcode-27
+    runs-on: ${{ needs.where.outputs.runner == 'artem-mac' && fromJSON('["self-hosted","artem-mac"]') || needs.where.outputs.runner }}
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
@@ -88,6 +103,7 @@ jobs:
           set -eo pipefail
           xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
           swift build -c release --product brushlab > build.log 2>&1 || { grep -E "error" build.log | grep -v "^Failed frontend" | cut -c1-400 | head -40; exit 1; }
+          rm -rf "$GITHUB_WORKSPACE/out"
           A=(--out "$GITHUB_WORKSPACE/out" --packs "$GITHUB_WORKSPACE/mamay/brush-lab/packs" --url-prefix "")
           [ -n "$ONLY" ] && A+=(--only "$ONLY")
           [ "$PACKS_ONLY" = "true" ] && A+=(--packs-only)
@@ -96,6 +112,7 @@ jobs:
         run: |
           set -eo pipefail
           cd "$GITHUB_WORKSPACE"
+          rm -rf pub   # Artem's Mac keeps its workspace between runs
           git clone -q --depth 1 -b brush-lab-out "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" pub 2>/dev/null || {
             git init -q pub && cd pub && git checkout -q --orphan brush-lab-out && cd ..; }
           cd pub
