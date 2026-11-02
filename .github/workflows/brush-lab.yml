@@ -87,7 +87,7 @@ jobs:
         run: |
           set -eo pipefail
           xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
-          swift build -c release --product brushlab 2>&1 | tail -5
+          swift build -c release --product brushlab > build.log 2>&1 || { grep -E "error" build.log | grep -v "^Failed frontend" | cut -c1-400 | head -40; exit 1; }
           A=(--out "$GITHUB_WORKSPACE/out" --packs "$GITHUB_WORKSPACE/mamay/brush-lab/packs" --url-prefix "")
           [ -n "$ONLY" ] && A+=(--only "$ONLY")
           [ "$PACKS_ONLY" = "true" ] && A+=(--packs-only)
