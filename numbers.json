@@ -1,1024 +1,94 @@
 [
   {
-    "brush" : "Ink Line",
-    "medium" : "Ink",
-    "size" : 12,
-    "strokes" : [
-      {
-        "covered" : 0.014755555555555555,
-        "coveredSettled" : 0.03601111111111111,
-        "darkness" : 0.5496141777463284,
-        "ms" : 55.09293079376221,
-        "name" : "light line",
-        "spread" : 2.440512048192771
-      },
-      {
-        "covered" : 0.054044444444444444,
-        "coveredSettled" : 0.061266666666666664,
-        "darkness" : 0.6786667870586202,
-        "ms" : 99.465012550354,
-        "name" : "heavy line",
-        "spread" : 1.1336348684210527
-      },
-      {
-        "covered" : 0.03017777777777778,
-        "coveredSettled" : 0.04237777777777778,
-        "darkness" : 0.6355763912516258,
-        "ms" : 61.98298931121826,
-        "name" : "pressure swell",
-        "spread" : 1.4042709867452134
-      },
-      {
-        "covered" : 0.09673333333333334,
-        "coveredSettled" : 0.10755555555555556,
-        "darkness" : 0.593733165514545,
-        "ms" : 170.82607746124268,
-        "name" : "fast wave",
-        "spread" : 1.1118768665288306
-      },
-      {
-        "covered" : 0.08295555555555556,
-        "coveredSettled" : 0.09654444444444445,
-        "darkness" : 0.5721917601625073,
-        "ms" : 166.57590866088867,
-        "name" : "slow wave",
-        "spread" : 1.163809268684704
-      },
-      {
-        "covered" : 0.1353888888888889,
-        "coveredSettled" : 0.1453222222222222,
-        "darkness" : 0.49516349986624436,
-        "ms" : 301.6320466995239,
-        "name" : "spiral",
-        "spread" : 1.0733688961838326
-      },
-      {
-        "covered" : 0.0816888888888889,
-        "coveredSettled" : 0.09443333333333333,
-        "darkness" : 0.6071883932874479,
-        "ms" : 136.55292987823486,
-        "name" : "loop",
-        "spread" : 1.1560119695321
-      },
-      {
-        "covered" : 0.051444444444444445,
-        "coveredSettled" : 0.054,
-        "darkness" : 0.6458254850707188,
-        "ms" : 93.01996231079102,
-        "name" : "tilted",
-        "spread" : 1.0496760259179265
-      },
-      {
-        "covered" : 0.09617777777777778,
-        "coveredSettled" : 0.11013333333333333,
-        "darkness" : 0.6458254850707188,
-        "ms" : 69.40901279449463,
-        "name" : "over the wet one",
-        "spread" : 1.145101663585952
-      },
-      {
-        "covered" : 0.18137777777777778,
-        "coveredSettled" : 0.1748111111111111,
-        "darkness" : 0.46675843280748497,
-        "ms" : 540.0770902633667,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.21713080981200936,
-          0.09453196459740613,
-          0.04469954804769571,
-          0.0234100369407673
-        ],
-        "spread" : 0.9637956383239402
-      }
-    ]
-  },
-  {
-    "brush" : "Dense Ink",
-    "medium" : "Ink",
-    "size" : 14,
-    "strokes" : [
-      {
-        "covered" : 0.05238888888888889,
-        "coveredSettled" : 0.06616666666666667,
-        "darkness" : 0.7195094549039991,
-        "ms" : 68.42601299285889,
-        "name" : "light line",
-        "spread" : 1.2629904559915164
-      },
-      {
-        "covered" : 0.06591111111111111,
-        "coveredSettled" : 0.07202222222222222,
-        "darkness" : 0.7342005783043378,
-        "ms" : 93.34099292755127,
-        "name" : "heavy line",
-        "spread" : 1.0927174645987863
-      },
-      {
-        "covered" : 0.04772222222222222,
-        "coveredSettled" : 0.05605555555555555,
-        "darkness" : 0.7245543065009447,
-        "ms" : 63.87507915496826,
-        "name" : "pressure swell",
-        "spread" : 1.1746216530849825
-      },
-      {
-        "covered" : 0.132,
-        "coveredSettled" : 0.13375555555555554,
-        "darkness" : 0.689119468380234,
-        "ms" : 185.8229637145996,
-        "name" : "fast wave",
-        "spread" : 1.0132996632996631
-      },
-      {
-        "covered" : 0.11734444444444445,
-        "coveredSettled" : 0.12185555555555555,
-        "darkness" : 0.6687860993979311,
-        "ms" : 189.18299674987793,
-        "name" : "slow wave",
-        "spread" : 1.0384433292301865
-      },
-      {
-        "covered" : 0.18453333333333333,
-        "coveredSettled" : 0.1481111111111111,
-        "darkness" : 0.6459959615091573,
-        "ms" : 331.44593238830566,
-        "name" : "spiral",
-        "spread" : 0.8026252408477842
-      },
-      {
-        "covered" : 0.11454444444444445,
-        "coveredSettled" : 0.12357777777777777,
-        "darkness" : 0.6883845047080176,
-        "ms" : 164.3669605255127,
-        "name" : "loop",
-        "spread" : 1.0788631293044912
-      },
-      {
-        "covered" : 0.052144444444444445,
-        "coveredSettled" : 0.05561111111111111,
-        "darkness" : 0.7187535000221875,
-        "ms" : 111.35601997375488,
-        "name" : "tilted",
-        "spread" : 1.0664819944598338
-      },
-      {
-        "covered" : 0.11564444444444444,
-        "coveredSettled" : 0.12885555555555556,
-        "darkness" : 0.7187535000221875,
-        "ms" : 77.2639513015747,
-        "name" : "over the wet one",
-        "spread" : 1.11423904688701
-      },
-      {
-        "covered" : 0.22624444444444444,
-        "coveredSettled" : 0.1494,
-        "darkness" : 0.6391859825592858,
-        "ms" : 508.978009223938,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.29641389712045274,
-          0.12162820568001112,
-          0.04465968185331286,
-          0.016435085426475655
-        ],
-        "spread" : 0.6603477065121305
-      }
-    ]
-  },
-  {
-    "brush" : "Transparent Wash",
-    "medium" : "Watercolor",
-    "size" : 22,
-    "strokes" : [
-      {
-        "covered" : 0.023777777777777776,
-        "coveredSettled" : 0.053533333333333336,
-        "darkness" : 0.26522155470280323,
-        "ms" : 61.585068702697754,
-        "name" : "light line",
-        "spread" : 2.2514018691588786
-      },
-      {
-        "covered" : 0.07013333333333334,
-        "coveredSettled" : 0.08586666666666666,
-        "darkness" : 0.2706059607302609,
-        "ms" : 94.23208236694336,
-        "name" : "heavy line",
-        "spread" : 1.224334600760456
-      },
-      {
-        "covered" : 0.04047777777777778,
-        "coveredSettled" : 0.0622,
-        "darkness" : 0.2842782969814453,
-        "ms" : 54.44502830505371,
-        "name" : "pressure swell",
-        "spread" : 1.5366456217403237
-      },
-      {
-        "covered" : 0.1395111111111111,
-        "coveredSettled" : 0.1628,
-        "darkness" : 0.1967656423041366,
-        "ms" : 189.77200984954834,
-        "name" : "fast wave",
-        "spread" : 1.1669321439949027
-      },
-      {
-        "covered" : 0.11828888888888889,
-        "coveredSettled" : 0.15193333333333334,
-        "darkness" : 0.2065783133105293,
-        "ms" : 231.09805583953857,
-        "name" : "slow wave",
-        "spread" : 1.2844260755213226
-      },
-      {
-        "covered" : 0.18055555555555555,
-        "coveredSettled" : 0.22126666666666667,
-        "darkness" : 0.1559639854737879,
-        "ms" : 248.52609634399414,
-        "name" : "spiral",
-        "spread" : 1.2254769230769231
-      },
-      {
-        "covered" : 0.11204444444444445,
-        "coveredSettled" : 0.13442222222222222,
-        "darkness" : 0.22231562384874407,
-        "ms" : 137.8270387649536,
-        "name" : "loop",
-        "spread" : 1.1997223324077746
-      },
-      {
-        "covered" : 0.07562222222222222,
-        "coveredSettled" : 0.0803,
-        "darkness" : 0.24299718816456503,
-        "ms" : 94.97296810150146,
-        "name" : "tilted",
-        "spread" : 1.0618571848369087
-      },
-      {
-        "covered" : 0.13442222222222222,
-        "coveredSettled" : 0.15852222222222223,
-        "darkness" : 0.24299718816456503,
-        "ms" : 65.87600708007812,
-        "name" : "over the wet one",
-        "spread" : 1.1792858323689868
-      },
-      {
-        "covered" : 0.2576555555555556,
-        "coveredSettled" : 0.31506666666666666,
-        "darkness" : 0.13206245824027327,
-        "ms" : 482.6509952545166,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.11378196526457338,
-          0.03638749772016609,
-          0.018145400785890792,
-          0.01113100637158431
-        ],
-        "spread" : 1.2228211652076415
-      }
-    ]
-  },
-  {
-    "brush" : "Dry Brush",
-    "medium" : "Gouache",
-    "size" : 24,
-    "strokes" : [
-      {
-        "covered" : 0.048355555555555554,
-        "coveredSettled" : 0.004555555555555556,
-        "darkness" : 0.6528541284251038,
-        "ms" : 66.47193431854248,
-        "name" : "light line",
-        "spread" : 0.09420955882352942
-      },
-      {
-        "covered" : 0.06415555555555555,
-        "coveredSettled" : 0.0011444444444444445,
-        "darkness" : 0.6521174329676448,
-        "ms" : 207.1300745010376,
-        "name" : "heavy line",
-        "spread" : 0.017838586768271564
-      },
-      {
-        "covered" : 0.048633333333333334,
-        "coveredSettled" : 0.004077777777777777,
-        "darkness" : 0.6525263629077307,
-        "ms" : 100.89695453643799,
-        "name" : "pressure swell",
-        "spread" : 0.08384738405300433
-      },
-      {
-        "covered" : 0.06301111111111111,
-        "coveredSettled" : 0.005311111111111111,
-        "darkness" : 0.6529954250992961,
-        "ms" : 185.9980821609497,
-        "name" : "fast wave",
-        "spread" : 0.08428848527596543
-      },
-      {
-        "covered" : 0.07032222222222222,
-        "coveredSettled" : 0.004477777777777778,
-        "darkness" : 0.6527172381782949,
-        "ms" : 355.1279306411743,
-        "name" : "slow wave",
-        "spread" : 0.06367514615263074
-      },
-      {
-        "covered" : 0.06956666666666667,
-        "coveredSettled" : 0.005,
-        "darkness" : 0.6523197844084082,
-        "ms" : 332.19993114471436,
-        "name" : "spiral",
-        "spread" : 0.07187350263536177
-      },
-      {
-        "covered" : 0.09584444444444444,
-        "coveredSettled" : 0.004244444444444445,
-        "darkness" : 0.6526531248316048,
-        "ms" : 173.1710433959961,
-        "name" : "loop",
-        "spread" : 0.04428472061210295
-      },
-      {
-        "covered" : 0.03781111111111111,
-        "coveredSettled" : 0.03334444444444445,
-        "darkness" : 0.652735872470562,
-        "ms" : 112.22600936889648,
-        "name" : "tilted",
-        "spread" : 0.8818689391713196
-      },
-      {
-        "covered" : 0.0898111111111111,
-        "coveredSettled" : 0.010977777777777777,
-        "darkness" : 0.652735872470562,
-        "ms" : 94.07496452331543,
-        "name" : "over the wet one",
-        "spread" : 0.12223184461214896
-      },
-      {
-        "covered" : 0.06396666666666667,
-        "coveredSettled" : 0.008733333333333333,
-        "darkness" : 0.6528633580835823,
-        "ms" : 422.7339029312134,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.12338152512067117,
-          0.00032825548422350077,
-          0,
-          0
-        ],
-        "spread" : 0.13652944241792597
-      }
-    ]
-  },
-  {
-    "brush" : "Wax Crayon",
-    "medium" : "Wax",
-    "size" : 8,
-    "strokes" : [
-      {
-        "covered" : 0.008611111111111111,
-        "coveredSettled" : 0.008611111111111111,
-        "darkness" : 0.7074395867533118,
-        "ms" : 47.36900329589844,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.01331111111111111,
-        "coveredSettled" : 0.01331111111111111,
-        "darkness" : 0.6939704313019425,
-        "ms" : 38.57302665710449,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.008755555555555556,
-        "coveredSettled" : 0.008755555555555556,
-        "darkness" : 0.7000110429023199,
-        "ms" : 30.223965644836426,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.03031111111111111,
-        "coveredSettled" : 0.03031111111111111,
-        "darkness" : 0.6934864959477269,
-        "ms" : 73.53591918945312,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.029133333333333334,
-        "coveredSettled" : 0.029133333333333334,
-        "darkness" : 0.7000154542328014,
-        "ms" : 47.36602306365967,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.049322222222222226,
-        "coveredSettled" : 0.049322222222222226,
-        "darkness" : 0.6973414472895388,
-        "ms" : 92.41199493408203,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.025344444444444444,
-        "coveredSettled" : 0.025344444444444444,
-        "darkness" : 0.6996146555476433,
-        "ms" : 47.42908477783203,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.02022222222222222,
-        "coveredSettled" : 0.02022222222222222,
-        "darkness" : 0.6765321111292615,
-        "ms" : 42.71697998046875,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.03322222222222222,
-        "coveredSettled" : 0.03322222222222222,
-        "darkness" : 0.6765321111292615,
-        "ms" : 40.444016456604004,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.07456666666666667,
-        "coveredSettled" : 0.07456666666666667,
-        "darkness" : 0.6969128843155256,
-        "ms" : 123.87704849243164,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.05806962114326425,
-          0.05850869835603654,
-          0.05889226430550651,
-          0.060291361091888866
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Oil Pastel",
-    "medium" : "Wax",
-    "size" : 12,
-    "strokes" : [
-      {
-        "covered" : 0.013666666666666667,
-        "coveredSettled" : 0.013666666666666667,
-        "darkness" : 0.6793177172696068,
-        "ms" : 56.767940521240234,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.022455555555555555,
-        "coveredSettled" : 0.022455555555555555,
-        "darkness" : 0.6844945862168943,
-        "ms" : 54.50606346130371,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.01531111111111111,
-        "coveredSettled" : 0.01531111111111111,
-        "darkness" : 0.6864462135096043,
-        "ms" : 19.881010055541992,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04973333333333333,
-        "coveredSettled" : 0.04973333333333333,
-        "darkness" : 0.6799023184706072,
-        "ms" : 71.6559886932373,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04763333333333333,
-        "coveredSettled" : 0.04763333333333333,
-        "darkness" : 0.6783390980899247,
-        "ms" : 114.2890453338623,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.08397777777777778,
-        "coveredSettled" : 0.08397777777777778,
-        "darkness" : 0.6796208806477289,
-        "ms" : 130.3321123123169,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04317777777777778,
-        "coveredSettled" : 0.04317777777777778,
-        "darkness" : 0.6755207287471141,
-        "ms" : 70.68204879760742,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.024444444444444446,
-        "coveredSettled" : 0.024444444444444446,
-        "darkness" : 0.6830197679521601,
-        "ms" : 66.98203086853027,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04524444444444444,
-        "coveredSettled" : 0.04524444444444444,
-        "darkness" : 0.6830197679521601,
-        "ms" : 39.85595703125,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.12556666666666666,
-        "coveredSettled" : 0.12556666666666666,
-        "darkness" : 0.6834121151368456,
-        "ms" : 201.36797428131104,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.0953172258147716,
-          0.09481232524394566,
-          0.09903727600731593,
-          0.09909452722566085
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Charcoal",
-    "medium" : "Charcoal",
-    "size" : 5,
-    "strokes" : [
-      {
-        "covered" : 0.006744444444444444,
-        "coveredSettled" : 0.006744444444444444,
-        "darkness" : 0.7423301287082003,
-        "ms" : 41.22602939605713,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.010355555555555555,
-        "coveredSettled" : 0.010355555555555555,
-        "darkness" : 0.7373578199018123,
-        "ms" : 19.10698413848877,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.0071111111111111115,
-        "coveredSettled" : 0.0071111111111111115,
-        "darkness" : 0.7365010180075504,
-        "ms" : 13.654947280883789,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.023422222222222223,
-        "coveredSettled" : 0.023422222222222223,
-        "darkness" : 0.7349406375642974,
-        "ms" : 35.28106212615967,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.022433333333333333,
-        "coveredSettled" : 0.022433333333333333,
-        "darkness" : 0.7357406099657937,
-        "ms" : 29.795050621032715,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.038511111111111114,
-        "coveredSettled" : 0.038511111111111114,
-        "darkness" : 0.7367193368853652,
-        "ms" : 54.031968116760254,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.0204,
-        "coveredSettled" : 0.0204,
-        "darkness" : 0.7392009846536488,
-        "ms" : 29.052019119262695,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.015411111111111112,
-        "coveredSettled" : 0.015411111111111112,
-        "darkness" : 0.7168456074715477,
-        "ms" : 19.35899257659912,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.024066666666666667,
-        "coveredSettled" : 0.024066666666666667,
-        "darkness" : 0.7168456074715477,
-        "ms" : 12.575984001159668,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.059866666666666665,
-        "coveredSettled" : 0.059866666666666665,
-        "darkness" : 0.7343680626659623,
-        "ms" : 75.27399063110352,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.04841875211773313,
-          0.049548258886323755,
-          0.04996930770136571,
-          0.05137345530272559
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Impasto",
-    "medium" : "Heavy acrylic",
-    "size" : 22,
-    "strokes" : [
-      {
-        "covered" : 0.08293333333333333,
-        "coveredSettled" : 0.0775,
-        "darkness" : 0.7138238392706314,
-        "ms" : 76.49898529052734,
-        "name" : "light line",
-        "spread" : 0.9344855305466239
-      },
-      {
-        "covered" : 0.09928888888888888,
-        "coveredSettled" : 0.09366666666666666,
-        "darkness" : 0.6978550193712871,
-        "ms" : 102.21600532531738,
-        "name" : "heavy line",
-        "spread" : 0.9433751119068935
-      },
-      {
-        "covered" : 0.07496666666666667,
-        "coveredSettled" : 0.07053333333333334,
-        "darkness" : 0.7152148014839191,
-        "ms" : 77.3019790649414,
-        "name" : "pressure swell",
-        "spread" : 0.94086260560249
-      },
-      {
-        "covered" : 0.20324444444444445,
-        "coveredSettled" : 0.1301,
-        "darkness" : 0.7085367932337635,
-        "ms" : 180.19700050354004,
-        "name" : "fast wave",
-        "spread" : 0.6401158976601793
-      },
-      {
-        "covered" : 0.21194444444444444,
-        "coveredSettled" : 0.14002222222222221,
-        "darkness" : 0.7084304621626479,
-        "ms" : 337.4890089035034,
-        "name" : "slow wave",
-        "spread" : 0.6606553079947576
-      },
-      {
-        "covered" : 0.30298888888888886,
-        "coveredSettled" : 0.13826666666666668,
-        "darkness" : 0.7053626449623766,
-        "ms" : 296.2270975112915,
-        "name" : "spiral",
-        "spread" : 0.4563423667901281
-      },
-      {
-        "covered" : 0.18433333333333332,
-        "coveredSettled" : 0.1416888888888889,
-        "darkness" : 0.7072419439533202,
-        "ms" : 161.0729694366455,
-        "name" : "loop",
-        "spread" : 0.7686558167570826
-      },
-      {
-        "covered" : 0.07803333333333333,
-        "coveredSettled" : 0.078,
-        "darkness" : 0.7010235991514028,
-        "ms" : 91.0940170288086,
-        "name" : "tilted",
-        "spread" : 0.9995728321230244
-      },
-      {
-        "covered" : 0.16905555555555554,
-        "coveredSettled" : 0.1534111111111111,
-        "darkness" : 0.7010235991514028,
-        "ms" : 94.29001808166504,
-        "name" : "over the wet one",
-        "spread" : 0.907459743674006
-      },
-      {
-        "covered" : 0.33871111111111113,
-        "coveredSettled" : 0.13878888888888888,
-        "darkness" : 0.7096019494507431,
-        "ms" : 468.4559106826782,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.37562718939227857,
-          0.2148698200350473,
-          0.09962067319602086,
-          0.0337422047365283
-        ],
-        "spread" : 0.4097559375410051
-      }
-    ]
-  },
-  {
-    "brush" : "Oil Round",
-    "medium" : "Oil",
-    "size" : 18,
-    "strokes" : [
-      {
-        "covered" : 0.021533333333333335,
-        "coveredSettled" : 0.021533333333333335,
-        "darkness" : 0.7114611860120478,
-        "ms" : 52.14893817901611,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.06274444444444445,
-        "coveredSettled" : 0.06274444444444445,
-        "darkness" : 0.7166657740307492,
-        "ms" : 119.09008026123047,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.03068888888888889,
-        "coveredSettled" : 0.03068888888888889,
-        "darkness" : 0.6335765546672623,
-        "ms" : 69.14103031158447,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.0659,
-        "coveredSettled" : 0.0659,
-        "darkness" : 0.5351342994426719,
-        "ms" : 197.30103015899658,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.042666666666666665,
-        "coveredSettled" : 0.042666666666666665,
-        "darkness" : 0.35658796405893883,
-        "ms" : 174.05104637145996,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.05181111111111111,
-        "coveredSettled" : 0.05181111111111111,
-        "darkness" : 0.21236811749941553,
-        "ms" : 231.7180633544922,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.026733333333333335,
-        "coveredSettled" : 0.026733333333333335,
-        "darkness" : 0.1759703678916172,
-        "ms" : 120.03803253173828,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.018044444444444443,
-        "coveredSettled" : 0.018044444444444443,
-        "darkness" : 0.3277871361906118,
-        "ms" : 91.04394912719727,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.03181111111111111,
-        "coveredSettled" : 0.03181111111111111,
-        "darkness" : 0.3277871361906118,
-        "ms" : 100.22008419036865,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.07754444444444444,
-        "coveredSettled" : 0.07754444444444444,
-        "darkness" : 0.1681151751042414,
-        "ms" : 449.3759870529175,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.020019751649953284,
-          0.016142806958663557,
-          0.013838718715553693,
-          0.013117769144446999
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Palette Knife",
-    "medium" : "Oil",
-    "size" : 20,
-    "strokes" : [
-      {
-        "covered" : 0.0753888888888889,
-        "coveredSettled" : 0.0753888888888889,
-        "darkness" : 0.6739210176515031,
-        "ms" : 13.036966323852539,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.0774,
-        "coveredSettled" : 0.0774,
-        "darkness" : 0.7347498192164275,
-        "ms" : 19.71590518951416,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.05968888888888889,
-        "coveredSettled" : 0.05968888888888889,
-        "darkness" : 0.7372127647970348,
-        "ms" : 9.464025497436523,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1668111111111111,
-        "coveredSettled" : 0.16684444444444443,
-        "darkness" : 0.4900479472439243,
-        "ms" : 29.125094413757324,
-        "name" : "fast wave",
-        "spread" : 1.000199826816759
-      },
-      {
-        "covered" : 0.17187777777777777,
-        "coveredSettled" : 0.1719111111111111,
-        "darkness" : 0.43468148140972585,
-        "ms" : 44.95894908905029,
-        "name" : "slow wave",
-        "spread" : 1.000193936259616
-      },
-      {
-        "covered" : 0.1769,
-        "coveredSettled" : 0.1769111111111111,
-        "darkness" : 0.44943171145073385,
-        "ms" : 45.81892490386963,
-        "name" : "spiral",
-        "spread" : 1.000062810124992
-      },
-      {
-        "covered" : 0.1621,
-        "coveredSettled" : 0.1621,
-        "darkness" : 0.5810704607607422,
-        "ms" : 25.566935539245605,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.053755555555555556,
-        "coveredSettled" : 0.053755555555555556,
-        "darkness" : 0.7178917047869674,
-        "ms" : 13.450026512145996,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.12911111111111112,
-        "coveredSettled" : 0.12911111111111112,
-        "darkness" : 0.7178917047869674,
-        "ms" : 11.639952659606934,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.16772222222222222,
-        "coveredSettled" : 0.16772222222222222,
-        "darkness" : 0.470199516528139,
-        "ms" : 118.40307712554932,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.2928964153780227,
-          0.05280320415724017,
-          0.00263055109918533,
-          3.328790769539724e-05
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
     "brush" : "Water",
     "medium" : "Watercolor",
     "size" : 20,
     "strokes" : [
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 52.89804935455322,
+        "covered" : 0.9493777777777778,
+        "coveredSettled" : 0.9496888888888889,
+        "darkness" : 0.8380108985197283,
+        "ms" : 30.106067657470703,
         "name" : "light line",
-        "spread" : 1
+        "spread" : 1.0003277000140443
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 72.28803634643555,
+        "covered" : 0.9579,
+        "coveredSettled" : 0.9574333333333334,
+        "darkness" : 0.8379929483718453,
+        "ms" : 63.26496601104736,
         "name" : "heavy line",
-        "spread" : 1
+        "spread" : 0.9995128231896162
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 44.906020164489746,
+        "covered" : 0.9574888888888888,
+        "coveredSettled" : 0.9570444444444445,
+        "darkness" : 0.8380249473062539,
+        "ms" : 39.82400894165039,
         "name" : "pressure swell",
-        "spread" : 1
+        "spread" : 0.9995358228700073
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 146.66199684143066,
+        "covered" : 0.9568555555555556,
+        "coveredSettled" : 0.9561555555555555,
+        "darkness" : 0.8379431404760979,
+        "ms" : 110.20207405090332,
         "name" : "fast wave",
-        "spread" : 1
+        "spread" : 0.9992684371262353
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 220.99101543426514,
+        "covered" : 0.9410333333333334,
+        "coveredSettled" : 0.9404111111111111,
+        "darkness" : 0.838683018086462,
+        "ms" : 151.42595767974854,
         "name" : "slow wave",
-        "spread" : 1
+        "spread" : 0.999338788329614
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 512.0769739151001,
+        "covered" : 0.9424,
+        "coveredSettled" : 0.9421444444444445,
+        "darkness" : 0.8382914619751461,
+        "ms" : 185.60409545898438,
         "name" : "spiral",
-        "spread" : 1
+        "spread" : 0.9997288247500472
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 211.98201179504395,
+        "covered" : 0.9486444444444444,
+        "coveredSettled" : 0.9481333333333334,
+        "darkness" : 0.8383737195981457,
+        "ms" : 93.53804588317871,
         "name" : "loop",
-        "spread" : 1
+        "spread" : 0.9994612195179087
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 77.84402370452881,
+        "covered" : 0.9486333333333333,
+        "coveredSettled" : 0.9486222222222223,
+        "darkness" : 0.8383340914437318,
+        "ms" : 66.78605079650879,
         "name" : "tilted",
-        "spread" : 1
+        "spread" : 0.9999882872436371
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 58.548927307128906,
+        "covered" : 0.9486222222222223,
+        "coveredSettled" : 0.9482111111111111,
+        "darkness" : 0.8383340914437318,
+        "ms" : 45.256972312927246,
         "name" : "over the wet one",
-        "spread" : 1
+        "spread" : 0.9995666229385307
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 354.94792461395264,
+        "covered" : 0.9409555555555555,
+        "coveredSettled" : 0.9407111111111112,
+        "darkness" : 0.8387135610379971,
+        "ms" : 336.7370367050171,
         "name" : "long, no reload",
         "quarters" : [
-          8.456903588278123e-05,
-          3.389004020653248e-05,
-          1.0416537056937208e-05,
-          2.9924878137566366e-06
+          0.8073751018824562,
+          0.8083915130340374,
+          0.8079432639217567,
+          0.8079334457479317
         ],
-        "spread" : 1
+        "spread" : 0.9997402168008881
       }
     ]
   },
@@ -1028,90 +98,90 @@
     "size" : 16,
     "strokes" : [
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 41.91398620605469,
+        "covered" : 0.9493777777777778,
+        "coveredSettled" : 0.9496888888888889,
+        "darkness" : 0.837999925673414,
+        "ms" : 31.165003776550293,
         "name" : "light line",
-        "spread" : 1
+        "spread" : 1.0003277000140443
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 37.495970726013184,
+        "covered" : 0.9579,
+        "coveredSettled" : 0.9574333333333334,
+        "darkness" : 0.8379820199481542,
+        "ms" : 36.633968353271484,
         "name" : "heavy line",
-        "spread" : 1
+        "spread" : 0.9995128231896162
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 25.009989738464355,
+        "covered" : 0.9574888888888888,
+        "coveredSettled" : 0.9570444444444445,
+        "darkness" : 0.838014009757386,
+        "ms" : 28.728008270263672,
         "name" : "pressure swell",
-        "spread" : 1
+        "spread" : 0.9995358228700073
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 184.07201766967773,
+        "covered" : 0.9568555555555556,
+        "coveredSettled" : 0.9561555555555555,
+        "darkness" : 0.8379319125534721,
+        "ms" : 76.24197006225586,
         "name" : "fast wave",
-        "spread" : 1
+        "spread" : 0.9992684371262353
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 325.7259130477905,
+        "covered" : 0.9410333333333334,
+        "coveredSettled" : 0.9404,
+        "darkness" : 0.8386736459296612,
+        "ms" : 87.48602867126465,
         "name" : "slow wave",
-        "spread" : 1
+        "spread" : 0.999326980978357
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 188.20202350616455,
+        "covered" : 0.9424,
+        "coveredSettled" : 0.9420666666666667,
+        "darkness" : 0.8382865966250271,
+        "ms" : 138.11111450195312,
         "name" : "spiral",
-        "spread" : 1
+        "spread" : 0.9996462931522355
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 89.89500999450684,
+        "covered" : 0.9486444444444444,
+        "coveredSettled" : 0.9481333333333334,
+        "darkness" : 0.8383627889294588,
+        "ms" : 66.0029649734497,
         "name" : "loop",
-        "spread" : 1
+        "spread" : 0.9994612195179087
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 79.7109603881836,
+        "covered" : 0.9486333333333333,
+        "coveredSettled" : 0.9486222222222223,
+        "darkness" : 0.8383231610496751,
+        "ms" : 38.86401653289795,
         "name" : "tilted",
-        "spread" : 1
+        "spread" : 0.9999882872436371
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 42.900919914245605,
+        "covered" : 0.9486222222222223,
+        "coveredSettled" : 0.9482111111111111,
+        "darkness" : 0.8383231610496751,
+        "ms" : 31.054973602294922,
         "name" : "over the wet one",
-        "spread" : 1
+        "spread" : 0.9995666229385307
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 192.9919719696045,
+        "covered" : 0.9409555555555555,
+        "coveredSettled" : 0.9407111111111112,
+        "darkness" : 0.8387026013584332,
+        "ms" : 215.18802642822266,
         "name" : "long, no reload",
         "quarters" : [
-          0,
-          0,
-          0,
-          0
+          0.8073631036889032,
+          0.8083803899239357,
+          0.8079325550127662,
+          0.8079227094900477
         ],
-        "spread" : 1
+        "spread" : 0.9997402168008881
       }
     ]
   },
@@ -1121,2136 +191,90 @@
     "size" : 16,
     "strokes" : [
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 36.53597831726074,
+        "covered" : 0.9493777777777778,
+        "coveredSettled" : 0.9496888888888889,
+        "darkness" : 0.8380190835024691,
+        "ms" : 39.59393501281738,
         "name" : "light line",
-        "spread" : 1
+        "spread" : 1.0003277000140443
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 55.108070373535156,
+        "covered" : 0.9579,
+        "coveredSettled" : 0.9574333333333334,
+        "darkness" : 0.8380011761448839,
+        "ms" : 49.357056617736816,
         "name" : "heavy line",
-        "spread" : 1
+        "spread" : 0.9995128231896162
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 30.395984649658203,
+        "covered" : 0.9574888888888888,
+        "coveredSettled" : 0.9570444444444445,
+        "darkness" : 0.8380331693765889,
+        "ms" : 32.27794170379639,
         "name" : "pressure swell",
-        "spread" : 1
+        "spread" : 0.9995358228700073
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 317.77405738830566,
+        "covered" : 0.9568555555555556,
+        "coveredSettled" : 0.9561555555555555,
+        "darkness" : 0.8379495279920179,
+        "ms" : 104.31599617004395,
         "name" : "fast wave",
-        "spread" : 1
+        "spread" : 0.9992684371262353
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 262.3720169067383,
+        "covered" : 0.9410333333333334,
+        "coveredSettled" : 0.9404,
+        "darkness" : 0.8386927969780766,
+        "ms" : 119.51696872711182,
         "name" : "slow wave",
-        "spread" : 1
+        "spread" : 0.999326980978357
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 231.16302490234375,
+        "covered" : 0.9424,
+        "coveredSettled" : 0.9420555555555555,
+        "darkness" : 0.838306213507533,
+        "ms" : 182.7390193939209,
         "name" : "spiral",
-        "spread" : 1
+        "spread" : 0.9996345029239766
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 112.87498474121094,
+        "covered" : 0.9486444444444444,
+        "coveredSettled" : 0.9481333333333334,
+        "darkness" : 0.838381944418488,
+        "ms" : 88.14501762390137,
         "name" : "loop",
-        "spread" : 1
+        "spread" : 0.9994612195179087
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 80.42800426483154,
+        "covered" : 0.9486333333333333,
+        "coveredSettled" : 0.9486222222222223,
+        "darkness" : 0.8383423176761424,
+        "ms" : 52.5209903717041,
         "name" : "tilted",
-        "spread" : 1
+        "spread" : 0.9999882872436371
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 58.135986328125,
+        "covered" : 0.9486222222222223,
+        "coveredSettled" : 0.9482111111111111,
+        "darkness" : 0.8383423176761424,
+        "ms" : 43.63095760345459,
         "name" : "over the wet one",
-        "spread" : 1
+        "spread" : 0.9995666229385307
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 184.54694747924805,
+        "covered" : 0.9409555555555555,
+        "coveredSettled" : 0.9407111111111112,
+        "darkness" : 0.8387217415539069,
+        "ms" : 361.63604259490967,
         "name" : "long, no reload",
         "quarters" : [
-          0,
-          0,
-          0,
-          0
+          0.8073823803829666,
+          0.8083989506766425,
+          0.8079508716642606,
+          0.8079398725908543
         ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Fan",
-    "medium" : "Gouache",
-    "size" : 30,
-    "strokes" : [
-      {
-        "covered" : 0.08852222222222222,
-        "coveredSettled" : 0.03297777777777778,
-        "darkness" : 0.6287965001328621,
-        "ms" : 115.56994915008545,
-        "name" : "light line",
-        "spread" : 0.37253671394502325
-      },
-      {
-        "covered" : 0.1066,
-        "coveredSettled" : 0.0417,
-        "darkness" : 0.6288377489461091,
-        "ms" : 125.47791004180908,
-        "name" : "heavy line",
-        "spread" : 0.39118198874296434
-      },
-      {
-        "covered" : 0.08463333333333334,
-        "coveredSettled" : 0.04675555555555556,
-        "darkness" : 0.6288339471683165,
-        "ms" : 50.88400840759277,
-        "name" : "pressure swell",
-        "spread" : 0.552448470526454
-      },
-      {
-        "covered" : 0.17564444444444444,
-        "coveredSettled" : 0.045677777777777775,
-        "darkness" : 0.6288024603117076,
-        "ms" : 147.5059986114502,
-        "name" : "fast wave",
-        "spread" : 0.2600581983805668
-      },
-      {
-        "covered" : 0.1823,
-        "coveredSettled" : 0.04551111111111111,
-        "darkness" : 0.6288162900403662,
-        "ms" : 195.4190731048584,
-        "name" : "slow wave",
-        "spread" : 0.24964953983056015
-      },
-      {
-        "covered" : 0.23877777777777778,
-        "coveredSettled" : 0.04664444444444445,
-        "darkness" : 0.6286933753132428,
-        "ms" : 424.42798614501953,
-        "name" : "spiral",
-        "spread" : 0.19534667287110286
-      },
-      {
-        "covered" : 0.1749888888888889,
-        "coveredSettled" : 0.04988888888888889,
-        "darkness" : 0.6286504723140205,
-        "ms" : 235.10897159576416,
-        "name" : "loop",
-        "spread" : 0.2850974665058099
-      },
-      {
-        "covered" : 0.05425555555555556,
-        "coveredSettled" : 0.05692222222222222,
-        "darkness" : 0.6287686990105651,
-        "ms" : 89.74897861480713,
-        "name" : "tilted",
-        "spread" : 1.0491501126356748
-      },
-      {
-        "covered" : 0.16085555555555556,
-        "coveredSettled" : 0.08024444444444444,
-        "darkness" : 0.6287686990105651,
-        "ms" : 105.35609722137451,
-        "name" : "over the wet one",
-        "spread" : 0.4988602611038198
-      },
-      {
-        "covered" : 0.22554444444444444,
-        "coveredSettled" : 0.049555555555555554,
-        "darkness" : 0.6287401241730094,
-        "ms" : 730.178952217102,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.292426367012592,
-          0.06666732983043287,
-          0.01441757316814739,
-          0.0030423803716666765
-        ],
-        "spread" : 0.21971525690920735
-      }
-    ]
-  },
-  {
-    "brush" : "Sponge",
-    "medium" : "Gouache",
-    "size" : 30,
-    "strokes" : [
-      {
-        "covered" : 0.03918888888888889,
-        "coveredSettled" : 0.004511111111111111,
-        "darkness" : 0.6175609611334498,
-        "ms" : 104.34901714324951,
-        "name" : "light line",
-        "spread" : 0.11511199319535013
-      },
-      {
-        "covered" : 0.12203333333333333,
-        "coveredSettled" : 0.017155555555555556,
-        "darkness" : 0.6171313195077168,
-        "ms" : 123.09801578521729,
-        "name" : "heavy line",
-        "spread" : 0.14058089775106986
-      },
-      {
-        "covered" : 0.07448888888888888,
-        "coveredSettled" : 0.02036666666666667,
-        "darkness" : 0.6170821329896365,
-        "ms" : 83.58895778656006,
-        "name" : "pressure swell",
-        "spread" : 0.2734188544152745
-      },
-      {
-        "covered" : 0.20063333333333333,
-        "coveredSettled" : 0.03738888888888889,
-        "darkness" : 0.6166710546495185,
-        "ms" : 143.19193363189697,
-        "name" : "fast wave",
-        "spread" : 0.18635432242343689
-      },
-      {
-        "covered" : 0.20528888888888888,
-        "coveredSettled" : 0.036555555555555556,
-        "darkness" : 0.6163090082371055,
-        "ms" : 317.79801845550537,
-        "name" : "slow wave",
-        "spread" : 0.17806884607057805
-      },
-      {
-        "covered" : 0.27723333333333333,
-        "coveredSettled" : 0.03983333333333333,
-        "darkness" : 0.6168940056151909,
-        "ms" : 661.1000299453735,
-        "name" : "spiral",
-        "spread" : 0.1436816159672959
-      },
-      {
-        "covered" : 0.1779,
-        "coveredSettled" : 0.0508,
-        "darkness" : 0.6159246860923377,
-        "ms" : 232.2850227355957,
-        "name" : "loop",
-        "spread" : 0.2855536818437324
-      },
-      {
-        "covered" : 0.06515555555555555,
-        "coveredSettled" : 0.06756666666666666,
-        "darkness" : 0.615226807841487,
-        "ms" : 310.22703647613525,
-        "name" : "tilted",
-        "spread" : 1.0370054570259208
-      },
-      {
-        "covered" : 0.1649,
-        "coveredSettled" : 0.0611,
-        "darkness" : 0.615226807841487,
-        "ms" : 180.0379753112793,
-        "name" : "over the wet one",
-        "spread" : 0.3705275924802911
-      },
-      {
-        "covered" : 0.28835555555555553,
-        "coveredSettled" : 0.04998888888888889,
-        "darkness" : 0.6151188502123981,
-        "ms" : 684.4919919967651,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.291464588891898,
-          0.1263399744136341,
-          0.06798122167682742,
-          0.042401971757195164
-        ],
-        "spread" : 0.17335850801479655
-      }
-    ]
-  },
-  {
-    "brush" : "Ink — sumi brush",
-    "medium" : "Watercolor",
-    "size" : 22,
-    "strokes" : [
-      {
-        "covered" : 0.06302222222222222,
-        "coveredSettled" : 0.06675555555555555,
-        "darkness" : 0.4551931179908405,
-        "ms" : 57.734012603759766,
-        "name" : "light line",
-        "spread" : 1.059238363892807
-      },
-      {
-        "covered" : 0.1018,
-        "coveredSettled" : 0.10722222222222222,
-        "darkness" : 0.37904437001895425,
-        "ms" : 63.22801113128662,
-        "name" : "heavy line",
-        "spread" : 1.0532634795896092
-      },
-      {
-        "covered" : 0.07346666666666667,
-        "coveredSettled" : 0.07655555555555556,
-        "darkness" : 0.423493233761201,
-        "ms" : 105.96203804016113,
-        "name" : "pressure swell",
-        "spread" : 1.0420447670901392
-      },
-      {
-        "covered" : 0.20673333333333332,
-        "coveredSettled" : 0.20676666666666665,
-        "darkness" : 0.3187757541508544,
-        "ms" : 454.21504974365234,
-        "name" : "fast wave",
-        "spread" : 1.0001612383102225
-      },
-      {
-        "covered" : 0.18737777777777778,
-        "coveredSettled" : 0.18923333333333334,
-        "darkness" : 0.37072169594355836,
-        "ms" : 541.6409969329834,
-        "name" : "slow wave",
-        "spread" : 1.00990275142315
-      },
-      {
-        "covered" : 0.2826111111111111,
-        "coveredSettled" : 0.26124444444444445,
-        "darkness" : 0.3020679573096786,
-        "ms" : 813.0320310592651,
-        "name" : "spiral",
-        "spread" : 0.9243955179870258
-      },
-      {
-        "covered" : 0.16646666666666668,
-        "coveredSettled" : 0.17677777777777778,
-        "darkness" : 0.36700449514128375,
-        "ms" : 274.80804920196533,
-        "name" : "loop",
-        "spread" : 1.0619409958617008
-      },
-      {
-        "covered" : 0.05823333333333333,
-        "coveredSettled" : 0.06818888888888888,
-        "darkness" : 0.40279072040357355,
-        "ms" : 73.64296913146973,
-        "name" : "tilted",
-        "spread" : 1.1709597405075367
-      },
-      {
-        "covered" : 0.15755555555555556,
-        "coveredSettled" : 0.1589,
-        "darkness" : 0.40279072040357355,
-        "ms" : 61.52307987213135,
-        "name" : "over the wet one",
-        "spread" : 1.0085331452750352
-      },
-      {
-        "covered" : 0.33155555555555555,
-        "coveredSettled" : 0.2861,
-        "darkness" : 0.3034498082263899,
-        "ms" : 411.2890958786011,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.22734478234627856,
-          0.10584785233311582,
-          0.060138348539247634,
-          0.03761114989610218
-        ],
-        "spread" : 0.862902144772118
-      }
-    ]
-  },
-  {
-    "brush" : "Ink — wash",
-    "medium" : "Watercolor",
-    "size" : 40,
-    "strokes" : [
-      {
-        "covered" : 0.07514444444444444,
-        "coveredSettled" : 0.09492222222222223,
-        "darkness" : 0.04802889770991324,
-        "ms" : 75.10101795196533,
-        "name" : "light line",
-        "spread" : 1.2631968061511165
-      },
-      {
-        "covered" : 0.11016666666666666,
-        "coveredSettled" : 0.13398888888888888,
-        "darkness" : 0.04237735824058297,
-        "ms" : 80.91497421264648,
-        "name" : "heavy line",
-        "spread" : 1.2162380231971759
-      },
-      {
-        "covered" : 0.07295555555555555,
-        "coveredSettled" : 0.09137777777777778,
-        "darkness" : 0.049715807639887914,
-        "ms" : 88.81700038909912,
-        "name" : "pressure swell",
-        "spread" : 1.2525129454766983
-      },
-      {
-        "covered" : 0.22117777777777778,
-        "coveredSettled" : 0.26697777777777776,
-        "darkness" : 0.04192322784723945,
-        "ms" : 300.25506019592285,
-        "name" : "fast wave",
-        "spread" : 1.2070732442479652
-      },
-      {
-        "covered" : 0.2094888888888889,
-        "coveredSettled" : 0.25764444444444445,
-        "darkness" : 0.05799530228801439,
-        "ms" : 374.7190237045288,
-        "name" : "slow wave",
-        "spread" : 1.2298716452742124
-      },
-      {
-        "covered" : 0.33782222222222225,
-        "coveredSettled" : 0.4076111111111111,
-        "darkness" : 0.043418401044364285,
-        "ms" : 339.4739627838135,
-        "name" : "spiral",
-        "spread" : 1.206584659913169
-      },
-      {
-        "covered" : 0.19116666666666668,
-        "coveredSettled" : 0.23858888888888888,
-        "darkness" : 0.04751532479575686,
-        "ms" : 220.3669548034668,
-        "name" : "loop",
-        "spread" : 1.2480674222609704
-      },
-      {
-        "covered" : 0.073,
-        "coveredSettled" : 0.08807777777777778,
-        "darkness" : 0.05241372575361232,
-        "ms" : 121.69206142425537,
-        "name" : "tilted",
-        "spread" : 1.2065449010654492
-      },
-      {
-        "covered" : 0.18126666666666666,
-        "coveredSettled" : 0.21394444444444444,
-        "darkness" : 0.05241372575361232,
-        "ms" : 74.48208332061768,
-        "name" : "over the wet one",
-        "spread" : 1.1802746107637612
-      },
-      {
-        "covered" : 0.3866777777777778,
-        "coveredSettled" : 0.4583777777777778,
-        "darkness" : 0.04682719320042403,
-        "ms" : 502.93898582458496,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.036834507812965704,
-          0.026913862672971973,
-          0.019428677298619978,
-          0.013919527747862327
-        ],
-        "spread" : 1.185425706157869
-      }
-    ]
-  },
-  {
-    "brush" : "Ink — dry brush",
-    "medium" : "Ink",
-    "size" : 30,
-    "strokes" : [
-      {
-        "covered" : 0.09258888888888889,
-        "coveredSettled" : 0.07206666666666667,
-        "darkness" : 0.8066118586983012,
-        "ms" : 83.22906494140625,
-        "name" : "light line",
-        "spread" : 0.7783511340453618
-      },
-      {
-        "covered" : 0.1072111111111111,
-        "coveredSettled" : 0.07857777777777777,
-        "darkness" : 0.7956933404053762,
-        "ms" : 175.65298080444336,
-        "name" : "heavy line",
-        "spread" : 0.7329256917815318
-      },
-      {
-        "covered" : 0.07813333333333333,
-        "coveredSettled" : 0.0663,
-        "darkness" : 0.8092219930518527,
-        "ms" : 112.29991912841797,
-        "name" : "pressure swell",
-        "spread" : 0.8485494880546075
-      },
-      {
-        "covered" : 0.2245,
-        "coveredSettled" : 0.08432222222222223,
-        "darkness" : 0.7816269271625691,
-        "ms" : 243.11697483062744,
-        "name" : "fast wave",
-        "spread" : 0.3756000989853997
-      },
-      {
-        "covered" : 0.17865555555555557,
-        "coveredSettled" : 0.06386666666666667,
-        "darkness" : 0.7996092467571966,
-        "ms" : 430.70197105407715,
-        "name" : "slow wave",
-        "spread" : 0.35748491821630696
-      },
-      {
-        "covered" : 0.23296666666666666,
-        "coveredSettled" : 0.08055555555555556,
-        "darkness" : 0.7722589719377319,
-        "ms" : 417.0769453048706,
-        "name" : "spiral",
-        "spread" : 0.34578146611341637
-      },
-      {
-        "covered" : 0.19887777777777776,
-        "coveredSettled" : 0.08244444444444445,
-        "darkness" : 0.77362952170812,
-        "ms" : 217.51999855041504,
-        "name" : "loop",
-        "spread" : 0.4145482987876418
-      },
-      {
-        "covered" : 0.08873333333333333,
-        "coveredSettled" : 0.08997777777777778,
-        "darkness" : 0.778752717345626,
-        "ms" : 168.67494583129883,
-        "name" : "tilted",
-        "spread" : 1.0140245429501629
-      },
-      {
-        "covered" : 0.18631111111111112,
-        "coveredSettled" : 0.1403,
-        "darkness" : 0.778752717345626,
-        "ms" : 113.99304866790771,
-        "name" : "over the wet one",
-        "spread" : 0.7530415076335878
-      },
-      {
-        "covered" : 0.20344444444444446,
-        "coveredSettled" : 0.08563333333333334,
-        "darkness" : 0.7829183695564792,
-        "ms" : 582.4140310287476,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.3204017545945058,
-          0.014874031431503896,
-          5.3231638071674963e-05,
-          0
-        ],
-        "spread" : 0.4209175314036046
-      }
-    ]
-  },
-  {
-    "brush" : "Ink — nib",
-    "medium" : "Watercolor",
-    "size" : 5,
-    "strokes" : [
-      {
-        "covered" : 0.01508888888888889,
-        "coveredSettled" : 0.017655555555555556,
-        "darkness" : 0.7648904163119601,
-        "ms" : 29.11996841430664,
-        "name" : "light line",
-        "spread" : 1.1701030927835052
-      },
-      {
-        "covered" : 0.017366666666666666,
-        "coveredSettled" : 0.020066666666666667,
-        "darkness" : 0.7658095536936734,
-        "ms" : 34.68191623687744,
-        "name" : "heavy line",
-        "spread" : 1.1554702495201536
-      },
-      {
-        "covered" : 0.013066666666666667,
-        "coveredSettled" : 0.016,
-        "darkness" : 0.7828446835574719,
-        "ms" : 21.319031715393066,
-        "name" : "pressure swell",
-        "spread" : 1.2244897959183674
-      },
-      {
-        "covered" : 0.036677777777777774,
-        "coveredSettled" : 0.03992222222222222,
-        "darkness" : 0.6626011036478564,
-        "ms" : 66.09201431274414,
-        "name" : "fast wave",
-        "spread" : 1.0884580430172675
-      },
-      {
-        "covered" : 0.03685555555555556,
-        "coveredSettled" : 0.04078888888888889,
-        "darkness" : 0.6754328524512656,
-        "ms" : 79.05495166778564,
-        "name" : "slow wave",
-        "spread" : 1.1067229424178473
-      },
-      {
-        "covered" : 0.05644444444444444,
-        "coveredSettled" : 0.0608,
-        "darkness" : 0.5759624170402127,
-        "ms" : 115.68796634674072,
-        "name" : "spiral",
-        "spread" : 1.0771653543307087
-      },
-      {
-        "covered" : 0.03338888888888889,
-        "coveredSettled" : 0.037333333333333336,
-        "darkness" : 0.6939682345482268,
-        "ms" : 77.89897918701172,
-        "name" : "loop",
-        "spread" : 1.1181364392678868
-      },
-      {
-        "covered" : 0.02068888888888889,
-        "coveredSettled" : 0.02497777777777778,
-        "darkness" : 0.6376343804525645,
-        "ms" : 32.765984535217285,
-        "name" : "tilted",
-        "spread" : 1.2073039742212675
-      },
-      {
-        "covered" : 0.04232222222222222,
-        "coveredSettled" : 0.0436,
-        "darkness" : 0.6376343804525645,
-        "ms" : 32.41598606109619,
-        "name" : "over the wet one",
-        "spread" : 1.030191651352061
-      },
-      {
-        "covered" : 0.07232222222222222,
-        "coveredSettled" : 0.0741,
-        "darkness" : 0.529390698828915,
-        "ms" : 205.25503158569336,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.09435195313352208,
-          0.04496896190981983,
-          0.027505434817270677,
-          0.01966224575853976
-        ],
-        "spread" : 1.024581348901521
-      }
-    ]
-  },
-  {
-    "brush" : "0.45 · Dry brush",
-    "medium" : "Gouache",
-    "size" : 34,
-    "strokes" : [
-      {
-        "covered" : 0.10752222222222223,
-        "coveredSettled" : 0.030322222222222223,
-        "darkness" : 0.6711675157023058,
-        "ms" : 130.13792037963867,
-        "name" : "light line",
-        "spread" : 0.28200888705177224
-      },
-      {
-        "covered" : 0.1166,
-        "coveredSettled" : 0.03443333333333334,
-        "darkness" : 0.6712169840418618,
-        "ms" : 167.57607460021973,
-        "name" : "heavy line",
-        "spread" : 0.2953116066323614
-      },
-      {
-        "covered" : 0.08914444444444444,
-        "coveredSettled" : 0.03528888888888889,
-        "darkness" : 0.6712292939608168,
-        "ms" : 105.58104515075684,
-        "name" : "pressure swell",
-        "spread" : 0.3958618970459928
-      },
-      {
-        "covered" : 0.1968888888888889,
-        "coveredSettled" : 0.03677777777777778,
-        "darkness" : 0.6712600427548232,
-        "ms" : 469.8140621185303,
-        "name" : "fast wave",
-        "spread" : 0.18679458239277652
-      },
-      {
-        "covered" : 0.20433333333333334,
-        "coveredSettled" : 0.037566666666666665,
-        "darkness" : 0.6712269518096042,
-        "ms" : 658.1710577011108,
-        "name" : "slow wave",
-        "spread" : 0.18384991843393148
-      },
-      {
-        "covered" : 0.21058888888888888,
-        "coveredSettled" : 0.036033333333333334,
-        "darkness" : 0.6712556788676728,
-        "ms" : 719.1990613937378,
-        "name" : "spiral",
-        "spread" : 0.17110747638896218
-      },
-      {
-        "covered" : 0.21337777777777778,
-        "coveredSettled" : 0.03997777777777778,
-        "darkness" : 0.6712548161003039,
-        "ms" : 391.5669918060303,
-        "name" : "loop",
-        "spread" : 0.18735680066652782
-      },
-      {
-        "covered" : 0.09397777777777777,
-        "coveredSettled" : 0.09102222222222223,
-        "darkness" : 0.6712443252505469,
-        "ms" : 294.124960899353,
-        "name" : "tilted",
-        "spread" : 0.9685504847481675
-      },
-      {
-        "covered" : 0.1995222222222222,
-        "coveredSettled" : 0.06634444444444444,
-        "darkness" : 0.6712443252505469,
-        "ms" : 207.44800567626953,
-        "name" : "over the wet one",
-        "spread" : 0.3325165673553489
-      },
-      {
-        "covered" : 0.19732222222222223,
-        "coveredSettled" : 0.04165555555555556,
-        "darkness" : 0.6712199647972742,
-        "ms" : 848.1720685958862,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.3774483695718092,
-          0.06554355389646466,
-          0.0015656294941144473,
-          0.0008299066954010041
-        ],
-        "spread" : 0.21110422884171406
-      }
-    ]
-  },
-  {
-    "brush" : "Dry pastel",
-    "medium" : "Pastel",
-    "size" : 26,
-    "strokes" : [
-      {
-        "covered" : 0.047122222222222225,
-        "coveredSettled" : 0.047122222222222225,
-        "darkness" : 0.35751061895227876,
-        "ms" : 47.058939933776855,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.05733333333333333,
-        "coveredSettled" : 0.05733333333333333,
-        "darkness" : 0.3633862193980364,
-        "ms" : 45.43590545654297,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04836666666666667,
-        "coveredSettled" : 0.04836666666666667,
-        "darkness" : 0.3619854865914277,
-        "ms" : 26.28302574157715,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.14965555555555554,
-        "coveredSettled" : 0.14965555555555554,
-        "darkness" : 0.3648385288449898,
-        "ms" : 108.62398147583008,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1416888888888889,
-        "coveredSettled" : 0.1416888888888889,
-        "darkness" : 0.36404319039036676,
-        "ms" : 184.2210292816162,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.22795555555555555,
-        "coveredSettled" : 0.22795555555555555,
-        "darkness" : 0.36269736280272197,
-        "ms" : 166.4600372314453,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.11238888888888889,
-        "coveredSettled" : 0.11238888888888889,
-        "darkness" : 0.36344020564081325,
-        "ms" : 103.92200946807861,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04502222222222222,
-        "coveredSettled" : 0.04502222222222222,
-        "darkness" : 0.3655663884138278,
-        "ms" : 49.92794990539551,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.09926666666666667,
-        "coveredSettled" : 0.09926666666666667,
-        "darkness" : 0.3655663884138278,
-        "ms" : 38.63704204559326,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.25887777777777776,
-        "coveredSettled" : 0.25887777777777776,
-        "darkness" : 0.36075323518209074,
-        "ms" : 259.052038192749,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.10543308816310021,
-          0.10051584504740595,
-          0.10465449013568812,
-          0.10677413257341349
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "0.45 · Charcoal",
-    "medium" : "Charcoal",
-    "size" : 18,
-    "strokes" : [
-      {
-        "covered" : 0.042755555555555554,
-        "coveredSettled" : 0.042755555555555554,
-        "darkness" : 0.7854162640254229,
-        "ms" : 50.02701282501221,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04494444444444445,
-        "coveredSettled" : 0.04494444444444445,
-        "darkness" : 0.7861088990659911,
-        "ms" : 19.5310115814209,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.035222222222222224,
-        "coveredSettled" : 0.035222222222222224,
-        "darkness" : 0.7875137871591723,
-        "ms" : 18.54705810546875,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.11147777777777777,
-        "coveredSettled" : 0.11147777777777777,
-        "darkness" : 0.7889803324270983,
-        "ms" : 84.61689949035645,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.11124444444444445,
-        "coveredSettled" : 0.11124444444444445,
-        "darkness" : 0.784428669706658,
-        "ms" : 67.71397590637207,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1965,
-        "coveredSettled" : 0.1965,
-        "darkness" : 0.787263182100729,
-        "ms" : 93.96195411682129,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.09878888888888888,
-        "coveredSettled" : 0.09878888888888888,
-        "darkness" : 0.7878833290753848,
-        "ms" : 53.41994762420654,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.04251111111111111,
-        "coveredSettled" : 0.04251111111111111,
-        "darkness" : 0.7844041006874349,
-        "ms" : 25.908946990966797,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.08768888888888889,
-        "coveredSettled" : 0.08768888888888889,
-        "darkness" : 0.7844041006874349,
-        "ms" : 22.842049598693848,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.26243333333333335,
-        "coveredSettled" : 0.26243333333333335,
-        "darkness" : 0.7885280688508719,
-        "ms" : 170.3040599822998,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.23344208723709495,
-          0.224899662212963,
-          0.2326341971751523,
-          0.23519255592152258
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Watercolour — wash",
-    "medium" : "Watercolor",
-    "size" : 50,
-    "strokes" : [
-      {
-        "covered" : 0.08624444444444444,
-        "coveredSettled" : 0.10543333333333334,
-        "darkness" : 0.00994271558912375,
-        "ms" : 118.63398551940918,
-        "name" : "light line",
-        "spread" : 1.2224942025251224
-      },
-      {
-        "covered" : 0.12307777777777777,
-        "coveredSettled" : 0.1446111111111111,
-        "darkness" : 0.008968542261994603,
-        "ms" : 127.9900074005127,
-        "name" : "heavy line",
-        "spread" : 1.1749571183533447
-      },
-      {
-        "covered" : 0.0845888888888889,
-        "coveredSettled" : 0.10284444444444445,
-        "darkness" : 0.010493245874728276,
-        "ms" : 100.47698020935059,
-        "name" : "pressure swell",
-        "spread" : 1.2158150531984762
-      },
-      {
-        "covered" : 0.2585,
-        "coveredSettled" : 0.3038666666666667,
-        "darkness" : 0.00881679141704065,
-        "ms" : 311.4060163497925,
-        "name" : "fast wave",
-        "spread" : 1.1754996776273372
-      },
-      {
-        "covered" : 0.24888888888888888,
-        "coveredSettled" : 0.2939111111111111,
-        "darkness" : 0.01338572255991721,
-        "ms" : 544.9239015579224,
-        "name" : "slow wave",
-        "spread" : 1.1808928571428572
-      },
-      {
-        "covered" : 0.39016666666666666,
-        "coveredSettled" : 0.4561222222222222,
-        "darkness" : 0.010146948981217829,
-        "ms" : 577.7499675750732,
-        "name" : "spiral",
-        "spread" : 1.1690445678484978
-      },
-      {
-        "covered" : 0.22133333333333333,
-        "coveredSettled" : 0.2669111111111111,
-        "darkness" : 0.010406269658452344,
-        "ms" : 324.7640132904053,
-        "name" : "loop",
-        "spread" : 1.2059236947791165
-      },
-      {
-        "covered" : 0.09574444444444444,
-        "coveredSettled" : 0.11282222222222223,
-        "darkness" : 0.011336778037691104,
-        "ms" : 247.56097793579102,
-        "name" : "tilted",
-        "spread" : 1.1783683416502264
-      },
-      {
-        "covered" : 0.21581111111111112,
-        "coveredSettled" : 0.24634444444444445,
-        "darkness" : 0.011336778037691104,
-        "ms" : 167.88697242736816,
-        "name" : "over the wet one",
-        "spread" : 1.1414817484425681
-      },
-      {
-        "covered" : 0.45474444444444445,
-        "coveredSettled" : 0.5369222222222222,
-        "darkness" : 0.010778766126104409,
-        "ms" : 859.1469526290894,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.008772334423246519,
-          0.007175416038920941,
-          0.005615450431685508,
-          0.0041804456498842095
-        ],
-        "spread" : 1.18071199941359
-      }
-    ]
-  },
-  {
-    "brush" : "Watercolour — wet-in-wet",
-    "medium" : "Watercolor",
-    "size" : 44,
-    "strokes" : [
-      {
-        "covered" : 0.06771111111111111,
-        "coveredSettled" : 0.08536666666666666,
-        "darkness" : 0.01964125515346778,
-        "ms" : 134.05001163482666,
-        "name" : "light line",
-        "spread" : 1.2607482769937643
-      },
-      {
-        "covered" : 0.09891111111111112,
-        "coveredSettled" : 0.12053333333333334,
-        "darkness" : 0.016580213010361004,
-        "ms" : 113.98899555206299,
-        "name" : "heavy line",
-        "spread" : 1.2186025612221973
-      },
-      {
-        "covered" : 0.07176666666666667,
-        "coveredSettled" : 0.08695555555555555,
-        "darkness" : 0.01917410245142762,
-        "ms" : 93.2610034942627,
-        "name" : "pressure swell",
-        "spread" : 1.2116426691438302
-      },
-      {
-        "covered" : 0.22723333333333334,
-        "coveredSettled" : 0.2665222222222222,
-        "darkness" : 0.016084019465358597,
-        "ms" : 248.43299388885498,
-        "name" : "fast wave",
-        "spread" : 1.172901080631754
-      },
-      {
-        "covered" : 0.21745555555555557,
-        "coveredSettled" : 0.2561777777777778,
-        "darkness" : 0.024394079701609526,
-        "ms" : 459.2839479446411,
-        "name" : "slow wave",
-        "spread" : 1.178069592764805
-      },
-      {
-        "covered" : 0.3577444444444444,
-        "coveredSettled" : 0.42915555555555557,
-        "darkness" : 0.017519615986745066,
-        "ms" : 437.7549886703491,
-        "name" : "spiral",
-        "spread" : 1.1996148709507097
-      },
-      {
-        "covered" : 0.19243333333333335,
-        "coveredSettled" : 0.23141111111111112,
-        "darkness" : 0.019060926029742003,
-        "ms" : 285.3689193725586,
-        "name" : "loop",
-        "spread" : 1.2025521103989838
-      },
-      {
-        "covered" : 0.07407777777777778,
-        "coveredSettled" : 0.08824444444444444,
-        "darkness" : 0.020284131880418544,
-        "ms" : 165.06099700927734,
-        "name" : "tilted",
-        "spread" : 1.191240437978101
-      },
-      {
-        "covered" : 0.17306666666666667,
-        "coveredSettled" : 0.19456666666666667,
-        "darkness" : 0.020284131880418544,
-        "ms" : 113.3500337600708,
-        "name" : "over the wet one",
-        "spread" : 1.1242295839753467
-      },
-      {
-        "covered" : 0.4179888888888889,
-        "coveredSettled" : 0.4933,
-        "darkness" : 0.019521329431550955,
-        "ms" : 758.0479383468628,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.01395309232742225,
-          0.0118238497035994,
-          0.009558452148905548,
-          0.0076148810679100105
-        ],
-        "spread" : 1.180174911613812
-      }
-    ]
-  },
-  {
-    "brush" : "Watercolour — glaze",
-    "medium" : "Watercolor",
-    "size" : 38,
-    "strokes" : [
-      {
-        "covered" : 0.06821111111111111,
-        "coveredSettled" : 0.08704444444444444,
-        "darkness" : 0.008191699951599764,
-        "ms" : 98.35994243621826,
-        "name" : "light line",
-        "spread" : 1.2761035999348427
-      },
-      {
-        "covered" : 0.10383333333333333,
-        "coveredSettled" : 0.13004444444444443,
-        "darkness" : 0.0067894174965489286,
-        "ms" : 125.10907649993896,
-        "name" : "heavy line",
-        "spread" : 1.2524344569288388
-      },
-      {
-        "covered" : 0.06841111111111112,
-        "coveredSettled" : 0.08845555555555555,
-        "darkness" : 0.008112119649098656,
-        "ms" : 71.16198539733887,
-        "name" : "pressure swell",
-        "spread" : 1.2929998375832383
-      },
-      {
-        "covered" : 0.2031111111111111,
-        "coveredSettled" : 0.25201111111111113,
-        "darkness" : 0.0066942130640053315,
-        "ms" : 244.20702457427979,
-        "name" : "fast wave",
-        "spread" : 1.2407549234135669
-      },
-      {
-        "covered" : 0.1888,
-        "coveredSettled" : 0.23833333333333334,
-        "darkness" : 0.009276125485527078,
-        "ms" : 388.9620304107666,
-        "name" : "slow wave",
-        "spread" : 1.262358757062147
-      },
-      {
-        "covered" : 0.30937777777777775,
-        "coveredSettled" : 0.3739777777777778,
-        "darkness" : 0.006721661042928938,
-        "ms" : 434.10801887512207,
-        "name" : "spiral",
-        "spread" : 1.2088062060048845
-      },
-      {
-        "covered" : 0.18038888888888888,
-        "coveredSettled" : 0.22821111111111111,
-        "darkness" : 0.007534620322714851,
-        "ms" : 226.16994380950928,
-        "name" : "loop",
-        "spread" : 1.2651062519248537
-      },
-      {
-        "covered" : 0.06863333333333334,
-        "coveredSettled" : 0.08265555555555555,
-        "darkness" : 0.008286988693490859,
-        "ms" : 158.17296504974365,
-        "name" : "tilted",
-        "spread" : 1.2043062975554475
-      },
-      {
-        "covered" : 0.16977777777777778,
-        "coveredSettled" : 0.20266666666666666,
-        "darkness" : 0.008286988693490859,
-        "ms" : 101.88806056976318,
-        "name" : "over the wet one",
-        "spread" : 1.193717277486911
-      },
-      {
-        "covered" : 0.35644444444444445,
-        "coveredSettled" : 0.41664444444444443,
-        "darkness" : 0.007144008698986114,
-        "ms" : 545.9280014038086,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.005647415191947146,
-          0.003764216641867158,
-          0.002543804550135129,
-          0.0017731261561481856
-        ],
-        "spread" : 1.1688902743142144
-      }
-    ]
-  },
-  {
-    "brush" : "Watercolour — granulating",
-    "medium" : "Watercolor",
-    "size" : 44,
-    "strokes" : [
-      {
-        "covered" : 0.08253333333333333,
-        "coveredSettled" : 0.09697777777777777,
-        "darkness" : 0.015413400232838366,
-        "ms" : 97.59104251861572,
-        "name" : "light line",
-        "spread" : 1.175013462574044
-      },
-      {
-        "covered" : 0.1232,
-        "coveredSettled" : 0.14187777777777777,
-        "darkness" : 0.012994353454066554,
-        "ms" : 164.0920639038086,
-        "name" : "heavy line",
-        "spread" : 1.151605339105339
-      },
-      {
-        "covered" : 0.0818,
-        "coveredSettled" : 0.09612222222222222,
-        "darkness" : 0.015395227859200429,
-        "ms" : 152.22108364105225,
-        "name" : "pressure swell",
-        "spread" : 1.1750882912252105
-      },
-      {
-        "covered" : 0.2523444444444444,
-        "coveredSettled" : 0.29125555555555555,
-        "darkness" : 0.01267447699416221,
-        "ms" : 288.36894035339355,
-        "name" : "fast wave",
-        "spread" : 1.154198406058738
-      },
-      {
-        "covered" : 0.23663333333333333,
-        "coveredSettled" : 0.27418888888888887,
-        "darkness" : 0.018756689462977757,
-        "ms" : 405.27498722076416,
-        "name" : "slow wave",
-        "spread" : 1.1587077992205475
-      },
-      {
-        "covered" : 0.38726666666666665,
-        "coveredSettled" : 0.4441777777777778,
-        "darkness" : 0.01370960403742034,
-        "ms" : 685.8170032501221,
-        "name" : "spiral",
-        "spread" : 1.1469558730705227
-      },
-      {
-        "covered" : 0.21672222222222223,
-        "coveredSettled" : 0.2539777777777778,
-        "darkness" : 0.014807235974870842,
-        "ms" : 389.77301120758057,
-        "name" : "loop",
-        "spread" : 1.1719046398359396
-      },
-      {
-        "covered" : 0.0923888888888889,
-        "coveredSettled" : 0.1058111111111111,
-        "darkness" : 0.01677915244883185,
-        "ms" : 179.0480613708496,
-        "name" : "tilted",
-        "spread" : 1.145279615153337
-      },
-      {
-        "covered" : 0.20593333333333333,
-        "coveredSettled" : 0.22948888888888888,
-        "darkness" : 0.01677915244883185,
-        "ms" : 124.54605102539062,
-        "name" : "over the wet one",
-        "spread" : 1.114384374662782
-      },
-      {
-        "covered" : 0.44906666666666667,
-        "coveredSettled" : 0.5162,
-        "darkness" : 0.014582787665705157,
-        "ms" : 615.731954574585,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.012083068039175958,
-          0.009321362334330327,
-          0.006976422152317425,
-          0.0050173007428392785
-        ],
-        "spread" : 1.1494952494061756
-      }
-    ]
-  },
-  {
-    "brush" : "Watercolour — dry brush",
-    "medium" : "Watercolor",
-    "size" : 36,
-    "strokes" : [
-      {
-        "covered" : 0.07471111111111112,
-        "coveredSettled" : 0.08012222222222222,
-        "darkness" : 0.051720254153760685,
-        "ms" : 199.00798797607422,
-        "name" : "light line",
-        "spread" : 1.0724271267102914
-      },
-      {
-        "covered" : 0.11217777777777778,
-        "coveredSettled" : 0.1150111111111111,
-        "darkness" : 0.043209150705136694,
-        "ms" : 244.62401866912842,
-        "name" : "heavy line",
-        "spread" : 1.025257527733756
-      },
-      {
-        "covered" : 0.08932222222222222,
-        "coveredSettled" : 0.09555555555555556,
-        "darkness" : 0.04666736598252885,
-        "ms" : 175.01401901245117,
-        "name" : "pressure swell",
-        "spread" : 1.0697847991043663
-      },
-      {
-        "covered" : 0.2074,
-        "coveredSettled" : 0.14044444444444446,
-        "darkness" : 0.038390618513797374,
-        "ms" : 384.2020034790039,
-        "name" : "fast wave",
-        "spread" : 0.67716704168006
-      },
-      {
-        "covered" : 0.1857888888888889,
-        "coveredSettled" : 0.12975555555555557,
-        "darkness" : 0.04420142627788666,
-        "ms" : 461.4959955215454,
-        "name" : "slow wave",
-        "spread" : 0.6984032055499073
-      },
-      {
-        "covered" : 0.23842222222222223,
-        "coveredSettled" : 0.14514444444444444,
-        "darkness" : 0.0389605589408612,
-        "ms" : 635.3878974914551,
-        "name" : "spiral",
-        "spread" : 0.60877062167956
-      },
-      {
-        "covered" : 0.16726666666666667,
-        "coveredSettled" : 0.1421,
-        "darkness" : 0.040184499759879574,
-        "ms" : 235.28194427490234,
-        "name" : "loop",
-        "spread" : 0.8495416500597848
-      },
-      {
-        "covered" : 0.06771111111111111,
-        "coveredSettled" : 0.0804,
-        "darkness" : 0.045940039664248616,
-        "ms" : 118.62504482269287,
-        "name" : "tilted",
-        "spread" : 1.1873974401050214
-      },
-      {
-        "covered" : 0.17427777777777778,
-        "coveredSettled" : 0.1718888888888889,
-        "darkness" : 0.045940039664248616,
-        "ms" : 101.07505321502686,
-        "name" : "over the wet one",
-        "spread" : 0.9862926362766975
-      },
-      {
-        "covered" : 0.22102222222222223,
-        "coveredSettled" : 0.1506888888888889,
-        "darkness" : 0.04127489756936532,
-        "ms" : 556.5869808197021,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.023293558356901438,
-          0.004879747364314648,
-          0.0016422747799257425,
-          0.0005968997202879233
-        ],
-        "spread" : 0.6817816207520612
-      }
-    ]
-  },
-  {
-    "brush" : "Gouache",
-    "medium" : "Gouache",
-    "size" : 30,
-    "strokes" : [
-      {
-        "covered" : 0.08386666666666667,
-        "coveredSettled" : 0.056266666666666666,
-        "darkness" : 0.14147509617525922,
-        "ms" : 67.71993637084961,
-        "name" : "light line",
-        "spread" : 0.670906200317965
-      },
-      {
-        "covered" : 0.13492222222222222,
-        "coveredSettled" : 0.06306666666666666,
-        "darkness" : 0.14086389416060005,
-        "ms" : 80.95395565032959,
-        "name" : "heavy line",
-        "spread" : 0.4674297949435888
-      },
-      {
-        "covered" : 0.10203333333333334,
-        "coveredSettled" : 0.06222222222222222,
-        "darkness" : 0.14059681189530948,
-        "ms" : 62.016963958740234,
-        "name" : "pressure swell",
-        "spread" : 0.6098224980943047
-      },
-      {
-        "covered" : 0.27016666666666667,
-        "coveredSettled" : 0.07282222222222222,
-        "darkness" : 0.14009620712645002,
-        "ms" : 223.96600246429443,
-        "name" : "fast wave",
-        "spread" : 0.2695455480156282
-      },
-      {
-        "covered" : 0.26792222222222223,
-        "coveredSettled" : 0.0728,
-        "darkness" : 0.1402365392702328,
-        "ms" : 326.01702213287354,
-        "name" : "slow wave",
-        "spread" : 0.2717206486127815
-      },
-      {
-        "covered" : 0.36543333333333333,
-        "coveredSettled" : 0.08216666666666667,
-        "darkness" : 0.13947894966025567,
-        "ms" : 307.2659969329834,
-        "name" : "spiral",
-        "spread" : 0.22484721335400892
-      },
-      {
-        "covered" : 0.21547777777777777,
-        "coveredSettled" : 0.07776666666666666,
-        "darkness" : 0.13980212309171527,
-        "ms" : 182.38699436187744,
-        "name" : "loop",
-        "spread" : 0.3609034187593462
-      },
-      {
-        "covered" : 0.08667777777777778,
-        "coveredSettled" : 0.08864444444444444,
-        "darkness" : 0.1396389491693302,
-        "ms" : 133.67199897766113,
-        "name" : "tilted",
-        "spread" : 1.022689398795026
-      },
-      {
-        "covered" : 0.19691111111111112,
-        "coveredSettled" : 0.13154444444444444,
-        "darkness" : 0.1396389491693302,
-        "ms" : 135.32400131225586,
-        "name" : "over the wet one",
-        "spread" : 0.6680397246360456
-      },
-      {
-        "covered" : 0.3816555555555556,
-        "coveredSettled" : 0.09543333333333333,
-        "darkness" : 0.13918088754061106,
-        "ms" : 518.0950164794922,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.07271729592756869,
-          0.03650032434225806,
-          0.01486321528355062,
-          0.005421039340448858
-        ],
-        "spread" : 0.2500509476258406
-      }
-    ]
-  },
-  {
-    "brush" : "Oil — alla prima",
-    "medium" : "Oil",
-    "size" : 30,
-    "strokes" : [
-      {
-        "covered" : 0.09338888888888888,
-        "coveredSettled" : 0.09338888888888888,
-        "darkness" : 0.5027084824581726,
-        "ms" : 77.58402824401855,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.10173333333333333,
-        "coveredSettled" : 0.10173333333333333,
-        "darkness" : 0.5010530006443028,
-        "ms" : 77.42202281951904,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.07717777777777778,
-        "coveredSettled" : 0.07717777777777778,
-        "darkness" : 0.5232926980297428,
-        "ms" : 68.916916847229,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.24138888888888888,
-        "coveredSettled" : 0.24138888888888888,
-        "darkness" : 0.4895555734188095,
-        "ms" : 330.902099609375,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.2457,
-        "coveredSettled" : 0.2457,
-        "darkness" : 0.495998137403366,
-        "ms" : 608.7979078292847,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.3847888888888889,
-        "coveredSettled" : 0.3847888888888889,
-        "darkness" : 0.4422533844198329,
-        "ms" : 372.44999408721924,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.2077,
-        "coveredSettled" : 0.2077,
-        "darkness" : 0.5037364020052895,
-        "ms" : 222.6349115371704,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.11091111111111111,
-        "coveredSettled" : 0.11091111111111111,
-        "darkness" : 0.49661070876643065,
-        "ms" : 111.97292804718018,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.20342222222222223,
-        "coveredSettled" : 0.20342222222222223,
-        "darkness" : 0.49661070876643065,
-        "ms" : 98.45197200775146,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.4637,
-        "coveredSettled" : 0.4637,
-        "darkness" : 0.3989765440250778,
-        "ms" : 590.9569263458252,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.30890365783242035,
-          0.24419665903391097,
-          0.16862340644091825,
-          0.097660162855148
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Oil — impasto",
-    "medium" : "Oil",
-    "size" : 34,
-    "strokes" : [
-      {
-        "covered" : 0.11283333333333333,
-        "coveredSettled" : 0.11283333333333333,
-        "darkness" : 0.237736482649402,
-        "ms" : 128.13103199005127,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.12258888888888889,
-        "coveredSettled" : 0.12258888888888889,
-        "darkness" : 0.2333525420196876,
-        "ms" : 137.75503635406494,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.09401111111111111,
-        "coveredSettled" : 0.09401111111111111,
-        "darkness" : 0.24700981092630753,
-        "ms" : 132.66098499298096,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.29034444444444446,
-        "coveredSettled" : 0.29034444444444446,
-        "darkness" : 0.20612118167789426,
-        "ms" : 281.1819314956665,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.2930333333333333,
-        "coveredSettled" : 0.2930333333333333,
-        "darkness" : 0.20858902737623672,
-        "ms" : 459.57207679748535,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.47883333333333333,
-        "coveredSettled" : 0.47883333333333333,
-        "darkness" : 0.16516627016503296,
-        "ms" : 491.88899993896484,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.25164444444444445,
-        "coveredSettled" : 0.25164444444444445,
-        "darkness" : 0.21312892758117283,
-        "ms" : 258.55398178100586,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.11648888888888889,
-        "coveredSettled" : 0.11648888888888889,
-        "darkness" : 0.23600018673707204,
-        "ms" : 151.4260768890381,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.2279,
-        "coveredSettled" : 0.2279,
-        "darkness" : 0.23600018673707204,
-        "ms" : 153.65099906921387,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.5511222222222222,
-        "coveredSettled" : 0.5511222222222222,
-        "darkness" : 0.14651683013298433,
-        "ms" : 799.1219758987427,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.1644360426926332,
-          0.10610589602578424,
-          0.057629376709308344,
-          0.024077617885100915
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Oil — glaze",
-    "medium" : "Oil",
-    "size" : 40,
-    "strokes" : [
-      {
-        "covered" : 0.0954,
-        "coveredSettled" : 0.0954,
-        "darkness" : 0.4895762777436693,
-        "ms" : 119.76611614227295,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1413888888888889,
-        "coveredSettled" : 0.1413888888888889,
-        "darkness" : 0.48091826642977703,
-        "ms" : 139.79697227478027,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.10102222222222222,
-        "coveredSettled" : 0.10102222222222222,
-        "darkness" : 0.4921154469653538,
-        "ms" : 108.22796821594238,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.2793555555555556,
-        "coveredSettled" : 0.2793555555555556,
-        "darkness" : 0.4609620568957347,
-        "ms" : 296.07605934143066,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.30044444444444446,
-        "coveredSettled" : 0.30044444444444446,
-        "darkness" : 0.45935888672544095,
-        "ms" : 538.4550094604492,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.4246333333333333,
-        "coveredSettled" : 0.4246333333333333,
-        "darkness" : 0.4373063672763251,
-        "ms" : 514.0249729156494,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.24401111111111112,
-        "coveredSettled" : 0.24401111111111112,
-        "darkness" : 0.47252315837154,
-        "ms" : 397.87399768829346,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.10754444444444444,
-        "coveredSettled" : 0.10754444444444444,
-        "darkness" : 0.4736449738592996,
-        "ms" : 242.095947265625,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.22714444444444445,
-        "coveredSettled" : 0.22714444444444445,
-        "darkness" : 0.4736449738592996,
-        "ms" : 115.88406562805176,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.4651,
-        "coveredSettled" : 0.4651,
-        "darkness" : 0.43258572459615496,
-        "ms" : 828.5740613937378,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.3321866310058933,
-          0.2424399598650611,
-          0.18062719253206994,
-          0.14126298659137235
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Oil — scumble",
-    "medium" : "Oil",
-    "size" : 36,
-    "strokes" : [
-      {
-        "covered" : 0.10698888888888888,
-        "coveredSettled" : 0.10698888888888888,
-        "darkness" : 0.057436512382327935,
-        "ms" : 146.71897888183594,
-        "name" : "light line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.11675555555555556,
-        "coveredSettled" : 0.11675555555555556,
-        "darkness" : 0.052725371735104505,
-        "ms" : 163.1789207458496,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.08974444444444445,
-        "coveredSettled" : 0.08974444444444445,
-        "darkness" : 0.056361530216577874,
-        "ms" : 116.60492420196533,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1834888888888889,
-        "coveredSettled" : 0.1834888888888889,
-        "darkness" : 0.037067808105794194,
-        "ms" : 382.4279308319092,
-        "name" : "fast wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1957111111111111,
-        "coveredSettled" : 0.1957111111111111,
-        "darkness" : 0.03584314790996657,
-        "ms" : 1021.5320587158203,
-        "name" : "slow wave",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1917888888888889,
-        "coveredSettled" : 0.1917888888888889,
-        "darkness" : 0.0346264985452162,
-        "ms" : 839.6440744400024,
-        "name" : "spiral",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.22076666666666667,
-        "coveredSettled" : 0.22076666666666667,
-        "darkness" : 0.04008276307204997,
-        "ms" : 335.03806591033936,
-        "name" : "loop",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.0983,
-        "coveredSettled" : 0.0983,
-        "darkness" : 0.051374556487399255,
-        "ms" : 173.78902435302734,
-        "name" : "tilted",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.2066111111111111,
-        "coveredSettled" : 0.2066111111111111,
-        "darkness" : 0.051374556487399255,
-        "ms" : 172.2019910812378,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.18395555555555557,
-        "coveredSettled" : 0.18395555555555557,
-        "darkness" : 0.037894685650420985,
-        "ms" : 1026.723027229309,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.027200691544609332,
-          0.0014194212678554437,
-          4.125300903851536e-05,
-          2.826736129874478e-06
-        ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Acrylic — heavy body",
-    "medium" : "Heavy acrylic",
-    "size" : 30,
-    "strokes" : [
-      {
-        "covered" : 0.10007777777777778,
-        "coveredSettled" : 0.09334444444444444,
-        "darkness" : 0.5092560598026431,
-        "ms" : 139.39595222473145,
-        "name" : "light line",
-        "spread" : 0.9327189963361829
-      },
-      {
-        "covered" : 0.10778888888888889,
-        "coveredSettled" : 0.10033333333333333,
-        "darkness" : 0.5086876319716941,
-        "ms" : 106.85694217681885,
-        "name" : "heavy line",
-        "spread" : 0.9308318730027831
-      },
-      {
-        "covered" : 0.08247777777777777,
-        "coveredSettled" : 0.07786666666666667,
-        "darkness" : 0.5239935869794761,
-        "ms" : 119.6439266204834,
-        "name" : "pressure swell",
-        "spread" : 0.9440926848982891
-      },
-      {
-        "covered" : 0.24333333333333335,
-        "coveredSettled" : 0.14192222222222223,
-        "darkness" : 0.5140873080665164,
-        "ms" : 382.1629285812378,
-        "name" : "fast wave",
-        "spread" : 0.5832420091324201
-      },
-      {
-        "covered" : 0.25003333333333333,
-        "coveredSettled" : 0.14858888888888888,
-        "darkness" : 0.5123193231027946,
-        "ms" : 556.251049041748,
-        "name" : "slow wave",
-        "spread" : 0.5942763187130604
-      },
-      {
-        "covered" : 0.3705555555555556,
-        "coveredSettled" : 0.14947777777777776,
-        "darkness" : 0.5091885926201318,
-        "ms" : 452.3569345474243,
-        "name" : "spiral",
-        "spread" : 0.4033883058470764
-      },
-      {
-        "covered" : 0.21693333333333334,
-        "coveredSettled" : 0.1590888888888889,
-        "darkness" : 0.5100272668195004,
-        "ms" : 205.93702793121338,
-        "name" : "loop",
-        "spread" : 0.7333538209383323
-      },
-      {
-        "covered" : 0.09701111111111112,
-        "coveredSettled" : 0.0967,
-        "darkness" : 0.5123607195126685,
-        "ms" : 133.02600383758545,
-        "name" : "tilted",
-        "spread" : 0.9967930363074102
-      },
-      {
-        "covered" : 0.19663333333333333,
-        "coveredSettled" : 0.1733111111111111,
-        "darkness" : 0.5123607195126685,
-        "ms" : 129.2269229888916,
-        "name" : "over the wet one",
-        "spread" : 0.8813923263830028
-      },
-      {
-        "covered" : 0.3884666666666667,
-        "coveredSettled" : 0.1536888888888889,
-        "darkness" : 0.5125601081043628,
-        "ms" : 657.6710939407349,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.3047940644258439,
-          0.20130992542221132,
-          0.09797360326465948,
-          0.02437801630364094
-        ],
-        "spread" : 0.3956295406441279
-      }
-    ]
-  },
-  {
-    "brush" : "Acrylic — fluid",
-    "medium" : "Watercolor",
-    "size" : 36,
-    "strokes" : [
-      {
-        "covered" : 0.08867777777777777,
-        "coveredSettled" : 0.09885555555555556,
-        "darkness" : 0.06205320273591409,
-        "ms" : 68.9389705657959,
-        "name" : "light line",
-        "spread" : 1.1147725848891117
-      },
-      {
-        "covered" : 0.13365555555555556,
-        "coveredSettled" : 0.1434777777777778,
-        "darkness" : 0.05455586679955399,
-        "ms" : 121.96493148803711,
-        "name" : "heavy line",
-        "spread" : 1.0734890680854603
-      },
-      {
-        "covered" : 0.09044444444444444,
-        "coveredSettled" : 0.09823333333333334,
-        "darkness" : 0.0657131324659855,
-        "ms" : 70.67596912384033,
-        "name" : "pressure swell",
-        "spread" : 1.0861179361179363
-      },
-      {
-        "covered" : 0.26313333333333333,
-        "coveredSettled" : 0.2809,
-        "darkness" : 0.051813462431718464,
-        "ms" : 215.01600742340088,
-        "name" : "fast wave",
-        "spread" : 1.0675196351659488
-      },
-      {
-        "covered" : 0.24105555555555555,
-        "coveredSettled" : 0.2604111111111111,
-        "darkness" : 0.06800421271751791,
-        "ms" : 386.7999315261841,
-        "name" : "slow wave",
-        "spread" : 1.0802949988476607
-      },
-      {
-        "covered" : 0.3869,
-        "coveredSettled" : 0.4115666666666667,
-        "darkness" : 0.05061891701218522,
-        "ms" : 319.614052772522,
-        "name" : "spiral",
-        "spread" : 1.0637546308262256
-      },
-      {
-        "covered" : 0.22287777777777779,
-        "coveredSettled" : 0.24724444444444443,
-        "darkness" : 0.06060519539388019,
-        "ms" : 152.02701091766357,
-        "name" : "loop",
-        "spread" : 1.1093274839224287
-      },
-      {
-        "covered" : 0.07965555555555555,
-        "coveredSettled" : 0.0933,
-        "darkness" : 0.06690933123417657,
-        "ms" : 100.28195381164551,
-        "name" : "tilted",
-        "spread" : 1.1712930673734134
-      },
-      {
-        "covered" : 0.20807777777777778,
-        "coveredSettled" : 0.21823333333333333,
-        "darkness" : 0.06690933123417657,
-        "ms" : 72.53694534301758,
-        "name" : "over the wet one",
-        "spread" : 1.0488065360175147
-      },
-      {
-        "covered" : 0.44072222222222224,
-        "coveredSettled" : 0.4671666666666667,
-        "darkness" : 0.052321158011787466,
-        "ms" : 547.639012336731,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.04941028123723943,
-          0.031152970798323514,
-          0.019648617448132205,
-          0.013224221132962644
-        ],
-        "spread" : 1.0600025211143325
-      }
-    ]
-  },
-  {
-    "brush" : "Acrylic — palette knife",
-    "medium" : "Heavy acrylic",
-    "size" : 42,
-    "strokes" : [
-      {
-        "covered" : 0.15135555555555555,
-        "coveredSettled" : 0.1486111111111111,
-        "darkness" : 0.05580317890731328,
-        "ms" : 54.40998077392578,
-        "name" : "light line",
-        "spread" : 0.9818675671707532
-      },
-      {
-        "covered" : 0.1524,
-        "coveredSettled" : 0.15003333333333332,
-        "darkness" : 0.04655601708542096,
-        "ms" : 41.1379337310791,
-        "name" : "heavy line",
-        "spread" : 0.9844706911636044
-      },
-      {
-        "covered" : 0.11615555555555555,
-        "coveredSettled" : 0.11512222222222222,
-        "darkness" : 0.05657568048670217,
-        "ms" : 16.515016555786133,
-        "name" : "pressure swell",
-        "spread" : 0.9911038836808878
-      },
-      {
-        "covered" : 0.36966666666666664,
-        "coveredSettled" : 0.19816666666666666,
-        "darkness" : 0.057291122276340305,
-        "ms" : 47.63388633728027,
-        "name" : "fast wave",
-        "spread" : 0.5360685302073941
-      },
-      {
-        "covered" : 0.37425555555555556,
-        "coveredSettled" : 0.20975555555555556,
-        "darkness" : 0.05727942326260031,
-        "ms" : 98.73497486114502,
-        "name" : "slow wave",
-        "spread" : 0.5604607665587982
-      },
-      {
-        "covered" : 0.48144444444444445,
-        "coveredSettled" : 0.18518888888888888,
-        "darkness" : 0.05693960458245095,
-        "ms" : 123.40795993804932,
-        "name" : "spiral",
-        "spread" : 0.3846526655896607
-      },
-      {
-        "covered" : 0.3211,
-        "coveredSettled" : 0.24026666666666666,
-        "darkness" : 0.0518541423620102,
-        "ms" : 44.450998306274414,
-        "name" : "loop",
-        "spread" : 0.748261185508149
-      },
-      {
-        "covered" : 0.12055555555555555,
-        "coveredSettled" : 0.12038888888888889,
-        "darkness" : 0.05154760859200772,
-        "ms" : 27.587056159973145,
-        "name" : "tilted",
-        "spread" : 0.9986175115207374
-      },
-      {
-        "covered" : 0.26311111111111113,
-        "coveredSettled" : 0.2573111111111111,
-        "darkness" : 0.05154760859200772,
-        "ms" : 30.54499626159668,
-        "name" : "over the wet one",
-        "spread" : 0.977956081081081
-      },
-      {
-        "covered" : 0.5472666666666667,
-        "coveredSettled" : 0.1965888888888889,
-        "darkness" : 0.05745489238642376,
-        "ms" : 207.82506465911865,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.04446913652552422,
-          0.019787085965578377,
-          0.002845787829929877,
-          5.4346845084326666e-05
-        ],
-        "spread" : 0.35921955577212006
+        "spread" : 0.9997402168008881
       }
     ]
   },
@@ -3263,7 +287,7 @@
         "covered" : 0.07855555555555556,
         "coveredSettled" : 0.07855555555555556,
         "darkness" : 0.3391531225680469,
-        "ms" : 43.316006660461426,
+        "ms" : 51.17297172546387,
         "name" : "light line",
         "spread" : 1
       },
@@ -3271,7 +295,7 @@
         "covered" : 0.11642222222222222,
         "coveredSettled" : 0.11642222222222222,
         "darkness" : 0.2963649354480896,
-        "ms" : 88.18399906158447,
+        "ms" : 59.91804599761963,
         "name" : "heavy line",
         "spread" : 1
       },
@@ -3279,7 +303,7 @@
         "covered" : 0.08178888888888888,
         "coveredSettled" : 0.08178888888888888,
         "darkness" : 0.3483367141350996,
-        "ms" : 54.96406555175781,
+        "ms" : 35.386085510253906,
         "name" : "pressure swell",
         "spread" : 1
       },
@@ -3287,7 +311,7 @@
         "covered" : 0.1629,
         "coveredSettled" : 0.1629,
         "darkness" : 0.22385642675437267,
-        "ms" : 166.82100296020508,
+        "ms" : 117.62595176696777,
         "name" : "fast wave",
         "spread" : 1
       },
@@ -3295,7 +319,7 @@
         "covered" : 0.1719,
         "coveredSettled" : 0.1719,
         "darkness" : 0.225159727064031,
-        "ms" : 379.7520399093628,
+        "ms" : 194.6619749069214,
         "name" : "slow wave",
         "spread" : 1
       },
@@ -3303,7 +327,7 @@
         "covered" : 0.17653333333333332,
         "coveredSettled" : 0.17653333333333332,
         "darkness" : 0.21514433716849637,
-        "ms" : 386.17098331451416,
+        "ms" : 191.67101383209229,
         "name" : "spiral",
         "spread" : 1
       },
@@ -3311,7 +335,7 @@
         "covered" : 0.18237777777777778,
         "coveredSettled" : 0.18237777777777778,
         "darkness" : 0.23325463001512642,
-        "ms" : 138.93496990203857,
+        "ms" : 96.65095806121826,
         "name" : "loop",
         "spread" : 1
       },
@@ -3319,7 +343,7 @@
         "covered" : 0.08571111111111111,
         "coveredSettled" : 0.08571111111111111,
         "darkness" : 0.3118256038800639,
-        "ms" : 92.11194515228271,
+        "ms" : 97.42403030395508,
         "name" : "tilted",
         "spread" : 1
       },
@@ -3327,7 +351,7 @@
         "covered" : 0.18005555555555555,
         "coveredSettled" : 0.18005555555555555,
         "darkness" : 0.3118256038800639,
-        "ms" : 72.60096073150635,
+        "ms" : 64.87393379211426,
         "name" : "over the wet one",
         "spread" : 1
       },
@@ -3335,7 +359,7 @@
         "covered" : 0.14866666666666667,
         "coveredSettled" : 0.14866666666666667,
         "darkness" : 0.2347836080472309,
-        "ms" : 486.28389835357666,
+        "ms" : 297.7999448776245,
         "name" : "long, no reload",
         "quarters" : [
           0.13096919637907092,
@@ -3348,281 +372,95 @@
     ]
   },
   {
-    "brush" : "Palette knife — oil",
-    "medium" : "Oil",
-    "size" : 44,
-    "strokes" : [
-      {
-        "covered" : 0.15716666666666668,
-        "coveredSettled" : 0.15718888888888888,
-        "darkness" : 0.10286354871682707,
-        "ms" : 23.002982139587402,
-        "name" : "light line",
-        "spread" : 1.000141392718275
-      },
-      {
-        "covered" : 0.15917777777777778,
-        "coveredSettled" : 0.15917777777777778,
-        "darkness" : 0.09081084637518715,
-        "ms" : 21.76797389984131,
-        "name" : "heavy line",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.1208111111111111,
-        "coveredSettled" : 0.1208111111111111,
-        "darkness" : 0.10007942666259986,
-        "ms" : 18.452048301696777,
-        "name" : "pressure swell",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.3863666666666667,
-        "coveredSettled" : 0.38813333333333333,
-        "darkness" : 0.0742773813051959,
-        "ms" : 51.95295810699463,
-        "name" : "fast wave",
-        "spread" : 1.0045725131567596
-      },
-      {
-        "covered" : 0.39055555555555554,
-        "coveredSettled" : 0.3907333333333333,
-        "darkness" : 0.07493470337305515,
-        "ms" : 93.04606914520264,
-        "name" : "slow wave",
-        "spread" : 1.0004551920341394
-      },
-      {
-        "covered" : 0.5433,
-        "coveredSettled" : 0.5437333333333333,
-        "darkness" : 0.050633974651108936,
-        "ms" : 93.14393997192383,
-        "name" : "spiral",
-        "spread" : 1.000797594944475
-      },
-      {
-        "covered" : 0.3352777777777778,
-        "coveredSettled" : 0.3353555555555556,
-        "darkness" : 0.079169947225014,
-        "ms" : 57.57796764373779,
-        "name" : "loop",
-        "spread" : 1.00023198011599
-      },
-      {
-        "covered" : 0.13095555555555555,
-        "coveredSettled" : 0.13104444444444444,
-        "darkness" : 0.09287931908293502,
-        "ms" : 30.11298179626465,
-        "name" : "tilted",
-        "spread" : 1.000678771423723
-      },
-      {
-        "covered" : 0.27703333333333335,
-        "coveredSettled" : 0.27703333333333335,
-        "darkness" : 0.09287931908293502,
-        "ms" : 27.453064918518066,
-        "name" : "over the wet one",
-        "spread" : 1
-      },
-      {
-        "covered" : 0.6528777777777778,
-        "coveredSettled" : 0.6530222222222222,
-        "darkness" : 0.046936974454069816,
-        "ms" : 149.25003051757812,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.07524864801582275,
-          0.03813181121481019,
-          0.012555660267576813,
-          0.003367254687214193
-        ],
-        "spread" : 1.0002212427032453
-      }
-    ]
-  },
-  {
-    "brush" : "0.45 · Sponge",
-    "medium" : "Watercolor",
-    "size" : 46,
-    "strokes" : [
-      {
-        "covered" : 0.10904444444444444,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 59.25595760345459,
-        "name" : "light line",
-        "spread" : 0
-      },
-      {
-        "covered" : 0.12861111111111112,
-        "coveredSettled" : 0.00044444444444444447,
-        "darkness" : 0.006381738199049619,
-        "ms" : 71.92099094390869,
-        "name" : "heavy line",
-        "spread" : 0.0034557235421166306
-      },
-      {
-        "covered" : 0.09432222222222222,
-        "coveredSettled" : 0.012822222222222223,
-        "darkness" : 0.015066053802514601,
-        "ms" : 46.49496078491211,
-        "name" : "pressure swell",
-        "spread" : 0.135940629049358
-      },
-      {
-        "covered" : 0.22517777777777778,
-        "coveredSettled" : 0.017466666666666665,
-        "darkness" : 0.012527131012349618,
-        "ms" : 174.11601543426514,
-        "name" : "fast wave",
-        "spread" : 0.07756834106385077
-      },
-      {
-        "covered" : 0.26126666666666665,
-        "coveredSettled" : 0.07852222222222222,
-        "darkness" : 0.02498561018151339,
-        "ms" : 363.6291027069092,
-        "name" : "slow wave",
-        "spread" : 0.30054435655354256
-      },
-      {
-        "covered" : 0.34013333333333334,
-        "coveredSettled" : 0.10973333333333334,
-        "darkness" : 0.020461619399306595,
-        "ms" : 252.77400016784668,
-        "name" : "spiral",
-        "spread" : 0.3226185809486476
-      },
-      {
-        "covered" : 0.2248888888888889,
-        "coveredSettled" : 0.043533333333333334,
-        "darkness" : 0.01971377911732537,
-        "ms" : 132.74705410003662,
-        "name" : "loop",
-        "spread" : 0.19357707509881422
-      },
-      {
-        "covered" : 0.08751111111111111,
-        "coveredSettled" : 0.1043111111111111,
-        "darkness" : 0.037952737645859186,
-        "ms" : 119.50194835662842,
-        "name" : "tilted",
-        "spread" : 1.1919756221432198
-      },
-      {
-        "covered" : 0.21838888888888888,
-        "coveredSettled" : 0.09543333333333333,
-        "darkness" : 0.037952737645859186,
-        "ms" : 126.3740062713623,
-        "name" : "over the wet one",
-        "spread" : 0.4369880437547698
-      },
-      {
-        "covered" : 0.4099777777777778,
-        "coveredSettled" : 0.1925,
-        "darkness" : 0.020482342196589825,
-        "ms" : 451.02596282958984,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.013598894891113105,
-          0.012840921890520766,
-          0.009984736806862925,
-          0.007047848138866663
-        ],
-        "spread" : 0.46953764431676515
-      }
-    ]
-  },
-  {
     "brush" : "0.45 · Eraser",
     "medium" : "Eraser",
     "size" : 30,
     "strokes" : [
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 42.192935943603516,
+        "covered" : 0.9471333333333334,
+        "coveredSettled" : 0.9496222222222223,
+        "darkness" : 0.8095972199055058,
+        "ms" : 56.800007820129395,
         "name" : "light line",
-        "spread" : 1
+        "spread" : 1.0026278125806527
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 44.07095909118652,
+        "covered" : 0.9403666666666667,
+        "coveredSettled" : 0.9393333333333334,
+        "darkness" : 0.807863967694852,
+        "ms" : 60.87899208068848,
         "name" : "heavy line",
-        "spread" : 1
+        "spread" : 0.9989011378540286
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 33.583998680114746,
+        "covered" : 0.9371555555555555,
+        "coveredSettled" : 0.9369,
+        "darkness" : 0.8109521764162074,
+        "ms" : 44.20793056488037,
         "name" : "pressure swell",
-        "spread" : 1
+        "spread" : 0.9997273072180594
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 125.3739595413208,
+        "covered" : 0.8780444444444444,
+        "coveredSettled" : 0.8773777777777778,
+        "darkness" : 0.7957718050083681,
+        "ms" : 160.49695014953613,
         "name" : "fast wave",
-        "spread" : 1
+        "spread" : 0.9992407369912939
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 216.1959409713745,
+        "covered" : 0.7985111111111111,
+        "coveredSettled" : 0.7978444444444445,
+        "darkness" : 0.8152940098701495,
+        "ms" : 243.45707893371582,
         "name" : "slow wave",
-        "spread" : 1
+        "spread" : 0.9991651128489133
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 226.7320156097412,
+        "covered" : 0.7951222222222222,
+        "coveredSettled" : 0.7947444444444445,
+        "darkness" : 0.7801066853274569,
+        "ms" : 343.3248996734619,
         "name" : "spiral",
-        "spread" : 1
+        "spread" : 0.9995248808708656
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 103.98399829864502,
+        "covered" : 0.8786333333333334,
+        "coveredSettled" : 0.8781222222222222,
+        "darkness" : 0.8019295914888424,
+        "ms" : 156.96310997009277,
         "name" : "loop",
-        "spread" : 1
+        "spread" : 0.9994182885036104
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 77.70395278930664,
+        "covered" : 0.9200333333333334,
+        "coveredSettled" : 0.9200222222222222,
+        "darkness" : 0.8080711662830825,
+        "ms" : 64.03100490570068,
         "name" : "tilted",
-        "spread" : 1
+        "spread" : 0.9999879231428812
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 61.419010162353516,
+        "covered" : 0.8918666666666667,
+        "coveredSettled" : 0.8914555555555556,
+        "darkness" : 0.8080711662830825,
+        "ms" : 63.081979751586914,
         "name" : "over the wet one",
-        "spread" : 1
+        "spread" : 0.9995390442019235
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 374.1610050201416,
+        "covered" : 0.7025666666666667,
+        "coveredSettled" : 0.7023222222222222,
+        "darkness" : 0.7698119974871792,
+        "ms" : 341.7220115661621,
         "name" : "long, no reload",
         "quarters" : [
-          0.004423086605133406,
-          0.004443275131214373,
-          0.004445343353733918,
-          0.004425792416245985
+          0.562054318571538,
+          0.5548741324469229,
+          0.5382749409320481,
+          0.5268758047387317
         ],
-        "spread" : 1
+        "spread" : 0.9996520693963403
       }
     ]
   },
@@ -3632,90 +470,90 @@
     "size" : 30,
     "strokes" : [
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 28.401970863342285,
+        "covered" : 0.9493777777777778,
+        "coveredSettled" : 0.9496888888888889,
+        "darkness" : 0.838026823788039,
+        "ms" : 47.300100326538086,
         "name" : "light line",
-        "spread" : 1
+        "spread" : 1.0003277000140443
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 40.152907371520996,
+        "covered" : 0.9579,
+        "coveredSettled" : 0.9574333333333334,
+        "darkness" : 0.8380089193849171,
+        "ms" : 54.06296253204346,
         "name" : "heavy line",
-        "spread" : 1
+        "spread" : 0.9995128231896162
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 27.67205238342285,
+        "covered" : 0.9574888888888888,
+        "coveredSettled" : 0.9570444444444445,
+        "darkness" : 0.8380409160307108,
+        "ms" : 41.953086853027344,
         "name" : "pressure swell",
-        "spread" : 1
+        "spread" : 0.9995358228700073
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 90.96503257751465,
+        "covered" : 0.9568555555555556,
+        "coveredSettled" : 0.9561444444444445,
+        "darkness" : 0.8379596321595565,
+        "ms" : 125.78999996185303,
         "name" : "fast wave",
-        "spread" : 1
+        "spread" : 0.9992568250171279
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 146.62301540374756,
+        "covered" : 0.9410333333333334,
+        "coveredSettled" : 0.9404,
+        "darkness" : 0.8387005376556329,
+        "ms" : 210.05499362945557,
         "name" : "slow wave",
-        "spread" : 1
+        "spread" : 0.999326980978357
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 148.9729881286621,
+        "covered" : 0.9424,
+        "coveredSettled" : 0.9420222222222222,
+        "darkness" : 0.838315571451754,
+        "ms" : 316.88106060028076,
         "name" : "spiral",
-        "spread" : 1
+        "spread" : 0.9995991322392002
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 73.62198829650879,
+        "covered" : 0.9486444444444444,
+        "coveredSettled" : 0.9481333333333334,
+        "darkness" : 0.8383896873574666,
+        "ms" : 149.9570608139038,
         "name" : "loop",
-        "spread" : 1
+        "spread" : 0.9994612195179087
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 49.59404468536377,
+        "covered" : 0.9486333333333333,
+        "coveredSettled" : 0.9486222222222223,
+        "darkness" : 0.8383500629795707,
+        "ms" : 68.88198852539062,
         "name" : "tilted",
-        "spread" : 1
+        "spread" : 0.9999882872436371
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 34.49392318725586,
+        "covered" : 0.9486222222222223,
+        "coveredSettled" : 0.9482111111111111,
+        "darkness" : 0.8383500629795707,
+        "ms" : 60.50097942352295,
         "name" : "over the wet one",
-        "spread" : 1
+        "spread" : 0.9995666229385307
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 211.8380069732666,
+        "covered" : 0.9409555555555555,
+        "coveredSettled" : 0.9407111111111112,
+        "darkness" : 0.8387294768431328,
+        "ms" : 327.8930187225342,
         "name" : "long, no reload",
         "quarters" : [
-          0,
-          0,
-          0,
-          0
+          0.8073902633594,
+          0.8084063592215793,
+          0.8079583930405223,
+          0.8079466594040221
         ],
-        "spread" : 1
+        "spread" : 0.9997402168008881
       }
     ]
   },
@@ -3725,183 +563,90 @@
     "size" : 10,
     "strokes" : [
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 14.049053192138672,
+        "covered" : 0.9493777777777778,
+        "coveredSettled" : 0.9496888888888889,
+        "darkness" : 0.8381035149926015,
+        "ms" : 16.582965850830078,
         "name" : "light line",
-        "spread" : 1
+        "spread" : 1.0003277000140443
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 9.109020233154297,
+        "covered" : 0.9579,
+        "coveredSettled" : 0.9574333333333334,
+        "darkness" : 0.838085606702604,
+        "ms" : 13.997912406921387,
         "name" : "heavy line",
-        "spread" : 1
+        "spread" : 0.9995128231896162
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 6.039977073669434,
+        "covered" : 0.9574888888888888,
+        "coveredSettled" : 0.9570444444444445,
+        "darkness" : 0.8381176069616876,
+        "ms" : 9.303092956542969,
         "name" : "pressure swell",
-        "spread" : 1
+        "spread" : 0.9995358228700073
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 16.37101173400879,
+        "covered" : 0.9568555555555556,
+        "coveredSettled" : 0.9562333333333334,
+        "darkness" : 0.8380335159997091,
+        "ms" : 29.205918312072754,
         "name" : "fast wave",
-        "spread" : 1
+        "spread" : 0.9993497218899869
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 14.3280029296875,
+        "covered" : 0.9410333333333334,
+        "coveredSettled" : 0.9404,
+        "darkness" : 0.8387794326879207,
+        "ms" : 31.40401840209961,
         "name" : "slow wave",
-        "spread" : 1
+        "spread" : 0.999326980978357
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 29.08492088317871,
+        "covered" : 0.9424,
+        "coveredSettled" : 0.9420666666666667,
+        "darkness" : 0.83840813793245,
+        "ms" : 72.51298427581787,
         "name" : "spiral",
-        "spread" : 1
+        "spread" : 0.9996462931522355
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 17.727017402648926,
+        "covered" : 0.9486444444444444,
+        "coveredSettled" : 0.9481333333333334,
+        "darkness" : 0.8384663749851562,
+        "ms" : 25.32196044921875,
         "name" : "loop",
-        "spread" : 1
+        "spread" : 0.9994612195179087
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 6.908059120178223,
+        "covered" : 0.9486333333333333,
+        "coveredSettled" : 0.9486222222222223,
+        "darkness" : 0.8384267463247121,
+        "ms" : 10.830044746398926,
         "name" : "tilted",
-        "spread" : 1
+        "spread" : 0.9999882872436371
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 6.346940994262695,
+        "covered" : 0.9486222222222223,
+        "coveredSettled" : 0.9482111111111111,
+        "darkness" : 0.8384267463247121,
+        "ms" : 11.8180513381958,
         "name" : "over the wet one",
-        "spread" : 1
+        "spread" : 0.9995666229385307
       },
       {
-        "covered" : 0,
-        "coveredSettled" : 0,
-        "darkness" : 0,
-        "ms" : 34.19804573059082,
+        "covered" : 0.9409555555555555,
+        "coveredSettled" : 0.9407222222222222,
+        "darkness" : 0.8388057555646744,
+        "ms" : 71.05100154876709,
         "name" : "long, no reload",
         "quarters" : [
-          0,
-          0,
-          0,
-          0
+          0.8074638516468822,
+          0.8084765390599913,
+          0.8080326858010501,
+          0.8080237195118101
         ],
-        "spread" : 1
-      }
-    ]
-  },
-  {
-    "brush" : "Brush Artist · Sumi — wetter",
-    "medium" : "Watercolor",
-    "size" : 24,
-    "strokes" : [
-      {
-        "covered" : 0.053922222222222226,
-        "coveredSettled" : 0.0597,
-        "darkness" : 0.20727009630454132,
-        "ms" : 54.98802661895752,
-        "name" : "light line",
-        "spread" : 1.1071502163610139
-      },
-      {
-        "covered" : 0.10823333333333333,
-        "coveredSettled" : 0.12282222222222222,
-        "darkness" : 0.12641140569350837,
-        "ms" : 70.0380802154541,
-        "name" : "heavy line",
-        "spread" : 1.1347910892105533
-      },
-      {
-        "covered" : 0.0727,
-        "coveredSettled" : 0.08246666666666666,
-        "darkness" : 0.15573350931018287,
-        "ms" : 43.080925941467285,
-        "name" : "pressure swell",
-        "spread" : 1.1343420449335166
-      },
-      {
-        "covered" : 0.20957777777777778,
-        "coveredSettled" : 0.24046666666666666,
-        "darkness" : 0.12206753771248506,
-        "ms" : 140.2360200881958,
-        "name" : "fast wave",
-        "spread" : 1.1473862792916976
-      },
-      {
-        "covered" : 0.1899111111111111,
-        "coveredSettled" : 0.21694444444444444,
-        "darkness" : 0.15217764006774487,
-        "ms" : 233.2460880279541,
-        "name" : "slow wave",
-        "spread" : 1.1423472969810438
-      },
-      {
-        "covered" : 0.2858222222222222,
-        "coveredSettled" : 0.3238,
-        "darkness" : 0.12070869766829999,
-        "ms" : 249.92692470550537,
-        "name" : "spiral",
-        "spread" : 1.1328720261234644
-      },
-      {
-        "covered" : 0.16876666666666668,
-        "coveredSettled" : 0.1945888888888889,
-        "darkness" : 0.1476870149746671,
-        "ms" : 123.90601634979248,
-        "name" : "loop",
-        "spread" : 1.1530054644808743
-      },
-      {
-        "covered" : 0.06131111111111111,
-        "coveredSettled" : 0.07201111111111111,
-        "darkness" : 0.16054778773575273,
-        "ms" : 59.811949729919434,
-        "name" : "tilted",
-        "spread" : 1.1745197535338892
-      },
-      {
-        "covered" : 0.1621,
-        "coveredSettled" : 0.17322222222222222,
-        "darkness" : 0.16054778773575273,
-        "ms" : 53.900957107543945,
-        "name" : "over the wet one",
-        "spread" : 1.068613338816917
-      },
-      {
-        "covered" : 0.33475555555555553,
-        "coveredSettled" : 0.3733444444444444,
-        "darkness" : 0.12280018767575689,
-        "ms" : 355.28600215911865,
-        "name" : "long, no reload",
-        "quarters" : [
-          0.10001772500937996,
-          0.054654637614091284,
-          0.03373254235512412,
-          0.022977170960233138
-        ],
-        "spread" : 1.1152748274030801
+        "spread" : 0.9997520251281203
       }
     ]
   }
