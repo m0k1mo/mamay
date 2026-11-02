@@ -109,6 +109,8 @@ jobs:
             echo '## swift test — errors'; echo '```'
             grep -E "error:|✘|fatal" test.log | grep -vE "✔|known issue|^\| " | sort -u | head -60 || true
             tail -1 test.log; echo '```'
+            # measures a test prints for the lead (speed of the grand run, bits per idea…)
+            if grep -q "^MAMAY " test.log; then echo '## measures'; echo '```'; grep "^MAMAY " test.log | sort -u | head -40; echo '```'; fi
             # golden: only the sheets that fail, and what changed against the last report of this branch
             if [ -f ci-out/golden/real.md ]; then
               echo '## golden (✘ rows; Δ vs previous)'; echo '```'
