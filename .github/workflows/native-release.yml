@@ -42,7 +42,7 @@ jobs:
     steps:
       - id: r
         env:
-          GH_TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          GH_TOKEN: ${{ secrets.RUNNERS_TOKEN || secrets.FORMLAB_CODE_TOKEN }}   # RUNNERS_TOKEN: fine-grained, m0k1mo/mamay, Administration: Read-only
         run: |
           R="${{ github.event.inputs.runner }}"
           if [ -z "$R" ] && [ "${{ github.event_name }}" = push ]; then   # the queue file may name it: {"runner": "xcode-27"}

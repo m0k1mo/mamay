@@ -71,7 +71,7 @@ jobs:
     steps:
       - id: r
         env:
-          GH_TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          GH_TOKEN: ${{ secrets.RUNNERS_TOKEN || secrets.FORMLAB_CODE_TOKEN }}   # RUNNERS_TOKEN: fine-grained, m0k1mo/mamay, Administration: Read-only
         run: |
           R=""
           if [ -z "$R" ]; then
