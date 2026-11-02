@@ -33,8 +33,23 @@ permissions:
   contents: write
 
 jobs:
+  where:
+    # the queue file may name the runner (Artem 03.11: the Mac travels — test builds go to GitHub's Mac): {"runner": "xcode-27"}
+    runs-on: ubuntu-latest
+    outputs:
+      runner: ${{ steps.r.outputs.runner }}
+    steps:
+      - id: r
+        run: |
+          R="${{ github.event.inputs.runner }}"
+          if [ -z "$R" ]; then
+            R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/native-release-queue/next.json" \
+                | python3 -c "import json,sys;print(json.load(sys.stdin).get('runner','artem-mac'))" || echo artem-mac)
+          fi
+          echo "runner=$R" >> "$GITHUB_OUTPUT"
   release:
-    runs-on: ${{ github.event.inputs.runner || 'artem-mac' }}
+    needs: where
+    runs-on: ${{ needs.where.outputs.runner }}
     timeout-minutes: 60
     steps:
       - name: What to build
@@ -88,7 +103,7 @@ jobs:
         run: |
           set -eo pipefail
           # on Artem's Mac: no Finder windows while the DMG is made (create-dmg would open one to lay out the icons)
-          SKIP=""; [ "${{ github.event.inputs.runner || 'artem-mac' }}" = "artem-mac" ] && SKIP="--skip-jenkins"
+          SKIP=""; [ "${{ needs.where.outputs.runner }}" = "artem-mac" ] && SKIP="--skip-jenkins"
           rm -rf ../../out Payload
           mkdir -p ../../out
           M=dd/Build/Products/Release
