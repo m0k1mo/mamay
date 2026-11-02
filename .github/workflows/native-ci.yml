@@ -69,7 +69,8 @@ jobs:
           xcodegen generate --quiet
           ok=1
           W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i nice -n 15"
-          for s in Mamay-Mac MamayTester-Mac; do
+          APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
+          for s in $APPS; do
             $W xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
               -derivedDataPath dd CODE_SIGN_IDENTITY=- build > "../../build-$s.log" 2>&1 || ok=0
           done

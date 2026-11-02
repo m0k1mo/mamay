@@ -73,7 +73,8 @@ jobs:
           set -eo pipefail
           sed -i '' "s/MARKETING_VERSION: \".*\"/MARKETING_VERSION: \"$V\"/; s/CURRENT_PROJECT_VERSION: \".*\"/CURRENT_PROJECT_VERSION: \"${{ github.run_number }}\"/" project.yml
           xcodegen generate --quiet
-          for s in Mamay-Mac MamayTester-Mac; do
+          APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
+          for s in $APPS; do
             xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
               -derivedDataPath dd CODE_SIGN_IDENTITY=- build | tail -3
           done
@@ -96,6 +97,11 @@ jobs:
             "../../out/Mamay-Native-$V.dmg" "$M/Mamay Native.app" || hdiutil create -volname "Mamay Native" -srcfolder "$M/Mamay Native.app" -ov -format UDZO "../../out/Mamay-Native-$V.dmg"
           create-dmg $SKIP --volname "Mamay Tester $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native Tester.app" 160 160 \
             "../../out/Mamay-Native-Tester-$V.dmg" "$M/Mamay Native Tester.app" || hdiutil create -volname "Mamay Tester" -srcfolder "$M/Mamay Native Tester.app" -ov -format UDZO "../../out/Mamay-Native-Tester-$V.dmg"
+          if [ -d "$M/Mamay Parser.app" ]; then   # Mamay Parser (from 0.1.9)
+            codesign --force --deep -s - "$M/Mamay Parser.app"
+            create-dmg $SKIP --volname "Mamay Parser $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Parser.app" 160 160 \
+              "../../out/Mamay-Parser-$V.dmg" "$M/Mamay Parser.app" || hdiutil create -volname "Mamay Parser" -srcfolder "$M/Mamay Parser.app" -ov -format UDZO "../../out/Mamay-Parser-$V.dmg"
+          fi
           I=dd/Build/Products/Release-iphoneos
           mkdir -p Payload && cp -R "$I/Mamay.app" Payload/ && ditto -c -k --keepParent Payload "../../out/Mamay-Native-iPad-$V.ipa"
           ls -la ../../out
