@@ -57,7 +57,7 @@ jobs:
           set -o pipefail
           mkdir -p "$GITHUB_WORKSPACE/ci-out"
           # on Artem's Mac: lowest priority (his apps first) and no sleep while building
-          W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i nice -n 15"
+          W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i"   # Artem 02.11, 11:58: the Mac at full power for builds
           GL=""; [ -f "$GITHUB_WORKSPACE/golden-last.json" ] && GL="$GITHUB_WORKSPACE/golden-last.json"
           MAMAY_GOLDEN_LAST="$GL" MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
         continue-on-error: true
@@ -68,7 +68,7 @@ jobs:
           set -o pipefail
           xcodegen generate --quiet
           ok=1
-          W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i nice -n 15"
+          W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i"   # Artem 02.11, 11:58: the Mac at full power for builds
           APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
           for s in $APPS; do
             $W xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
