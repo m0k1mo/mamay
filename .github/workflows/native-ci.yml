@@ -125,6 +125,7 @@ jobs:
               echo '```'
             done
           } > $R
+          rm -rf rep   # the self-hosted runner keeps its workspace: a clone left by the last run made every push since 02.11 00:38 fail
           git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep 2>/dev/null || {
             git init -q rep && git -C rep checkout -q --orphan native-ci-reports && git -C rep remote add origin "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git"; }
           mkdir -p rep/native-ci
