@@ -66,6 +66,7 @@ jobs:
         working-directory: src/native
         run: |
           set -o pipefail
+          sh scripts/fingerprints.sh   # what this build is made of: progress in the Tester is kept by these, not by the version
           xcodegen generate --quiet
           ok=1
           W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i"   # Artem 02.11, 11:58: the Mac at full power for builds

@@ -72,6 +72,7 @@ jobs:
         run: |
           set -eo pipefail
           sed -i '' "s/MARKETING_VERSION: \".*\"/MARKETING_VERSION: \"$V\"/; s/CURRENT_PROJECT_VERSION: \".*\"/CURRENT_PROJECT_VERSION: \"${{ github.run_number }}\"/" project.yml
+          sh scripts/fingerprints.sh   # what this build is made of: progress in the Tester is kept by these, not by the version
           xcodegen generate --quiet
           APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
           for s in $APPS; do
