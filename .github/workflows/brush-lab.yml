@@ -1,0 +1,72 @@
+# Brush Lab in the cloud (M2, Artem 03.11: the Mac stays home; the Brush Artist must still create brushes and see what works).
+# A GitHub Mac paints every brush of Mamay — the 15 tuned presets, the 23 techniques of 0.45, the erasers — and every Brush
+# Artist pack in brush-lab/packs/*.json with the same ten strokes on the CPU reference of Mamay's paint engine, and publishes
+# a sheet per brush, numbers.json and report.md on the branch `brush-lab-out` (public: raw.githubusercontent.com/m0k1mo/mamay/
+# brush-lab-out/report.md). Runs when a pack is pushed, by hand (only some brushes, or only the packs), and from the lead.
+name: Brush Lab
+
+on:
+  push:
+    branches: [main]
+    paths: ['brush-lab/packs/**']
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: commit or branch of m0k1mo/Formlab
+        default: native/lead-0111
+      only:
+        description: only these brushes (names, comma-separated; empty = all)
+        default: ''
+      packs_only:
+        description: only the Brush Artist's packs
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: brush-lab
+  cancel-in-progress: false
+
+jobs:
+  lab:
+    runs-on: xcode-27
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: mamay
+      - uses: actions/checkout@v4
+        with:
+          repository: m0k1mo/Formlab
+          ref: ${{ github.event.inputs.ref || 'native/lead-0111' }}
+          token: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          path: src
+      - name: Paint every brush
+        working-directory: src/native
+        env:
+          ONLY: ${{ github.event.inputs.only }}
+          PACKS_ONLY: ${{ github.event.inputs.packs_only }}
+        run: |
+          set -eo pipefail
+          xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
+          swift build -c release --product brushlab 2>&1 | tail -5
+          A=(--out "$GITHUB_WORKSPACE/out" --packs "$GITHUB_WORKSPACE/mamay/brush-lab/packs" --url-prefix "")
+          [ -n "$ONLY" ] && A+=(--only "$ONLY")
+          [ "$PACKS_ONLY" = "true" ] && A+=(--packs-only)
+          "$(swift build -c release --show-bin-path)/brushlab" "${A[@]}"
+      - name: Publish on brush-lab-out
+        run: |
+          set -eo pipefail
+          cd "$GITHUB_WORKSPACE"
+          git clone -q --depth 1 -b brush-lab-out "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" pub 2>/dev/null || {
+            git init -q pub && cd pub && git checkout -q --orphan brush-lab-out && cd ..; }
+          cd pub
+          # a partial run (only some brushes) keeps the other sheets; the report and numbers are of this run
+          cp -f ../out/*.png . 2>/dev/null || true
+          cp -f ../out/report.md ../out/numbers.json .
+          printf '%s\n' "${{ github.sha }} $(date -u +%FT%TZ) run ${{ github.run_number }}" > LAST_RUN
+          git add -A
+          git -c user.name="brush-lab" -c user.email="brush-lab@users.noreply.github.com" commit -qm "Brush Lab run ${{ github.run_number }}" || exit 0
+          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:brush-lab-out

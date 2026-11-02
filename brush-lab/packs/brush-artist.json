@@ -1,0 +1,7 @@
+{"id": "brush-artist", "version": 1, "folder": "Brush Artist",
+ "brushes": [
+  {"name": "Sumi — wetter", "recipe": {"size": 24, "path": {"smoothing": 0.25, "pressureToSize": 0.75},
+    "tool": {"stiffness": 0.25, "capacity": 1.8, "release": 0.75, "bristle": 0.3, "entropy": 0.45},
+    "material": {"color": {"r": 0.008, "g": 0.008, "b": 0.01, "a": 1}, "water": 0.85, "pigment": 1, "stain": 0.7},
+    "form": {"source": "round", "round": 0.8, "rag": 1}}}
+ ]}
