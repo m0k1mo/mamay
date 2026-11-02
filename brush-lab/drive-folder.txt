@@ -1,0 +1,2 @@
+# The Brush Artist's Drive folder «Formlab — художники/Brush Packs» — read every 2 hours by brush-lab.yml (gdown --folder).
+# It works once the folder is shared «Anyone with the link — Viewer». Empty = packs come by push only.

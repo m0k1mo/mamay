@@ -9,6 +9,8 @@ on:
   push:
     branches: [main]
     paths: ['brush-lab/packs/**']
+  schedule:
+    - cron: '17 */2 * * *'   # every 2 hours: new packs from the Brush Artist's Drive folder (brush-lab/drive-folder.txt)
   workflow_dispatch:
     inputs:
       ref:
@@ -30,13 +32,47 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  drive:
+    # cheap: a Linux box looks at the Drive folder; the Mac starts only when there is something to paint
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.drive.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: mamay
+      - name: Packs from the Brush Artist's Drive folder
+        id: drive
+        working-directory: mamay
+        run: |
+          set -eo pipefail
+          echo "changed=0" >> "$GITHUB_OUTPUT"
+          F=$(grep -v '^#' brush-lab/drive-folder.txt 2>/dev/null | head -1 | tr -d '[:space:]' || true)
+          [ -n "$F" ] || { echo "no Drive folder link — packs come by push only"; exit 0; }
+          python3 -m pip install -q --user gdown >/dev/null 2>&1 || pip3 install -q gdown
+          rm -rf /tmp/drive && mkdir -p /tmp/drive
+          python3 -m gdown --folder "$F" -O /tmp/drive --quiet || { echo "the Drive folder is not readable (is it shared «anyone with the link»?)"; exit 0; }
+          for f in $(find /tmp/drive -name '*.json'); do
+            id=$(python3 -c "import json,sys;d=json.load(open(sys.argv[1]));assert isinstance(d['id'],str) and isinstance(d['version'],int) and isinstance(d['brushes'],list);print(d['id'])" "$f" 2>/dev/null) || { echo "skip $(basename "$f"): not a pack"; continue; }
+            python3 -c "import json,sys;json.dump(json.load(open(sys.argv[1])),open(sys.argv[2],'w'),ensure_ascii=False,indent=1)" "$f" /tmp/pack.json
+            if ! cmp -s /tmp/pack.json "brush-lab/packs/$id.json"; then cp /tmp/pack.json "brush-lab/packs/$id.json"; echo "new: $id"; echo "changed=1" >> "$GITHUB_OUTPUT"; fi
+          done
+          if git status --porcelain brush-lab/packs | grep -q .; then
+            git add brush-lab/packs
+            git -c user.name="brush-lab" -c user.email="brush-lab@users.noreply.github.com" commit -qm "Brush Lab: packs from the Brush Artist's Drive folder"
+            git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:main
+          fi
+
   lab:
+    needs: drive
+    if: github.event_name != 'schedule' || needs.drive.outputs.changed == '1'
     runs-on: xcode-27
     timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
         with:
           path: mamay
+          ref: main
       - uses: actions/checkout@v4
         with:
           repository: m0k1mo/Formlab
