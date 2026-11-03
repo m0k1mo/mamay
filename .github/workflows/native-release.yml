@@ -65,8 +65,8 @@ jobs:
         id: p
         env:
           IN_REF: ${{ github.event.inputs.ref }}
-          IN_V: ${{ steps.p.outputs.version }}
-          IN_NOTES: ${{ steps.p.outputs.notes }}
+          IN_V: ${{ github.event.inputs.version }}
+          IN_NOTES: ${{ github.event.inputs.notes }}
           REPO: ${{ github.repository }}
           SHA: ${{ github.sha }}
         run: |
@@ -76,6 +76,7 @@ jobs:
             IN_V=$(python3 -c "import json;print(json.load(open('q.json'))['version'])")
             IN_NOTES=$(python3 -c "import json;print(json.load(open('q.json')).get('notes',''))")
           fi
+          [ -n "$IN_V" ] || { echo "no version — nothing to publish"; exit 1; }
           [ -n "$IN_NOTES" ] || IN_NOTES="ТЕСТОВА збірка Mamay Native + Mamay Tester (для тестів, не для роботи). Нові збірки приходять у самому Тестері — кнопка Update."
           echo "ref=$IN_REF" >> "$GITHUB_OUTPUT"; echo "version=$IN_V" >> "$GITHUB_OUTPUT"
           { echo "notes<<EOF_NOTES"; echo "$IN_NOTES"; echo "EOF_NOTES"; } >> "$GITHUB_OUTPUT"
