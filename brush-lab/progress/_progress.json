@@ -1,14 +1,14 @@
 {
- "step": "50 references done on the new engine \u2014 average 5.9/10 (Oct 4.9)",
- "doing": "waiting for wet-in-wet spreading in the engine",
+ "step": "50 references \u2014 average 6.0/10 after the wet-in-wet engine (Oct 4.9)",
+ "doing": "refs v10 (#47 back to a flat slab)",
  "done": 50,
  "running": false,
- "updated": "2026-11-03T17:46:14Z",
+ "updated": "2026-11-03T21:01:11Z",
  "session": "Brush Artist",
  "log": [
-  "14:50 all 50 redone (old engine) \u2014 5.2",
   "19:15 engine 0.1.25 \u2014 5.4",
   "19:40 real sheet grounds, dry layer \u2014 refs v6",
-  "20:05 refs v7 \u2014 5.9; paused"
+  "20:05 refs v7 \u2014 5.9; paused",
+  "23:00 refs v9 \u2014 wet-in-wet spreads, 6.0; paused"
  ]
 }
