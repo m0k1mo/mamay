@@ -135,6 +135,8 @@ jobs:
             echo '## swift test — errors'; echo '```'
             grep -E "error:|✘|fatal" test.log | grep -vE "✔|known issue|^\| " | sort -u | head -60 || true
             tail -1 test.log; echo '```'
+            # what a failed expectation says (its comment with the numbers, the values Swift Testing prints after it)
+            if grep -q "Expectation failed" test.log; then echo '## failed expectations — the numbers'; echo '```'; grep -E -A3 "Expectation failed" test.log | grep -E "↳|→|Expectation failed" | sed 's/\x1b\[[0-9;]*m//g' | head -60; echo '```'; fi
             # measures a test prints for the lead (speed of the grand run, bits per idea…)
             if grep -q "^MAMAY " test.log; then echo '## measures'; echo '```'; grep "^MAMAY " test.log | sort -u | head -40; echo '```'; fi
             # golden: only the sheets that fail, and what changed against the last report of this branch
