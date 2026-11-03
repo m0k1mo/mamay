@@ -1,7 +1,551 @@
-{"id": "brush-artist", "version": 1, "folder": "Brush Artist",
+{
+ "id": "brush-artist",
+ "version": 2,
+ "folder": "Brush Artist",
  "brushes": [
-  {"name": "Sumi — wetter", "recipe": {"size": 24, "path": {"smoothing": 0.25, "pressureToSize": 0.75},
-    "tool": {"stiffness": 0.25, "capacity": 1.8, "release": 0.75, "bristle": 0.3, "entropy": 0.45},
-    "material": {"color": {"r": 0.008, "g": 0.008, "b": 0.01, "a": 1}, "water": 0.85, "pigment": 1, "stain": 0.7},
-    "form": {"source": "round", "round": 0.8, "rag": 1}}}
- ]}
+  {
+   "name": "Ink wash A",
+   "recipe": {
+    "size": 40,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.15,
+     "capacity": 2,
+     "bristle": 0.1,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.7,
+     "pigment": 3,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.3
+    }
+   }
+  },
+  {
+   "name": "Ink wash B",
+   "recipe": {
+    "size": 40,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.15,
+     "capacity": 2,
+     "bristle": 0.1,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.85,
+     "pigment": 3,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.3
+    }
+   }
+  },
+  {
+   "name": "Ink wash C",
+   "recipe": {
+    "size": 36,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.15,
+     "capacity": 2,
+     "bristle": 0.1,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.62,
+     "pigment": 2,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.3
+    }
+   }
+  },
+  {
+   "name": "Ink wash D (ink path)",
+   "recipe": {
+    "size": 40,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.15,
+     "capacity": 3,
+     "bristle": 0.1,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.5,
+     "pigment": 0.4,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.3
+    }
+   }
+  },
+  {
+   "name": "Ink dry A",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.6
+    },
+    "tool": {
+     "stiffness": 0.7,
+     "capacity": 0.6,
+     "bristle": 1,
+     "entropy": 0.9
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.3,
+     "pigment": 3,
+     "hold": 0
+    },
+    "form": {
+     "source": "round",
+     "round": 0.45,
+     "rag": 1.6
+    }
+   }
+  },
+  {
+   "name": "Ink dry B",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.6
+    },
+    "tool": {
+     "stiffness": 0.7,
+     "capacity": 0.9,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.3,
+     "pigment": 3,
+     "hold": 0
+    },
+    "form": {
+     "source": "round",
+     "round": 0.45,
+     "rag": 1.6
+    }
+   }
+  },
+  {
+   "name": "Ink dry C",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.6
+    },
+    "tool": {
+     "stiffness": 0.7,
+     "capacity": 0.5,
+     "bristle": 0.7,
+     "entropy": 1
+    },
+    "material": {
+     "color": {
+      "r": 0.0056,
+      "g": 0.0056,
+      "b": 0.0056,
+      "a": 1
+     },
+     "water": 0.3,
+     "pigment": 3,
+     "hold": 0
+    },
+    "form": {
+     "source": "round",
+     "round": 0.45,
+     "rag": 1.6
+    }
+   }
+  },
+  {
+   "name": "Watercolour wash A",
+   "recipe": {
+    "size": 46,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.12,
+     "capacity": 2.5,
+     "bristle": 0.05,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.1144,
+      "b": 0.4342,
+      "a": 1
+     },
+     "water": 0.65,
+     "pigment": 3,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.35
+    }
+   }
+  },
+  {
+   "name": "Watercolour wash B",
+   "recipe": {
+    "size": 46,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.12,
+     "capacity": 2.5,
+     "bristle": 0.05,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.1144,
+      "b": 0.4342,
+      "a": 1
+     },
+     "water": 0.8,
+     "pigment": 3,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.35
+    }
+   }
+  },
+  {
+   "name": "Watercolour wash C",
+   "recipe": {
+    "size": 50,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.7
+    },
+    "tool": {
+     "stiffness": 0.12,
+     "capacity": 2.5,
+     "bristle": 0.05,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.1144,
+      "b": 0.4342,
+      "a": 1
+     },
+     "water": 0.7,
+     "pigment": 2,
+     "hold": 1
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.35
+    }
+   }
+  },
+  {
+   "name": "Gouache A",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.6
+    },
+    "tool": {
+     "stiffness": 0.55,
+     "capacity": 1.2,
+     "bristle": 0.25,
+     "entropy": 0.2
+    },
+    "material": {
+     "color": {
+      "r": 0.7454,
+      "g": 0.4342,
+      "b": 0.0144,
+      "a": 1
+     },
+     "water": 0.45,
+     "cover": 0.9,
+     "pigment": 1.2,
+     "hold": 0.6
+    },
+    "form": {
+     "source": "round",
+     "round": 0.55,
+     "rag": 0.6
+    }
+   }
+  },
+  {
+   "name": "Gouache B",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.6
+    },
+    "tool": {
+     "stiffness": 0.55,
+     "capacity": 0.8,
+     "bristle": 0.25,
+     "entropy": 0.35
+    },
+    "material": {
+     "color": {
+      "r": 0.7454,
+      "g": 0.4342,
+      "b": 0.0144,
+      "a": 1
+     },
+     "water": 0.45,
+     "cover": 0.9,
+     "pigment": 1.2,
+     "hold": 0.3
+    },
+    "form": {
+     "source": "round",
+     "round": 0.55,
+     "rag": 0.6
+    }
+   }
+  },
+  {
+   "name": "Oil A",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.5
+    },
+    "tool": {
+     "stiffness": 0.8,
+     "capacity": 1.2,
+     "bristle": 1,
+     "entropy": 0.7
+    },
+    "material": {
+     "color": {
+      "r": 0.0273,
+      "g": 0.1144,
+      "b": 0.3916,
+      "a": 1
+     },
+     "water": 0.05,
+     "thick": 0.5,
+     "cover": 0.95,
+     "pigment": 1.4,
+     "hold": 0.3,
+     "gloss": 0.6,
+     "body": 0.4
+    },
+    "form": {
+     "source": "flat",
+     "round": 0.3,
+     "rag": 0.8
+    },
+    "counterform": {
+     "tool": "bristles",
+     "push": 0.5
+    }
+   }
+  },
+  {
+   "name": "Oil B",
+   "recipe": {
+    "size": 30,
+    "path": {
+     "smoothing": 0.25,
+     "pressureToSize": 0.5
+    },
+    "tool": {
+     "stiffness": 0.6,
+     "capacity": 1.2,
+     "bristle": 0.7,
+     "entropy": 0.5
+    },
+    "material": {
+     "color": {
+      "r": 0.0273,
+      "g": 0.1144,
+      "b": 0.3916,
+      "a": 1
+     },
+     "water": 0.05,
+     "thick": 0.5,
+     "cover": 0.95,
+     "pigment": 1.4,
+     "hold": 0.3,
+     "gloss": 0.6,
+     "body": 0.4
+    },
+    "form": {
+     "source": "flat",
+     "round": 0.3,
+     "rag": 0.8
+    },
+    "counterform": {
+     "tool": "bristles",
+     "push": 0.5
+    }
+   }
+  },
+  {
+   "name": "Charcoal A",
+   "recipe": {
+    "size": 14,
+    "path": {
+     "smoothing": 0.2,
+     "pressureToSize": 1,
+     "pressureCurve": 1.4
+    },
+    "tool": {
+     "stiffness": 1,
+     "capacity": 3,
+     "bristle": 0,
+     "entropy": 0.5
+    },
+    "material": {
+     "color": {
+      "r": 0.0116,
+      "g": 0.011,
+      "b": 0.0103,
+      "a": 1
+     },
+     "water": 0,
+     "dry": 1,
+     "thick": 0.3,
+     "cover": 0,
+     "pigment": 1
+    },
+    "form": {
+     "source": "charcoal",
+     "round": 0.6
+    }
+   }
+  },
+  {
+   "name": "Charcoal B",
+   "recipe": {
+    "size": 20,
+    "path": {
+     "smoothing": 0.2,
+     "pressureToSize": 1,
+     "pressureCurve": 1.4
+    },
+    "tool": {
+     "stiffness": 1,
+     "capacity": 3,
+     "bristle": 0,
+     "entropy": 0.5
+    },
+    "material": {
+     "color": {
+      "r": 0.0116,
+      "g": 0.011,
+      "b": 0.0103,
+      "a": 1
+     },
+     "water": 0,
+     "dry": 1,
+     "thick": 0.3,
+     "cover": 0.2,
+     "pigment": 0.6
+    },
+    "form": {
+     "source": "round",
+     "round": 0.5,
+     "rag": 2.4
+    },
+    "steps": [
+     {
+      "noise": {
+       "_0": 0.5,
+       "scale": 6,
+       "seed": 3
+      }
+     }
+    ]
+   }
+  }
+ ]
+}
