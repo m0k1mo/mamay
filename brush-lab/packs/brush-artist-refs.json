@@ -1,10 +1,10 @@
 {
  "id": "brush-artist-refs",
- "version": 11,
+ "version": 12,
  "folder": "Brush Artist · Refs",
  "brushes": [
   {
-   "name": "#01 Drag #22403f",
+   "name": "#01 Henry Ward peach cloud",
    "recipe": {
     "size": 44,
     "flow": 1,
@@ -1897,7 +1897,7 @@
    }
   },
   {
-   "name": "#02 Drag #2b2f1c",
+   "name": "#02 Henry Ward cream strokes",
    "recipe": {
     "size": 46,
     "flow": 1,
@@ -3758,7 +3758,7 @@
    }
   },
   {
-   "name": "#04 Drag #8a6a20",
+   "name": "#04 Henry Ward grey cloud",
    "recipe": {
     "size": 50,
     "flow": 1,
@@ -5994,7 +5994,7 @@
    }
   },
   {
-   "name": "#06 Drag #8c6e28",
+   "name": "#06 Henry Ward scrubbed grey",
    "recipe": {
     "size": 50,
     "flow": 1,
@@ -8338,7 +8338,7 @@
    }
   },
   {
-   "name": "#09 Drag #e8b4a8",
+   "name": "#09 Henry Ward white loops",
    "recipe": {
     "size": 46,
     "flow": 1,
@@ -12881,7 +12881,7 @@
    }
   },
   {
-   "name": "#13 Drag #e8e4e0",
+   "name": "#13 Henry Ward blue streaky form",
    "recipe": {
     "size": 50,
     "flow": 1,
@@ -14430,7 +14430,7 @@
    }
   },
   {
-   "name": "#14 Drag #3a3a34",
+   "name": "#14 Henry Ward olive totem",
    "recipe": {
     "size": 48,
     "path": {
