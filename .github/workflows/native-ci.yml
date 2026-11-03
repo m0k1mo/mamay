@@ -35,6 +35,11 @@ jobs:
         run: |
           R="${{ github.event.inputs.runner || github.event.client_payload.runner || '' }}"
           [ "$R" = auto ] && R=""
+          # scripts/prefer-runner.txt: artem-mac while Artem is at home with his Mac (the lead sets it), auto when he travels
+          if [ -z "$R" ]; then
+            P=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/scripts/prefer-runner.txt" 2>/dev/null | tr -d '[:space:]' || true)
+            [ "$P" = artem-mac ] || [ "$P" = xcode-27 ] && R="$P"
+          fi
           if [ -z "$R" ]; then
             R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/scripts/which-mac.sh" | bash)
           fi
