@@ -9,6 +9,9 @@ on:
       ref:
         description: branch, tag or commit of m0k1mo/Formlab
         default: native/main
+      runner:
+        description: "auto (Artem's Mac when online, else GitHub's), artem-mac or xcode-27"
+        default: auto
   repository_dispatch:
     types: [native-ci]
 
@@ -30,7 +33,8 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.RUNNERS_TOKEN || secrets.FORMLAB_CODE_TOKEN }}   # RUNNERS_TOKEN: fine-grained, m0k1mo/mamay, Administration: Read-only
         run: |
-          R=""
+          R="${{ github.event.inputs.runner || github.event.client_payload.runner || '' }}"
+          [ "$R" = auto ] && R=""
           if [ -z "$R" ]; then
             R=$(curl -fsSL "https://raw.githubusercontent.com/${{ github.repository }}/${{ github.sha }}/scripts/which-mac.sh" | bash)
           fi
