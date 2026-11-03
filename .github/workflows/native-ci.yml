@@ -24,14 +24,17 @@ concurrency:
 
 jobs:
   where:
-    # Artem 03.11: his Mac when it is online, GitHub's Mac only when it is not (scripts/which-mac.sh)
+    # Artem 03.11: his Mac when it is online, GitHub's Mac only when it is not (scripts/which-mac.sh pings it)
     runs-on: ubuntu-latest
+    permissions:
+      actions: write
+      contents: read
     outputs:
       runner: ${{ steps.r.outputs.runner }}
     steps:
       - id: r
         env:
-          GH_TOKEN: ${{ secrets.RUNNERS_TOKEN || secrets.FORMLAB_CODE_TOKEN }}   # RUNNERS_TOKEN: fine-grained, m0k1mo/mamay, Administration: Read-only
+          GH_TOKEN: ${{ github.token }}   # actions: write — which-mac.sh pings the Mac (mac-ping.yml)
         run: |
           R="${{ github.event.inputs.runner || github.event.client_payload.runner || '' }}"
           [ "$R" = auto ] && R=""

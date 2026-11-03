@@ -1,0 +1,19 @@
+# Is Artem's Mac there right now? (Artem 03.11, 18:45: «сам відслідковуй, чи Mac в онлайні — навіть заблокований»)
+# scripts/which-mac.sh starts this with a tag and waits up to a minute: if the job starts on artem-mac, the Mac is online
+# (asleep / off / no network → it never starts, and which-mac.sh cancels it). The job does nothing else.
+name: Mac ping
+run-name: "Mac ping ${{ inputs.tag }}"
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: who asks (run id)
+        default: hand
+permissions:
+  contents: read
+jobs:
+  ping:
+    runs-on: [self-hosted, artem-mac]
+    timeout-minutes: 2
+    steps:
+      - run: echo "pong $(date -u +%FT%TZ) $(hostname -s)"
