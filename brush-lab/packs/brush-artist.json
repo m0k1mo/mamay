@@ -1,6 +1,6 @@
 {
  "id": "brush-artist",
- "version": 7,
+ "version": 8,
  "folder": "Brush Artist",
  "brushes": [
   {
@@ -1235,7 +1235,7 @@
       "a": 1
      },
      "water": 0.62,
-     "pigment": 4,
+     "pigment": 10,
      "hold": 1
     },
     "form": {
@@ -1977,7 +1977,7 @@
       "a": 1
      },
      "water": 0.62,
-     "pigment": 4,
+     "pigment": 10,
      "hold": 1
     },
     "form": {
@@ -2009,7 +2009,7 @@
       "a": 1
      },
      "water": 0.62,
-     "pigment": 4,
+     "pigment": 10,
      "hold": 1
     },
     "form": {
@@ -2095,7 +2095,7 @@
   {
    "name": "Charcoal — stick",
    "recipe": {
-    "size": 16,
+    "size": 28,
     "surface": {
      "relief": 0.6
     },
@@ -2909,7 +2909,7 @@
   {
    "name": "Charcoal — stick B",
    "recipe": {
-    "size": 20,
+    "size": 36,
     "surface": {
      "relief": 0.8
     },
@@ -2934,7 +2934,7 @@
      "water": 0,
      "dry": 1,
      "thick": 0.3,
-     "cover": 0.5,
+     "cover": 0.69,
      "pigment": 3
     },
     "form": {
@@ -2947,7 +2947,7 @@
   {
    "name": "Charcoal — stick C",
    "recipe": {
-    "size": 14,
+    "size": 22,
     "surface": {
      "relief": 0.45
     },
