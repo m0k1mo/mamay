@@ -1,6 +1,6 @@
 {
  "id": "brush-artist",
- "version": 8,
+ "version": 9,
  "folder": "Brush Artist",
  "brushes": [
   {
@@ -1234,8 +1234,8 @@
       "b": 0.6308,
       "a": 1
      },
-     "water": 0.62,
-     "pigment": 10,
+     "water": 0.6,
+     "pigment": 12,
      "hold": 1
     },
     "form": {
@@ -1976,8 +1976,8 @@
       "b": 0.5776,
       "a": 1
      },
-     "water": 0.62,
-     "pigment": 10,
+     "water": 0.6,
+     "pigment": 12,
      "hold": 1
     },
     "form": {
@@ -2008,8 +2008,8 @@
       "b": 0.3916,
       "a": 1
      },
-     "water": 0.62,
-     "pigment": 10,
+     "water": 0.6,
+     "pigment": 12,
      "hold": 1
     },
     "form": {
