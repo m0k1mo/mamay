@@ -1,0 +1,13 @@
+{
+ "step": "50 references on the new engine \u2014 refs pack v6 (real sheet grounds), M2 pack v10",
+ "doing": "brush-lab/packs/brush-artist-refs.json v6",
+ "done": 50,
+ "running": true,
+ "updated": "2026-11-03T17:25:08Z",
+ "session": "Brush Artist",
+ "log": [
+  "14:50 all 50 references redone (old engine) \u2014 avg 5.2",
+  "19:15 engine 0.1.25 \u2014 avg 5.4",
+  "19:30 engine 1103-1915: grounds, dry layer, richer watercolour \u2014 refs v6 pushed"
+ ]
+}
