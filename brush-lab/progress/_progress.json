@@ -1,14 +1,14 @@
 {
- "step": "Handed over to the developer \u2014 references average 6.1/10 (Oct 4.9)",
- "doing": "claude/brush-handoff-to-dev.md",
+ "step": "04.11 rerun on engine 1104-0430 \u2014 references 6.0/10",
+ "doing": "refs v16",
  "done": 50,
  "running": false,
- "updated": "2026-11-03T21:48:12Z",
+ "updated": "2026-11-04T06:47:17Z",
  "session": "Brush Artist",
  "log": [
-  "19:40 real sheet grounds, dry layer \u2014 refs v6",
   "20:05 refs v7 \u2014 5.9; paused",
   "23:00 refs v9 \u2014 wet-in-wet spreads, 6.0; paused",
-  "23:55 refs v13, handed over to the developer"
+  "23:55 refs v13, handed over to the developer",
+  "08:40 Henry Ward release 0.35, knife/tilt/finger checked \u2014 6.0"
  ]
 }
