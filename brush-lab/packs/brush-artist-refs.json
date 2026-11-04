@@ -1,6 +1,6 @@
 {
  "id": "brush-artist-refs",
- "version": 14,
+ "version": 15,
  "folder": "Brush Artist · Refs",
  "brushes": [
   {
@@ -17,7 +17,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "release": 0.15
+     "release": 0.35
     },
     "material": {
      "color": {
@@ -1524,7 +1524,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "release": 0.15
+     "release": 0.35
     },
     "material": {
      "color": {
@@ -2097,8 +2097,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
-     "release": 0.3
+     "entropy": 0.6
     },
     "material": {
      "color": {
@@ -3000,7 +2999,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "release": 0.15
+     "release": 0.35
     },
     "material": {
      "color": {
@@ -4161,8 +4160,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
-     "release": 0.3
+     "entropy": 0.6
     },
     "material": {
      "color": {
@@ -4851,7 +4849,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "release": 0.15
+     "release": 0.35
     },
     "material": {
      "color": {
@@ -6124,8 +6122,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
-     "release": 0.3
+     "entropy": 0.6
     },
     "material": {
      "color": {
@@ -6810,7 +6807,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "release": 0.15
+     "release": 0.35
     },
     "material": {
      "color": {
@@ -7753,8 +7750,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
-     "release": 0.3
+     "entropy": 0.6
     },
     "material": {
      "color": {
@@ -8867,8 +8863,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
-     "release": 0.3
+     "entropy": 0.6
     },
     "material": {
      "color": {
@@ -11355,7 +11350,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "release": 0.15
+     "release": 0.35
     },
     "material": {
      "color": {
@@ -12902,8 +12897,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
-     "release": 0.3
+     "entropy": 0.6
     },
     "material": {
      "color": {
@@ -30886,7 +30880,7 @@
      "soft": 0.8
     },
     "time": {
-     "tilt": 1.5,
+     "tilt": 3,
      "downhill": 90
     }
    },
@@ -42158,13 +42152,16 @@
     "size": 70,
     "path": {
      "smoothing": 0.25,
-     "pressureToSize": 0.6
+     "pressureToSize": 0.7
     },
     "tool": {
-     "stiffness": 0.55,
-     "capacity": 1.2,
-     "bristle": 0.25,
-     "entropy": 0.2
+     "stiffness": 0.3,
+     "capacity": 2.5,
+     "bristle": 0.05,
+     "entropy": 0.3
+    },
+    "surface": {
+     "absorb": 0.5
     },
     "material": {
      "color": {
@@ -42173,18 +42170,17 @@
       "b": 0.0044,
       "a": 1
      },
-     "water": 0.45,
-     "cover": 0.9,
-     "pigment": 1.2,
+     "water": 0.9,
+     "pigment": 12,
      "hold": 1
     },
     "form": {
      "source": "round",
-     "round": 0.55,
-     "rag": 0.6
+     "round": 1,
+     "soft": 0.6
     },
     "time": {
-     "tilt": 1.5,
+     "tilt": 3,
      "downhill": 90
     }
    },
