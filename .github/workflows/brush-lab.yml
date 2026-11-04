@@ -105,12 +105,12 @@ jobs:
         run: |
           set -eo pipefail
           xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
-          swift build -c release --product brushlab > build.log 2>&1 || { grep -E "error" build.log | grep -v "^Failed frontend" | cut -c1-400 | head -40; exit 1; }
+          nice -n 15 swift build -c release --product brushlab > build.log 2>&1 || { grep -E "error" build.log | grep -v "^Failed frontend" | cut -c1-400 | head -40; exit 1; }
           rm -rf "$GITHUB_WORKSPACE/out"
           A=(--out "$GITHUB_WORKSPACE/out" --packs "$GITHUB_WORKSPACE/mamay/brush-lab/packs" --url-prefix "")
           [ -n "$ONLY" ] && A+=(--only "$ONLY")
           [ "$PACKS_ONLY" = "true" ] && A+=(--packs-only)
-          "$(swift build -c release --show-bin-path)/brushlab" "${A[@]}"
+          nice -n 15 "$(swift build -c release --show-bin-path)/brushlab" "${A[@]}"   # Artem's Mac stays usable (CLAUDE.md: heavy jobs with nice)
       - name: Publish on brush-lab-out
         run: |
           set -eo pipefail
