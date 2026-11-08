@@ -1,0 +1,236 @@
+{
+ "id": "v3-shapes",
+ "version": 1,
+ "folder": "v3 · Any shape",
+ "brushes": [
+  {
+   "name": "K stamp",
+   "recipe": {
+    "size": 48,
+    "tool": {
+     "kind": "solid",
+     "shape": {
+      "source": "text",
+      "text": "K"
+     },
+     "load": 0.9,
+     "entropy": 0.6
+    },
+    "texture": {
+     "push": 0.3
+    },
+    "paint": {
+     "fluidity": 0.3,
+     "body": 0.4,
+     "opacity": 0.9,
+     "gloss": 0.15,
+     "strength": 0.55,
+     "color": {
+      "r": 0.62,
+      "g": 0.08,
+      "b": 0.05,
+      "a": 1
+     }
+    },
+    "hand": {
+     "pressureToSize": 0.3
+    }
+   }
+  },
+  {
+   "name": "K of hairs",
+   "recipe": {
+    "size": 48,
+    "tool": {
+     "kind": "hairs",
+     "shape": {
+      "source": "text",
+      "text": "K"
+     },
+     "stiffness": 0.6,
+     "load": 0.9,
+     "dryness": 0.3,
+     "entropy": 0.8
+    },
+    "paint": {
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.85,
+     "gloss": 0.45,
+     "strength": 0.5,
+     "color": {
+      "r": 0.08,
+      "g": 0.12,
+      "b": 0.35,
+      "a": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Star stamp",
+   "recipe": {
+    "size": 44,
+    "tool": {
+     "kind": "solid",
+     "shape": {
+      "source": "star"
+     },
+     "load": 0.9
+    },
+    "texture": {
+     "push": 0.2,
+     "dab": 0.6
+    },
+    "paint": {
+     "fluidity": 0.3,
+     "body": 0.4,
+     "opacity": 0.9,
+     "gloss": 0.15,
+     "strength": 0.55,
+     "color": {
+      "r": 0.9,
+      "g": 0.6,
+      "b": 0.05,
+      "a": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Star of hairs",
+   "recipe": {
+    "size": 44,
+    "tool": {
+     "kind": "hairs",
+     "shape": {
+      "source": "star",
+      "rag": 0.6
+     },
+     "stiffness": 0.5,
+     "load": 0.9,
+     "entropy": 0.8
+    },
+    "paint": {
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.85,
+     "gloss": 0.45,
+     "strength": 0.5,
+     "color": {
+      "r": 0.1,
+      "g": 0.35,
+      "b": 0.15,
+      "a": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Rag",
+   "recipe": {
+    "size": 60,
+    "tool": {
+     "kind": "rag",
+     "shape": {
+      "source": "round",
+      "rag": 2.5,
+      "soft": 0.2
+     },
+     "load": 0.6,
+     "dryness": 0.4,
+     "entropy": 1
+    },
+    "paint": {
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.85,
+     "gloss": 0.45,
+     "strength": 0.5,
+     "color": {
+      "r": 0.35,
+      "g": 0.2,
+      "b": 0.12,
+      "a": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Dry oil on canvas",
+   "recipe": {
+    "size": 40,
+    "tool": {
+     "kind": "hairs",
+     "shape": {
+      "source": "flat",
+      "round": 0.3,
+      "follow": 0.6
+     },
+     "stiffness": 0.8,
+     "load": 0.6,
+     "dryness": 0.6,
+     "clump": 0.5,
+     "entropy": 1
+    },
+    "surface": {
+     "weave": 0.8,
+     "weaveSize": 6,
+     "relief": 0.7
+    },
+    "paint": {
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.85,
+     "gloss": 0.45,
+     "strength": 0.5,
+     "color": {
+      "r": 0.75,
+      "g": 0.65,
+      "b": 0.45,
+      "a": 1
+     }
+    }
+   }
+  },
+  {
+   "name": "Two colours streaks",
+   "recipe": {
+    "size": 44,
+    "tool": {
+     "kind": "hairs",
+     "shape": {
+      "source": "flat",
+      "round": 0.3
+     },
+     "stiffness": 0.7,
+     "load": 1,
+     "entropy": 0.8,
+     "colors": [
+      {
+       "r": 0.1,
+       "g": 0.2,
+       "b": 0.5,
+       "a": 1
+      }
+     ],
+     "colorPattern": "streaks"
+    },
+    "paint": {
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.85,
+     "gloss": 0.45,
+     "strength": 0.5,
+     "color": {
+      "r": 0.8,
+      "g": 0.3,
+      "b": 0.1,
+      "a": 1
+     },
+     "mix": 0.3
+    }
+   }
+  }
+ ]
+}
