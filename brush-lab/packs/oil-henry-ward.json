@@ -1,6 +1,6 @@
 {
  "id": "oil-henry-ward",
- "version": 5,
+ "version": 6,
  "folder": "Oil · Henry Ward",
  "brushes": [
   {
@@ -13,7 +13,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -24,7 +24,8 @@
      "clump": 0.55,
      "pickup": 0.3,
      "bristle": 1,
-     "entropy": 0.8
+     "entropy": 0.8,
+     "tip": "flat"
     },
     "material": {
      "color": {
@@ -33,13 +34,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -63,7 +66,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -74,7 +77,8 @@
      "clump": 0.7,
      "pickup": 0.4,
      "bristle": 1,
-     "entropy": 0.8
+     "entropy": 0.8,
+     "tip": "flat"
     },
     "material": {
      "color": {
@@ -83,13 +87,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -109,11 +115,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -124,7 +130,8 @@
      "clump": 0.3,
      "pickup": 0.8,
      "bristle": 1,
-     "entropy": 0.8
+     "entropy": 0.8,
+     "tip": "round"
     },
     "material": {
      "color": {
@@ -133,13 +140,15 @@
       "b": 0.0513,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -163,7 +172,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -174,7 +183,8 @@
      "clump": 0.5,
      "pickup": 1.0,
      "bristle": 1,
-     "entropy": 0.8
+     "entropy": 0.8,
+     "tip": "flat"
     },
     "material": {
      "color": {
@@ -183,13 +193,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.65
     },
     "form": {
      "source": "flat",
@@ -213,7 +225,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -224,7 +236,8 @@
      "clump": 0.4,
      "pickup": 0.5,
      "bristle": 1,
-     "entropy": 0.8
+     "entropy": 0.8,
+     "tip": "flat"
     },
     "material": {
      "color": {
@@ -233,13 +246,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.5,
-     "opacity": 0.35,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.6,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
     },
     "form": {
      "source": "flat",
@@ -263,7 +278,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -274,7 +289,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -283,13 +299,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -313,7 +331,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -325,6 +343,7 @@
      "pickup": 0.5,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.0452,
@@ -348,13 +367,15 @@
       "b": 0.0578,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.5,
-     "opacity": 0.35,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.6,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
     },
     "form": {
      "source": "flat",
@@ -377,234 +398,51 @@
       "points": [
        [
         -40.0,
-        21.0
+        19.1
        ],
        [
         21.8,
-        21.9
+        18.3
        ],
        [
         83.6,
-        22.5
-       ],
-       [
-        145.4,
-        22.9
-       ],
-       [
-        207.3,
-        23.3
-       ],
-       [
-        269.1,
-        23.9
-       ],
-       [
-        330.9,
-        24.7
-       ],
-       [
-        392.7,
-        25.6
-       ],
-       [
-        454.5,
-        26.4
-       ],
-       [
-        516.3,
-        26.8
-       ],
-       [
-        578.2,
-        26.7
-       ],
-       [
-        640.0,
-        26.2
-       ]
-      ],
-      "pressure": [
-       1,
-       1,
-       1,
-       1
-      ],
-      "speed": 900,
-      "rest": 0.1,
-      "brush": "Ground #2b2f1c flat"
-     },
-     {
-      "points": [
-       [
-        -40.0,
-        89.7
-       ],
-       [
-        21.8,
-        91.6
-       ],
-       [
-        83.6,
-        93.7
-       ],
-       [
-        145.4,
-        95.6
-       ],
-       [
-        207.2,
-        96.9
-       ],
-       [
-        269.1,
-        97.5
-       ],
-       [
-        330.9,
-        97.4
-       ],
-       [
-        392.7,
-        96.8
-       ],
-       [
-        454.5,
-        95.9
-       ],
-       [
-        516.4,
-        95.0
-       ],
-       [
-        578.2,
-        94.3
-       ],
-       [
-        640.0,
-        93.9
-       ]
-      ],
-      "pressure": [
-       1,
-       1,
-       1,
-       1
-      ],
-      "speed": 900,
-      "rest": 0.1,
-      "brush": "Ground #2b2f1c flat"
-     },
-     {
-      "points": [
-       [
-        -40.0,
-        161.7
-       ],
-       [
-        21.8,
-        161.0
-       ],
-       [
-        83.6,
-        159.9
-       ],
-       [
-        145.4,
-        158.6
-       ],
-       [
-        207.3,
-        157.1
-       ],
-       [
-        269.1,
-        155.8
-       ],
-       [
-        330.9,
-        154.9
-       ],
-       [
-        392.7,
-        154.6
-       ],
-       [
-        454.5,
-        154.8
-       ],
-       [
-        516.4,
-        155.4
-       ],
-       [
-        578.2,
-        156.0
-       ],
-       [
-        640.0,
-        156.5
-       ]
-      ],
-      "pressure": [
-       1,
-       1,
-       1,
-       1
-      ],
-      "speed": 900,
-      "rest": 0.1,
-      "brush": "Ground #2b2f1c flat"
-     },
-     {
-      "points": [
-       [
-        -40.0,
-        232.1
-       ],
-       [
-        21.8,
-        230.8
-       ],
-       [
-        83.6,
-        229.7
+        18.0
        ],
        [
         145.5,
-        229.1
+        18.1
        ],
        [
         207.3,
-        229.0
+        18.2
        ],
        [
         269.1,
-        229.5
+        18.3
        ],
        [
         330.9,
-        230.3
+        18.3
        ],
        [
         392.7,
-        231.2
+        18.0
        ],
        [
         454.5,
-        232.1
+        17.6
        ],
        [
         516.4,
-        232.7
+        17.4
        ],
        [
         578.2,
-        233.2
+        17.6
        ],
        [
         640.0,
-        233.6
+        18.1
        ]
       ],
       "pressure": [
@@ -621,51 +459,51 @@
       "points": [
        [
         -40.0,
-        303.2
+        89.6
        ],
        [
         21.8,
-        302.4
+        89.5
        ],
        [
         83.7,
-        301.6
+        89.8
        ],
        [
         145.5,
-        301.1
+        90.4
        ],
        [
         207.3,
-        301.1
+        91.1
        ],
        [
         269.1,
-        301.8
+        91.8
        ],
        [
         330.9,
-        303.0
+        92.2
        ],
        [
-        392.8,
-        304.6
+        392.7,
+        92.5
        ],
        [
         454.6,
-        306.3
+        92.8
        ],
        [
         516.4,
-        307.9
+        93.3
        ],
        [
         578.2,
-        309.2
+        94.1
        ],
        [
         640.0,
-        310.3
+        95.4
        ]
       ],
       "pressure": [
@@ -682,19 +520,202 @@
       "points": [
        [
         -40.0,
-        372.2
+        160.2
        ],
        [
         21.8,
-        370.9
+        158.7
        ],
        [
         83.6,
-        370.1
+        157.5
        ],
        [
         145.4,
-        369.6
+        156.4
+       ],
+       [
+        207.2,
+        155.5
+       ],
+       [
+        269.1,
+        154.5
+       ],
+       [
+        330.9,
+        153.6
+       ],
+       [
+        392.7,
+        152.9
+       ],
+       [
+        454.5,
+        152.7
+       ],
+       [
+        516.3,
+        153.1
+       ],
+       [
+        578.2,
+        154.0
+       ],
+       [
+        640.0,
+        155.5
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 900,
+      "rest": 0.1,
+      "brush": "Ground #2b2f1c flat"
+     },
+     {
+      "points": [
+       [
+        -40.0,
+        232.7
+       ],
+       [
+        21.8,
+        233.0
+       ],
+       [
+        83.7,
+        233.0
+       ],
+       [
+        145.5,
+        232.8
+       ],
+       [
+        207.3,
+        232.6
+       ],
+       [
+        269.1,
+        232.4
+       ],
+       [
+        330.9,
+        232.3
+       ],
+       [
+        392.8,
+        232.1
+       ],
+       [
+        454.6,
+        231.6
+       ],
+       [
+        516.4,
+        230.6
+       ],
+       [
+        578.2,
+        229.0
+       ],
+       [
+        640.0,
+        227.0
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 900,
+      "rest": 0.1,
+      "brush": "Ground #2b2f1c flat"
+     },
+     {
+      "points": [
+       [
+        -40.0,
+        301.4
+       ],
+       [
+        21.8,
+        301.1
+       ],
+       [
+        83.7,
+        301.2
+       ],
+       [
+        145.5,
+        301.6
+       ],
+       [
+        207.3,
+        302.3
+       ],
+       [
+        269.1,
+        302.9
+       ],
+       [
+        330.9,
+        303.4
+       ],
+       [
+        392.8,
+        303.8
+       ],
+       [
+        454.6,
+        304.3
+       ],
+       [
+        516.4,
+        305.1
+       ],
+       [
+        578.2,
+        306.3
+       ],
+       [
+        640.0,
+        308.0
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 900,
+      "rest": 0.1,
+      "brush": "Ground #2b2f1c flat"
+     },
+     {
+      "points": [
+       [
+        -40.0,
+        372.6
+       ],
+       [
+        21.8,
+        371.9
+       ],
+       [
+        83.6,
+        371.2
+       ],
+       [
+        145.5,
+        370.4
        ],
        [
         207.3,
@@ -702,31 +723,31 @@
        ],
        [
         269.1,
-        369.2
+        368.5
        ],
        [
         330.9,
-        368.8
+        367.7
        ],
        [
         392.7,
-        368.2
+        367.5
        ],
        [
         454.5,
-        367.3
+        367.9
        ],
        [
         516.4,
-        366.4
+        369.0
        ],
        [
         578.2,
-        365.7
+        370.6
        ],
        [
         640.0,
-        365.2
+        372.4
        ]
       ],
       "pressure": [
@@ -743,112 +764,51 @@
       "points": [
        [
         -40.0,
-        443.0
+        444.0
        ],
        [
         21.8,
-        443.7
-       ],
-       [
-        83.6,
-        444.4
-       ],
-       [
-        145.5,
-        444.8
-       ],
-       [
-        207.3,
         444.7
        ],
        [
-        269.1,
-        444.1
-       ],
-       [
-        330.9,
-        443.3
-       ],
-       [
-        392.7,
-        442.3
-       ],
-       [
-        454.5,
-        441.5
-       ],
-       [
-        516.4,
-        441.0
-       ],
-       [
-        578.2,
-        440.8
-       ],
-       [
-        640.0,
-        440.8
-       ]
-      ],
-      "pressure": [
-       1,
-       1,
-       1,
-       1
-      ],
-      "speed": 900,
-      "rest": 0.1,
-      "brush": "Ground #2b2f1c flat"
-     },
-     {
-      "points": [
-       [
-        -40.0,
-        514.6
-       ],
-       [
-        21.8,
-        514.1
-       ],
-       [
-        83.6,
-        513.7
+        83.7,
+        444.9
        ],
        [
         145.5,
-        513.6
+        444.7
        ],
        [
         207.3,
-        513.9
+        444.0
        ],
        [
         269.1,
-        514.6
+        443.1
        ],
        [
         330.9,
-        515.6
+        442.2
        ],
        [
         392.7,
-        516.7
+        441.4
        ],
        [
-        454.5,
-        517.5
+        454.6,
+        440.8
        ],
        [
         516.4,
-        518.0
+        440.3
        ],
        [
         578.2,
-        518.2
+        439.8
        ],
        [
         640.0,
-        518.2
+        438.9
        ]
       ],
       "pressure": [
@@ -865,51 +825,112 @@
       "points": [
        [
         -40.0,
-        584.7
+        513.2
        ],
        [
         21.8,
-        582.1
+        514.6
        ],
        [
         83.6,
-        579.9
+        516.0
        ],
        [
         145.4,
-        578.3
+        517.4
        ],
        [
-        207.2,
-        577.5
+        207.3,
+        518.3
        ],
        [
         269.1,
-        577.2
+        518.9
        ],
        [
         330.9,
-        577.4
+        519.0
        ],
        [
         392.7,
-        577.8
+        518.9
        ],
        [
         454.5,
-        578.3
+        518.8
        ],
        [
-        516.3,
-        578.7
+        516.4,
+        518.9
        ],
        [
         578.2,
-        579.2
+        519.5
        ],
        [
         640.0,
-        579.9
+        520.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 900,
+      "rest": 0.1,
+      "brush": "Ground #2b2f1c flat"
+     },
+     {
+      "points": [
+       [
+        -40.0,
+        584.4
+       ],
+       [
+        21.8,
+        584.8
+       ],
+       [
+        83.7,
+        585.1
+       ],
+       [
+        145.5,
+        585.0
+       ],
+       [
+        207.3,
+        584.4
+       ],
+       [
+        269.1,
+        583.3
+       ],
+       [
+        330.9,
+        582.0
+       ],
+       [
+        392.7,
+        580.6
+       ],
+       [
+        454.6,
+        579.4
+       ],
+       [
+        516.4,
+        578.5
+       ],
+       [
+        578.2,
+        577.8
+       ],
+       [
+        640.0,
+        577.2
        ]
       ],
       "pressure": [
@@ -2398,7 +2419,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -2410,6 +2431,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.7011,
@@ -2433,13 +2455,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -4040,7 +4064,7 @@
       ],
       "speed": 439.5965360344437,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4134,7 +4158,7 @@
       ],
       "speed": 553.5686388921015,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4228,7 +4252,7 @@
       ],
       "speed": 374.8956977119256,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4322,7 +4346,7 @@
       ],
       "speed": 891.1329123964547,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4416,7 +4440,7 @@
       ],
       "speed": 342.84150574712896,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4510,7 +4534,7 @@
       ],
       "speed": 333.56276852957035,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4604,7 +4628,7 @@
       ],
       "speed": 685.7111221202545,
       "rest": 0.3,
-      "brush": "Dry scrub #c8ccd0 round"
+      "brush": "Dry scrub #c8ccd0 worn"
      },
      {
       "points": [
@@ -4963,7 +4987,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -4975,6 +4999,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.2423,
@@ -4998,13 +5023,15 @@
       "b": 0.2789,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -7292,7 +7319,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -7304,6 +7331,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.2232,
@@ -7327,13 +7355,15 @@
       "b": 0.2159,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -8941,7 +8971,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -8953,6 +8983,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -8976,13 +9007,15 @@
       "b": 0.3231,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -11192,7 +11225,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -11204,6 +11237,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.521,
@@ -11227,13 +11261,15 @@
       "b": 0.0116,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -12488,7 +12524,7 @@
       ],
       "speed": 554.5889349849119,
       "rest": 0.2,
-      "brush": "Loaded flat #ecc8c8 round"
+      "brush": "Loaded flat #ecc8c8 worn"
      },
      {
       "points": [
@@ -12574,7 +12610,7 @@
       ],
       "speed": 406.9386241003075,
       "rest": 0.2,
-      "brush": "Loaded flat #ecc8c8 round"
+      "brush": "Loaded flat #ecc8c8 worn"
      },
      {
       "points": [
@@ -12660,7 +12696,7 @@
       ],
       "speed": 795.2440989107541,
       "rest": 0.2,
-      "brush": "Loaded flat #ecc8c8 round"
+      "brush": "Loaded flat #ecc8c8 worn"
      },
      {
       "points": [
@@ -13191,7 +13227,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -13203,6 +13239,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -13226,13 +13263,15 @@
       "b": 0.9216,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -15659,7 +15698,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -15671,6 +15710,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.5776,
@@ -15694,18 +15734,20 @@
       "b": 0.5776,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -16352,7 +16394,7 @@
       ],
       "speed": 652.7764398106865,
       "rest": 0.2,
-      "brush": "Loaded flat #a89ac8 round",
+      "brush": "Loaded flat #a89ac8 worn",
       "dry": true
      },
      {
@@ -16439,7 +16481,7 @@
       ],
       "speed": 430.87458646013175,
       "rest": 0.2,
-      "brush": "Loaded flat #a89ac8 round"
+      "brush": "Loaded flat #a89ac8 worn"
      },
      {
       "points": [
@@ -16525,7 +16567,7 @@
       ],
       "speed": 769.2644389552672,
       "rest": 0.2,
-      "brush": "Loaded flat #a89ac8 round"
+      "brush": "Loaded flat #a89ac8 worn"
      },
      {
       "points": [
@@ -17210,7 +17252,7 @@
       ],
       "speed": 557.1406738789824,
       "rest": 0.2,
-      "brush": "Dry scrub #efeee6 round",
+      "brush": "Dry scrub #efeee6 worn",
       "dry": true
      },
      {
@@ -17297,7 +17339,7 @@
       ],
       "speed": 647.07327613507,
       "rest": 0.2,
-      "brush": "Dry scrub #efeee6 round"
+      "brush": "Dry scrub #efeee6 worn"
      },
      {
       "points": [
@@ -17383,7 +17425,7 @@
       ],
       "speed": 472.2575381730493,
       "rest": 0.2,
-      "brush": "Dry scrub #efeee6 round"
+      "brush": "Dry scrub #efeee6 worn"
      }
     ]
    }
@@ -17398,7 +17440,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -17410,6 +17452,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.5776,
@@ -17433,18 +17476,20 @@
       "b": 0.0685,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -18091,7 +18136,7 @@
       ],
       "speed": 620.9192749095209,
       "rest": 0.2,
-      "brush": "Loaded flat #a8b84a round",
+      "brush": "Loaded flat #a8b84a worn",
       "dry": true
      },
      {
@@ -18178,7 +18223,7 @@
       ],
       "speed": 457.4691469732084,
       "rest": 0.2,
-      "brush": "Loaded flat #a8b84a round"
+      "brush": "Loaded flat #a8b84a worn"
      },
      {
       "points": [
@@ -18264,7 +18309,7 @@
       ],
       "speed": 453.1028687233863,
       "rest": 0.2,
-      "brush": "Loaded flat #a8b84a round"
+      "brush": "Loaded flat #a8b84a worn"
      },
      {
       "points": [
@@ -18608,7 +18653,7 @@
       ],
       "speed": 404.863776225207,
       "rest": 0.2,
-      "brush": "Loaded flat #4a1420 round"
+      "brush": "Loaded flat #4a1420 worn"
      },
      {
       "points": [
@@ -18694,7 +18739,7 @@
       ],
       "speed": 585.5412433456895,
       "rest": 0.2,
-      "brush": "Loaded flat #4a1420 round"
+      "brush": "Loaded flat #4a1420 worn"
      },
      {
       "points": [
@@ -18780,7 +18825,7 @@
       ],
       "speed": 775.6522600501878,
       "rest": 0.2,
-      "brush": "Loaded flat #4a1420 round"
+      "brush": "Loaded flat #4a1420 worn"
      },
      {
       "points": [
@@ -18866,7 +18911,7 @@
       ],
       "speed": 566.706723159245,
       "rest": 0.2,
-      "brush": "Loaded flat #4a1420 round"
+      "brush": "Loaded flat #4a1420 worn"
      },
      {
       "points": [
@@ -18952,7 +18997,7 @@
       ],
       "speed": 794.0880589996684,
       "rest": 0.2,
-      "brush": "Loaded flat #4a1420 round"
+      "brush": "Loaded flat #4a1420 worn"
      },
      {
       "points": [
@@ -19293,7 +19338,7 @@
       ],
       "speed": 423.70484681737287,
       "rest": 0.2,
-      "brush": "Dry scrub #c0506a round"
+      "brush": "Dry scrub #c0506a worn"
      },
      {
       "points": [
@@ -19379,7 +19424,7 @@
       ],
       "speed": 452.2616384042133,
       "rest": 0.2,
-      "brush": "Dry scrub #c0506a round"
+      "brush": "Dry scrub #c0506a worn"
      },
      {
       "points": [
@@ -19465,7 +19510,7 @@
       ],
       "speed": 694.3761065798722,
       "rest": 0.2,
-      "brush": "Dry scrub #c0506a round"
+      "brush": "Dry scrub #c0506a worn"
      }
     ]
    }
@@ -19480,7 +19525,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -19492,6 +19537,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 1.0,
@@ -19515,13 +19561,15 @@
       "b": 0.4342,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -22515,7 +22563,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -22527,6 +22575,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.3813,
@@ -22550,13 +22599,15 @@
       "b": 0.0091,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -24859,7 +24910,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -24871,6 +24922,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.3813,
@@ -24894,18 +24946,20 @@
       "b": 0.1441,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -25552,7 +25606,7 @@
       ],
       "speed": 642.9449193369886,
       "rest": 0.2,
-      "brush": "Loaded flat #8a906a round",
+      "brush": "Loaded flat #8a906a worn",
       "dry": true
      },
      {
@@ -25639,7 +25693,7 @@
       ],
       "speed": 623.7939073597687,
       "rest": 0.2,
-      "brush": "Loaded flat #8a906a round"
+      "brush": "Loaded flat #8a906a worn"
      },
      {
       "points": [
@@ -25725,7 +25779,7 @@
       ],
       "speed": 774.7481911341142,
       "rest": 0.2,
-      "brush": "Loaded flat #8a906a round"
+      "brush": "Loaded flat #8a906a worn"
      },
      {
       "points": [
@@ -25811,7 +25865,7 @@
       ],
       "speed": 367.4009754812609,
       "rest": 0.2,
-      "brush": "Loaded flat #8a906a round"
+      "brush": "Loaded flat #8a906a worn"
      },
      {
       "points": [
@@ -25897,7 +25951,7 @@
       ],
       "speed": 700.7341058433684,
       "rest": 0.2,
-      "brush": "Loaded flat #8a906a round"
+      "brush": "Loaded flat #8a906a worn"
      },
      {
       "points": [
@@ -25983,7 +26037,7 @@
       ],
       "speed": 399.9309646538474,
       "rest": 0.2,
-      "brush": "Loaded flat #8a906a round"
+      "brush": "Loaded flat #8a906a worn"
      },
      {
       "points": [
@@ -27030,7 +27084,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27041,7 +27095,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -27050,13 +27105,15 @@
       "b": 0.0116,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -27080,7 +27137,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27092,6 +27149,7 @@
      "pickup": 0.5,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.0452,
@@ -27115,13 +27173,15 @@
       "b": 0.0578,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.5,
-     "opacity": 0.35,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.6,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
     },
     "form": {
      "source": "flat",
@@ -27145,7 +27205,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27157,6 +27217,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 1.0,
@@ -27180,13 +27241,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -27210,7 +27273,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27222,6 +27285,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -27245,13 +27309,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -27275,7 +27341,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27286,7 +27352,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -27295,13 +27362,15 @@
       "b": 0.0144,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -27325,7 +27394,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27337,6 +27406,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.7011,
@@ -27360,13 +27430,15 @@
       "b": 0.5271,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -27381,7 +27453,7 @@
    }
   },
   {
-   "name": "Dry scrub #c8ccd0 round",
+   "name": "Dry scrub #c8ccd0 worn",
    "recipe": {
     "size": 90,
     "path": {
@@ -27390,7 +27462,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27402,6 +27474,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.8388,
@@ -27425,18 +27498,20 @@
       "b": 0.6308,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -27455,7 +27530,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27467,6 +27542,7 @@
      "pickup": 1.0,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.5029,
@@ -27490,13 +27566,15 @@
       "b": 0.402,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.65
     },
     "form": {
      "source": "flat",
@@ -27520,7 +27598,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27531,7 +27609,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -27540,13 +27619,15 @@
       "b": 0.3916,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -27570,7 +27651,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27582,6 +27663,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.2423,
@@ -27605,13 +27687,15 @@
       "b": 0.2789,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -27635,7 +27719,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27647,6 +27731,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -27670,13 +27755,15 @@
       "b": 0.8879,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -27700,7 +27787,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27712,6 +27799,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -27735,13 +27823,15 @@
       "b": 0.8879,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -27765,7 +27855,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27776,7 +27866,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -27785,13 +27876,15 @@
       "b": 0.7011,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -27815,7 +27908,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27827,6 +27920,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.2232,
@@ -27850,13 +27944,15 @@
       "b": 0.2159,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -27880,7 +27976,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27892,6 +27988,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.162,
@@ -27915,13 +28012,15 @@
       "b": 0.0052,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -27941,11 +28040,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -27957,6 +28056,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.0242,
@@ -27980,13 +28080,15 @@
       "b": 0.0513,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -28010,7 +28112,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28021,7 +28123,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -28030,13 +28133,15 @@
       "b": 0.0497,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -28060,7 +28165,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28072,6 +28177,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -28095,13 +28201,15 @@
       "b": 0.3231,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -28125,7 +28233,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28137,6 +28245,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -28160,13 +28269,15 @@
       "b": 0.3231,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -28186,11 +28297,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28202,6 +28313,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.0242,
@@ -28225,13 +28337,15 @@
       "b": 0.0395,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -28255,7 +28369,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28266,7 +28380,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -28275,13 +28390,15 @@
       "b": 0.7605,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -28305,7 +28422,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28317,6 +28434,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.521,
@@ -28340,13 +28458,15 @@
       "b": 0.0116,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -28366,11 +28486,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28382,6 +28502,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.0273,
@@ -28405,13 +28526,15 @@
       "b": 0.0252,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -28426,7 +28549,7 @@
    }
   },
   {
-   "name": "Loaded flat #ecc8c8 round",
+   "name": "Loaded flat #ecc8c8 worn",
    "recipe": {
     "size": 84,
     "path": {
@@ -28435,7 +28558,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28447,6 +28570,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 1.0,
@@ -28470,18 +28594,20 @@
       "b": 0.5776,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -28500,7 +28626,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28512,6 +28638,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.1912,
@@ -28535,13 +28662,15 @@
       "b": 0.807,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -28565,7 +28694,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28577,6 +28706,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.0116,
@@ -28600,13 +28730,15 @@
       "b": 0.0091,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -28630,7 +28762,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28641,7 +28773,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -28650,13 +28783,15 @@
       "b": 0.855,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -28680,7 +28815,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28692,6 +28827,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -28715,13 +28851,15 @@
       "b": 0.9216,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -28741,11 +28879,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28757,6 +28895,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.0262,
@@ -28780,13 +28919,15 @@
       "b": 0.1878,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -28806,11 +28947,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28822,6 +28963,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.016,
@@ -28845,13 +28987,15 @@
       "b": 0.007,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -28875,7 +29019,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28887,6 +29031,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.8388,
@@ -28910,13 +29055,15 @@
       "b": 0.0395,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -28940,7 +29087,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -28951,7 +29098,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -28960,13 +29108,15 @@
       "b": 0.4793,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -28981,7 +29131,7 @@
    }
   },
   {
-   "name": "Loaded flat #a89ac8 round",
+   "name": "Loaded flat #a89ac8 worn",
    "recipe": {
     "size": 84,
     "path": {
@@ -28990,7 +29140,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29002,6 +29152,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.5776,
@@ -29025,18 +29176,20 @@
       "b": 0.5776,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -29051,11 +29204,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29067,6 +29220,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.0437,
@@ -29090,13 +29244,15 @@
       "b": 0.0091,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -29120,7 +29276,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29132,6 +29288,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.0437,
@@ -29155,13 +29312,15 @@
       "b": 0.0091,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -29176,7 +29335,7 @@
    }
   },
   {
-   "name": "Dry scrub #efeee6 round",
+   "name": "Dry scrub #efeee6 worn",
    "recipe": {
     "size": 90,
     "path": {
@@ -29185,7 +29344,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29197,6 +29356,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 1.0,
@@ -29220,18 +29380,20 @@
       "b": 0.7913,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -29250,7 +29412,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29261,7 +29423,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -29270,13 +29433,15 @@
       "b": 0.8714,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -29291,7 +29456,7 @@
    }
   },
   {
-   "name": "Loaded flat #a8b84a round",
+   "name": "Loaded flat #a8b84a worn",
    "recipe": {
     "size": 84,
     "path": {
@@ -29300,7 +29465,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29312,6 +29477,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.5776,
@@ -29335,18 +29501,20 @@
       "b": 0.0685,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -29365,7 +29533,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29377,6 +29545,7 @@
      "pickup": 0.5,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.162,
@@ -29400,13 +29569,15 @@
       "b": 0.1441,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.5,
-     "opacity": 0.35,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.6,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
     },
     "form": {
      "source": "flat",
@@ -29421,7 +29592,7 @@
    }
   },
   {
-   "name": "Loaded flat #4a1420 round",
+   "name": "Loaded flat #4a1420 worn",
    "recipe": {
     "size": 84,
     "path": {
@@ -29430,7 +29601,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29442,6 +29613,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.1119,
@@ -29465,18 +29637,20 @@
       "b": 0.0144,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -29491,11 +29665,11 @@
     "size": 34,
     "path": {
      "smoothing": 0.3,
-     "pressureToSize": 0.5,
+     "pressureToSize": 0.8,
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29507,6 +29681,7 @@
      "pickup": 0.8,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "round",
      "colors": [
       {
        "r": 0.0437,
@@ -29530,13 +29705,15 @@
       "b": 0.0052,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.35
     },
     "form": {
      "source": "flat",
@@ -29551,7 +29728,7 @@
    }
   },
   {
-   "name": "Dry scrub #c0506a round",
+   "name": "Dry scrub #c0506a worn",
    "recipe": {
     "size": 90,
     "path": {
@@ -29560,7 +29737,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29572,6 +29749,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.7682,
@@ -29595,18 +29773,20 @@
       "b": 0.1441,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -29625,7 +29805,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29636,7 +29816,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -29645,13 +29826,15 @@
       "b": 0.5776,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -29675,7 +29858,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29687,6 +29870,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 1.0,
@@ -29710,13 +29894,15 @@
       "b": 0.4342,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -29740,7 +29926,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29752,6 +29938,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 1.0,
@@ -29775,13 +29962,15 @@
       "b": 0.6308,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -29805,7 +29994,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29817,6 +30006,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.0437,
@@ -29840,13 +30030,15 @@
       "b": 0.0212,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -29870,7 +30062,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29881,7 +30073,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -29890,13 +30083,15 @@
       "b": 0.7454,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -29920,7 +30115,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29932,6 +30127,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.3813,
@@ -29955,13 +30151,15 @@
       "b": 0.0091,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -29985,7 +30183,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -29997,6 +30195,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.5776,
@@ -30020,13 +30219,15 @@
       "b": 0.7157,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -30050,7 +30251,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -30062,6 +30263,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.9823,
@@ -30085,13 +30287,15 @@
       "b": 0.8714,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
@@ -30115,7 +30319,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -30126,7 +30330,8 @@
      "clump": 0.0,
      "pickup": 0.1,
      "bristle": 1,
-     "entropy": 0.5
+     "entropy": 0.5,
+     "tip": "filbert"
     },
     "material": {
      "color": {
@@ -30135,13 +30340,15 @@
       "b": 0.0343,
       "a": 1
      },
-     "fluidity": 0.35,
-     "body": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
      "opacity": 0.95,
-     "gloss": 0.3,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.8
+     "mix": 0.8,
+     "solvent": "turpentine",
+     "dilute": 0.75
     },
     "form": {
      "source": "flat",
@@ -30156,7 +30363,7 @@
    }
   },
   {
-   "name": "Loaded flat #8a906a round",
+   "name": "Loaded flat #8a906a worn",
    "recipe": {
     "size": 84,
     "path": {
@@ -30165,7 +30372,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -30177,6 +30384,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "worn",
      "colors": [
       {
        "r": 0.3813,
@@ -30200,18 +30408,20 @@
       "b": 0.1441,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
-     "round": 0.9,
-     "rag": 1.4,
+     "round": 0.35,
+     "rag": 1.6,
      "follow": 0.6
     },
     "counterform": {
@@ -30230,7 +30440,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -30242,6 +30452,7 @@
      "pickup": 0.3,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "flat",
      "colors": [
       {
        "r": 0.2961,
@@ -30265,13 +30476,15 @@
       "b": 0.0976,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.5
     },
     "form": {
      "source": "flat",
@@ -30295,7 +30508,7 @@
      "tremor": 0.6
     },
     "surface": {
-     "weave": 0.45,
+     "weave": 0.5,
      "weaveSize": 6
     },
     "tool": {
@@ -30307,6 +30520,7 @@
      "pickup": 0.4,
      "bristle": 1,
      "entropy": 0.8,
+     "tip": "filbert",
      "colors": [
       {
        "r": 0.5776,
@@ -30330,13 +30544,15 @@
       "b": 0.2462,
       "a": 1
      },
-     "fluidity": 0.42,
-     "body": 0.32,
-     "opacity": 0.8,
-     "gloss": 0.3,
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
      "strength": 0.5,
      "tack": 0.4,
-     "mix": 0.45
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
     },
     "form": {
      "source": "flat",
