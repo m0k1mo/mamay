@@ -1,0 +1,3767 @@
+{
+ "id": "surface-test",
+ "version": 1,
+ "folder": "Surface test",
+ "brushes": [
+  {
+   "name": "Under SmoothPanel",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.4342,
+      "g": 0.0513,
+      "b": 0.0232,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.3
+    }
+   }
+  },
+  {
+   "name": "Oil 0% SmoothPanel",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.0
+    }
+   }
+  },
+  {
+   "name": "Oil 40% SmoothPanel",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Oil 80% SmoothPanel",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
+    }
+   }
+  },
+  {
+   "name": "Dry scrub SmoothPanel",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "worn",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.85,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
+    }
+   }
+  },
+  {
+   "name": "Watercolour SmoothPanel",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.8
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "round",
+     "stiffness": 0.2,
+     "load": 1.0,
+     "give": 0.7,
+     "clump": 0.3,
+     "pickup": 0.4,
+     "entropy": 0.7
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.117,
+      "b": 0.6308,
+      "a": 1
+     },
+     "fluidity": 0.85,
+     "body": 0.05,
+     "opacity": 0.15,
+     "strength": 1.0,
+     "granulation": 0.4,
+     "solvent": "water",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Surface test · smooth panel",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.0,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   },
+   "sheet": {
+    "width": 600,
+    "height": 600,
+    "background": "#2b2f1c",
+    "settle": 15,
+    "strokes": [
+     {
+      "points": [
+       [
+        110.0,
+        20.0
+       ],
+       [
+        110.8,
+        66.0
+       ],
+       [
+        111.5,
+        111.2
+       ],
+       [
+        112.3,
+        155.2
+       ],
+       [
+        113.1,
+        197.8
+       ],
+       [
+        113.8,
+        239.0
+       ],
+       [
+        114.6,
+        279.3
+       ],
+       [
+        115.4,
+        319.4
+       ],
+       [
+        116.2,
+        360.1
+       ],
+       [
+        116.9,
+        401.8
+       ],
+       [
+        117.7,
+        445.0
+       ],
+       [
+        118.5,
+        489.6
+       ],
+       [
+        119.2,
+        535.2
+       ],
+       [
+        120.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        250.0,
+        20.0
+       ],
+       [
+        250.8,
+        66.0
+       ],
+       [
+        251.5,
+        111.2
+       ],
+       [
+        252.3,
+        155.2
+       ],
+       [
+        253.1,
+        197.8
+       ],
+       [
+        253.8,
+        239.0
+       ],
+       [
+        254.6,
+        279.3
+       ],
+       [
+        255.4,
+        319.4
+       ],
+       [
+        256.2,
+        360.1
+       ],
+       [
+        256.9,
+        401.8
+       ],
+       [
+        257.7,
+        445.0
+       ],
+       [
+        258.5,
+        489.6
+       ],
+       [
+        259.2,
+        535.2
+       ],
+       [
+        260.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        390.0,
+        20.0
+       ],
+       [
+        390.8,
+        66.0
+       ],
+       [
+        391.5,
+        111.2
+       ],
+       [
+        392.3,
+        155.2
+       ],
+       [
+        393.1,
+        197.8
+       ],
+       [
+        393.8,
+        239.0
+       ],
+       [
+        394.6,
+        279.3
+       ],
+       [
+        395.4,
+        319.4
+       ],
+       [
+        396.2,
+        360.1
+       ],
+       [
+        396.9,
+        401.8
+       ],
+       [
+        397.7,
+        445.0
+       ],
+       [
+        398.5,
+        489.6
+       ],
+       [
+        399.2,
+        535.2
+       ],
+       [
+        400.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        530.0,
+        20.0
+       ],
+       [
+        530.8,
+        66.0
+       ],
+       [
+        531.5,
+        111.2
+       ],
+       [
+        532.3,
+        155.2
+       ],
+       [
+        533.1,
+        197.8
+       ],
+       [
+        533.8,
+        239.0
+       ],
+       [
+        534.6,
+        279.3
+       ],
+       [
+        535.4,
+        319.4
+       ],
+       [
+        536.2,
+        360.1
+       ],
+       [
+        536.9,
+        401.8
+       ],
+       [
+        537.7,
+        445.0
+       ],
+       [
+        538.5,
+        489.6
+       ],
+       [
+        539.2,
+        535.2
+       ],
+       [
+        540.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 1,
+      "brush": "Under SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        80.0
+       ],
+       [
+        71.5,
+        83.3
+       ],
+       [
+        113.1,
+        85.8
+       ],
+       [
+        154.6,
+        87.1
+       ],
+       [
+        196.2,
+        87.0
+       ],
+       [
+        237.7,
+        85.5
+       ],
+       [
+        279.2,
+        83.2
+       ],
+       [
+        320.8,
+        80.6
+       ],
+       [
+        362.3,
+        78.5
+       ],
+       [
+        403.8,
+        77.6
+       ],
+       [
+        445.4,
+        78.1
+       ],
+       [
+        486.9,
+        80.0
+       ],
+       [
+        528.5,
+        82.9
+       ],
+       [
+        570.0,
+        86.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 0% SmoothPanel",
+      "dry": true
+     },
+     {
+      "points": [
+       [
+        30.0,
+        185.0
+       ],
+       [
+        71.5,
+        188.3
+       ],
+       [
+        113.1,
+        190.8
+       ],
+       [
+        154.6,
+        192.1
+       ],
+       [
+        196.2,
+        192.0
+       ],
+       [
+        237.7,
+        190.5
+       ],
+       [
+        279.2,
+        188.2
+       ],
+       [
+        320.8,
+        185.6
+       ],
+       [
+        362.3,
+        183.5
+       ],
+       [
+        403.8,
+        182.6
+       ],
+       [
+        445.4,
+        183.1
+       ],
+       [
+        486.9,
+        185.0
+       ],
+       [
+        528.5,
+        187.9
+       ],
+       [
+        570.0,
+        191.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 40% SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        290.0
+       ],
+       [
+        71.5,
+        293.3
+       ],
+       [
+        113.1,
+        295.8
+       ],
+       [
+        154.6,
+        297.1
+       ],
+       [
+        196.2,
+        297.0
+       ],
+       [
+        237.7,
+        295.5
+       ],
+       [
+        279.2,
+        293.2
+       ],
+       [
+        320.8,
+        290.6
+       ],
+       [
+        362.3,
+        288.5
+       ],
+       [
+        403.8,
+        287.6
+       ],
+       [
+        445.4,
+        288.1
+       ],
+       [
+        486.9,
+        290.0
+       ],
+       [
+        528.5,
+        292.9
+       ],
+       [
+        570.0,
+        296.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 80% SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        395.0
+       ],
+       [
+        71.5,
+        398.3
+       ],
+       [
+        113.1,
+        400.8
+       ],
+       [
+        154.6,
+        402.1
+       ],
+       [
+        196.2,
+        402.0
+       ],
+       [
+        237.7,
+        400.5
+       ],
+       [
+        279.2,
+        398.2
+       ],
+       [
+        320.8,
+        395.6
+       ],
+       [
+        362.3,
+        393.5
+       ],
+       [
+        403.8,
+        392.6
+       ],
+       [
+        445.4,
+        393.1
+       ],
+       [
+        486.9,
+        395.0
+       ],
+       [
+        528.5,
+        397.9
+       ],
+       [
+        570.0,
+        401.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Dry scrub SmoothPanel"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        500.0
+       ],
+       [
+        71.5,
+        503.3
+       ],
+       [
+        113.1,
+        505.8
+       ],
+       [
+        154.6,
+        507.1
+       ],
+       [
+        196.2,
+        507.0
+       ],
+       [
+        237.7,
+        505.5
+       ],
+       [
+        279.2,
+        503.2
+       ],
+       [
+        320.8,
+        500.6
+       ],
+       [
+        362.3,
+        498.5
+       ],
+       [
+        403.8,
+        497.6
+       ],
+       [
+        445.4,
+        498.1
+       ],
+       [
+        486.9,
+        500.0
+       ],
+       [
+        528.5,
+        502.9
+       ],
+       [
+        570.0,
+        506.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Watercolour SmoothPanel"
+     }
+    ]
+   }
+  },
+  {
+   "name": "Under Paper",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.4342,
+      "g": 0.0513,
+      "b": 0.0232,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.3
+    }
+   }
+  },
+  {
+   "name": "Oil 0% Paper",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.0
+    }
+   }
+  },
+  {
+   "name": "Oil 40% Paper",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Oil 80% Paper",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
+    }
+   }
+  },
+  {
+   "name": "Dry scrub Paper",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "worn",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.85,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
+    }
+   }
+  },
+  {
+   "name": "Watercolour Paper",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.8
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "round",
+     "stiffness": 0.2,
+     "load": 1.0,
+     "give": 0.7,
+     "clump": 0.3,
+     "pickup": 0.4,
+     "entropy": 0.7
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.117,
+      "b": 0.6308,
+      "a": 1
+     },
+     "fluidity": 0.85,
+     "body": 0.05,
+     "opacity": 0.15,
+     "strength": 1.0,
+     "granulation": 0.4,
+     "solvent": "water",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Surface test · paper",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.6,
+     "grain": 6,
+     "weave": 0
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   },
+   "sheet": {
+    "width": 600,
+    "height": 600,
+    "background": "#2b2f1c",
+    "settle": 15,
+    "strokes": [
+     {
+      "points": [
+       [
+        110.0,
+        20.0
+       ],
+       [
+        110.8,
+        66.0
+       ],
+       [
+        111.5,
+        111.2
+       ],
+       [
+        112.3,
+        155.2
+       ],
+       [
+        113.1,
+        197.8
+       ],
+       [
+        113.8,
+        239.0
+       ],
+       [
+        114.6,
+        279.3
+       ],
+       [
+        115.4,
+        319.4
+       ],
+       [
+        116.2,
+        360.1
+       ],
+       [
+        116.9,
+        401.8
+       ],
+       [
+        117.7,
+        445.0
+       ],
+       [
+        118.5,
+        489.6
+       ],
+       [
+        119.2,
+        535.2
+       ],
+       [
+        120.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under Paper"
+     },
+     {
+      "points": [
+       [
+        250.0,
+        20.0
+       ],
+       [
+        250.8,
+        66.0
+       ],
+       [
+        251.5,
+        111.2
+       ],
+       [
+        252.3,
+        155.2
+       ],
+       [
+        253.1,
+        197.8
+       ],
+       [
+        253.8,
+        239.0
+       ],
+       [
+        254.6,
+        279.3
+       ],
+       [
+        255.4,
+        319.4
+       ],
+       [
+        256.2,
+        360.1
+       ],
+       [
+        256.9,
+        401.8
+       ],
+       [
+        257.7,
+        445.0
+       ],
+       [
+        258.5,
+        489.6
+       ],
+       [
+        259.2,
+        535.2
+       ],
+       [
+        260.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under Paper"
+     },
+     {
+      "points": [
+       [
+        390.0,
+        20.0
+       ],
+       [
+        390.8,
+        66.0
+       ],
+       [
+        391.5,
+        111.2
+       ],
+       [
+        392.3,
+        155.2
+       ],
+       [
+        393.1,
+        197.8
+       ],
+       [
+        393.8,
+        239.0
+       ],
+       [
+        394.6,
+        279.3
+       ],
+       [
+        395.4,
+        319.4
+       ],
+       [
+        396.2,
+        360.1
+       ],
+       [
+        396.9,
+        401.8
+       ],
+       [
+        397.7,
+        445.0
+       ],
+       [
+        398.5,
+        489.6
+       ],
+       [
+        399.2,
+        535.2
+       ],
+       [
+        400.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under Paper"
+     },
+     {
+      "points": [
+       [
+        530.0,
+        20.0
+       ],
+       [
+        530.8,
+        66.0
+       ],
+       [
+        531.5,
+        111.2
+       ],
+       [
+        532.3,
+        155.2
+       ],
+       [
+        533.1,
+        197.8
+       ],
+       [
+        533.8,
+        239.0
+       ],
+       [
+        534.6,
+        279.3
+       ],
+       [
+        535.4,
+        319.4
+       ],
+       [
+        536.2,
+        360.1
+       ],
+       [
+        536.9,
+        401.8
+       ],
+       [
+        537.7,
+        445.0
+       ],
+       [
+        538.5,
+        489.6
+       ],
+       [
+        539.2,
+        535.2
+       ],
+       [
+        540.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 1,
+      "brush": "Under Paper"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        80.0
+       ],
+       [
+        71.5,
+        83.3
+       ],
+       [
+        113.1,
+        85.8
+       ],
+       [
+        154.6,
+        87.1
+       ],
+       [
+        196.2,
+        87.0
+       ],
+       [
+        237.7,
+        85.5
+       ],
+       [
+        279.2,
+        83.2
+       ],
+       [
+        320.8,
+        80.6
+       ],
+       [
+        362.3,
+        78.5
+       ],
+       [
+        403.8,
+        77.6
+       ],
+       [
+        445.4,
+        78.1
+       ],
+       [
+        486.9,
+        80.0
+       ],
+       [
+        528.5,
+        82.9
+       ],
+       [
+        570.0,
+        86.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 0% Paper",
+      "dry": true
+     },
+     {
+      "points": [
+       [
+        30.0,
+        185.0
+       ],
+       [
+        71.5,
+        188.3
+       ],
+       [
+        113.1,
+        190.8
+       ],
+       [
+        154.6,
+        192.1
+       ],
+       [
+        196.2,
+        192.0
+       ],
+       [
+        237.7,
+        190.5
+       ],
+       [
+        279.2,
+        188.2
+       ],
+       [
+        320.8,
+        185.6
+       ],
+       [
+        362.3,
+        183.5
+       ],
+       [
+        403.8,
+        182.6
+       ],
+       [
+        445.4,
+        183.1
+       ],
+       [
+        486.9,
+        185.0
+       ],
+       [
+        528.5,
+        187.9
+       ],
+       [
+        570.0,
+        191.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 40% Paper"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        290.0
+       ],
+       [
+        71.5,
+        293.3
+       ],
+       [
+        113.1,
+        295.8
+       ],
+       [
+        154.6,
+        297.1
+       ],
+       [
+        196.2,
+        297.0
+       ],
+       [
+        237.7,
+        295.5
+       ],
+       [
+        279.2,
+        293.2
+       ],
+       [
+        320.8,
+        290.6
+       ],
+       [
+        362.3,
+        288.5
+       ],
+       [
+        403.8,
+        287.6
+       ],
+       [
+        445.4,
+        288.1
+       ],
+       [
+        486.9,
+        290.0
+       ],
+       [
+        528.5,
+        292.9
+       ],
+       [
+        570.0,
+        296.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 80% Paper"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        395.0
+       ],
+       [
+        71.5,
+        398.3
+       ],
+       [
+        113.1,
+        400.8
+       ],
+       [
+        154.6,
+        402.1
+       ],
+       [
+        196.2,
+        402.0
+       ],
+       [
+        237.7,
+        400.5
+       ],
+       [
+        279.2,
+        398.2
+       ],
+       [
+        320.8,
+        395.6
+       ],
+       [
+        362.3,
+        393.5
+       ],
+       [
+        403.8,
+        392.6
+       ],
+       [
+        445.4,
+        393.1
+       ],
+       [
+        486.9,
+        395.0
+       ],
+       [
+        528.5,
+        397.9
+       ],
+       [
+        570.0,
+        401.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Dry scrub Paper"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        500.0
+       ],
+       [
+        71.5,
+        503.3
+       ],
+       [
+        113.1,
+        505.8
+       ],
+       [
+        154.6,
+        507.1
+       ],
+       [
+        196.2,
+        507.0
+       ],
+       [
+        237.7,
+        505.5
+       ],
+       [
+        279.2,
+        503.2
+       ],
+       [
+        320.8,
+        500.6
+       ],
+       [
+        362.3,
+        498.5
+       ],
+       [
+        403.8,
+        497.6
+       ],
+       [
+        445.4,
+        498.1
+       ],
+       [
+        486.9,
+        500.0
+       ],
+       [
+        528.5,
+        502.9
+       ],
+       [
+        570.0,
+        506.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Watercolour Paper"
+     }
+    ]
+   }
+  },
+  {
+   "name": "Under FineCanvas",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.4342,
+      "g": 0.0513,
+      "b": 0.0232,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.3
+    }
+   }
+  },
+  {
+   "name": "Oil 0% FineCanvas",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.0
+    }
+   }
+  },
+  {
+   "name": "Oil 40% FineCanvas",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Oil 80% FineCanvas",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
+    }
+   }
+  },
+  {
+   "name": "Dry scrub FineCanvas",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "worn",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.85,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
+    }
+   }
+  },
+  {
+   "name": "Watercolour FineCanvas",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.8
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "round",
+     "stiffness": 0.2,
+     "load": 1.0,
+     "give": 0.7,
+     "clump": 0.3,
+     "pickup": 0.4,
+     "entropy": 0.7
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.117,
+      "b": 0.6308,
+      "a": 1
+     },
+     "fluidity": 0.85,
+     "body": 0.05,
+     "opacity": 0.15,
+     "strength": 1.0,
+     "granulation": 0.4,
+     "solvent": "water",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Surface test · fine canvas",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.35,
+     "weave": 0.8,
+     "weaveSize": 5
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   },
+   "sheet": {
+    "width": 600,
+    "height": 600,
+    "background": "#2b2f1c",
+    "settle": 15,
+    "strokes": [
+     {
+      "points": [
+       [
+        110.0,
+        20.0
+       ],
+       [
+        110.8,
+        66.0
+       ],
+       [
+        111.5,
+        111.2
+       ],
+       [
+        112.3,
+        155.2
+       ],
+       [
+        113.1,
+        197.8
+       ],
+       [
+        113.8,
+        239.0
+       ],
+       [
+        114.6,
+        279.3
+       ],
+       [
+        115.4,
+        319.4
+       ],
+       [
+        116.2,
+        360.1
+       ],
+       [
+        116.9,
+        401.8
+       ],
+       [
+        117.7,
+        445.0
+       ],
+       [
+        118.5,
+        489.6
+       ],
+       [
+        119.2,
+        535.2
+       ],
+       [
+        120.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under FineCanvas"
+     },
+     {
+      "points": [
+       [
+        250.0,
+        20.0
+       ],
+       [
+        250.8,
+        66.0
+       ],
+       [
+        251.5,
+        111.2
+       ],
+       [
+        252.3,
+        155.2
+       ],
+       [
+        253.1,
+        197.8
+       ],
+       [
+        253.8,
+        239.0
+       ],
+       [
+        254.6,
+        279.3
+       ],
+       [
+        255.4,
+        319.4
+       ],
+       [
+        256.2,
+        360.1
+       ],
+       [
+        256.9,
+        401.8
+       ],
+       [
+        257.7,
+        445.0
+       ],
+       [
+        258.5,
+        489.6
+       ],
+       [
+        259.2,
+        535.2
+       ],
+       [
+        260.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under FineCanvas"
+     },
+     {
+      "points": [
+       [
+        390.0,
+        20.0
+       ],
+       [
+        390.8,
+        66.0
+       ],
+       [
+        391.5,
+        111.2
+       ],
+       [
+        392.3,
+        155.2
+       ],
+       [
+        393.1,
+        197.8
+       ],
+       [
+        393.8,
+        239.0
+       ],
+       [
+        394.6,
+        279.3
+       ],
+       [
+        395.4,
+        319.4
+       ],
+       [
+        396.2,
+        360.1
+       ],
+       [
+        396.9,
+        401.8
+       ],
+       [
+        397.7,
+        445.0
+       ],
+       [
+        398.5,
+        489.6
+       ],
+       [
+        399.2,
+        535.2
+       ],
+       [
+        400.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under FineCanvas"
+     },
+     {
+      "points": [
+       [
+        530.0,
+        20.0
+       ],
+       [
+        530.8,
+        66.0
+       ],
+       [
+        531.5,
+        111.2
+       ],
+       [
+        532.3,
+        155.2
+       ],
+       [
+        533.1,
+        197.8
+       ],
+       [
+        533.8,
+        239.0
+       ],
+       [
+        534.6,
+        279.3
+       ],
+       [
+        535.4,
+        319.4
+       ],
+       [
+        536.2,
+        360.1
+       ],
+       [
+        536.9,
+        401.8
+       ],
+       [
+        537.7,
+        445.0
+       ],
+       [
+        538.5,
+        489.6
+       ],
+       [
+        539.2,
+        535.2
+       ],
+       [
+        540.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 1,
+      "brush": "Under FineCanvas"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        80.0
+       ],
+       [
+        71.5,
+        83.3
+       ],
+       [
+        113.1,
+        85.8
+       ],
+       [
+        154.6,
+        87.1
+       ],
+       [
+        196.2,
+        87.0
+       ],
+       [
+        237.7,
+        85.5
+       ],
+       [
+        279.2,
+        83.2
+       ],
+       [
+        320.8,
+        80.6
+       ],
+       [
+        362.3,
+        78.5
+       ],
+       [
+        403.8,
+        77.6
+       ],
+       [
+        445.4,
+        78.1
+       ],
+       [
+        486.9,
+        80.0
+       ],
+       [
+        528.5,
+        82.9
+       ],
+       [
+        570.0,
+        86.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 0% FineCanvas",
+      "dry": true
+     },
+     {
+      "points": [
+       [
+        30.0,
+        185.0
+       ],
+       [
+        71.5,
+        188.3
+       ],
+       [
+        113.1,
+        190.8
+       ],
+       [
+        154.6,
+        192.1
+       ],
+       [
+        196.2,
+        192.0
+       ],
+       [
+        237.7,
+        190.5
+       ],
+       [
+        279.2,
+        188.2
+       ],
+       [
+        320.8,
+        185.6
+       ],
+       [
+        362.3,
+        183.5
+       ],
+       [
+        403.8,
+        182.6
+       ],
+       [
+        445.4,
+        183.1
+       ],
+       [
+        486.9,
+        185.0
+       ],
+       [
+        528.5,
+        187.9
+       ],
+       [
+        570.0,
+        191.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 40% FineCanvas"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        290.0
+       ],
+       [
+        71.5,
+        293.3
+       ],
+       [
+        113.1,
+        295.8
+       ],
+       [
+        154.6,
+        297.1
+       ],
+       [
+        196.2,
+        297.0
+       ],
+       [
+        237.7,
+        295.5
+       ],
+       [
+        279.2,
+        293.2
+       ],
+       [
+        320.8,
+        290.6
+       ],
+       [
+        362.3,
+        288.5
+       ],
+       [
+        403.8,
+        287.6
+       ],
+       [
+        445.4,
+        288.1
+       ],
+       [
+        486.9,
+        290.0
+       ],
+       [
+        528.5,
+        292.9
+       ],
+       [
+        570.0,
+        296.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 80% FineCanvas"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        395.0
+       ],
+       [
+        71.5,
+        398.3
+       ],
+       [
+        113.1,
+        400.8
+       ],
+       [
+        154.6,
+        402.1
+       ],
+       [
+        196.2,
+        402.0
+       ],
+       [
+        237.7,
+        400.5
+       ],
+       [
+        279.2,
+        398.2
+       ],
+       [
+        320.8,
+        395.6
+       ],
+       [
+        362.3,
+        393.5
+       ],
+       [
+        403.8,
+        392.6
+       ],
+       [
+        445.4,
+        393.1
+       ],
+       [
+        486.9,
+        395.0
+       ],
+       [
+        528.5,
+        397.9
+       ],
+       [
+        570.0,
+        401.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Dry scrub FineCanvas"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        500.0
+       ],
+       [
+        71.5,
+        503.3
+       ],
+       [
+        113.1,
+        505.8
+       ],
+       [
+        154.6,
+        507.1
+       ],
+       [
+        196.2,
+        507.0
+       ],
+       [
+        237.7,
+        505.5
+       ],
+       [
+        279.2,
+        503.2
+       ],
+       [
+        320.8,
+        500.6
+       ],
+       [
+        362.3,
+        498.5
+       ],
+       [
+        403.8,
+        497.6
+       ],
+       [
+        445.4,
+        498.1
+       ],
+       [
+        486.9,
+        500.0
+       ],
+       [
+        528.5,
+        502.9
+       ],
+       [
+        570.0,
+        506.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Watercolour FineCanvas"
+     }
+    ]
+   }
+  },
+  {
+   "name": "Under CoarseLinen",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.4342,
+      "g": 0.0513,
+      "b": 0.0232,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.3
+    }
+   }
+  },
+  {
+   "name": "Oil 0% CoarseLinen",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.0
+    }
+   }
+  },
+  {
+   "name": "Oil 40% CoarseLinen",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Oil 80% CoarseLinen",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.8
+    }
+   }
+  },
+  {
+   "name": "Dry scrub CoarseLinen",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "worn",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.85,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.2
+    }
+   }
+  },
+  {
+   "name": "Watercolour CoarseLinen",
+   "recipe": {
+    "size": 60,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.8
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "round",
+     "stiffness": 0.2,
+     "load": 1.0,
+     "give": 0.7,
+     "clump": 0.3,
+     "pickup": 0.4,
+     "entropy": 0.7
+    },
+    "material": {
+     "color": {
+      "r": 0.0232,
+      "g": 0.117,
+      "b": 0.6308,
+      "a": 1
+     },
+     "fluidity": 0.85,
+     "body": 0.05,
+     "opacity": 0.15,
+     "strength": 1.0,
+     "granulation": 0.4,
+     "solvent": "water",
+     "dilute": 0.4
+    }
+   }
+  },
+  {
+   "name": "Surface test · coarse linen",
+   "recipe": {
+    "size": 70,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.5,
+     "tremor": 0.5
+    },
+    "surface": {
+     "relief": 0.5,
+     "weave": 1.0,
+     "weaveSize": 10
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "flat",
+     "stiffness": 0.75,
+     "load": 1.0,
+     "give": 0.8,
+     "dryness": 0.5,
+     "clump": 0.75,
+     "pickup": 0.3,
+     "bristle": 1,
+     "entropy": 0.8
+    },
+    "material": {
+     "color": {
+      "r": 0.8388,
+      "g": 0.7913,
+      "b": 0.5271,
+      "a": 1
+     },
+     "fluidity": 0.2,
+     "body": 0.6,
+     "opacity": 0.95,
+     "gloss": 0.4,
+     "strength": 0.5,
+     "tack": 0.4,
+     "mix": 0.45,
+     "solvent": "turpentine",
+     "dilute": 0.4
+    }
+   },
+   "sheet": {
+    "width": 600,
+    "height": 600,
+    "background": "#2b2f1c",
+    "settle": 15,
+    "strokes": [
+     {
+      "points": [
+       [
+        110.0,
+        20.0
+       ],
+       [
+        110.8,
+        66.0
+       ],
+       [
+        111.5,
+        111.2
+       ],
+       [
+        112.3,
+        155.2
+       ],
+       [
+        113.1,
+        197.8
+       ],
+       [
+        113.8,
+        239.0
+       ],
+       [
+        114.6,
+        279.3
+       ],
+       [
+        115.4,
+        319.4
+       ],
+       [
+        116.2,
+        360.1
+       ],
+       [
+        116.9,
+        401.8
+       ],
+       [
+        117.7,
+        445.0
+       ],
+       [
+        118.5,
+        489.6
+       ],
+       [
+        119.2,
+        535.2
+       ],
+       [
+        120.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        250.0,
+        20.0
+       ],
+       [
+        250.8,
+        66.0
+       ],
+       [
+        251.5,
+        111.2
+       ],
+       [
+        252.3,
+        155.2
+       ],
+       [
+        253.1,
+        197.8
+       ],
+       [
+        253.8,
+        239.0
+       ],
+       [
+        254.6,
+        279.3
+       ],
+       [
+        255.4,
+        319.4
+       ],
+       [
+        256.2,
+        360.1
+       ],
+       [
+        256.9,
+        401.8
+       ],
+       [
+        257.7,
+        445.0
+       ],
+       [
+        258.5,
+        489.6
+       ],
+       [
+        259.2,
+        535.2
+       ],
+       [
+        260.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        390.0,
+        20.0
+       ],
+       [
+        390.8,
+        66.0
+       ],
+       [
+        391.5,
+        111.2
+       ],
+       [
+        392.3,
+        155.2
+       ],
+       [
+        393.1,
+        197.8
+       ],
+       [
+        393.8,
+        239.0
+       ],
+       [
+        394.6,
+        279.3
+       ],
+       [
+        395.4,
+        319.4
+       ],
+       [
+        396.2,
+        360.1
+       ],
+       [
+        396.9,
+        401.8
+       ],
+       [
+        397.7,
+        445.0
+       ],
+       [
+        398.5,
+        489.6
+       ],
+       [
+        399.2,
+        535.2
+       ],
+       [
+        400.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 0.1,
+      "brush": "Under CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        530.0,
+        20.0
+       ],
+       [
+        530.8,
+        66.0
+       ],
+       [
+        531.5,
+        111.2
+       ],
+       [
+        532.3,
+        155.2
+       ],
+       [
+        533.1,
+        197.8
+       ],
+       [
+        533.8,
+        239.0
+       ],
+       [
+        534.6,
+        279.3
+       ],
+       [
+        535.4,
+        319.4
+       ],
+       [
+        536.2,
+        360.1
+       ],
+       [
+        536.9,
+        401.8
+       ],
+       [
+        537.7,
+        445.0
+       ],
+       [
+        538.5,
+        489.6
+       ],
+       [
+        539.2,
+        535.2
+       ],
+       [
+        540.0,
+        581.3
+       ]
+      ],
+      "pressure": [
+       1,
+       1,
+       1,
+       1
+      ],
+      "speed": 600,
+      "rest": 1,
+      "brush": "Under CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        80.0
+       ],
+       [
+        71.5,
+        83.3
+       ],
+       [
+        113.1,
+        85.8
+       ],
+       [
+        154.6,
+        87.1
+       ],
+       [
+        196.2,
+        87.0
+       ],
+       [
+        237.7,
+        85.5
+       ],
+       [
+        279.2,
+        83.2
+       ],
+       [
+        320.8,
+        80.6
+       ],
+       [
+        362.3,
+        78.5
+       ],
+       [
+        403.8,
+        77.6
+       ],
+       [
+        445.4,
+        78.1
+       ],
+       [
+        486.9,
+        80.0
+       ],
+       [
+        528.5,
+        82.9
+       ],
+       [
+        570.0,
+        86.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 0% CoarseLinen",
+      "dry": true
+     },
+     {
+      "points": [
+       [
+        30.0,
+        185.0
+       ],
+       [
+        71.5,
+        188.3
+       ],
+       [
+        113.1,
+        190.8
+       ],
+       [
+        154.6,
+        192.1
+       ],
+       [
+        196.2,
+        192.0
+       ],
+       [
+        237.7,
+        190.5
+       ],
+       [
+        279.2,
+        188.2
+       ],
+       [
+        320.8,
+        185.6
+       ],
+       [
+        362.3,
+        183.5
+       ],
+       [
+        403.8,
+        182.6
+       ],
+       [
+        445.4,
+        183.1
+       ],
+       [
+        486.9,
+        185.0
+       ],
+       [
+        528.5,
+        187.9
+       ],
+       [
+        570.0,
+        191.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 40% CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        290.0
+       ],
+       [
+        71.5,
+        293.3
+       ],
+       [
+        113.1,
+        295.8
+       ],
+       [
+        154.6,
+        297.1
+       ],
+       [
+        196.2,
+        297.0
+       ],
+       [
+        237.7,
+        295.5
+       ],
+       [
+        279.2,
+        293.2
+       ],
+       [
+        320.8,
+        290.6
+       ],
+       [
+        362.3,
+        288.5
+       ],
+       [
+        403.8,
+        287.6
+       ],
+       [
+        445.4,
+        288.1
+       ],
+       [
+        486.9,
+        290.0
+       ],
+       [
+        528.5,
+        292.9
+       ],
+       [
+        570.0,
+        296.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Oil 80% CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        395.0
+       ],
+       [
+        71.5,
+        398.3
+       ],
+       [
+        113.1,
+        400.8
+       ],
+       [
+        154.6,
+        402.1
+       ],
+       [
+        196.2,
+        402.0
+       ],
+       [
+        237.7,
+        400.5
+       ],
+       [
+        279.2,
+        398.2
+       ],
+       [
+        320.8,
+        395.6
+       ],
+       [
+        362.3,
+        393.5
+       ],
+       [
+        403.8,
+        392.6
+       ],
+       [
+        445.4,
+        393.1
+       ],
+       [
+        486.9,
+        395.0
+       ],
+       [
+        528.5,
+        397.9
+       ],
+       [
+        570.0,
+        401.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Dry scrub CoarseLinen"
+     },
+     {
+      "points": [
+       [
+        30.0,
+        500.0
+       ],
+       [
+        71.5,
+        503.3
+       ],
+       [
+        113.1,
+        505.8
+       ],
+       [
+        154.6,
+        507.1
+       ],
+       [
+        196.2,
+        507.0
+       ],
+       [
+        237.7,
+        505.5
+       ],
+       [
+        279.2,
+        503.2
+       ],
+       [
+        320.8,
+        500.6
+       ],
+       [
+        362.3,
+        498.5
+       ],
+       [
+        403.8,
+        497.6
+       ],
+       [
+        445.4,
+        498.1
+       ],
+       [
+        486.9,
+        500.0
+       ],
+       [
+        528.5,
+        502.9
+       ],
+       [
+        570.0,
+        506.3
+       ]
+      ],
+      "pressure": [
+       0.9,
+       0.85,
+       0.8,
+       0.5
+      ],
+      "speed": 450,
+      "rest": 0.3,
+      "brush": "Watercolour CoarseLinen"
+     }
+    ]
+   }
+  }
+ ]
+}
