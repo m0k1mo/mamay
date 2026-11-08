@@ -1,0 +1,32 @@
+# Copies the codon corpus Artem built in the Tester (his pictures as 32² grey fields, his poster genomes) from the Drive folder
+# on his Mac into the PRIVATE repo, branch native-ci-reports/codons-night/, so the night run on GitHub's Mac can use them.
+# One minute on his Mac, no build. Started by the Architect (workflow_dispatch) while the Mac is online.
+name: Codons corpus from the Mac
+on:
+  workflow_dispatch:
+jobs:
+  copy:
+    runs-on: [self-hosted, artem-mac]
+    timeout-minutes: 10
+    steps:
+      - name: Find the Drive folder and push the corpus
+        env:
+          TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          set -e
+          D=""
+          for c in "$HOME/Library/CloudStorage"/GoogleDrive-*/"My Drive/Mamay Reports/native/evolution/codons" \
+                   "$HOME/Library/CloudStorage"/GoogleDrive-*/"Мій диск/Mamay Reports/native/evolution/codons" \
+                   "$HOME/Google Drive/My Drive/Mamay Reports/native/evolution/codons" \
+                   "$HOME/Library/Application Support/Mamay Tester/reports/native/evolution/codons"; do
+            if [ -d "$c" ]; then D="$c"; break; fi
+          done
+          [ -n "$D" ] || { echo "no codons folder found"; ls "$HOME/Library/CloudStorage" || true; exit 1; }
+          echo "folder: $D"; ls -la "$D" | head -40
+          git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep
+          mkdir -p rep/codons-night/corpus
+          for f in corpus-extra.json genomes.json groups.json state.json pictures-done.tsv report-latest.md; do
+            [ -f "$D/$f" ] && cp "$D/$f" rep/codons-night/corpus/ && echo "copied $f ($(wc -c < "$D/$f") bytes)" || echo "no $f"
+          done
+          cd rep && git add -A && git -c user.name=mamay-ci -c user.email=ci@mamay.local commit -q -m "codons-night: corpus from Artem's Mac $(date -u +%Y-%m-%dT%H:%M)" || echo "nothing new"
+          for i in 1 2 3; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || true; sleep 3; done
