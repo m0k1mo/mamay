@@ -1,0 +1,67 @@
+# The night run of the codons (Artem 09.11, 01:47): on GitHub's Mac, not Artem's. Builds the `codons` tool from the private repo,
+# takes the corpus the Tester made (codons-night/corpus/ on the reports branch — Artem's pictures), says posters, makes codons,
+# runs the selection, crosses, and pushes report.md + PNGs to the reports branch under codons-night/<run>/. The Architect reads
+# them and starts the next cycle with changed atoms or settings.
+name: Codons night
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Formlab ref (branch or sha) with the codons engine"
+        default: "native/codons"
+      minutes:
+        description: "time budget for the run"
+        default: "150"
+      posters:
+        description: "posters to say in full"
+        default: "40"
+      generations:
+        description: "selection generations at most"
+        default: "400"
+      seed:
+        description: "seed"
+        default: "64"
+jobs:
+  night:
+    runs-on: xcode-27
+    timeout-minutes: 340
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: m0k1mo/Formlab
+          ref: ${{ inputs.ref }}
+          token: ${{ secrets.FORMLAB_CODE_TOKEN }}
+          path: src
+      - name: Corpus from the reports branch
+        env:
+          TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep
+          ls -la rep/codons-night/corpus/ || echo "no corpus from the Mac yet — the bundled sheets only"
+      - name: Build the codons tool
+        working-directory: src/native
+        run: |
+          sudo xcode-select -s /Applications/Xcode_27*.app 2>/dev/null || true
+          swift build -c release --product codons 2>&1 | tail -5
+      - name: Run
+        working-directory: src/native
+        run: |
+          EXTRA=""; [ -f "$GITHUB_WORKSPACE/rep/codons-night/corpus/corpus-extra.json" ] && EXTRA="--extra $GITHUB_WORKSPACE/rep/codons-night/corpus/corpus-extra.json"
+          .build/release/codons --out "$GITHUB_WORKSPACE/out" $EXTRA --posters ${{ inputs.posters }} --minutes ${{ inputs.minutes }} --generations ${{ inputs.generations }} --seed ${{ inputs.seed }} 2>&1 | tee "$GITHUB_WORKSPACE/run.log" | tail -40
+      - name: Push the results to the reports branch
+        if: always()
+        env:
+          TOKEN: ${{ secrets.FORMLAB_CODE_TOKEN }}
+        run: |
+          cd rep && git pull -q --rebase origin native-ci-reports || true
+          D="codons-night/${{ github.run_number }}"
+          mkdir -p "$D"; cp -R "$GITHUB_WORKSPACE/out/." "$D/" 2>/dev/null || true; cp "$GITHUB_WORKSPACE/run.log" "$D/" 2>/dev/null || true
+          mkdir -p codons-night/latest && rm -rf codons-night/latest/* && cp -R "$D/." codons-night/latest/
+          git add -A && git -c user.name=mamay-ci -c user.email=ci@mamay.local commit -q -m "codons-night ${{ github.run_number }}: $(grep -m1 'done:' "$GITHUB_WORKSPACE/run.log" || echo 'no result')" || echo "nothing"
+          for i in 1 2 3 4 5; do git push -q origin HEAD:native-ci-reports && break; git pull -q --rebase origin native-ci-reports || true; sleep 3; done
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: codons-night-${{ github.run_number }}
+          path: out
+          retention-days: 7
