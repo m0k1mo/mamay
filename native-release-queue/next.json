@@ -1,1 +1,5 @@
-{"version": "0.1.35-test", "ref": "9b4e2e16c2a668f2186a524320780044165c652d", "notes": "TEST build. Brushes v3 \u2014 five parts: tool (what touches \u2014 hairs, solid, knife, sponge, rag, finger \u2014 of any shape: round, flat, star, polygons, letters like K, your own mask), texture (what the tool leaves in the paint), surface (paper, canvas weave), paint (ten numbers, colours, unmixed), hand. A solid shape drags like a knife; with entropy every stroke has its own live tip. Plus v2.1: soft varied dry strips, colours in the brush, a covering white, flatter thick paint."}
+{
+"version": "0.1.36-test",
+"ref": "cfe0f479c8e54946bbe32f54bd4ca7d3db599b63",
+"notes": "ТЕСТОВА збірка. Тестер › Evolution Design › Codons — нова сторінка «Find the Codons»: 64 слова простору шукаються відбором на картинках (83 еталонні аркуші 0.45 на старт; «Add Pictures…» — додай свої плакати й референси). Сітка 8×8 — кодони в дії, нижче — картинки та їхні гени, крива ціни. У кінці звіт і графік зберігаються на Диск: Mamay Reports › native › evolution › codons. Старий Genesis — поруч, сегмент «Genesis». Решта (пензлі v3) — як у 0.1.35."
+}
