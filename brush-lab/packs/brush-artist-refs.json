@@ -1,6 +1,6 @@
 {
  "id": "brush-artist-refs",
- "version": 17,
+ "version": 18,
  "folder": "Brush Artist · Refs",
  "brushes": [
   {
@@ -17,7 +17,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "dryness": 0.7,
+     "dryness": 0.85,
      "clump": 0.6,
      "pickup": 0.6
     },
@@ -31,13 +31,18 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0.5
+     "hold": 0.5,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 1.6,
      "follow": 0.6
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -1527,7 +1532,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "dryness": 0.7,
+     "dryness": 0.85,
      "clump": 0.6,
      "pickup": 0.6
     },
@@ -1541,13 +1546,18 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0.5
+     "hold": 0.5,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 1.6,
      "follow": 0.6
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -2103,7 +2113,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
+     "entropy": 0.8,
      "pickup": 0.5,
      "clump": 0.4
     },
@@ -2120,7 +2130,8 @@
      "pigment": 1.3,
      "hold": 0.5,
      "gloss": 0.5,
-     "body": 0.75
+     "body": 0.75,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -2131,6 +2142,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -3008,7 +3023,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "dryness": 0.7,
+     "dryness": 0.85,
      "clump": 0.6,
      "pickup": 0.6
     },
@@ -3022,13 +3037,18 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0.5
+     "hold": 0.5,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 1.6,
      "follow": 0.6
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -4172,7 +4192,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
+     "entropy": 0.8,
      "pickup": 0.5,
      "clump": 0.4
     },
@@ -4189,7 +4209,8 @@
      "pigment": 1.3,
      "hold": 0.5,
      "gloss": 0.5,
-     "body": 0.75
+     "body": 0.75,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -4200,6 +4221,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -4864,7 +4889,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "dryness": 0.7,
+     "dryness": 0.85,
      "clump": 0.6,
      "pickup": 0.6
     },
@@ -4878,13 +4903,18 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0.5
+     "hold": 0.5,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 1.6,
      "follow": 0.6
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -6140,7 +6170,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
+     "entropy": 0.8,
      "pickup": 0.5,
      "clump": 0.4
     },
@@ -6157,7 +6187,8 @@
      "pigment": 1.3,
      "hold": 0.5,
      "gloss": 0.5,
-     "body": 0.75
+     "body": 0.75,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -6168,6 +6199,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -6341,12 +6376,17 @@
      "water": 0.3,
      "cover": 0.9,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "bristle",
      "round": 0.45,
      "rag": 1.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -6828,7 +6868,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "dryness": 0.7,
+     "dryness": 0.85,
      "clump": 0.6,
      "pickup": 0.6
     },
@@ -6842,13 +6882,18 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0.5
+     "hold": 0.5,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 1.6,
      "follow": 0.6
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -7774,7 +7819,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
+     "entropy": 0.8,
      "pickup": 0.5,
      "clump": 0.4
     },
@@ -7791,7 +7836,8 @@
      "pigment": 1.3,
      "hold": 0.4,
      "gloss": 0.5,
-     "body": 0.75
+     "body": 0.75,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -7802,6 +7848,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -8890,7 +8940,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
+     "entropy": 0.8,
      "pickup": 0.5,
      "clump": 0.4
     },
@@ -8907,7 +8957,8 @@
      "pigment": 1.3,
      "hold": 0.6,
      "gloss": 0.5,
-     "body": 0.75
+     "body": 0.75,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -8918,6 +8969,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -10071,12 +10126,17 @@
      "water": 0.3,
      "cover": 0.9,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "bristle",
      "round": 0.45,
      "rag": 1.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -11380,7 +11440,7 @@
      "capacity": 1.1,
      "bristle": 1,
      "entropy": 1.5,
-     "dryness": 0.7,
+     "dryness": 0.85,
      "clump": 0.6,
      "pickup": 0.6
     },
@@ -11394,13 +11454,18 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0.5
+     "hold": 0.5,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 1.6,
      "follow": 0.6
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -12930,7 +12995,7 @@
      "stiffness": 0.75,
      "capacity": 1.2,
      "bristle": 0.7,
-     "entropy": 0.6,
+     "entropy": 0.8,
      "pickup": 0.5,
      "clump": 0.4
     },
@@ -12947,7 +13012,8 @@
      "pigment": 1.3,
      "hold": 0.6,
      "gloss": 0.5,
-     "body": 0.75
+     "body": 0.75,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -12958,6 +13024,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -20812,7 +20882,7 @@
      "stiffness": 1,
      "capacity": 3,
      "bristle": 0,
-     "entropy": 0.5
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -20825,7 +20895,8 @@
      "dry": 1,
      "thick": 0.3,
      "cover": 0.85,
-     "pigment": 2
+     "pigment": 2,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -21900,12 +21971,17 @@
      "water": 0.3,
      "cover": 0.9,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "bristle",
      "round": 0.45,
      "rag": 1.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -23334,12 +23410,17 @@
      "water": 0.3,
      "cover": 0.9,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "bristle",
      "round": 0.45,
      "rag": 1.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -24388,7 +24469,8 @@
      "pigment": 1.4,
      "hold": 0.3,
      "gloss": 0.6,
-     "body": 0.4
+     "body": 0.4,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -24399,6 +24481,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -25430,7 +25516,7 @@
      "stiffness": 0.95,
      "capacity": 3,
      "bristle": 0.7,
-     "entropy": 0.6
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -25445,7 +25531,8 @@
      "pigment": 1.4,
      "hold": 0.9,
      "gloss": 0.4,
-     "body": 1
+     "body": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -25455,6 +25542,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -25563,7 +25654,7 @@
      "stiffness": 0.95,
      "capacity": 2.5,
      "bristle": 0.7,
-     "entropy": 0.6
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -25578,7 +25669,8 @@
      "pigment": 1.4,
      "hold": 0.9,
      "gloss": 0.4,
-     "body": 1
+     "body": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -25588,6 +25680,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -27415,7 +27511,7 @@
      "stiffness": 0.55,
      "capacity": 1.2,
      "bristle": 0.25,
-     "entropy": 0.2
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -27427,7 +27523,8 @@
      "water": 0.45,
      "cover": 0.9,
      "pigment": 1.2,
-     "hold": 0.7
+     "hold": 0.7,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -29672,7 +29769,7 @@
      "stiffness": 0.95,
      "capacity": 3,
      "bristle": 0.7,
-     "entropy": 0.6
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -29687,7 +29784,8 @@
      "pigment": 1.4,
      "hold": 0.9,
      "gloss": 0.4,
-     "body": 1
+     "body": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -29697,6 +29795,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -30446,7 +30548,8 @@
      "pigment": 1.4,
      "hold": 0.3,
      "gloss": 0.6,
-     "body": 0.4
+     "body": 0.4,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -30457,6 +30560,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -31025,7 +31132,7 @@
      "stiffness": 0.55,
      "capacity": 1.2,
      "bristle": 0.25,
-     "entropy": 0.2
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -31037,7 +31144,8 @@
      "water": 0.45,
      "cover": 0.9,
      "pigment": 1.2,
-     "hold": 0.8
+     "hold": 0.8,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -32451,7 +32559,8 @@
      "pigment": 1.4,
      "hold": 0.3,
      "gloss": 0.6,
-     "body": 0.4
+     "body": 0.4,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -32462,6 +32571,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -34371,7 +34484,7 @@
      "stiffness": 0.95,
      "capacity": 3,
      "bristle": 0.7,
-     "entropy": 0.6
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -34386,7 +34499,8 @@
      "pigment": 1.4,
      "hold": 0.9,
      "gloss": 0.4,
-     "body": 1
+     "body": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -34396,6 +34510,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -37229,7 +37347,7 @@
      "stiffness": 1,
      "capacity": 3,
      "bristle": 0,
-     "entropy": 0.5
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -37242,7 +37360,8 @@
      "dry": 1,
      "thick": 0.3,
      "cover": 0.85,
-     "pigment": 2
+     "pigment": 2,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -38905,12 +39024,17 @@
      "water": 0.3,
      "cover": 0.9,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "bristle",
      "round": 0.45,
      "rag": 1.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -39331,7 +39455,8 @@
      "pigment": 1.4,
      "hold": 0.3,
      "gloss": 0.7,
-     "body": 0.4
+     "body": 0.4,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -39342,6 +39467,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.5
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -40422,7 +40551,7 @@
      "stiffness": 1,
      "capacity": 3,
      "bristle": 0,
-     "entropy": 0.5
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -40435,7 +40564,8 @@
      "dry": 1,
      "thick": 0.3,
      "cover": 0.85,
-     "pigment": 2
+     "pigment": 2,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -41991,7 +42121,7 @@
      "stiffness": 1,
      "capacity": 1.6,
      "bristle": 0,
-     "entropy": 0.4
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -42006,7 +42136,8 @@
      "pigment": 1.2,
      "hold": 0.8,
      "gloss": 0.5,
-     "body": 1
+     "body": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -42015,6 +42146,10 @@
     "counterform": {
      "tool": "flat",
      "push": 1
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -42210,7 +42345,7 @@
      "stiffness": 0.55,
      "capacity": 1.2,
      "bristle": 0.25,
-     "entropy": 0.2
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -42222,7 +42357,8 @@
      "water": 0.45,
      "cover": 0.9,
      "pigment": 1.2,
-     "hold": 1
+     "hold": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
@@ -43969,7 +44105,7 @@
      "stiffness": 0.95,
      "capacity": 2,
      "bristle": 0.7,
-     "entropy": 0.6
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -43984,7 +44120,8 @@
      "pigment": 1.4,
      "hold": 0.9,
      "gloss": 0.4,
-     "body": 1
+     "body": 1,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
@@ -43994,6 +44131,10 @@
     "counterform": {
      "tool": "bristles",
      "push": 0.8
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    },
    "sheet": {
@@ -44451,12 +44592,17 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 2
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    }
   },
@@ -44486,12 +44632,17 @@
      "water": 0.25,
      "cover": 1,
      "pigment": 3,
-     "hold": 0
+     "hold": 0,
+     "mix": 0.5
     },
     "form": {
      "source": "flat",
      "round": 0.35,
      "rag": 2
+    },
+    "surface": {
+     "weave": 0.45,
+     "weaveSize": 6
     }
    }
   },
@@ -44507,7 +44658,7 @@
      "stiffness": 0.9,
      "capacity": 0,
      "bristle": 0,
-     "entropy": 0.3
+     "entropy": 0.8
     },
     "material": {
      "color": {
@@ -44520,7 +44671,8 @@
      "dry": 1,
      "thick": 0.3,
      "cover": 0.85,
-     "pigment": 2
+     "pigment": 2,
+     "mix": 0.5
     },
     "form": {
      "source": "round",
