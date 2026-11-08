@@ -1,14 +1,14 @@
 {
- "step": "Oil \u00b7 Henry Ward \u2014 12 paintings layer by layer on engine v2.1",
- "doing": "brush-lab/packs/oil-henry-ward.json v4",
+ "step": "Henry Ward v7 (oil + turpentine) and new Watercolour pack on engine v3.1",
+ "doing": "watercolour.json v2",
  "done": 50,
- "running": true,
- "updated": "2026-11-08T12:08:39Z",
+ "running": false,
+ "updated": "2026-11-08T21:30:32Z",
  "session": "Brush Artist",
  "log": [
-  "23:00 refs v9 \u2014 wet-in-wet spreads, 6.0; paused",
   "23:55 refs v13, handed over to the developer",
   "08:40 Henry Ward release 0.35, knife/tilt/finger checked \u2014 6.0",
-  "08.11 14:10 Henry Ward v4 \u2014 12 paintings, avg 6.1; refs average 6.2"
+  "08.11 14:10 Henry Ward v4 \u2014 12 paintings, avg 6.1; refs average 6.2",
+  "08.11 23:30 Henry Ward v7, Watercolour v2 \u2014 #29 8, #16 7.5, #33 6.5"
  ]
 }
