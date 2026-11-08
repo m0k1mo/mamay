@@ -12,8 +12,15 @@ on:
       runner:
         description: "auto (Artem's Mac when online, else GitHub's), artem-mac or xcode-27"
         default: auto
+      heavy:
+        description: "heavy tests too (golden) — they run every night anyway"
+        type: boolean
+        default: false
   repository_dispatch:
     types: [native-ci]
+  # Organizer 08.11 16:35: fast tests on every change, the heavy ones (golden) at night — 02:07 Kyiv, never 9:00–13:00
+  schedule:
+    - cron: '7 0 * * *'
 
 permissions:
   contents: read
@@ -56,7 +63,8 @@ jobs:
     runs-on: ${{ matrix.runner == 'artem-mac' && fromJSON('["self-hosted","artem-mac"]') || matrix.runner }}
     timeout-minutes: 60
     env:
-      REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || 'native/main' }}
+      REF: ${{ github.event.inputs.ref || github.event.client_payload.ref || (github.event_name == 'schedule' && 'native/lead-0111') || 'native/main' }}
+      HEAVY: ${{ (github.event_name == 'schedule' || github.event.inputs.heavy == 'true') && '1' || '' }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -78,34 +86,53 @@ jobs:
           curl -fsSL -H "Authorization: Bearer $TOKEN" -H "Accept: application/vnd.github.raw" \
             "https://api.github.com/repos/m0k1mo/Formlab/contents/native-ci/golden-last-${{ matrix.runner }}.json?ref=native-ci-reports" \
             -o golden-last.json && echo "baseline: $(wc -c < golden-last.json) bytes" || { rm -f golden-last.json; echo "no baseline yet"; }
+      - name: "Build cache (Artem's Mac keeps its builds between runs — Organizer 08.11, never from scratch)"
+        run: |
+          if [ "${{ matrix.runner }}" = artem-mac ]; then
+            mkdir -p "$HOME/mamay-cache/ci-swiftpm" "$HOME/mamay-cache/ci-dd"
+            echo "SP=$HOME/mamay-cache/ci-swiftpm" >> "$GITHUB_ENV"; echo "DD=$HOME/mamay-cache/ci-dd" >> "$GITHUB_ENV"
+          else
+            echo "SP=$GITHUB_WORKSPACE/src/native/.build" >> "$GITHUB_ENV"; echo "DD=$GITHUB_WORKSPACE/src/native/dd" >> "$GITHUB_ENV"
+          fi
+          : > "$GITHUB_WORKSPACE/times.txt"
       - name: Swift tests (packages)
         id: tests
         working-directory: src/native
         run: |
           set -o pipefail
+          T0=$(date +%s)
           mkdir -p "$GITHUB_WORKSPACE/ci-out"
           # on Artem's Mac: lowest priority (his apps first) and no sleep while building
           W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i"   # Artem 02.11, 11:58: the Mac at full power for builds
           GL=""; [ -f "$GITHUB_WORKSPACE/golden-last.json" ] && GL="$GITHUB_WORKSPACE/golden-last.json"
-          MAMAY_GOLDEN_LAST="$GL" MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing 2>&1 | tee ../../test.log
+          # fast on every change; golden (heavy) at night or on request
+          SKIP=""; [ -n "$HEAVY" ] || SKIP="--skip GoldenTests"
+          MAMAY_GOLDEN_LAST="$GL" MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing --scratch-path "$SP" $SKIP 2>&1 | tee ../../test.log
+          echo "tests $(( $(date +%s) - T0 )) s${HEAVY:+ (with golden)}" >> "$GITHUB_WORKSPACE/times.txt"
         continue-on-error: true
       - name: Build apps
         id: apps
         working-directory: src/native
         run: |
           set -o pipefail
+          T0=$(date +%s)
           sh scripts/fingerprints.sh   # what this build is made of: progress in the Tester is kept by these, not by the version
           xcodegen generate --quiet
           ok=1
           W=""; [ "${{ matrix.runner }}" = artem-mac ] && W="caffeinate -i"   # Artem 02.11, 11:58: the Mac at full power for builds
           APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
           for s in $APPS; do
-            $W xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
-              -derivedDataPath dd CODE_SIGN_IDENTITY=- build > "../../build-$s.log" 2>&1 || ok=0
+            # CI checks that the apps compile: Debug, incremental (test builds for Artem stay Release — native-release.yml);
+            # the type-checker names what is slow to compile (Organizer 08.11 §5)
+            $W xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Debug -destination 'generic/platform=macOS' \
+              -derivedDataPath "$DD" ONLY_ACTIVE_ARCH=YES CODE_SIGN_IDENTITY=- \
+              OTHER_SWIFT_FLAGS='$(inherited) -Xfrontend -warn-long-function-bodies=400 -Xfrontend -warn-long-expression-type-checking=400' \
+              build > "../../build-$s.log" 2>&1 || ok=0
           done
+          echo "apps $(( $(date +%s) - T0 )) s" >> "$GITHUB_WORKSPACE/times.txt"
           # iPad needs the iOS platform (~8 GB) — built on GitHub runners only
-          [ "${{ matrix.runner }}" = artem-mac ] || xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
-            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO build > ../../build-Mamay-iPad.log 2>&1 || ok=0
+          [ "${{ matrix.runner }}" = artem-mac ] || xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Debug -destination 'generic/platform=iOS' \
+            -derivedDataPath "$DD" CODE_SIGNING_ALLOWED=NO build > ../../build-Mamay-iPad.log 2>&1 || ok=0
           [ $ok = 1 ]
         continue-on-error: true
       - name: Package (xcode-27 only)
@@ -113,7 +140,7 @@ jobs:
         working-directory: src/native
         run: |
           mkdir -p ../../out
-          P=dd/Build/Products/Release
+          P="$DD/Build/Products/Debug"
           ditto -c -k --keepParent "$P/Mamay Native.app" "../../out/Mamay-Native-mac.zip"
           ditto -c -k --keepParent "$P/Mamay Native Tester.app" "../../out/Mamay-Native-Tester-mac.zip"
           ls -la ../../out
@@ -133,6 +160,7 @@ jobs:
           {
             echo "# Native CI · ${{ matrix.runner }} · $REF @ $SHA · run ${{ github.run_number }}"
             echo; echo "tests: ${{ steps.tests.outcome }} · apps: ${{ steps.apps.outcome }}"; echo
+            echo "⏱ $(tr '\n' ' ' < times.txt 2>/dev/null)"; echo
             echo "env: $(grep -m1 ProductVersion env.txt | awk '{print $2}') · $(grep -m1 '^Xcode' env.txt) · $(grep -m1 'Apple Swift version' env.txt | sed -E 's/.*(Apple Swift version [0-9.]+).*/\1/')"
             # errors only: compile errors, failed tests (not ✔, not known issues, not the golden table — that lives in out/golden/real.md)
             echo '## swift test — errors'; echo '```'
@@ -147,6 +175,12 @@ jobs:
               echo '## golden (✘ rows; Δ vs previous)'; echo '```'
               grep -E "^\| .* ✘ \|$" ci-out/golden/real.md | cut -d'|' -f2,5,6,7 | head -30
               grep -E "^Without paint" ci-out/golden/real.md || true
+              echo '```'
+            fi
+            # slow to compile (the type-checker's warnings, the 15 worst)
+            if grep -qh "to type-check" build-*.log 2>/dev/null; then
+              echo '## slow to compile (ms)'; echo '```'
+              grep -h "to type-check" build-*.log | sed -E 's|.*/native/||' | sort -u | awk -F'took ' '{split($2,a,"ms"); print a[1]"\t"$0}' | sort -rn | cut -f2 | head -15
               echo '```'
             fi
             for f in build-*.log; do

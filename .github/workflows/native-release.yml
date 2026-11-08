@@ -96,16 +96,21 @@ jobs:
           V: ${{ steps.p.outputs.version }}
         run: |
           set -eo pipefail
+          # Artem's Mac keeps its Release builds between test builds: only what changed compiles (Organizer 08.11)
+          DD=dd; [ "${{ needs.where.outputs.runner }}" = artem-mac ] && { DD="$HOME/mamay-cache/release-dd"; mkdir -p "$DD"; }
+          echo "DD=$DD" >> "$GITHUB_ENV"
+          T0=$(date +%s)
           sed -i '' "s/MARKETING_VERSION: \".*\"/MARKETING_VERSION: \"$V\"/; s/CURRENT_PROJECT_VERSION: \".*\"/CURRENT_PROJECT_VERSION: \"${{ github.run_number }}\"/" project.yml
           sh scripts/fingerprints.sh   # what this build is made of: progress in the Tester is kept by these, not by the version
           xcodegen generate --quiet
           APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
           for s in $APPS; do
             xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
-              -derivedDataPath dd CODE_SIGN_IDENTITY=- build | tail -3
+              -derivedDataPath "$DD" CODE_SIGN_IDENTITY=- build | tail -3
           done
           xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
-            -derivedDataPath dd CODE_SIGNING_ALLOWED=NO build | tail -3
+            -derivedDataPath "$DD" CODE_SIGNING_ALLOWED=NO build | tail -3
+          echo "⏱ build $(( $(date +%s) - T0 )) s"
       - name: Package
         working-directory: src/native
         env:
@@ -116,7 +121,7 @@ jobs:
           SKIP=""; [ "${{ needs.where.outputs.runner }}" = "artem-mac" ] && SKIP="--skip-jenkins"
           rm -rf ../../out Payload
           mkdir -p ../../out
-          M=dd/Build/Products/Release
+          M="$DD/Build/Products/Release"
           codesign --force --deep -s - "$M/Mamay Native.app"
           codesign --force --deep -s - "$M/Mamay Native Tester.app"
           create-dmg $SKIP --volname "Mamay Native $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Native.app" 160 160 \
@@ -128,7 +133,7 @@ jobs:
             create-dmg $SKIP --volname "Mamay Parser $V" --app-drop-link 420 160 --window-size 600 320 --icon "Mamay Parser.app" 160 160 \
               "../../out/Mamay-Parser-$V.dmg" "$M/Mamay Parser.app" || hdiutil create -volname "Mamay Parser" -srcfolder "$M/Mamay Parser.app" -ov -format UDZO "../../out/Mamay-Parser-$V.dmg"
           fi
-          I=dd/Build/Products/Release-iphoneos
+          I="$DD/Build/Products/Release-iphoneos"
           mkdir -p Payload && cp -R "$I/Mamay.app" Payload/ && ditto -c -k --keepParent Payload "../../out/Mamay-Native-iPad-$V.ipa"
           ls -la ../../out
       - name: Publish prerelease
