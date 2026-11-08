@@ -1,1 +1,6 @@
-{"version": "0.1.38-test", "ref": "9b79678b9a5ea08221481a538febec11a3ca5d79", "runner": "xcode-27", "notes": "TEST build = 0.1.37 (codons, brushes v3.1: solvent, wet mixing by strands, uneven profile, named tips) + fixes from Bug Reports: the old document is released when another opens (memory), one failing render job no longer drops the rest (no 15 s hangs), the Tester measures undo without its own sleeps, each parallel Mamay its share of memory, the Mac name in reports."}
+{
+"version": "0.1.39-test",
+"ref": "23eef2dbd3ccc2622daa05cf7a4d9854034bbd28",
+"runner": "xcode-27",
+"notes": "ТЕСТОВА збірка (GitHub). Codons: після завершеного прогону «Find the Codons» починає новий прогін зі своїм сідом (раніше миттєво створював ту саму групу вдруге); помилка коштує дорожче за слово (λ 5000) і пошук гена глибший (до 8 кодонів) — гени мають стати довшими й точнішими, прогін на ~третину довший. Решта — як у 0.1.38."
+}
