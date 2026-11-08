@@ -1,6 +1,6 @@
 {
  "id": "watercolour",
- "version": 1,
+ "version": 2,
  "folder": "Watercolour",
  "brushes": [
   {
@@ -376,7 +376,7 @@
   {
    "name": "SH blue",
    "recipe": {
-    "size": 40,
+    "size": 46,
     "path": {
      "smoothing": 0.3,
      "pressureToSize": 0.8,
@@ -396,8 +396,8 @@
     },
     "material": {
      "color": {
-      "r": 0.0423,
-      "g": 0.162,
+      "r": 0.0232,
+      "g": 0.117,
       "b": 0.6308,
       "a": 1
      },
@@ -405,13 +405,13 @@
      "body": 0.05,
      "opacity": 0.15,
      "gloss": 0.0,
-     "strength": 0.9,
+     "strength": 1.0,
      "granulation": 0.1,
      "staining": 0.5,
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.5
+     "dilute": 0.3
     },
     "form": {
      "source": "round",
@@ -427,7 +427,7 @@
   {
    "name": "SH violet",
    "recipe": {
-    "size": 40,
+    "size": 46,
     "path": {
      "smoothing": 0.3,
      "pressureToSize": 0.8,
@@ -447,22 +447,22 @@
     },
     "material": {
      "color": {
-      "r": 0.2542,
-      "g": 0.0802,
-      "b": 0.5776,
+      "r": 0.1946,
+      "g": 0.0423,
+      "b": 0.5271,
       "a": 1
      },
      "fluidity": 0.85,
      "body": 0.05,
      "opacity": 0.15,
      "gloss": 0.0,
-     "strength": 0.9,
+     "strength": 1.0,
      "granulation": 0.1,
      "staining": 0.5,
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.5
+     "dilute": 0.3
     },
     "form": {
      "source": "round",
@@ -478,7 +478,7 @@
   {
    "name": "SH teal",
    "recipe": {
-    "size": 40,
+    "size": 46,
     "path": {
      "smoothing": 0.3,
      "pressureToSize": 0.8,
@@ -498,22 +498,22 @@
     },
     "material": {
      "color": {
-      "r": 0.0086,
-      "g": 0.3515,
-      "b": 0.3916,
+      "r": 0.003,
+      "g": 0.3231,
+      "b": 0.3515,
       "a": 1
      },
      "fluidity": 0.85,
      "body": 0.05,
      "opacity": 0.15,
      "gloss": 0.0,
-     "strength": 0.9,
+     "strength": 1.0,
      "granulation": 0.1,
      "staining": 0.5,
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.5
+     "dilute": 0.3
     },
     "form": {
      "source": "round",
@@ -529,7 +529,7 @@
   {
    "name": "#16 Shrigley strokes",
    "recipe": {
-    "size": 40,
+    "size": 46,
     "path": {
      "smoothing": 0.3,
      "pressureToSize": 0.8,
@@ -549,8 +549,8 @@
     },
     "material": {
      "color": {
-      "r": 0.0423,
-      "g": 0.162,
+      "r": 0.0232,
+      "g": 0.117,
       "b": 0.6308,
       "a": 1
      },
@@ -558,13 +558,13 @@
      "body": 0.05,
      "opacity": 0.15,
      "gloss": 0.0,
-     "strength": 0.9,
+     "strength": 1.0,
      "granulation": 0.1,
      "staining": 0.5,
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.5
+     "dilute": 0.3
     },
     "form": {
      "source": "round",
@@ -1662,7 +1662,7 @@
   {
    "name": "Pink flame",
    "recipe": {
-    "size": 50,
+    "size": 60,
     "path": {
      "smoothing": 0.3,
      "pressureToSize": 0.8,
@@ -1682,22 +1682,22 @@
     },
     "material": {
      "color": {
-      "r": 0.807,
-      "g": 0.1441,
-      "b": 0.2542,
+      "r": 0.7454,
+      "g": 0.1022,
+      "b": 0.1946,
       "a": 1
      },
      "fluidity": 0.85,
      "body": 0.05,
      "opacity": 0.15,
      "gloss": 0.0,
-     "strength": 0.8,
+     "strength": 0.9,
      "granulation": 0.0,
      "staining": 0.5,
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.85
+     "dilute": 0.8
     },
     "form": {
      "source": "round",
@@ -1707,6 +1707,10 @@
     "surface": {
      "relief": 0.4,
      "grain": 6
+    },
+    "time": {
+     "tilt": 1.5,
+     "downhill": 270
     }
    }
   },
@@ -2209,19 +2213,19 @@
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.7
+     "dilute": 0.75
     },
     "form": {
      "source": "round",
      "round": 1,
-     "soft": 0.6
+     "soft": 0.8
     },
     "surface": {
      "relief": 0.4,
      "grain": 6
     },
     "time": {
-     "tilt": 2.5,
+     "tilt": 2.0,
      "downhill": 90
     }
    },
@@ -2308,62 +2312,11 @@
       "rest": 3
      }
     ],
-    "wet": 0.5
+    "wet": 0.9
    }
   },
   {
    "name": "Sepia wash",
-   "recipe": {
-    "size": 70,
-    "path": {
-     "smoothing": 0.3,
-     "pressureToSize": 0.8,
-     "tremor": 0.4
-    },
-    "tool": {
-     "kind": "hairs",
-     "tip": "round",
-     "stiffness": 0.2,
-     "load": 1.0,
-     "give": 0.7,
-     "dryness": 0.0,
-     "clump": 0.3,
-     "pickup": 0.4,
-     "bristle": 0.6,
-     "entropy": 0.7
-    },
-    "material": {
-     "color": {
-      "r": 0.3515,
-      "g": 0.1946,
-      "b": 0.0802,
-      "a": 1
-     },
-     "fluidity": 0.85,
-     "body": 0.05,
-     "opacity": 0.15,
-     "gloss": 0.0,
-     "strength": 0.8,
-     "granulation": 0.2,
-     "staining": 0.5,
-     "drying": 0.5,
-     "mix": 0.6,
-     "solvent": "water",
-     "dilute": 0.85
-    },
-    "form": {
-     "source": "round",
-     "round": 1,
-     "soft": 0.8
-    },
-    "surface": {
-     "relief": 0.4,
-     "grain": 6
-    }
-   }
-  },
-  {
-   "name": "#40 Olive and sepia blooms",
    "recipe": {
     "size": 80,
     "path": {
@@ -2385,27 +2338,78 @@
     },
     "material": {
      "color": {
-      "r": 0.1441,
-      "g": 0.1946,
-      "b": 0.0232,
+      "r": 0.2542,
+      "g": 0.117,
+      "b": 0.0395,
       "a": 1
      },
      "fluidity": 0.85,
      "body": 0.05,
      "opacity": 0.15,
      "gloss": 0.0,
-     "strength": 0.8,
+     "strength": 1.0,
      "granulation": 0.2,
      "staining": 0.5,
      "drying": 0.5,
      "mix": 0.6,
      "solvent": "water",
-     "dilute": 0.75
+     "dilute": 0.6
     },
     "form": {
      "source": "round",
      "round": 1,
-     "soft": 0.8
+     "soft": 0.7
+    },
+    "surface": {
+     "relief": 0.4,
+     "grain": 6
+    }
+   }
+  },
+  {
+   "name": "#40 Olive and sepia blooms",
+   "recipe": {
+    "size": 90,
+    "path": {
+     "smoothing": 0.3,
+     "pressureToSize": 0.8,
+     "tremor": 0.4
+    },
+    "tool": {
+     "kind": "hairs",
+     "tip": "round",
+     "stiffness": 0.2,
+     "load": 1.0,
+     "give": 0.7,
+     "dryness": 0.0,
+     "clump": 0.3,
+     "pickup": 0.4,
+     "bristle": 0.6,
+     "entropy": 0.7
+    },
+    "material": {
+     "color": {
+      "r": 0.1022,
+      "g": 0.1441,
+      "b": 0.0103,
+      "a": 1
+     },
+     "fluidity": 0.85,
+     "body": 0.05,
+     "opacity": 0.15,
+     "gloss": 0.0,
+     "strength": 1.0,
+     "granulation": 0.2,
+     "staining": 0.5,
+     "drying": 0.5,
+     "mix": 0.6,
+     "solvent": "water",
+     "dilute": 0.55
+    },
+    "form": {
+     "source": "round",
+     "round": 1,
+     "soft": 0.7
     },
     "surface": {
      "relief": 0.4,
