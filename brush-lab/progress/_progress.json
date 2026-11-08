@@ -1,14 +1,14 @@
 {
- "step": "04.11 rerun on engine 1104-0430 \u2014 references 6.0/10",
- "doing": "refs v16",
+ "step": "Oil \u00b7 Henry Ward \u2014 12 paintings layer by layer on engine v2.1",
+ "doing": "brush-lab/packs/oil-henry-ward.json v4",
  "done": 50,
- "running": false,
- "updated": "2026-11-04T06:47:17Z",
+ "running": true,
+ "updated": "2026-11-08T12:08:39Z",
  "session": "Brush Artist",
  "log": [
-  "20:05 refs v7 \u2014 5.9; paused",
   "23:00 refs v9 \u2014 wet-in-wet spreads, 6.0; paused",
   "23:55 refs v13, handed over to the developer",
-  "08:40 Henry Ward release 0.35, knife/tilt/finger checked \u2014 6.0"
+  "08:40 Henry Ward release 0.35, knife/tilt/finger checked \u2014 6.0",
+  "08.11 14:10 Henry Ward v4 \u2014 12 paintings, avg 6.1; refs average 6.2"
  ]
 }
