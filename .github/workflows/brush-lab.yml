@@ -19,6 +19,9 @@ on:
       only:
         description: only these brushes (names, comma-separated; empty = all)
         default: ''
+      scale:
+        description: "paint field per pixel: 2 = fine (v4, ≈ 4× slower), 1 = quick (a sheet's own \"scale\" wins)"
+        default: '2'
       packs_only:
         description: only the Brush Artist's packs
         type: boolean
@@ -85,7 +88,7 @@ jobs:
     needs: [drive, where]
     if: github.event_name != 'schedule' || needs.drive.outputs.changed == '1'
     runs-on: ${{ needs.where.outputs.runner == 'artem-mac' && fromJSON('["self-hosted","artem-mac"]') || needs.where.outputs.runner }}
-    timeout-minutes: 90
+    timeout-minutes: 330   # v4 §8: the 2× field paints ≈ 4× longer (09.11: a full run hit the old 90 min)
     steps:
       - uses: actions/checkout@v4
         with:
@@ -102,6 +105,7 @@ jobs:
         env:
           ONLY: ${{ github.event.inputs.only }}
           PACKS_ONLY: ${{ github.event.inputs.packs_only }}
+          MAMAY_LAB_SCALE: ${{ github.event.inputs.scale || '2' }}
         run: |
           set -eo pipefail
           xcodebuild -downloadComponent MetalToolchain >/dev/null 2>&1 || true
