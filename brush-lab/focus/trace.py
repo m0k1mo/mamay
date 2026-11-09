@@ -85,7 +85,7 @@ def trace(n,k=6,gw=160,crop=None,bg=None,order="area",line_max=2.6,spacing=0.75,
     lbl=np.vectorize(lambda t: alias[t])(lbl)
     ids=sorted(set(alias),key=lambda i:-(lbl==i).sum())
     border=np.concatenate([lbl[0],lbl[-1],lbl[:,0],lbl[:,-1]])
-    bgid=max(ids,key=lambda i:(border==i).sum()) if bg is None else bg
+    bgid=max(ids,key=lambda i:(border==i).sum()) if bg is None else (max([i for i in ids if (lbl==i).sum()>0.08*h*w],key=lambda i:color.rgb2lab(np.array([[a[lbl==i].mean(0)]]))[0,0,0]) if bg=='light' else bg)
     cols={i:a[lbl==i].mean(0) for i in ids}
     rest=[i for i in ids if i!=bgid and (lbl==i).sum()>=min_frac*h*w]
     if dark_last: rest.sort(key=lambda i:(-(lbl==i).sum()*(1 if color.rgb2lab(np.array([[cols[i]]]))[0,0,0]>35 else 0.001)))
@@ -106,7 +106,7 @@ def trace(n,k=6,gw=160,crop=None,bg=None,order="area",line_max=2.6,spacing=0.75,
             else:
                 sz=csz
                 an=orient(a,cm) if ang is None else ang
-                for seg in rows(cm,an,sz*spacing,minrun or max(sz*1.2,5),jit=0.3,rng=rng): masses.append(seg)
+                for seg in rows(cm,an,sz*spacing,minrun or max(sz*1.2,5),jit=0.12,rng=rng): masses.append(seg)
                 msizes.append(sz)
         hc=hexc(cols[i])
         if masses: layers.append((hc,"mass",masses,float(np.median(msizes))/w))

@@ -334,8 +334,8 @@ def r24():
     return s,"#3a4a6a"
 @ref(25)
 def r25():
-    y=B("#25 yellow",impasto("#f4c20d",0.2,"flat",ent=1.2,gloss=0.35,streak=0.06))
-    return [st(ln(0.5,0.12,0.49,0.9,0.01),y,[1,0.95,0.9,0.85,0.6],220,2)],"#f2f2f0"
+    y=B("#25 yellow",impasto("#f4c20d",0.34,"flat",ent=1.3,gloss=0.35,streak=0.06,colors=["#ffd21a","#e8a800"]))
+    return [st(ln(0.5,0.1,0.49,0.92,0.01,30),y,[1,1,0.95,0.9,0.85,0.7],180,2)],"#f2f2f0"
 @ref(26)
 def r26():
     k=B("#26 ink brush",ink("#0c0c0e",0.025,load=1,dry=0.15,ent=0.9,p2s=0.95))
@@ -422,7 +422,7 @@ def r34():
     return s,"#6a1a3a"
 @ref(35)
 def r35():
-    rd=B("#35 red runs",wc("#e02a2a",0.11,0.75,0.8,0.1,tilt=2.0,colors=["#f07a20"]))
+    rd=B("#35 red runs",wc("#e02a2a",0.22,0.7,0.8,0.1,tilt=3.0,colors=["#f07a20"]))
     return [st(ln(0.0,0.42,1.0,0.4,0.01,16),rd,[0.9,1,1,0.9],280,3)],"#f8f6f4"
 LET={'I':[[(0.5,0),(0.5,1)]],'T':[[(0,0),(1,0)],[(0.5,0),(0.5,1)]],'W':[[(0,0),(0.25,1),(0.5,0.4),(0.75,1),(1,0)]],
  'A':[[(0,1),(0.5,0),(1,1)],[(0.25,0.6),(0.75,0.6)]],'S':[[(1,0.1),(0.5,0),(0,0.25),(0.5,0.5),(1,0.75),(0.5,1),(0,0.9)]],
@@ -558,10 +558,10 @@ def r46():
 @ref(47)
 def r47():
     y=B("#47 yellow",gouache("#e8f020",0.3,"flat",ent=0.3))
-    p=B("#47 pink knife",knife("#f0a8d0",0.2))
+    p=B("#47 pink knife",knife("#f0a8d0",0.3))
     s=ground(y,5)
     for k in range(4):
-        e=st(ln(0.15,0.15+k*0.22,0.85,0.16+k*0.22,0.005,8),p,[0.9,1,0.9],300,1);s.append(e)
+        e=st(ln(0.12,0.17+k*0.22,0.88,0.16+k*0.22+R(-0.02,0.02),R(-0.02,0.02),14,0.006),p,[0.9,1,0.95,0.8],260,1);s.append(e)
     s[5]["dry"]=True
     return s,"#e8f020"
 @ref(48)
@@ -595,11 +595,11 @@ def auto(n):
     out=[];first=True
     for li,(hc,kind,items,sz) in enumerate(layers):
         if kind=="mass":
-            b=B(f"#{n:02d} L{li} {hc}",mk_m(hc,min(0.12,sz*1.15)))
+            b=B(f"#{n:02d} L{li} {hc}",mk_m(hc,min(0.15,sz*MS.get(n,1.6))))
             ss=[st([(x/gw,y/gh) for x,y in it],b,sp=R(450,750),rest=0.2) for it in items if len(it)>=2]
         else:
             wmax=max(max(wd) for _,wd in items) or 1
-            b=B(f"#{n:02d} L{li} {hc} line",mk_l(hc,min(0.08,sz)))
+            b=B(f"#{n:02d} L{li} {hc} line",mk_l(hc,min(0.08,sz*LS.get(n,1.0))))
             ss=[]
             for pts,wd in items:
                 if len(pts)<2: continue
@@ -612,6 +612,8 @@ def auto(n):
 
 # ======================= build =======================
 MANUAL={25,33,35,46,47}
+MS={38:1.0,41:1.0,18:1.1}
+LS={19:0.7,31:0.8,28:0.9}
 def build(ver,K,only=None):
     C.K=K;names=[]
     for n in sorted(F):
