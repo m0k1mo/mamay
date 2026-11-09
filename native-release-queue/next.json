@@ -1,6 +1,1 @@
-{
-"version": "0.1.42-test",
-"ref": "4cc191665bf9f73118e6c4b73dd681eccbe7cde4",
-"runner": "xcode-27",
-"notes": "ТЕСТОВА збірка (GitHub). Evolution Design: мова отримала слова місця — move x/y, zoom, rotate, mirror, дрібний шум ×2/×4, диск і смуга (раніше геном не міг покласти фігуру в кут — лише «погода» на весь аркуш). Пошук плаката ширший і глибший (промінь 128, до 200 атомів). Після кожної групи — бокс «Result» простими словами: біти, скільки картинок сказано, краще чи гірше за найкращу групу і що робити далі; на Say the Poster — 4 кроки шляху. Лаги прибрано (картинки генів рахуються раз у фоні). Під капотом — нічний інструмент codons (той самий рушій без Тестера)."
-}
+{"version": "0.1.43-test", "ref": "1694a0f6d50398cc2871632e7d7cb1f43f62a948", "notes": "TEST build = 0.1.42 (codons, poster genomes) + brushes v3.2: each hair leaves its own fine line of density inside the stroke; the stroke stays one body while there is paint (gaps only where it runs out); no white lines along strands on matt paint; a full covering brush covers wet paint (the pickup slider decides how much it mixes); painting over a dried layer is no longer a barcode; thick paint never throws white specks. Faster builds on Artem's Mac."}
