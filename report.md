@@ -1,806 +1,304 @@
 ![All brushes](contact.png)
 
-# Brush Lab — 6 brushes · 9 Nov 2026 at 07:07
+# Brush Lab — 16 brushes · 9 Nov 2026 at 12:56
 
 Every sheet: 1500 × 600, ten strokes in a 5 × 2 grid — 1. light line · 2. heavy line · 3. pressure swell · 4. fast wave · 5. slow wave · 6. spiral · 7. loop · 8. tilted · 9. over the wet one · 10. long, no reload (cell 8 holds «tilted» and «over the wet one» crossed). The CPU reference of Mamay's paint engine; the wet layer settles 20 s at the end.
 
 Columns: **covered** = share of the cell with paint right after the stroke → after settling; **width** = painted area of the stroke ÷ its length (px); **dark** = mean darkness of the painted pixels above the paper's own grain (0 = paper, 1 = black); **spread** = how far wet paint went beyond the stroke (1.0 = stayed); **ms** = the stroke on the CPU; long stroke: paint in each quarter of its length (it should run out: wet → streaks → dry tail).
 
-## Refs v3 · #19 Guston charcoal hand
-Charcoal 1.00 · 78 px · 19.4 s
+## Oil focus · A best filbert
+Gouache 1.00 + turpentine 15 % · 260 px · 224.6 s
 
-![Refs v3 · #19 Guston charcoal hand](Refs-v3-19-Guston-charcoal-hand.png)
+![Oil focus · A best filbert](Oil-focus-A-best-filbert.png)
 
-| stroke | covered | width | dark | spread | ms |
-|---|---|---|---|---|---|
-| light line | 12 % → 12 % | 35.8 px | 0.62 | 1.00 | 632 |
-| heavy line | 23 % → 23 % | 67.4 px | 0.61 | 1.00 | 560 |
-| pressure swell | 16 % → 16 % | 59.6 px | 0.62 | 1.01 | 324 |
-| fast wave | 48 % → 48 % | 55.0 px | 0.62 | 1.00 | 727 |
-| slow wave | 45 % → 45 % | 51.9 px | 0.62 | 1.00 | 989 |
-| spiral | 65 % → 65 % | 42.8 px | 0.62 | 1.00 | 938 |
-| loop | 37 % → 37 % | 47.3 px | 0.62 | 1.00 | 557 |
-| tilted | 12 % → 12 % | 32.4 px | 0.61 | 1.00 | 352 |
-| over the wet one | 30 % → 31 % | 52.4 px | 0.61 | 1.01 | 288 |
-| long, no reload | 80 % → 80 % | 35.8 px | 0.62 | 1.00 | 1839 | quarters: 0.53 → 0.53 → 0.53 → 0.53
-
-Numbers say: light vs heavy: width 35.8 → 67.4 px, dark 0.62 → 0.61; the long stroke does not run out of paint.
-
-## Refs v3 · #21 Gritty dog contours
-Gouache 1.00 + water 15 % · 106 px · 74.7 s
-
-![Refs v3 · #21 Gritty dog contours](Refs-v3-21-Gritty-dog-contours.png)
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
 
 | stroke | covered | width | dark | spread | ms |
 |---|---|---|---|---|---|
-| light line | 32 % → 31 % | 91.9 px | 0.35 | 0.97 | 1009 |
-| heavy line | 34 % → 31 % | 98.2 px | 0.35 | 0.93 | 754 |
-| pressure swell | 26 % → 26 % | 96.1 px | 0.36 | 1.03 | 351 |
-| fast wave | 63 % → 55 % | 72.4 px | 0.36 | 0.88 | 1154 |
-| slow wave | 65 % → 52 % | 75.4 px | 0.35 | 0.79 | 2297 |
-| spiral | 73 % → 48 % | 48.4 px | 0.34 | 0.65 | 2828 |
-| loop | 59 % → 56 % | 76.2 px | 0.34 | 0.94 | 1215 |
-| tilted | 25 % → 25 % | 69.7 px | 0.36 | 1.01 | 703 |
-| over the wet one | 52 % → 50 % | 76.4 px | 0.36 | 0.95 | 549 |
-| long, no reload | 85 % → 61 % | 38.1 px | 0.34 | 0.71 | 9051 | quarters: 0.34 → 0.33 → 0.29 → 0.24
+| light line | 73 % → 71 % | 213.2 px | 0.29 | 0.97 | 3198 |
+| heavy line | 75 % → 66 % | 218.6 px | 0.29 | 0.88 | 3792 |
+| pressure swell | 66 % → 73 % | 249.2 px | 0.26 | 1.11 | 2343 |
+| fast wave | 99 % → 78 % | 114.6 px | 0.25 | 0.78 | 10412 |
+| slow wave | 99 % → 65 % | 115.0 px | 0.28 | 0.66 | 17534 |
+| spiral | 100 % → 70 % | 65.9 px | 0.28 | 0.70 | 15417 |
+| loop | 100 % → 78 % | 129.5 px | 0.28 | 0.78 | 8443 |
+| tilted | 55 % → 55 % | 153.5 px | 0.26 | 1.00 | 3537 |
+| over the wet one | 92 % → 85 % | 103.5 px | 0.26 | 0.92 | 3558 |
+| long, no reload | 100 % → 55 % | 44.8 px | 0.28 | 0.55 | 20971 | quarters: 0.00 → 0.00 → 0.00 → 0.00
 
-Numbers say: light vs heavy: width 91.9 → 98.2 px, dark 0.35 → 0.35; pressure barely changes the width.
+Numbers say: light vs heavy: width 213.2 → 218.6 px, dark 0.29 → 0.29; pressure barely changes the width.
 
-## Refs v3 · #24 Picasso flat oil
-Gouache 1.00 + turpentine 20 % · 102 px · 73.5 s
+## Oil focus · B flat
+Gouache 1.00 + turpentine 15 % · 260 px · 199.9 s
 
-![Refs v3 · #24 Picasso flat oil](Refs-v3-24-Picasso-flat-oil.png)
+![Oil focus · B flat](Oil-focus-B-flat.png)
 
-| stroke | covered | width | dark | spread | ms |
-|---|---|---|---|---|---|
-| light line | 32 % → 29 % | 94.3 px | 0.12 | 0.90 | 1232 |
-| heavy line | 34 % → 30 % | 97.7 px | 0.12 | 0.88 | 694 |
-| pressure swell | 25 % → 25 % | 94.8 px | 0.14 | 0.99 | 346 |
-| fast wave | 69 % → 34 % | 80.2 px | 0.19 | 0.49 | 1215 |
-| slow wave | 68 % → 34 % | 79.0 px | 0.15 | 0.50 | 2437 |
-| spiral | 79 % → 33 % | 52.4 px | 0.17 | 0.41 | 3134 |
-| loop | 61 % → 38 % | 78.6 px | 0.12 | 0.62 | 1472 |
-| tilted | 24 % → 24 % | 66.1 px | 0.16 | 1.00 | 661 |
-| over the wet one | 52 % → 47 % | 79.2 px | 0.16 | 0.90 | 571 |
-| long, no reload | 96 % → 36 % | 43.2 px | 0.16 | 0.38 | 10209 | quarters: 0.16 → 0.12 → 0.04 → 0.01
-
-Numbers say: light vs heavy: width 94.3 → 97.7 px, dark 0.12 → 0.12; pressure barely changes the width.
-
-## Refs v3 · #19 Guston charcoal hand — own sheet
-own sheet 1600 × 1600 · Charcoal 1.00 · 78 px · 48.2 s
-
-![Refs v3 · #19 Guston charcoal hand — own sheet](Refs-v3-19-Guston-charcoal-hand-own-sheet.png)
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
 
 | stroke | covered | width | dark | spread | ms |
 |---|---|---|---|---|---|
-| stroke 1 | 5 % → 21 % | 41.4 px | 0.59 | 4.58 | 231 |
-| stroke 2 | 8 % → 22 % | 87.1 px | 0.59 | 2.57 | 76 |
-| stroke 3 | 8 % → 21 % | 195.2 px | 0.59 | 2.61 | 43 |
-| stroke 4 | 12 % → 21 % | 127.7 px | 0.59 | 1.74 | 134 |
-| stroke 5 | 6 % → 19 % | 79.0 px | 0.59 | 2.87 | 108 |
-| stroke 6 | 17 % → 23 % | 448.4 px | 0.59 | 1.33 | 45 |
-| stroke 7 | 18 % → 22 % | 509.9 px | 0.59 | 1.19 | 42 |
-| stroke 8 | 18 % → 22 % | 250.1 px | 0.59 | 1.22 | 100 |
-| stroke 9 | 3 % → 38 % | 39.9 px | 0.60 | 13.70 | 70 |
-| stroke 10 | 5 % → 42 % | 88.0 px | 0.60 | 7.76 | 55 |
-| stroke 11 | 4 % → 25 % | 50.5 px | 0.59 | 6.09 | 67 |
-| stroke 12 | 4 % → 37 % | 47.2 px | 0.60 | 10.11 | 63 |
-| stroke 13 | 3 % → 34 % | 57.8 px | 0.60 | 10.56 | 28 |
-| stroke 14 | 2 % → 39 % | 60.8 px | 0.60 | 19.38 | 23 |
-| stroke 15 | 8 % → 41 % | 95.7 px | 0.60 | 5.19 | 86 |
-| stroke 16 | 7 % → 50 % | 123.3 px | 0.60 | 6.63 | 47 |
-| stroke 17 | 7 % → 27 % | 165.5 px | 0.59 | 3.96 | 39 |
-| stroke 18 | 2 % → 39 % | 55.8 px | 0.60 | 20.83 | 19 |
-| stroke 19 | 2 % → 50 % | 42.1 px | 0.60 | 21.72 | 25 |
-| stroke 20 | 2 % → 33 % | 55.8 px | 0.60 | 16.58 | 18 |
-| stroke 21 | 10 % → 42 % | 164.7 px | 0.60 | 4.09 | 49 |
-| stroke 22 | 5 % → 40 % | 128.8 px | 0.60 | 7.85 | 21 |
-| stroke 23 | 14 % → 26 % | 115.8 px | 0.60 | 1.85 | 103 |
-| stroke 24 | 10 % → 19 % | 77.5 px | 0.60 | 1.83 | 132 |
-| stroke 25 | 4 % → 44 % | 61.3 px | 0.60 | 12.19 | 42 |
-| stroke 26 | 10 % → 58 % | 196.1 px | 0.60 | 5.75 | 35 |
-| stroke 27 | 13 % → 59 % | 271.4 px | 0.60 | 4.42 | 48 |
-| stroke 28 | 15 % → 56 % | 140.4 px | 0.60 | 3.84 | 102 |
-| stroke 29 | 9 % → 47 % | 176.3 px | 0.60 | 5.08 | 39 |
-| stroke 30 | 17 % → 41 % | 139.9 px | 0.60 | 2.46 | 118 |
-| stroke 31 | 5 % → 37 % | 134.6 px | 0.60 | 6.99 | 27 |
-| stroke 32 | 7 % → 40 % | 196.2 px | 0.60 | 5.58 | 33 |
-| stroke 33 | 7 % → 33 % | 154.5 px | 0.60 | 4.86 | 34 |
-| stroke 34 | 22 % → 60 % | 308.5 px | 0.60 | 2.78 | 63 |
-| stroke 35 | 17 % → 55 % | 393.8 px | 0.60 | 3.18 | 37 |
-| stroke 36 | 15 % → 24 % | 99.3 px | 0.60 | 1.59 | 87 |
-| stroke 37 | 20 % → 40 % | 351.4 px | 0.60 | 2.03 | 69 |
-| stroke 38 | 9 % → 31 % | 115.5 px | 0.59 | 3.32 | 60 |
-| stroke 39 | 15 % → 49 % | 349.1 px | 0.60 | 3.22 | 31 |
-| stroke 40 | 18 % → 44 % | 257.6 px | 0.60 | 2.45 | 50 |
-| stroke 41 | 17 % → 33 % | 265.7 px | 0.59 | 1.91 | 52 |
-| stroke 42 | 13 % → 44 % | 208.0 px | 0.60 | 3.43 | 50 |
-| stroke 43 | 11 % → 34 % | 182.1 px | 0.60 | 3.08 | 40 |
-| stroke 44 | 17 % → 37 % | 133.3 px | 0.60 | 2.17 | 177 |
-| stroke 45 | 15 % → 27 % | 114.0 px | 0.60 | 1.79 | 190 |
-| stroke 46 | 19 % → 53 % | 404.7 px | 0.60 | 2.73 | 37 |
-| stroke 47 | 18 % → 51 % | 477.9 px | 0.60 | 2.84 | 28 |
-| stroke 48 | 20 % → 47 % | 328.5 px | 0.60 | 2.36 | 46 |
-| stroke 49 | 5 % → 22 % | 61.1 px | 0.59 | 4.58 | 87 |
-| stroke 50 | 31 % → 55 % | 575.4 px | 0.60 | 1.76 | 70 |
-| stroke 51 | 29 % → 50 % | 403.8 px | 0.60 | 1.76 | 51 |
-| stroke 52 | 13 % → 32 % | 211.7 px | 0.60 | 2.44 | 43 |
-| stroke 53 | 13 % → 37 % | 209.7 px | 0.60 | 2.87 | 75 |
-| stroke 54 | 14 % → 33 % | 327.6 px | 0.60 | 2.39 | 38 |
-| stroke 55 | 29 % → 48 % | 494.5 px | 0.60 | 1.63 | 108 |
-| stroke 56 | 24 % → 50 % | 644.2 px | 0.60 | 2.07 | 26 |
-| stroke 57 | 19 % → 46 % | 458.6 px | 0.60 | 2.44 | 26 |
-| stroke 58 | 10 % → 28 % | 180.1 px | 0.60 | 2.73 | 45 |
-| stroke 59 | 34 % → 54 % | 648.5 px | 0.60 | 1.62 | 49 |
-| stroke 60 | 29 % → 53 % | 408.9 px | 0.60 | 1.82 | 64 |
-| stroke 61 | 20 % → 31 % | 547.8 px | 0.60 | 1.60 | 26 |
-| stroke 62 | 24 % → 30 % | 362.6 px | 0.60 | 1.23 | 76 |
-| stroke 63 | 39 % → 56 % | 614.9 px | 0.60 | 1.42 | 59 |
-| stroke 64 | 23 % → 38 % | 135.6 px | 0.60 | 1.67 | 262 |
-| stroke 65 | 24 % → 41 % | 208.6 px | 0.60 | 1.70 | 163 |
-| stroke 66 | 20 % → 30 % | 322.6 px | 0.60 | 1.51 | 72 |
-| stroke 67 | 28 % → 44 % | 236.6 px | 0.60 | 1.56 | 139 |
-| stroke 68 | 38 % → 55 % | 414.9 px | 0.60 | 1.42 | 132 |
-| stroke 69 | 29 % → 51 % | 603.9 px | 0.60 | 1.74 | 29 |
-| stroke 70 | 28 % → 32 % | 632.6 px | 0.60 | 1.14 | 27 |
-| stroke 71 | 13 % → 26 % | 351.2 px | 0.60 | 1.96 | 48 |
-| stroke 72 | 37 % → 55 % | 416.1 px | 0.60 | 1.48 | 130 |
-| stroke 73 | 30 % → 47 % | 749.2 px | 0.60 | 1.56 | 56 |
-| stroke 74 | 29 % → 32 % | 135.6 px | 0.60 | 1.10 | 466 |
-| stroke 75 | 28 % → 41 % | 549.2 px | 0.60 | 1.46 | 57 |
-| stroke 76 | 48 % → 57 % | 888.0 px | 0.60 | 1.20 | 38 |
-| stroke 77 | 35 % → 43 % | 442.6 px | 0.60 | 1.24 | 67 |
-| stroke 78 | 36 % → 51 % | 776.1 px | 0.60 | 1.40 | 41 |
-| stroke 79 | 33 % → 48 % | 1056.7 px | 0.60 | 1.45 | 28 |
-| stroke 80 | 37 % → 50 % | 852.1 px | 0.60 | 1.34 | 42 |
-| stroke 81 | 29 % → 33 % | 263.0 px | 0.60 | 1.16 | 150 |
-| stroke 82 | 35 % → 49 % | 554.4 px | 0.60 | 1.42 | 54 |
-| stroke 83 | 31 % → 40 % | 843.9 px | 0.60 | 1.30 | 32 |
-| stroke 84 | 34 % → 41 % | 484.4 px | 0.60 | 1.19 | 58 |
-| stroke 85 | 30 % → 33 % | 355.0 px | 0.60 | 1.11 | 122 |
-| stroke 86 | 17 % → 25 % | 272.5 px | 0.59 | 1.42 | 57 |
-| stroke 87 | 32 % → 38 % | 384.7 px | 0.60 | 1.17 | 83 |
-| stroke 88 | 42 % → 50 % | 497.4 px | 0.60 | 1.20 | 111 |
-| stroke 89 | 34 % → 47 % | 831.0 px | 0.60 | 1.39 | 29 |
-| stroke 90 | 17 % → 22 % | 349.2 px | 0.60 | 1.28 | 39 |
-| stroke 91 | 30 % → 32 % | 489.0 px | 0.60 | 1.07 | 56 |
-| stroke 92 | 44 % → 50 % | 694.8 px | 0.60 | 1.14 | 59 |
-| stroke 93 | 44 % → 52 % | 1102.9 px | 0.60 | 1.18 | 38 |
-| stroke 94 | 31 % → 39 % | 349.8 px | 0.60 | 1.25 | 81 |
-| stroke 95 | 48 % → 55 % | 793.3 px | 0.60 | 1.14 | 58 |
-| stroke 96 | 18 % → 22 % | 502.4 px | 0.59 | 1.19 | 26 |
-| stroke 97 | 29 % → 32 % | 224.8 px | 0.60 | 1.08 | 160 |
-| stroke 98 | 42 % → 46 % | 1293.9 px | 0.60 | 1.08 | 21 |
-| stroke 99 | 45 % → 51 % | 1368.3 px | 0.60 | 1.13 | 34 |
-| stroke 100 | 37 % → 37 % | 579.3 px | 0.60 | 1.01 | 45 |
-| stroke 101 | 41 % → 45 % | 650.3 px | 0.60 | 1.12 | 65 |
-| stroke 102 | 53 % → 56 % | 921.7 px | 0.60 | 1.06 | 50 |
-| stroke 103 | 20 % → 23 % | 678.7 px | 0.59 | 1.13 | 24 |
-| stroke 104 | 40 % → 46 % | 1298.6 px | 0.60 | 1.13 | 20 |
-| stroke 105 | 48 % → 49 % | 1000.3 px | 0.60 | 1.03 | 35 |
-| stroke 106 | 28 % → 35 % | 514.2 px | 0.60 | 1.23 | 45 |
-| stroke 107 | 56 % → 57 % | 1078.3 px | 0.60 | 1.02 | 50 |
-| stroke 108 | 46 % → 47 % | 471.9 px | 0.60 | 1.00 | 115 |
-| stroke 109 | 59 % → 60 % | 1708.9 px | 0.60 | 1.01 | 45 |
-| stroke 110 | 32 % → 32 % | 515.2 px | 0.60 | 1.00 | 152 |
-| stroke 111 | 40 % → 42 % | 608.0 px | 0.60 | 1.05 | 511 |
-| stroke 112 | 39 % → 39 % | 470.4 px | 0.60 | 1.00 | 790 |
-| stroke 113 | 53 % → 53 % | 1017.2 px | 0.60 | 1.00 | 100 |
-| stroke 114 | 31 % → 31 % | 495.2 px | 0.60 | 1.00 | 112 |
-| stroke 115 | 23 % → 23 % | 403.5 px | 0.59 | 1.00 | 69 |
+| light line | 69 % → 69 % | 200.7 px | 0.30 | 1.00 | 2483 |
+| heavy line | 70 % → 64 % | 204.4 px | 0.30 | 0.91 | 3235 |
+| pressure swell | 61 % → 69 % | 230.3 px | 0.27 | 1.12 | 1905 |
+| fast wave | 99 % → 74 % | 114.0 px | 0.25 | 0.75 | 8253 |
+| slow wave | 99 % → 65 % | 114.8 px | 0.29 | 0.66 | 14333 |
+| spiral | 100 % → 72 % | 65.8 px | 0.28 | 0.73 | 13152 |
+| loop | 100 % → 79 % | 129.3 px | 0.29 | 0.79 | 6687 |
+| tilted | 52 % → 52 % | 144.7 px | 0.27 | 1.00 | 3734 |
+| over the wet one | 88 % → 84 % | 102.3 px | 0.27 | 0.95 | 3428 |
+| long, no reload | 100 % → 57 % | 44.8 px | 0.28 | 0.57 | 16250 | quarters: 0.00 → 0.00 → 0.00 → 0.00
+
+Numbers say: light vs heavy: width 200.7 → 204.4 px, dark 0.30 → 0.30; pressure barely changes the width.
+
+## Oil focus · C round
+Gouache 1.00 + turpentine 15 % · 260 px · 187.6 s
+
+![Oil focus · C round](Oil-focus-C-round.png)
+
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| light line | 44 % → 38 % | 126.9 px | 0.36 | 0.86 | 1518 |
+| heavy line | 56 % → 51 % | 163.1 px | 0.36 | 0.92 | 2397 |
+| pressure swell | 41 % → 42 % | 152.8 px | 0.32 | 1.03 | 1982 |
+| fast wave | 89 % → 81 % | 103.2 px | 0.32 | 0.91 | 6788 |
+| slow wave | 90 % → 67 % | 104.2 px | 0.35 | 0.75 | 10818 |
+| spiral | 93 % → 71 % | 61.6 px | 0.36 | 0.76 | 11122 |
+| loop | 78 % → 70 % | 100.5 px | 0.35 | 0.91 | 5296 |
+| tilted | 48 % → 48 % | 133.4 px | 0.34 | 1.00 | 4206 |
+| over the wet one | 83 % → 75 % | 97.4 px | 0.34 | 0.91 | 2863 |
+| long, no reload | 100 % → 62 % | 44.7 px | 0.35 | 0.63 | 16583 | quarters: 0.00 → 0.00 → 0.00 → 0.00
+
+Numbers say: light vs heavy: width 126.9 → 163.1 px, dark 0.36 → 0.36.
+
+## Oil focus · D worn
+Gouache 1.00 + turpentine 15 % · 260 px · 240.0 s
+
+![Oil focus · D worn](Oil-focus-D-worn.png)
+
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| light line | 67 % → 68 % | 195.9 px | 0.30 | 1.00 | 3754 |
+| heavy line | 77 % → 67 % | 224.6 px | 0.30 | 0.86 | 4668 |
+| pressure swell | 72 % → 74 % | 269.3 px | 0.28 | 1.04 | 3170 |
+| fast wave | 97 % → 87 % | 112.0 px | 0.28 | 0.89 | 10577 |
+| slow wave | 96 % → 62 % | 110.5 px | 0.30 | 0.65 | 17421 |
+| spiral | 97 % → 85 % | 64.2 px | 0.30 | 0.87 | 15947 |
+| loop | 96 % → 77 % | 124.7 px | 0.30 | 0.80 | 8883 |
+| tilted | 57 % → 57 % | 158.1 px | 0.28 | 1.00 | 4472 |
+| over the wet one | 93 % → 86 % | 102.6 px | 0.28 | 0.92 | 4311 |
+| long, no reload | 99 % → 56 % | 44.5 px | 0.29 | 0.57 | 21613 | quarters: 0.00 → 0.00 → 0.00 → 0.01
+
+Numbers say: light vs heavy: width 195.9 → 224.6 px, dark 0.30 → 0.30.
+
+## Oil focus · E swell
+Gouache 1.00 + turpentine 15 % · 260 px · 224.3 s
+
+![Oil focus · E swell](Oil-focus-E-swell.png)
+
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| light line | 73 % → 71 % | 212.2 px | 0.28 | 0.97 | 2670 |
+| heavy line | 77 % → 66 % | 223.1 px | 0.29 | 0.86 | 5165 |
+| pressure swell | 66 % → 74 % | 247.6 px | 0.26 | 1.12 | 2762 |
+| fast wave | 99 % → 78 % | 114.7 px | 0.25 | 0.78 | 9795 |
+| slow wave | 100 % → 65 % | 115.0 px | 0.28 | 0.65 | 15755 |
+| spiral | 100 % → 70 % | 65.9 px | 0.27 | 0.70 | 15007 |
+| loop | 100 % → 78 % | 129.5 px | 0.28 | 0.78 | 8281 |
+| tilted | 55 % → 55 % | 153.9 px | 0.25 | 1.00 | 3593 |
+| over the wet one | 92 % → 85 % | 103.1 px | 0.25 | 0.92 | 3512 |
+| long, no reload | 100 % → 54 % | 44.8 px | 0.28 | 0.54 | 20792 | quarters: 0.00 → 0.00 → 0.00 → 0.00
+
+Numbers say: light vs heavy: width 212.2 → 223.1 px, dark 0.28 → 0.29; pressure barely changes the width.
+
+## Oil focus · F steady hand
+Gouache 1.00 + turpentine 15 % · 260 px · 227.1 s
+
+![Oil focus · F steady hand](Oil-focus-F-steady-hand.png)
+
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| light line | 73 % → 71 % | 212.5 px | 0.29 | 0.97 | 3075 |
+| heavy line | 75 % → 66 % | 217.3 px | 0.29 | 0.88 | 3982 |
+| pressure swell | 66 % → 73 % | 247.6 px | 0.26 | 1.11 | 2436 |
+| fast wave | 99 % → 78 % | 114.7 px | 0.25 | 0.78 | 10564 |
+| slow wave | 99 % → 66 % | 114.9 px | 0.28 | 0.66 | 17712 |
+| spiral | 100 % → 70 % | 65.9 px | 0.28 | 0.70 | 15815 |
+| loop | 100 % → 78 % | 129.5 px | 0.28 | 0.78 | 8596 |
+| tilted | 55 % → 55 % | 153.0 px | 0.26 | 1.00 | 3655 |
+| over the wet one | 92 % → 85 % | 103.7 px | 0.26 | 0.92 | 3611 |
+| long, no reload | 100 % → 54 % | 44.8 px | 0.28 | 0.54 | 21532 | quarters: 0.00 → 0.00 → 0.00 → 0.00
+
+Numbers say: light vs heavy: width 212.5 → 217.3 px, dark 0.29 → 0.29; pressure barely changes the width.
+
+## Oil focus · G soft hairs
+Gouache 1.00 + turpentine 15 % · 260 px · 226.1 s
+
+![Oil focus · G soft hairs](Oil-focus-G-soft-hairs.png)
+
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| light line | 73 % → 72 % | 212.1 px | 0.28 | 0.98 | 3005 |
+| heavy line | 74 % → 62 % | 216.0 px | 0.28 | 0.83 | 3899 |
+| pressure swell | 65 % → 72 % | 243.9 px | 0.25 | 1.11 | 2275 |
+| fast wave | 99 % → 69 % | 114.6 px | 0.24 | 0.70 | 10446 |
+| slow wave | 99 % → 49 % | 114.9 px | 0.27 | 0.50 | 18069 |
+| spiral | 100 % → 65 % | 65.8 px | 0.27 | 0.65 | 16227 |
+| loop | 100 % → 67 % | 129.5 px | 0.28 | 0.67 | 8264 |
+| tilted | 56 % → 56 % | 155.5 px | 0.25 | 1.00 | 3596 |
+| over the wet one | 92 % → 84 % | 101.0 px | 0.25 | 0.91 | 3634 |
+| long, no reload | 100 % → 56 % | 44.8 px | 0.27 | 0.56 | 21812 | quarters: 0.00 → 0.00 → 0.00 → 0.00
+
+Numbers say: light vs heavy: width 212.1 → 216.0 px, dark 0.28 → 0.28; pressure barely changes the width.
+
+## Oil focus · H narrow
+Gouache 1.00 + turpentine 15 % · 200 px · 176.2 s
+
+![Oil focus · H narrow](Oil-focus-H-narrow.png)
+
+A light paint: laid on a grey sheet (on white it cannot be seen); **dark** = how far it is from the grey either way.
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| light line | 60 % → 55 % | 174.0 px | 0.31 | 0.92 | 2240 |
+| heavy line | 62 % → 54 % | 178.6 px | 0.31 | 0.88 | 2083 |
+| pressure swell | 50 % → 58 % | 187.6 px | 0.28 | 1.15 | 1678 |
+| fast wave | 94 % → 63 % | 108.4 px | 0.27 | 0.67 | 6533 |
+| slow wave | 96 % → 56 % | 110.7 px | 0.31 | 0.58 | 11660 |
+| spiral | 98 % → 55 % | 64.9 px | 0.29 | 0.56 | 11225 |
+| loop | 92 % → 64 % | 119.8 px | 0.30 | 0.69 | 5340 |
+| tilted | 44 % → 44 % | 123.9 px | 0.28 | 1.00 | 2641 |
+| over the wet one | 83 % → 76 % | 108.8 px | 0.28 | 0.91 | 2731 |
+| long, no reload | 99 % → 48 % | 44.5 px | 0.30 | 0.49 | 15347 | quarters: 0.00 → 0.00 → 0.00 → 0.01
+
+Numbers say: light vs heavy: width 174.0 → 178.6 px, dark 0.31 → 0.31; pressure barely changes the width.
+
+## Oil focus · A best filbert — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 131.2 s
+
+![Oil focus · A best filbert — own sheet](Oil-focus-A-best-filbert-own-sheet.png)
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| stroke 1 | 15 % → 48 % | 189.4 px | 0.48 | 3.16 | 10555 |
+| stroke 2 | 28 % → 29 % | 351.0 px | 0.38 | 1.04 | 9713 |
+| stroke 3 | 35 % → 32 % | 328.8 px | 0.45 | 0.91 | 19579 |
+| stroke 4 | 41 % → 30 % | 572.7 px | 0.49 | 0.73 | 19270 |
+| stroke 5 | 50 % → 33 % | 806.7 px | 0.50 | 0.67 | 9996 |
 
 Numbers say: wet paint spreads well beyond the stroke.
 
-## Refs v3 · #21 Gritty dog contours — own sheet
-own sheet 1600 × 2260 · Gouache 1.00 + water 15 % · 106 px · 166.5 s
+## Oil focus · B flat — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 113.2 s
 
-![Refs v3 · #21 Gritty dog contours — own sheet](Refs-v3-21-Gritty-dog-contours-own-sheet.png)
+![Oil focus · B flat — own sheet](Oil-focus-B-flat-own-sheet.png)
 
 | stroke | covered | width | dark | spread | ms |
 |---|---|---|---|---|---|
-| stroke 1 | 5 % → 2 % | 106.1 px | 0.42 | 0.39 | 520 |
-| stroke 2 | 8 % → 2 % | 223.8 px | 0.42 | 0.24 | 184 |
-| stroke 3 | 10 % → 1 % | 145.9 px | 0.42 | 0.12 | 487 |
-| stroke 4 | 15 % → 2 % | 278.3 px | 0.42 | 0.14 | 241 |
-| stroke 5 | 24 % → 2 % | 855.9 px | 0.42 | 0.08 | 70 |
-| stroke 6 | 17 % → 3 % | 272.8 px | 0.42 | 0.16 | 309 |
-| stroke 7 | 20 % → 2 % | 304.1 px | 0.42 | 0.11 | 321 |
-| stroke 8 | 19 % → 3 % | 318.1 px | 0.43 | 0.15 | 334 |
-| stroke 9 | 17 % → 3 % | 211.7 px | 0.43 | 0.20 | 931 |
-| stroke 10 | 33 % → 1 % | 683.9 px | 0.42 | 0.03 | 225 |
-| stroke 11 | 41 % → 1 % | 1442.7 px | 0.42 | 0.04 | 123 |
-| stroke 12 | 22 % → 3 % | 287.6 px | 0.43 | 0.13 | 688 |
-| stroke 13 | 34 % → 2 % | 560.1 px | 0.42 | 0.06 | 361 |
-| stroke 14 | 30 % → 3 % | 404.0 px | 0.43 | 0.12 | 889 |
-| stroke 15 | 22 % → 6 % | 579.2 px | 0.43 | 0.26 | 141 |
-| stroke 16 | 40 % → 1 % | 1412.4 px | 0.42 | 0.04 | 99 |
-| stroke 17 | 33 % → 4 % | 435.2 px | 0.43 | 0.13 | 692 |
-| stroke 18 | 33 % → 1 % | 1134.2 px | 0.42 | 0.04 | 98 |
-| stroke 19 | 32 % → 4 % | 399.8 px | 0.43 | 0.12 | 783 |
-| stroke 20 | 45 % → 4 % | 1005.9 px | 0.41 | 0.09 | 172 |
-| stroke 21 | 36 % → 6 % | 866.3 px | 0.43 | 0.16 | 324 |
-| stroke 22 | 38 % → 4 % | 586.0 px | 0.41 | 0.10 | 865 |
-| stroke 23 | 32 % → 5 % | 658.9 px | 0.43 | 0.17 | 622 |
-| stroke 24 | 32 % → 4 % | 620.3 px | 0.41 | 0.13 | 497 |
-| stroke 25 | 28 % → 5 % | 479.4 px | 0.43 | 0.16 | 779 |
-| stroke 26 | 5 % → 2 % | 141.6 px | 0.44 | 0.42 | 225 |
-| stroke 27 | 30 % → 4 % | 591.6 px | 0.41 | 0.15 | 494 |
-| stroke 28 | 44 % → 4 % | 1308.8 px | 0.40 | 0.09 | 173 |
-| stroke 29 | 28 % → 4 % | 421.9 px | 0.43 | 0.15 | 485 |
-| stroke 30 | 7 % → 2 % | 154.4 px | 0.43 | 0.25 | 172 |
-| stroke 31 | 31 % → 5 % | 651.9 px | 0.41 | 0.16 | 250 |
-| stroke 32 | 44 % → 5 % | 1074.8 px | 0.41 | 0.11 | 232 |
-| stroke 33 | 29 % → 5 % | 409.0 px | 0.43 | 0.18 | 540 |
-| stroke 34 | 12 % → 1 % | 262.1 px | 0.43 | 0.09 | 344 |
-| stroke 35 | 33 % → 6 % | 799.1 px | 0.41 | 0.17 | 164 |
-| stroke 36 | 41 % → 6 % | 978.3 px | 0.41 | 0.15 | 180 |
-| stroke 37 | 28 % → 5 % | 379.2 px | 0.43 | 0.16 | 912 |
-| stroke 38 | 14 % → 1 % | 308.9 px | 0.43 | 0.05 | 315 |
-| stroke 39 | 35 % → 7 % | 1229.2 px | 0.41 | 0.21 | 146 |
-| stroke 40 | 37 % → 7 % | 993.8 px | 0.41 | 0.18 | 276 |
-| stroke 41 | 29 % → 4 % | 376.0 px | 0.43 | 0.13 | 861 |
-| stroke 42 | 19 % → 0 % | 363.5 px | 0.43 | 0.02 | 227 |
-| stroke 43 | 36 % → 8 % | 1232.0 px | 0.42 | 0.22 | 94 |
-| stroke 44 | 42 % → 5 % | 1006.0 px | 0.42 | 0.11 | 175 |
-| stroke 45 | 30 % → 3 % | 395.6 px | 0.43 | 0.10 | 632 |
-| stroke 46 | 30 % → 0 % | 818.4 px | 0.42 | 0.01 | 117 |
-| stroke 47 | 22 % → 0 % | 636.8 px | 0.00 | 0.00 | 121 |
-| stroke 48 | 33 % → 7 % | 733.7 px | 0.42 | 0.21 | 114 |
-| stroke 49 | 27 % → 3 % | 330.9 px | 0.43 | 0.11 | 713 |
-| stroke 50 | 25 % → 1 % | 672.9 px | 0.43 | 0.02 | 93 |
-| stroke 51 | 28 % → 8 % | 960.5 px | 0.42 | 0.30 | 67 |
-| stroke 52 | 42 % → 4 % | 869.5 px | 0.42 | 0.11 | 210 |
-| stroke 53 | 34 % → 2 % | 433.9 px | 0.42 | 0.06 | 508 |
-| stroke 54 | 27 % → 1 % | 661.9 px | 0.43 | 0.03 | 111 |
-| stroke 55 | 26 % → 8 % | 618.2 px | 0.42 | 0.29 | 133 |
-| stroke 56 | 39 % → 3 % | 504.4 px | 0.42 | 0.08 | 461 |
-| stroke 57 | 43 % → 0 % | 1495.3 px | 0.42 | 0.01 | 69 |
-| stroke 58 | 29 % → 1 % | 787.1 px | 0.43 | 0.03 | 117 |
-| stroke 59 | 42 % → 5 % | 1455.8 px | 0.42 | 0.12 | 88 |
-| stroke 60 | 43 % → 3 % | 562.5 px | 0.42 | 0.06 | 400 |
-| stroke 61 | 32 % → 1 % | 507.4 px | 0.43 | 0.02 | 203 |
-| stroke 62 | 22 % → 7 % | 605.3 px | 0.42 | 0.32 | 76 |
-| stroke 63 | 40 % → 5 % | 661.6 px | 0.42 | 0.12 | 191 |
-| stroke 64 | 48 % → 3 % | 622.3 px | 0.42 | 0.06 | 344 |
-| stroke 65 | 48 % → 1 % | 1714.3 px | 0.43 | 0.02 | 56 |
-| stroke 66 | 32 % → 1 % | 779.8 px | 0.43 | 0.02 | 93 |
-| stroke 67 | 37 % → 5 % | 778.1 px | 0.42 | 0.14 | 126 |
-| stroke 68 | 49 % → 4 % | 620.0 px | 0.42 | 0.07 | 371 |
-| stroke 69 | 31 % → 1 % | 704.9 px | 0.43 | 0.02 | 105 |
-| stroke 70 | 28 % → 7 % | 996.4 px | 0.42 | 0.25 | 54 |
-| stroke 71 | 47 % → 4 % | 577.8 px | 0.42 | 0.07 | 515 |
-| stroke 72 | 34 % → 1 % | 710.1 px | 0.43 | 0.02 | 117 |
-| stroke 73 | 23 % → 6 % | 471.0 px | 0.42 | 0.28 | 115 |
-| stroke 74 | 48 % → 4 % | 600.3 px | 0.42 | 0.08 | 451 |
-| stroke 75 | 29 % → 1 % | 483.8 px | 0.43 | 0.03 | 191 |
-| stroke 76 | 40 % → 5 % | 485.7 px | 0.42 | 0.12 | 939 |
-| stroke 77 | 57 % → 1 % | 1506.2 px | 0.42 | 0.02 | 83 |
-| stroke 78 | 29 % → 1 % | 429.5 px | 0.42 | 0.04 | 269 |
-| stroke 79 | 29 % → 7 % | 520.0 px | 0.43 | 0.23 | 282 |
-| stroke 80 | 52 % → 6 % | 670.1 px | 0.42 | 0.11 | 384 |
-| stroke 81 | 55 % → 1 % | 1089.5 px | 0.42 | 0.02 | 132 |
-| stroke 82 | 33 % → 1 % | 504.2 px | 0.42 | 0.04 | 215 |
-| stroke 83 | 30 % → 6 % | 621.6 px | 0.42 | 0.22 | 114 |
-| stroke 84 | 50 % → 7 % | 618.2 px | 0.42 | 0.13 | 516 |
-| stroke 85 | 56 % → 1 % | 1032.7 px | 0.42 | 0.02 | 163 |
-| stroke 86 | 35 % → 1 % | 586.3 px | 0.42 | 0.04 | 196 |
-| stroke 87 | 45 % → 5 % | 547.4 px | 0.42 | 0.12 | 564 |
-| stroke 88 | 53 % → 1 % | 994.8 px | 0.42 | 0.02 | 143 |
-| stroke 89 | 38 % → 2 % | 700.1 px | 0.42 | 0.04 | 156 |
-| stroke 90 | 46 % → 6 % | 564.6 px | 0.42 | 0.13 | 531 |
-| stroke 91 | 56 % → 2 % | 1943.7 px | 0.42 | 0.04 | 51 |
-| stroke 92 | 54 % → 2 % | 1057.7 px | 0.42 | 0.03 | 125 |
-| stroke 93 | 43 % → 7 % | 797.7 px | 0.42 | 0.16 | 135 |
-| stroke 94 | 52 % → 9 % | 774.8 px | 0.43 | 0.18 | 221 |
-| stroke 95 | 55 % → 3 % | 979.0 px | 0.42 | 0.05 | 150 |
-| stroke 96 | 51 % → 2 % | 932.9 px | 0.42 | 0.04 | 147 |
-| stroke 97 | 47 % → 10 % | 986.7 px | 0.43 | 0.20 | 116 |
-| stroke 98 | 52 % → 4 % | 632.6 px | 0.43 | 0.08 | 579 |
-| stroke 99 | 50 % → 7 % | 612.7 px | 0.43 | 0.13 | 524 |
-| stroke 100 | 46 % → 2 % | 1367.5 px | 0.43 | 0.04 | 70 |
-| stroke 101 | 45 % → 9 % | 1106.8 px | 0.43 | 0.21 | 104 |
-| stroke 102 | 52 % → 7 % | 671.2 px | 0.43 | 0.14 | 366 |
-| stroke 103 | 43 % → 8 % | 794.0 px | 0.43 | 0.20 | 154 |
-| stroke 104 | 54 % → 8 % | 1064.2 px | 0.43 | 0.15 | 144 |
-| stroke 105 | 51 % → 5 % | 1488.2 px | 0.43 | 0.10 | 72 |
-| stroke 106 | 42 % → 9 % | 830.3 px | 0.43 | 0.21 | 144 |
-| stroke 107 | 47 % → 8 % | 1395.2 px | 0.43 | 0.18 | 77 |
-| stroke 108 | 39 % → 10 % | 814.7 px | 0.43 | 0.24 | 124 |
-| stroke 109 | 44 % → 8 % | 988.7 px | 0.43 | 0.19 | 95 |
-| stroke 110 | 38 % → 10 % | 928.3 px | 0.43 | 0.25 | 91 |
-| stroke 111 | 44 % → 7 % | 699.2 px | 0.43 | 0.17 | 194 |
-| stroke 112 | 40 % → 9 % | 890.5 px | 0.43 | 0.23 | 108 |
-| stroke 113 | 33 % → 7 % | 1113.6 px | 0.43 | 0.22 | 55 |
-| stroke 114 | 37 % → 9 % | 898.2 px | 0.43 | 0.25 | 93 |
-| stroke 115 | 33 % → 9 % | 738.0 px | 0.43 | 0.27 | 116 |
-| stroke 116 | 30 % → 9 % | 740.6 px | 0.43 | 0.29 | 91 |
-| stroke 117 | 27 % → 8 % | 595.5 px | 0.43 | 0.30 | 109 |
-| stroke 118 | 23 % → 8 % | 680.1 px | 0.43 | 0.34 | 66 |
-| stroke 119 | 1 % → 3 % | 31.3 px | 0.42 | 4.34 | 9 |
-| stroke 120 | 1 % → 2 % | 22.8 px | 0.44 | 1.74 | 21 |
-| stroke 121 | 1 % → 2 % | 21.6 px | 0.42 | 1.27 | 27 |
-| stroke 122 | 2 % → 1 % | 33.3 px | 0.42 | 0.71 | 19 |
-| stroke 123 | 3 % → 1 % | 47.7 px | 0.42 | 0.38 | 26 |
-| stroke 124 | 5 % → 2 % | 154.5 px | 0.42 | 0.35 | 9 |
-| stroke 125 | 6 % → 2 % | 293.0 px | 0.42 | 0.33 | 7 |
-| stroke 126 | 6 % → 2 % | 134.0 px | 0.42 | 0.29 | 16 |
-| stroke 127 | 7 % → 2 % | 223.5 px | 0.42 | 0.21 | 10 |
-| stroke 128 | 9 % → 2 % | 244.2 px | 0.42 | 0.21 | 13 |
-| stroke 129 | 7 % → 2 % | 112.2 px | 0.42 | 0.32 | 37 |
-| stroke 130 | 12 % → 2 % | 410.5 px | 0.42 | 0.16 | 11 |
-| stroke 131 | 12 % → 1 % | 373.4 px | 0.43 | 0.09 | 14 |
-| stroke 132 | 8 % → 2 % | 228.4 px | 0.42 | 0.26 | 15 |
-| stroke 133 | 5 % → 3 % | 110.6 px | 0.43 | 0.53 | 20 |
-| stroke 134 | 3 % → 6 % | 97.3 px | 0.41 | 1.76 | 15 |
-| stroke 135 | 7 % → 4 % | 311.4 px | 0.42 | 0.48 | 8 |
-| stroke 136 | 4 % → 7 % | 77.2 px | 0.42 | 1.76 | 23 |
-| stroke 137 | 4 % → 8 % | 75.9 px | 0.42 | 2.13 | 14 |
-| stroke 138 | 2 % → 0 % | 44.2 px | 0.38 | 0.23 | 13 |
-| stroke 139 | 5 % → 9 % | 292.5 px | 0.42 | 1.78 | 6 |
-| stroke 140 | 6 % → 6 % | 85.8 px | 0.42 | 1.08 | 33 |
-| stroke 141 | 6 % → 4 % | 273.9 px | 0.42 | 0.62 | 6 |
-| stroke 142 | 7 % → 4 % | 354.1 px | 0.42 | 0.52 | 5 |
-| stroke 143 | 7 % → 6 % | 254.5 px | 0.41 | 0.86 | 7 |
-| stroke 144 | 9 % → 5 % | 249.2 px | 0.40 | 0.59 | 8 |
-| stroke 145 | 7 % → 8 % | 185.0 px | 0.42 | 1.17 | 14 |
-| stroke 146 | 6 % → 4 % | 160.8 px | 0.42 | 0.65 | 11 |
-| stroke 147 | 1 % → 4 % | 26.8 px | 0.44 | 5.32 | 7 |
-| stroke 148 | 4 % → 7 % | 109.5 px | 0.42 | 1.53 | 18 |
-| stroke 149 | 3 % → 4 % | 88.8 px | 0.42 | 1.28 | 11 |
-| stroke 150 | 3 % → 5 % | 45.9 px | 0.42 | 1.78 | 31 |
-| stroke 151 | 2 % → 11 % | 63.8 px | 0.43 | 5.67 | 14 |
-| stroke 152 | 3 % → 10 % | 52.1 px | 0.43 | 2.92 | 34 |
-| stroke 153 | 4 % → 7 % | 78.2 px | 0.43 | 1.79 | 15 |
-| stroke 154 | 1 % → 1 % | 32.6 px | 0.42 | 1.26 | 13 |
-| stroke 155 | 2 % → 1 % | 35.7 px | 0.42 | 0.38 | 41 |
-| stroke 156 | 5 % → 1 % | 119.3 px | 0.42 | 0.21 | 23 |
-| stroke 157 | 4 % → 3 % | 75.8 px | 0.43 | 0.69 | 28 |
-| stroke 158 | 5 % → 3 % | 188.4 px | 0.42 | 0.69 | 10 |
-| stroke 159 | 1 % → 1 % | 32.4 px | 0.43 | 1.62 | 5 |
-| stroke 160 | 1 % → 1 % | 55.5 px | 0.43 | 1.09 | 5 |
-| stroke 161 | 2 % → 1 % | 67.0 px | 0.43 | 0.25 | 19 |
-| stroke 162 | 1 % → 4 % | 56.1 px | 0.43 | 3.61 | 4 |
-| stroke 163 | 1 % → 7 % | 26.4 px | 0.42 | 10.52 | 5 |
-| stroke 164 | 2 % → 3 % | 47.7 px | 0.43 | 1.77 | 9 |
-| stroke 165 | 1 % → 1 % | 57.5 px | 0.42 | 0.53 | 19 |
-| stroke 166 | 2 % → 0 % | 124.4 px | 0.42 | 0.14 | 13 |
-| stroke 167 | 3 % → 0 % | 148.4 px | 0.39 | 0.05 | 13 |
-| stroke 168 | 4 % → 1 % | 126.1 px | 0.38 | 0.13 | 24 |
-| stroke 169 | 5 % → 1 % | 144.7 px | 0.40 | 0.30 | 26 |
-| stroke 170 | 6 % → 3 % | 155.8 px | 0.42 | 0.47 | 31 |
-| stroke 171 | 7 % → 3 % | 134.3 px | 0.42 | 0.47 | 45 |
-| stroke 172 | 8 % → 3 % | 136.4 px | 0.42 | 0.38 | 63 |
-| stroke 173 | 9 % → 3 % | 139.7 px | 0.42 | 0.31 | 81 |
-| stroke 174 | 12 % → 3 % | 292.4 px | 0.42 | 0.28 | 34 |
-| stroke 175 | 3 % → 5 % | 60.0 px | 0.43 | 1.78 | 55 |
-| stroke 176 | 6 % → 4 % | 68.9 px | 0.43 | 0.60 | 164 |
-| stroke 177 | 8 % → 3 % | 80.8 px | 0.43 | 0.43 | 205 |
-| stroke 178 | 11 % → 4 % | 118.4 px | 0.43 | 0.33 | 194 |
-| stroke 179 | 17 % → 4 % | 239.0 px | 0.43 | 0.25 | 110 |
-| stroke 180 | 24 % → 6 % | 1244.7 px | 0.43 | 0.25 | 18 |
-| stroke 181 | 13 % → 1 % | 679.7 px | 0.40 | 0.05 | 13 |
-| stroke 182 | 14 % → 2 % | 306.6 px | 0.42 | 0.18 | 43 |
-| stroke 183 | 15 % → 3 % | 377.6 px | 0.42 | 0.22 | 45 |
-| stroke 184 | 16 % → 3 % | 296.9 px | 0.42 | 0.22 | 59 |
-| stroke 185 | 7 % → 6 % | 240.6 px | 0.42 | 0.77 | 43 |
-| stroke 186 | 15 % → 6 % | 189.8 px | 0.42 | 0.40 | 98 |
-| stroke 187 | 16 % → 6 % | 268.2 px | 0.42 | 0.38 | 65 |
-| stroke 188 | 18 % → 6 % | 294.7 px | 0.42 | 0.35 | 69 |
-| stroke 189 | 26 % → 3 % | 1010.8 px | 0.42 | 0.13 | 21 |
-| stroke 190 | 18 % → 6 % | 497.8 px | 0.42 | 0.35 | 32 |
-| stroke 191 | 19 % → 6 % | 982.6 px | 0.41 | 0.29 | 22 |
-| stroke 192 | 20 % → 6 % | 1061.2 px | 0.41 | 0.28 | 22 |
-| stroke 193 | 19 % → 8 % | 781.7 px | 0.42 | 0.43 | 21 |
-| stroke 194 | 20 % → 10 % | 564.5 px | 0.42 | 0.49 | 28 |
-| stroke 195 | 20 % → 10 % | 319.7 px | 0.42 | 0.51 | 72 |
-| stroke 196 | 20 % → 10 % | 332.7 px | 0.42 | 0.50 | 63 |
-| stroke 197 | 20 % → 9 % | 554.6 px | 0.42 | 0.44 | 31 |
-| stroke 198 | 1 % → 2 % | 18.3 px | 0.42 | 3.75 | 6 |
-| stroke 199 | 1 % → 2 % | 30.4 px | 0.42 | 1.51 | 10 |
-| stroke 200 | 1 % → 4 % | 21.2 px | 0.44 | 3.76 | 12 |
-| stroke 201 | 3 % → 3 % | 26.4 px | 0.43 | 1.33 | 64 |
-| stroke 202 | 2 % → 6 % | 40.3 px | 0.42 | 2.55 | 48 |
-| stroke 203 | 5 % → 6 % | 61.2 px | 0.42 | 1.36 | 44 |
-| stroke 204 | 6 % → 8 % | 332.6 px | 0.42 | 1.24 | 8 |
-| stroke 205 | 3 % → 5 % | 123.0 px | 0.42 | 1.60 | 7 |
-| stroke 206 | 3 % → 6 % | 37.7 px | 0.42 | 1.94 | 78 |
-| stroke 207 | 1 % → 7 % | 34.7 px | 0.43 | 5.60 | 16 |
-| stroke 208 | 3 % → 8 % | 107.3 px | 0.43 | 2.48 | 15 |
-| stroke 209 | 4 % → 6 % | 88.0 px | 0.42 | 1.54 | 18 |
-| stroke 210 | 4 % → 9 % | 109.1 px | 0.43 | 2.04 | 10 |
-| stroke 211 | 0 % → 1 % | 22.0 px | 0.42 | 3.88 | 4 |
-| stroke 212 | 3 % → 8 % | 50.0 px | 0.43 | 2.97 | 41 |
-| stroke 213 | 7 % → 11 % | 261.8 px | 0.43 | 1.68 | 10 |
-| stroke 214 | 5 % → 8 % | 54.2 px | 0.43 | 1.69 | 38 |
-| stroke 215 | 7 % → 11 % | 200.8 px | 0.43 | 1.51 | 11 |
-| stroke 216 | 1 % → 1 % | 40.8 px | 0.42 | 1.37 | 7 |
-| stroke 217 | 5 % → 7 % | 102.0 px | 0.43 | 1.24 | 17 |
-| stroke 218 | 4 % → 5 % | 194.0 px | 0.43 | 1.26 | 7 |
-| stroke 219 | 1 % → 1 % | 22.5 px | 0.42 | 1.60 | 5 |
-| stroke 220 | 1 % → 2 % | 59.7 px | 0.42 | 1.27 | 4 |
+| stroke 1 | 15 % → 47 % | 187.3 px | 0.49 | 3.13 | 8946 |
+| stroke 2 | 28 % → 29 % | 342.2 px | 0.40 | 1.06 | 7225 |
+| stroke 3 | 34 % → 31 % | 321.2 px | 0.45 | 0.90 | 14695 |
+| stroke 4 | 41 % → 29 % | 564.7 px | 0.49 | 0.72 | 14429 |
+| stroke 5 | 48 % → 33 % | 779.3 px | 0.50 | 0.68 | 7824 |
 
 Numbers say: wet paint spreads well beyond the stroke.
 
-## Refs v3 · #24 Picasso flat oil — own sheet
-own sheet 1600 × 2312 · Gouache 1.00 + turpentine 20 % · 102 px · 268.7 s
+## Oil focus · C round — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 115.6 s
 
-![Refs v3 · #24 Picasso flat oil — own sheet](Refs-v3-24-Picasso-flat-oil-own-sheet.png)
+![Oil focus · C round — own sheet](Oil-focus-C-round-own-sheet.png)
 
 | stroke | covered | width | dark | spread | ms |
 |---|---|---|---|---|---|
-| stroke 1 | 5 % → 3 % | 108.9 px | 0.06 | 0.60 | 471 |
-| stroke 2 | 9 % → 3 % | 131.7 px | 0.06 | 0.33 | 463 |
-| stroke 3 | 14 % → 5 % | 322.8 px | 0.08 | 0.33 | 169 |
-| stroke 4 | 18 % → 5 % | 282.0 px | 0.08 | 0.31 | 247 |
-| stroke 5 | 20 % → 5 % | 545.6 px | 0.07 | 0.23 | 109 |
-| stroke 6 | 21 % → 4 % | 235.8 px | 0.08 | 0.20 | 465 |
-| stroke 7 | 25 % → 4 % | 295.1 px | 0.08 | 0.17 | 496 |
-| stroke 8 | 21 % → 4 % | 554.8 px | 0.08 | 0.20 | 117 |
-| stroke 9 | 25 % → 3 % | 244.3 px | 0.08 | 0.12 | 816 |
-| stroke 10 | 35 % → 4 % | 1126.8 px | 0.09 | 0.12 | 113 |
-| stroke 11 | 32 % → 3 % | 328.9 px | 0.09 | 0.09 | 818 |
-| stroke 12 | 32 % → 2 % | 329.8 px | 0.09 | 0.07 | 876 |
-| stroke 13 | 32 % → 2 % | 292.2 px | 0.09 | 0.05 | 1549 |
-| stroke 14 | 34 % → 1 % | 338.4 px | 0.09 | 0.04 | 800 |
-| stroke 15 | 48 % → 2 % | 1110.3 px | 0.09 | 0.05 | 166 |
-| stroke 16 | 34 % → 0 % | 427.9 px | 0.00 | 0.00 | 446 |
-| stroke 17 | 32 % → 0 % | 606.2 px | 0.00 | 0.00 | 207 |
-| stroke 18 | 22 % → 3 % | 492.5 px | 0.06 | 0.15 | 141 |
-| stroke 19 | 31 % → 3 % | 558.5 px | 0.06 | 0.10 | 762 |
-| stroke 20 | 39 % → 3 % | 569.7 px | 0.06 | 0.07 | 1799 |
-| stroke 21 | 46 % → 3 % | 615.8 px | 0.06 | 0.06 | 770 |
-| stroke 22 | 63 % → 2 % | 1965.3 px | 0.07 | 0.04 | 258 |
-| stroke 23 | 47 % → 1 % | 635.0 px | 0.07 | 0.02 | 833 |
-| stroke 24 | 52 % → 2 % | 471.2 px | 0.08 | 0.03 | 1347 |
-| stroke 25 | 5 % → 1 % | 125.8 px | 0.06 | 0.16 | 229 |
-| stroke 26 | 12 % → 3 % | 140.7 px | 0.06 | 0.22 | 283 |
-| stroke 27 | 17 % → 0 % | 262.1 px | 0.00 | 0.00 | 218 |
-| stroke 28 | 7 % → 0 % | 104.4 px | 0.00 | 0.00 | 614 |
-| stroke 29 | 16 % → 0 % | 140.7 px | 0.00 | 0.00 | 831 |
-| stroke 30 | 19 % → 0 % | 164.4 px | 0.00 | 0.00 | 989 |
-| stroke 31 | 23 % → 0 % | 193.8 px | 0.00 | 0.00 | 1241 |
-| stroke 32 | 31 % → 0 % | 235.4 px | 0.00 | 0.00 | 1252 |
-| stroke 33 | 39 % → 0 % | 268.9 px | 0.00 | 0.00 | 1108 |
-| stroke 34 | 48 % → 0 % | 317.6 px | 0.00 | 0.00 | 1497 |
-| stroke 35 | 62 % → 0 % | 393.3 px | 0.00 | 0.00 | 828 |
-| stroke 36 | 77 % → 0 % | 502.6 px | 0.00 | 0.00 | 414 |
-| stroke 37 | 93 % → 0 % | 616.8 px | 0.00 | 0.00 | 399 |
-| stroke 38 | 96 % → 0 % | 767.8 px | 0.00 | 0.00 | 183 |
-| stroke 39 | 7 % → 3 % | 111.9 px | 0.07 | 0.48 | 125 |
-| stroke 40 | 14 % → 2 % | 124.9 px | 0.07 | 0.14 | 362 |
-| stroke 41 | 25 % → 2 % | 138.0 px | 0.07 | 0.06 | 435 |
-| stroke 42 | 37 % → 1 % | 139.4 px | 0.07 | 0.03 | 537 |
-| stroke 43 | 2 % → 0 % | 49.4 px | 0.00 | 0.00 | 26 |
-| stroke 44 | 5 % → 0 % | 67.0 px | 0.00 | 0.00 | 41 |
-| stroke 45 | 7 % → 0 % | 171.5 px | 0.00 | 0.00 | 18 |
-| stroke 46 | 6 % → 0 % | 194.8 px | 0.00 | 0.00 | 23 |
-| stroke 47 | 7 % → 0 % | 231.4 px | 0.00 | 0.00 | 21 |
-| stroke 48 | 9 % → 0 % | 152.5 px | 0.00 | 0.00 | 37 |
-| stroke 49 | 11 % → 0 % | 174.2 px | 0.00 | 0.00 | 51 |
-| stroke 50 | 5 % → 0 % | 49.1 px | 0.00 | 0.00 | 23 |
-| stroke 51 | 7 % → 0 % | 73.9 px | 0.00 | 0.00 | 25 |
-| stroke 52 | 8 % → 0 % | 80.9 px | 0.00 | 0.00 | 41 |
-| stroke 53 | 10 % → 0 % | 127.0 px | 0.00 | 0.00 | 30 |
-| stroke 54 | 11 % → 0 % | 132.4 px | 0.00 | 0.00 | 31 |
-| stroke 55 | 14 % → 0 % | 204.5 px | 0.00 | 0.00 | 26 |
-| stroke 56 | 18 % → 0 % | 476.0 px | 0.00 | 0.00 | 18 |
-| stroke 57 | 20 % → 0 % | 414.5 px | 0.00 | 0.00 | 17 |
-| stroke 58 | 21 % → 0 % | 215.9 px | 0.00 | 0.00 | 122 |
-| stroke 59 | 24 % → 0 % | 234.1 px | 0.00 | 0.00 | 73 |
-| stroke 60 | 25 % → 0 % | 244.0 px | 0.00 | 0.00 | 67 |
-| stroke 61 | 37 % → 0 % | 855.1 px | 0.00 | 0.00 | 18 |
-| stroke 62 | 26 % → 0 % | 1330.0 px | 0.00 | 0.00 | 10 |
-| stroke 63 | 5 % → 2 % | 97.6 px | 0.07 | 0.36 | 26 |
-| stroke 64 | 11 % → 1 % | 133.9 px | 0.07 | 0.14 | 41 |
-| stroke 65 | 13 % → 0 % | 188.2 px | 0.07 | 0.03 | 41 |
-| stroke 66 | 14 % → 1 % | 194.6 px | 0.07 | 0.05 | 48 |
-| stroke 67 | 36 % → 0 % | 831.8 px | 0.00 | 0.00 | 17 |
-| stroke 68 | 19 % → 1 % | 228.7 px | 0.07 | 0.05 | 58 |
-| stroke 69 | 27 % → 1 % | 208.6 px | 0.07 | 0.03 | 104 |
-| stroke 70 | 29 % → 0 % | 255.1 px | 0.07 | 0.01 | 93 |
-| stroke 71 | 32 % → 0 % | 315.7 px | 0.00 | 0.00 | 83 |
-| stroke 72 | 38 % → 0 % | 577.2 px | 0.00 | 0.00 | 45 |
-| stroke 73 | 44 % → 0 % | 1362.4 px | 0.00 | 0.00 | 15 |
-| stroke 74 | 2 % → 2 % | 48.0 px | 0.08 | 1.35 | 28 |
-| stroke 75 | 3 % → 3 % | 55.0 px | 0.08 | 0.80 | 63 |
-| stroke 76 | 5 % → 3 % | 68.8 px | 0.08 | 0.71 | 62 |
-| stroke 77 | 7 % → 3 % | 265.8 px | 0.09 | 0.39 | 17 |
-| stroke 78 | 7 % → 5 % | 301.3 px | 0.08 | 0.68 | 21 |
-| stroke 79 | 8 % → 3 % | 333.9 px | 0.09 | 0.36 | 18 |
-| stroke 80 | 9 % → 3 % | 366.4 px | 0.09 | 0.39 | 18 |
-| stroke 81 | 6 % → 2 % | 227.5 px | 0.05 | 0.36 | 15 |
-| stroke 82 | 7 % → 2 % | 267.5 px | 0.05 | 0.35 | 16 |
-| stroke 83 | 7 % → 3 % | 296.1 px | 0.05 | 0.35 | 20 |
-| stroke 84 | 10 % → 4 % | 317.9 px | 0.09 | 0.40 | 22 |
-| stroke 85 | 11 % → 4 % | 466.4 px | 0.09 | 0.37 | 17 |
-| stroke 86 | 11 % → 4 % | 265.5 px | 0.09 | 0.32 | 49 |
-| stroke 87 | 11 % → 3 % | 242.6 px | 0.09 | 0.31 | 53 |
-| stroke 88 | 11 % → 4 % | 661.9 px | 0.09 | 0.38 | 9 |
-| stroke 89 | 11 % → 4 % | 456.1 px | 0.09 | 0.37 | 17 |
-| stroke 90 | 9 % → 4 % | 380.2 px | 0.09 | 0.49 | 17 |
-| stroke 91 | 9 % → 4 % | 556.8 px | 0.09 | 0.42 | 13 |
-| stroke 92 | 2 % → 0 % | 50.5 px | 0.00 | 0.00 | 23 |
-| stroke 93 | 4 % → 0 % | 49.8 px | 0.00 | 0.00 | 84 |
-| stroke 94 | 6 % → 0 % | 61.3 px | 0.00 | 0.00 | 125 |
-| stroke 95 | 10 % → 0 % | 547.2 px | 0.00 | 0.00 | 15 |
-| stroke 96 | 9 % → 0 % | 117.2 px | 0.00 | 0.00 | 71 |
-| stroke 97 | 9 % → 0 % | 543.5 px | 0.00 | 0.00 | 9 |
-| stroke 98 | 11 % → 0 % | 125.5 px | 0.00 | 0.00 | 94 |
-| stroke 99 | 9 % → 0 % | 393.1 px | 0.00 | 0.00 | 19 |
-| stroke 100 | 10 % → 0 % | 222.1 px | 0.00 | 0.00 | 52 |
-| stroke 101 | 10 % → 0 % | 187.0 px | 0.00 | 0.00 | 46 |
-| stroke 102 | 9 % → 0 % | 133.0 px | 0.00 | 0.00 | 59 |
-| stroke 103 | 11 % → 5 % | 480.9 px | 0.07 | 0.45 | 13 |
-| stroke 104 | 13 % → 6 % | 398.9 px | 0.08 | 0.49 | 27 |
-| stroke 105 | 15 % → 7 % | 897.4 px | 0.08 | 0.49 | 11 |
-| stroke 106 | 11 % → 2 % | 447.1 px | 0.04 | 0.15 | 15 |
-| stroke 107 | 12 % → 2 % | 358.2 px | 0.05 | 0.21 | 23 |
-| stroke 108 | 11 % → 3 % | 298.6 px | 0.06 | 0.28 | 32 |
-| stroke 109 | 11 % → 3 % | 239.8 px | 0.06 | 0.32 | 33 |
-| stroke 110 | 9 % → 4 % | 275.1 px | 0.06 | 0.40 | 23 |
-| stroke 111 | 8 % → 4 % | 506.7 px | 0.06 | 0.46 | 10 |
-| stroke 112 | 8 % → 3 % | 332.9 px | 0.06 | 0.43 | 17 |
-| stroke 113 | 9 % → 2 % | 498.9 px | 0.07 | 0.26 | 13 |
-| stroke 114 | 10 % → 4 % | 587.3 px | 0.06 | 0.38 | 11 |
-| stroke 115 | 12 % → 3 % | 352.9 px | 0.07 | 0.21 | 22 |
-| stroke 116 | 11 % → 1 % | 355.3 px | 0.07 | 0.06 | 21 |
-| stroke 117 | 13 % → 2 % | 221.2 px | 0.07 | 0.13 | 62 |
-| stroke 118 | 14 % → 2 % | 209.7 px | 0.07 | 0.13 | 65 |
-| stroke 119 | 15 % → 2 % | 218.4 px | 0.07 | 0.11 | 83 |
-| stroke 120 | 14 % → 1 % | 233.4 px | 0.07 | 0.06 | 54 |
-| stroke 121 | 13 % → 1 % | 138.7 px | 0.07 | 0.05 | 118 |
-| stroke 122 | 15 % → 1 % | 220.4 px | 0.07 | 0.05 | 92 |
-| stroke 123 | 16 % → 1 % | 314.2 px | 0.07 | 0.05 | 60 |
-| stroke 124 | 18 % → 4 % | 774.2 px | 0.06 | 0.20 | 18 |
-| stroke 125 | 18 % → 3 % | 430.6 px | 0.06 | 0.18 | 40 |
-| stroke 126 | 17 % → 4 % | 735.4 px | 0.06 | 0.21 | 16 |
-| stroke 127 | 35 % → 1 % | 1428.1 px | 0.07 | 0.02 | 14 |
-| stroke 128 | 32 % → 1 % | 425.4 px | 0.07 | 0.02 | 63 |
-| stroke 129 | 31 % → 1 % | 288.9 px | 0.07 | 0.04 | 131 |
-| stroke 130 | 9 % → 2 % | 138.2 px | 0.06 | 0.19 | 63 |
-| stroke 131 | 14 % → 1 % | 149.4 px | 0.07 | 0.08 | 117 |
-| stroke 132 | 22 % → 1 % | 698.2 px | 0.07 | 0.04 | 23 |
-| stroke 133 | 13 % → 1 % | 213.7 px | 0.07 | 0.06 | 61 |
-| stroke 134 | 15 % → 1 % | 290.6 px | 0.07 | 0.06 | 41 |
-| stroke 135 | 18 % → 1 % | 562.4 px | 0.07 | 0.05 | 21 |
-| stroke 136 | 22 % → 0 % | 1234.1 px | 0.08 | 0.02 | 12 |
-| stroke 137 | 22 % → 0 % | 441.3 px | 0.06 | 0.02 | 45 |
-| stroke 138 | 23 % → 0 % | 238.3 px | 0.06 | 0.02 | 108 |
-| stroke 139 | 24 % → 0 % | 727.7 px | 0.05 | 0.00 | 23 |
-| stroke 140 | 26 % → 0 % | 1551.1 px | 0.00 | 0.00 | 10 |
-| stroke 141 | 21 % → 0 % | 850.9 px | 0.00 | 0.00 | 19 |
-| stroke 142 | 5 % → 0 % | 217.7 px | 0.00 | 0.00 | 15 |
-| stroke 143 | 5 % → 0 % | 117.1 px | 0.00 | 0.00 | 38 |
-| stroke 144 | 8 % → 0 % | 84.8 px | 0.00 | 0.00 | 140 |
-| stroke 145 | 12 % → 0 % | 107.8 px | 0.00 | 0.00 | 189 |
-| stroke 146 | 16 % → 0 % | 137.9 px | 0.10 | 0.01 | 258 |
-| stroke 147 | 21 % → 0 % | 237.0 px | 0.00 | 0.00 | 204 |
-| stroke 148 | 21 % → 0 % | 270.3 px | 0.00 | 0.00 | 90 |
-| stroke 149 | 13 % → 1 % | 229.2 px | 0.07 | 0.10 | 57 |
-| stroke 150 | 24 % → 0 % | 1406.9 px | 0.00 | 0.00 | 15 |
-| stroke 151 | 1 % → 2 % | 61.3 px | 0.06 | 2.23 | 10 |
-| stroke 152 | 3 % → 2 % | 111.7 px | 0.07 | 0.68 | 11 |
-| stroke 153 | 4 % → 4 % | 70.9 px | 0.06 | 0.90 | 60 |
-| stroke 154 | 8 % → 3 % | 149.8 px | 0.07 | 0.32 | 31 |
-| stroke 155 | 7 % → 4 % | 74.2 px | 0.06 | 0.59 | 101 |
-| stroke 156 | 17 % → 2 % | 201.8 px | 0.07 | 0.12 | 44 |
-| stroke 157 | 18 % → 2 % | 202.0 px | 0.07 | 0.12 | 57 |
-| stroke 158 | 16 % → 3 % | 337.4 px | 0.07 | 0.20 | 31 |
-| stroke 159 | 18 % → 3 % | 341.2 px | 0.07 | 0.19 | 35 |
-| stroke 160 | 17 % → 4 % | 843.2 px | 0.07 | 0.25 | 13 |
-| stroke 161 | 19 % → 4 % | 650.0 px | 0.07 | 0.19 | 17 |
-| stroke 162 | 19 % → 4 % | 950.4 px | 0.07 | 0.20 | 10 |
-| stroke 163 | 20 % → 4 % | 719.2 px | 0.07 | 0.20 | 17 |
-| stroke 164 | 1 % → 4 % | 39.9 px | 0.06 | 4.23 | 11 |
-| stroke 165 | 2 % → 4 % | 73.6 px | 0.06 | 2.06 | 13 |
-| stroke 166 | 3 % → 4 % | 88.7 px | 0.06 | 1.34 | 12 |
-| stroke 167 | 2 % → 6 % | 69.0 px | 0.08 | 3.43 | 11 |
-| stroke 168 | 1 % → 3 % | 38.1 px | 0.06 | 2.67 | 13 |
-| stroke 169 | 2 % → 0 % | 34.8 px | 0.00 | 0.00 | 36 |
-| stroke 170 | 4 % → 3 % | 40.9 px | 0.06 | 0.91 | 77 |
-| stroke 171 | 3 % → 0 % | 107.2 px | 0.00 | 0.00 | 17 |
-| stroke 172 | 3 % → 0 % | 82.4 px | 0.00 | 0.00 | 31 |
-| stroke 173 | 3 % → 5 % | 120.3 px | 0.06 | 1.77 | 8 |
-| stroke 174 | 5 % → 0 % | 60.7 px | 0.00 | 0.00 | 41 |
-| stroke 175 | 3 % → 0 % | 38.6 px | 0.00 | 0.00 | 35 |
-| stroke 176 | 5 % → 0 % | 119.0 px | 0.00 | 0.00 | 8 |
-| stroke 177 | 9 % → 3 % | 97.5 px | 0.06 | 0.34 | 287 |
-| stroke 178 | 12 % → 5 % | 370.6 px | 0.06 | 0.44 | 56 |
-| stroke 179 | 14 % → 2 % | 106.4 px | 0.06 | 0.12 | 983 |
-| stroke 180 | 16 % → 0 % | 209.2 px | 0.00 | 0.00 | 184 |
-| stroke 181 | 26 % → 2 % | 213.7 px | 0.06 | 0.09 | 603 |
-| stroke 182 | 22 % → 5 % | 396.6 px | 0.06 | 0.23 | 118 |
-| stroke 183 | 18 % → 0 % | 275.6 px | 0.04 | 0.01 | 169 |
-| stroke 184 | 32 % → 2 % | 270.9 px | 0.06 | 0.08 | 520 |
-| stroke 185 | 29 % → 3 % | 229.8 px | 0.06 | 0.09 | 831 |
-| stroke 186 | 32 % → 2 % | 307.8 px | 0.06 | 0.06 | 405 |
-| stroke 187 | 45 % → 4 % | 1423.1 px | 0.06 | 0.10 | 58 |
-| stroke 188 | 26 % → 2 % | 812.9 px | 0.04 | 0.07 | 55 |
-| stroke 189 | 29 % → 3 % | 588.1 px | 0.06 | 0.11 | 116 |
-| stroke 190 | 32 % → 3 % | 446.8 px | 0.06 | 0.08 | 191 |
-| stroke 191 | 30 % → 3 % | 515.2 px | 0.06 | 0.10 | 138 |
-| stroke 192 | 6 % → 1 % | 111.2 px | 0.07 | 0.13 | 114 |
-| stroke 193 | 10 % → 1 % | 157.2 px | 0.07 | 0.07 | 186 |
-| stroke 194 | 50 % → 1 % | 459.3 px | 0.06 | 0.03 | 321 |
-| stroke 195 | 50 % → 1 % | 627.8 px | 0.07 | 0.01 | 194 |
-| stroke 196 | 43 % → 1 % | 987.9 px | 0.07 | 0.02 | 94 |
-| stroke 197 | 44 % → 3 % | 442.4 px | 0.06 | 0.07 | 392 |
-| stroke 198 | 29 % → 4 % | 667.2 px | 0.07 | 0.12 | 68 |
-| stroke 199 | 20 % → 4 % | 497.9 px | 0.07 | 0.20 | 60 |
-| stroke 200 | 5 % → 0 % | 112.9 px | 0.00 | 0.00 | 85 |
-| stroke 201 | 10 % → 0 % | 228.7 px | 0.00 | 0.00 | 92 |
-| stroke 202 | 13 % → 0 % | 226.7 px | 0.00 | 0.00 | 133 |
-| stroke 203 | 25 % → 0 % | 319.6 px | 0.00 | 0.00 | 157 |
-| stroke 204 | 1 % → 4 % | 31.8 px | 0.09 | 3.28 | 24 |
-| stroke 205 | 1 % → 0 % | 31.9 px | 0.00 | 0.00 | 12 |
-| stroke 206 | 3 % → 0 % | 29.7 px | 0.00 | 0.00 | 86 |
-| stroke 207 | 2 % → 0 % | 76.9 px | 0.00 | 0.00 | 8 |
-| stroke 208 | 8 % → 3 % | 97.0 px | 0.09 | 0.36 | 302 |
-| stroke 209 | 12 % → 1 % | 204.8 px | 0.09 | 0.07 | 137 |
-| stroke 210 | 12 % → 0 % | 207.9 px | 0.00 | 0.00 | 132 |
-| stroke 211 | 18 % → 1 % | 113.3 px | 0.09 | 0.07 | 924 |
-| stroke 212 | 28 % → 2 % | 211.1 px | 0.09 | 0.07 | 494 |
-| stroke 213 | 37 % → 2 % | 377.1 px | 0.09 | 0.05 | 270 |
-| stroke 214 | 4 % → 0 % | 124.8 px | 0.00 | 0.00 | 49 |
-| stroke 215 | 29 % → 0 % | 532.8 px | 0.00 | 0.00 | 109 |
-| stroke 216 | 26 % → 0 % | 292.6 px | 0.00 | 0.00 | 269 |
-| stroke 217 | 31 % → 0 % | 258.1 px | 0.00 | 0.00 | 487 |
-| stroke 218 | 36 % → 0 % | 276.3 px | 0.00 | 0.00 | 584 |
-| stroke 219 | 42 % → 0 % | 362.0 px | 0.00 | 0.00 | 375 |
-| stroke 220 | 40 % → 0 % | 775.3 px | 0.00 | 0.00 | 87 |
-| stroke 221 | 8 % → 5 % | 104.6 px | 0.06 | 0.59 | 155 |
-| stroke 222 | 20 % → 3 % | 145.9 px | 0.06 | 0.14 | 567 |
-| stroke 223 | 31 % → 3 % | 219.8 px | 0.06 | 0.09 | 621 |
-| stroke 224 | 44 % → 3 % | 344.0 px | 0.06 | 0.07 | 496 |
-| stroke 225 | 31 % → 4 % | 502.8 px | 0.06 | 0.13 | 162 |
-| stroke 226 | 39 % → 4 % | 697.2 px | 0.06 | 0.11 | 135 |
-| stroke 227 | 9 % → 0 % | 104.4 px | 0.00 | 0.00 | 108 |
-| stroke 228 | 13 % → 0 % | 120.6 px | 0.00 | 0.00 | 190 |
-| stroke 229 | 17 % → 0 % | 138.8 px | 0.00 | 0.00 | 285 |
-| stroke 230 | 19 % → 0 % | 149.7 px | 0.00 | 0.00 | 361 |
-| stroke 231 | 22 % → 0 % | 166.6 px | 0.00 | 0.00 | 478 |
-| stroke 232 | 24 % → 0 % | 184.7 px | 0.00 | 0.00 | 563 |
-| stroke 233 | 26 % → 0 % | 205.8 px | 0.00 | 0.00 | 675 |
-| stroke 234 | 36 % → 0 % | 282.7 px | 0.00 | 0.00 | 363 |
-| stroke 235 | 34 % → 0 % | 516.6 px | 0.00 | 0.00 | 181 |
-| stroke 236 | 36 % → 0 % | 279.9 px | 0.00 | 0.00 | 604 |
-| stroke 237 | 32 % → 0 % | 476.0 px | 0.00 | 0.00 | 209 |
-| stroke 238 | 35 % → 0 % | 271.9 px | 0.00 | 0.00 | 454 |
-| stroke 239 | 29 % → 0 % | 444.4 px | 0.00 | 0.00 | 183 |
-| stroke 240 | 36 % → 0 % | 272.3 px | 0.00 | 0.00 | 543 |
-| stroke 241 | 29 % → 0 % | 421.8 px | 0.00 | 0.00 | 217 |
-| stroke 242 | 39 % → 0 % | 275.1 px | 0.00 | 0.00 | 619 |
-| stroke 243 | 27 % → 0 % | 384.1 px | 0.00 | 0.00 | 232 |
-| stroke 244 | 42 % → 0 % | 283.6 px | 0.00 | 0.00 | 618 |
-| stroke 245 | 25 % → 0 % | 361.1 px | 0.00 | 0.00 | 183 |
-| stroke 246 | 8 % → 1 % | 96.8 px | 0.08 | 0.17 | 112 |
-| stroke 247 | 45 % → 0 % | 314.3 px | 0.00 | 0.00 | 579 |
-| stroke 248 | 23 % → 0 % | 378.3 px | 0.00 | 0.00 | 155 |
-| stroke 249 | 13 % → 1 % | 126.3 px | 0.08 | 0.08 | 202 |
-| stroke 250 | 49 % → 0 % | 355.5 px | 0.00 | 0.00 | 535 |
-| stroke 251 | 24 % → 0 % | 383.6 px | 0.00 | 0.00 | 155 |
-| stroke 252 | 17 % → 1 % | 150.6 px | 0.08 | 0.05 | 327 |
-| stroke 253 | 53 % → 0 % | 407.1 px | 0.00 | 0.00 | 641 |
-| stroke 254 | 23 % → 0 % | 391.7 px | 0.04 | 0.00 | 187 |
-| stroke 255 | 23 % → 1 % | 206.4 px | 0.08 | 0.03 | 456 |
-| stroke 256 | 56 % → 0 % | 462.9 px | 0.00 | 0.00 | 560 |
-| stroke 257 | 24 % → 1 % | 216.1 px | 0.06 | 0.06 | 643 |
-| stroke 258 | 59 % → 0 % | 508.3 px | 0.00 | 0.00 | 484 |
-| stroke 259 | 27 % → 1 % | 242.5 px | 0.06 | 0.06 | 604 |
-| stroke 260 | 58 % → 0 % | 505.6 px | 0.00 | 0.00 | 512 |
-| stroke 261 | 30 % → 1 % | 268.3 px | 0.06 | 0.05 | 664 |
-| stroke 262 | 57 % → 0 % | 493.5 px | 0.00 | 0.00 | 451 |
-| stroke 263 | 33 % → 2 % | 301.9 px | 0.06 | 0.05 | 731 |
-| stroke 264 | 56 % → 0 % | 478.1 px | 0.00 | 0.00 | 468 |
-| stroke 265 | 38 % → 3 % | 636.9 px | 0.06 | 0.07 | 139 |
-| stroke 266 | 52 % → 0 % | 779.4 px | 0.00 | 0.00 | 151 |
-| stroke 267 | 55 % → 0 % | 470.7 px | 0.00 | 0.00 | 417 |
-| stroke 268 | 46 % → 0 % | 1270.6 px | 0.00 | 0.00 | 83 |
-| stroke 269 | 54 % → 0 % | 473.0 px | 0.00 | 0.00 | 419 |
-| stroke 270 | 53 % → 0 % | 463.4 px | 0.08 | 0.00 | 393 |
-| stroke 271 | 51 % → 0 % | 448.4 px | 0.09 | 0.01 | 399 |
-| stroke 272 | 50 % → 1 % | 431.7 px | 0.09 | 0.02 | 365 |
-| stroke 273 | 48 % → 1 % | 416.8 px | 0.09 | 0.02 | 377 |
-| stroke 274 | 48 % → 2 % | 411.8 px | 0.09 | 0.03 | 423 |
-| stroke 275 | 46 % → 2 % | 401.9 px | 0.09 | 0.05 | 347 |
-| stroke 276 | 43 % → 2 % | 374.6 px | 0.09 | 0.06 | 354 |
-| stroke 277 | 45 % → 3 % | 397.3 px | 0.09 | 0.06 | 336 |
-| stroke 278 | 47 % → 3 % | 416.8 px | 0.09 | 0.06 | 301 |
-| stroke 279 | 47 % → 3 % | 424.6 px | 0.09 | 0.06 | 311 |
-| stroke 280 | 48 % → 2 % | 432.3 px | 0.09 | 0.05 | 259 |
-| stroke 281 | 48 % → 2 % | 438.1 px | 0.08 | 0.04 | 309 |
-| stroke 282 | 46 % → 2 % | 420.7 px | 0.08 | 0.04 | 308 |
-| stroke 283 | 45 % → 2 % | 422.5 px | 0.08 | 0.04 | 244 |
-| stroke 284 | 50 % → 0 % | 510.4 px | 0.00 | 0.00 | 190 |
-| stroke 285 | 55 % → 0 % | 649.1 px | 0.00 | 0.00 | 124 |
-| stroke 286 | 21 % → 2 % | 229.5 px | 0.08 | 0.08 | 91 |
-| stroke 287 | 21 % → 1 % | 210.2 px | 0.08 | 0.07 | 185 |
-| stroke 288 | 23 % → 1 % | 260.6 px | 0.08 | 0.06 | 180 |
-| stroke 289 | 27 % → 1 % | 348.2 px | 0.08 | 0.04 | 156 |
-| stroke 290 | 36 % → 1 % | 659.8 px | 0.08 | 0.03 | 127 |
-| stroke 291 | 36 % → 1 % | 732.8 px | 0.08 | 0.03 | 97 |
-| stroke 292 | 37 % → 1 % | 996.8 px | 0.08 | 0.03 | 66 |
-| stroke 293 | 24 % → 1 % | 547.8 px | 0.08 | 0.04 | 79 |
-| stroke 294 | 44 % → 1 % | 978.3 px | 0.07 | 0.02 | 92 |
-| stroke 295 | 7 % → 0 % | 112.2 px | 0.00 | 0.00 | 80 |
-| stroke 296 | 42 % → 1 % | 426.8 px | 0.08 | 0.01 | 317 |
-| stroke 297 | 50 % → 0 % | 446.7 px | 0.07 | 0.01 | 374 |
-| stroke 298 | 57 % → 0 % | 515.8 px | 0.04 | 0.00 | 345 |
-| stroke 299 | 60 % → 0 % | 750.6 px | 0.00 | 0.00 | 171 |
-| stroke 300 | 2 % → 0 % | 80.1 px | 0.07 | 0.07 | 21 |
-| stroke 301 | 3 % → 0 % | 95.7 px | 0.00 | 0.00 | 31 |
-| stroke 302 | 10 % → 0 % | 169.4 px | 0.00 | 0.00 | 33 |
-| stroke 303 | 8 % → 0 % | 170.6 px | 0.00 | 0.00 | 95 |
-| stroke 304 | 12 % → 0 % | 107.0 px | 0.00 | 0.00 | 136 |
-| stroke 305 | 15 % → 0 % | 166.4 px | 0.00 | 0.00 | 95 |
-| stroke 306 | 19 % → 0 % | 206.4 px | 0.00 | 0.00 | 90 |
-| stroke 307 | 28 % → 0 % | 697.7 px | 0.00 | 0.00 | 29 |
-| stroke 308 | 21 % → 0 % | 761.5 px | 0.00 | 0.00 | 29 |
-| stroke 309 | 24 % → 0 % | 652.8 px | 0.00 | 0.00 | 33 |
-| stroke 310 | 26 % → 0 % | 450.4 px | 0.00 | 0.00 | 61 |
-| stroke 311 | 3 % → 0 % | 70.6 px | 0.04 | 0.08 | 47 |
-| stroke 312 | 4 % → 0 % | 81.8 px | 0.04 | 0.07 | 74 |
-| stroke 313 | 6 % → 0 % | 111.8 px | 0.04 | 0.01 | 85 |
-| stroke 314 | 7 % → 0 % | 128.0 px | 0.10 | 0.03 | 82 |
-| stroke 315 | 9 % → 1 % | 130.7 px | 0.07 | 0.11 | 104 |
-| stroke 316 | 10 % → 0 % | 156.5 px | 0.08 | 0.05 | 114 |
-| stroke 317 | 11 % → 0 % | 155.2 px | 0.08 | 0.02 | 127 |
-| stroke 318 | 13 % → 0 % | 180.2 px | 0.08 | 0.01 | 140 |
-| stroke 319 | 11 % → 2 % | 458.3 px | 0.09 | 0.21 | 22 |
-| stroke 320 | 13 % → 1 % | 157.8 px | 0.07 | 0.11 | 231 |
-| stroke 321 | 15 % → 1 % | 189.9 px | 0.06 | 0.07 | 199 |
-| stroke 322 | 18 % → 0 % | 228.6 px | 0.08 | 0.02 | 204 |
-| stroke 323 | 21 % → 0 % | 268.1 px | 0.08 | 0.00 | 175 |
-| stroke 324 | 24 % → 0 % | 319.2 px | 0.00 | 0.00 | 160 |
-| stroke 325 | 32 % → 0 % | 478.6 px | 0.00 | 0.00 | 110 |
-| stroke 326 | 36 % → 0 % | 682.3 px | 0.00 | 0.00 | 92 |
-| stroke 327 | 17 % → 3 % | 576.1 px | 0.06 | 0.18 | 35 |
-| stroke 328 | 21 % → 4 % | 574.0 px | 0.07 | 0.19 | 74 |
-| stroke 329 | 26 % → 2 % | 829.7 px | 0.05 | 0.07 | 39 |
-| stroke 330 | 28 % → 3 % | 921.7 px | 0.06 | 0.12 | 44 |
-| stroke 331 | 6 % → 0 % | 63.8 px | 0.00 | 0.00 | 154 |
-| stroke 332 | 9 % → 0 % | 126.0 px | 0.00 | 0.00 | 113 |
-| stroke 333 | 10 % → 0 % | 165.9 px | 0.00 | 0.00 | 109 |
-| stroke 334 | 10 % → 0 % | 149.4 px | 0.00 | 0.00 | 99 |
-| stroke 335 | 10 % → 0 % | 166.1 px | 0.00 | 0.00 | 99 |
-| stroke 336 | 11 % → 0 % | 160.6 px | 0.00 | 0.00 | 114 |
-| stroke 337 | 18 % → 0 % | 718.5 px | 0.00 | 0.00 | 19 |
-| stroke 338 | 13 % → 0 % | 165.2 px | 0.00 | 0.00 | 127 |
-| stroke 339 | 20 % → 1 % | 185.5 px | 0.07 | 0.03 | 259 |
-| stroke 340 | 14 % → 4 % | 558.3 px | 0.06 | 0.26 | 21 |
-| stroke 341 | 18 % → 0 % | 190.0 px | 0.00 | 0.00 | 177 |
-| stroke 342 | 31 % → 0 % | 569.3 px | 0.00 | 0.00 | 64 |
-| stroke 343 | 32 % → 0 % | 1278.5 px | 0.00 | 0.00 | 24 |
-| stroke 344 | 25 % → 3 % | 324.3 px | 0.06 | 0.10 | 139 |
-| stroke 345 | 19 % → 5 % | 359.2 px | 0.06 | 0.26 | 53 |
-| stroke 346 | 17 % → 0 % | 254.8 px | 0.00 | 0.00 | 113 |
-| stroke 347 | 30 % → 0 % | 346.7 px | 0.00 | 0.00 | 176 |
-| stroke 348 | 21 % → 5 % | 290.1 px | 0.06 | 0.23 | 93 |
-| stroke 349 | 18 % → 4 % | 423.3 px | 0.07 | 0.21 | 38 |
-| stroke 350 | 18 % → 3 % | 507.3 px | 0.07 | 0.16 | 20 |
-| stroke 351 | 7 % → 3 % | 138.2 px | 0.06 | 0.40 | 58 |
-| stroke 352 | 9 % → 1 % | 176.7 px | 0.07 | 0.11 | 62 |
-| stroke 353 | 10 % → 1 % | 183.0 px | 0.07 | 0.07 | 80 |
-| stroke 354 | 10 % → 1 % | 261.7 px | 0.07 | 0.09 | 41 |
-| stroke 355 | 10 % → 2 % | 174.2 px | 0.07 | 0.17 | 74 |
-| stroke 356 | 10 % → 2 % | 157.0 px | 0.07 | 0.20 | 92 |
-| stroke 357 | 12 % → 1 % | 217.8 px | 0.07 | 0.12 | 76 |
-| stroke 358 | 14 % → 1 % | 553.4 px | 0.07 | 0.08 | 27 |
-| stroke 359 | 19 % → 1 % | 388.4 px | 0.07 | 0.04 | 69 |
-| stroke 360 | 18 % → 2 % | 757.7 px | 0.07 | 0.09 | 28 |
-| stroke 361 | 4 % → 1 % | 67.1 px | 0.06 | 0.14 | 65 |
-| stroke 362 | 8 % → 0 % | 71.5 px | 0.06 | 0.00 | 203 |
-| stroke 363 | 12 % → 0 % | 138.2 px | 0.06 | 0.00 | 129 |
-| stroke 364 | 16 % → 0 % | 201.8 px | 0.00 | 0.00 | 107 |
-| stroke 365 | 14 % → 1 % | 201.9 px | 0.06 | 0.04 | 107 |
-| stroke 366 | 13 % → 0 % | 237.3 px | 0.05 | 0.00 | 63 |
-| stroke 367 | 1 % → 2 % | 37.4 px | 0.08 | 1.12 | 17 |
-| stroke 368 | 3 % → 3 % | 34.1 px | 0.09 | 1.14 | 69 |
-| stroke 369 | 1 % → 4 % | 30.7 px | 0.06 | 4.80 | 9 |
-| stroke 370 | 3 % → 3 % | 45.5 px | 0.06 | 1.20 | 37 |
-| stroke 371 | 1 % → 1 % | 39.0 px | 0.07 | 1.18 | 9 |
-| stroke 372 | 2 % → 4 % | 34.0 px | 0.06 | 1.60 | 54 |
-| stroke 373 | 5 % → 5 % | 116.0 px | 0.06 | 1.14 | 19 |
+| stroke 1 | 10 % → 41 % | 129.7 px | 0.52 | 3.90 | 5910 |
+| stroke 2 | 20 % → 29 % | 252.1 px | 0.45 | 1.42 | 5394 |
+| stroke 3 | 24 % → 25 % | 221.3 px | 0.52 | 1.06 | 14490 |
+| stroke 4 | 28 % → 25 % | 394.8 px | 0.53 | 0.88 | 14545 |
+| stroke 5 | 34 % → 28 % | 554.3 px | 0.52 | 0.84 | 6127 |
+
+Numbers say: wet paint spreads well beyond the stroke.
+
+## Oil focus · D worn — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 133.1 s
+
+![Oil focus · D worn — own sheet](Oil-focus-D-worn-own-sheet.png)
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| stroke 1 | 15 % → 46 % | 188.2 px | 0.49 | 3.06 | 12870 |
+| stroke 2 | 28 % → 29 % | 343.5 px | 0.38 | 1.03 | 11377 |
+| stroke 3 | 33 % → 32 % | 311.9 px | 0.46 | 0.96 | 23571 |
+| stroke 4 | 36 % → 29 % | 503.7 px | 0.50 | 0.79 | 23703 |
+| stroke 5 | 43 % → 30 % | 697.2 px | 0.51 | 0.71 | 10586 |
+
+Numbers say: wet paint spreads well beyond the stroke.
+
+## Oil focus · E swell — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 114.3 s
+
+![Oil focus · E swell — own sheet](Oil-focus-E-swell-own-sheet.png)
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| stroke 1 | 15 % → 49 % | 190.6 px | 0.49 | 3.20 | 15958 |
+| stroke 2 | 29 % → 30 % | 354.5 px | 0.40 | 1.04 | 13523 |
+| stroke 3 | 35 % → 33 % | 331.2 px | 0.46 | 0.92 | 22425 |
+| stroke 4 | 41 % → 31 % | 574.8 px | 0.50 | 0.74 | 13073 |
+| stroke 5 | 50 % → 33 % | 810.5 px | 0.51 | 0.67 | 8086 |
+
+Numbers say: wet paint spreads well beyond the stroke.
+
+## Oil focus · F steady hand — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 102.8 s
+
+![Oil focus · F steady hand — own sheet](Oil-focus-F-steady-hand-own-sheet.png)
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| stroke 1 | 15 % → 50 % | 189.4 px | 0.48 | 3.24 | 12991 |
+| stroke 2 | 28 % → 31 % | 351.0 px | 0.38 | 1.08 | 11432 |
+| stroke 3 | 35 % → 32 % | 328.9 px | 0.45 | 0.92 | 17274 |
+| stroke 4 | 41 % → 31 % | 573.0 px | 0.49 | 0.75 | 12636 |
+| stroke 5 | 50 % → 35 % | 808.4 px | 0.50 | 0.70 | 6331 |
+
+Numbers say: wet paint spreads well beyond the stroke.
+
+## Oil focus · G soft hairs — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 260 px · 90.2 s
+
+![Oil focus · G soft hairs — own sheet](Oil-focus-G-soft-hairs-own-sheet.png)
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| stroke 1 | 15 % → 42 % | 186.0 px | 0.47 | 2.79 | 12199 |
+| stroke 2 | 28 % → 23 % | 346.7 px | 0.34 | 0.80 | 9030 |
+| stroke 3 | 34 % → 29 % | 317.5 px | 0.43 | 0.84 | 12730 |
+| stroke 4 | 39 % → 26 % | 542.6 px | 0.48 | 0.66 | 11120 |
+| stroke 5 | 48 % → 27 % | 788.1 px | 0.51 | 0.56 | 5791 |
+
+Numbers say: wet paint spreads well beyond the stroke.
+
+## Oil focus · H narrow — own sheet
+own sheet 2000 × 1320 · Gouache 1.00 + turpentine 15 % · 200 px · 66.6 s
+
+![Oil focus · H narrow — own sheet](Oil-focus-H-narrow-own-sheet.png)
+
+| stroke | covered | width | dark | spread | ms |
+|---|---|---|---|---|---|
+| stroke 1 | 20 % → 41 % | 189.4 px | 0.50 | 2.09 | 7210 |
+| stroke 2 | 24 % → 23 % | 228.4 px | 0.37 | 0.98 | 5864 |
+| stroke 3 | 34 % → 27 % | 270.6 px | 0.41 | 0.80 | 7072 |
+| stroke 4 | 36 % → 28 % | 395.5 px | 0.48 | 0.77 | 6967 |
+| stroke 5 | 48 % → 31 % | 611.3 px | 0.52 | 0.64 | 3868 |
 
 Numbers say: wet paint spreads well beyond the stroke.
 
