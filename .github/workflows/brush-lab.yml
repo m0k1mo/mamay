@@ -120,8 +120,17 @@ jobs:
           set -eo pipefail
           cd "$GITHUB_WORKSPACE"
           rm -rf pub   # Artem's Mac keeps its workspace between runs
-          git clone -q --depth 1 -b brush-lab-out "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" pub 2>/dev/null || {
-            git init -q pub && cd pub && git checkout -q --orphan brush-lab-out && cd ..; }
+          # no credential helper: on Artem's Mac with a locked keychain (screen locked) the osxkeychain helper fails
+          # («failed to store: -25308»), the clone failed silently and an orphan push was rejected (runs 112–113, 09.11)
+          R="https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git"
+          rc=0; git -c credential.helper= ls-remote --exit-code --heads "$R" brush-lab-out >/dev/null || rc=$?
+          if [ $rc -eq 0 ]; then
+            git -c credential.helper= clone -q --depth 1 -b brush-lab-out "$R" pub
+          elif [ $rc -eq 2 ]; then   # the branch does not exist yet
+            git init -q pub && cd pub && git checkout -q --orphan brush-lab-out && cd ..
+          else
+            echo "::error::cannot reach brush-lab-out (ls-remote $rc)"; exit 1
+          fi
           cd pub
           # a partial run (only some brushes) keeps the other sheets; the report and numbers are of this run
           cp -f ../out/*.png . 2>/dev/null || true
@@ -129,4 +138,4 @@ jobs:
           printf '%s\n' "${{ github.sha }} $(date -u +%FT%TZ) run ${{ github.run_number }}" > LAST_RUN
           git add -A
           git -c user.name="brush-lab" -c user.email="brush-lab@users.noreply.github.com" commit -qm "Brush Lab run ${{ github.run_number }}" || exit 0
-          git push -q "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}.git" HEAD:brush-lab-out
+          git -c credential.helper= push -q "$R" HEAD:brush-lab-out
