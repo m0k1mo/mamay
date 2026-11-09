@@ -115,6 +115,18 @@ jobs:
           [ -n "$ONLY" ] && A+=(--only "$ONLY")
           [ "$PACKS_ONLY" = "true" ] && A+=(--packs-only)
           "$(swift build -c release --show-bin-path)/brushlab" "${A[@]}"
+      # a failed publish must not lose a long paint (Brush Artist 09.11 22:35): the sheets also stay with the run for 7 days
+      - name: Keep the sheets with the run
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: brush-lab-sheets
+          path: |
+            out/*.png
+            out/report.md
+            out/numbers.json
+          retention-days: 7
+          if-no-files-found: ignore
       - name: Publish on brush-lab-out
         run: |
           set -eo pipefail
