@@ -1,1 +1,5 @@
-{"version": "0.1.43-test", "ref": "1694a0f6d50398cc2871632e7d7cb1f43f62a948", "notes": "TEST build = 0.1.42 (codons, poster genomes) + brushes v3.2: each hair leaves its own fine line of density inside the stroke; the stroke stays one body while there is paint (gaps only where it runs out); no white lines along strands on matt paint; a full covering brush covers wet paint (the pickup slider decides how much it mixes); painting over a dried layer is no longer a barcode; thick paint never throws white specks. Faster builds on Artem's Mac."}
+{
+"version": "0.1.44-test",
+"ref": "726da9ef0aff04113422084e4a74daa6c2a71e49",
+"notes": "ТЕСТОВА збірка = 0.1.43 (пензлі v3.2) + новий «Say the Poster»: плакат малюється мазок за мазком у 128×128 на відеокарті — щокроку відеокарта пробує ~1000 випадкових форм (диск або смуга: де, розмір, поворот, світліша/темніша), бере ту, що найбільше наближає до плаката, підкручує і кладе; записує атомами (move → zoom → disc). Іде до 95 % схожості, або поки 60 мазків підряд нічого не дають, або 3000 мазків; картина росте на екрані наживо. «Codons from Genomes» бере візерунки мазків — числа стають параметрами. Одна ціль: один плакат, сказаний повністю."
+}
