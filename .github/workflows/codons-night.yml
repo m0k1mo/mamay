@@ -42,7 +42,7 @@ jobs:
         working-directory: src/native
         run: |
           sudo xcode-select -s /Applications/Xcode_27*.app 2>/dev/null || true
-          swift build -c release --product codons 2>&1 | tail -5
+          swift build -c release --product codons 2>&1 | grep -E "error|warning: unre|Compiling|Build complete" | tail -40
       - name: Run
         working-directory: src/native
         run: |
