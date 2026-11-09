@@ -104,12 +104,14 @@ jobs:
           sh scripts/fingerprints.sh   # what this build is made of: progress in the Tester is kept by these, not by the version
           xcodegen generate --quiet
           APPS="Mamay-Mac MamayTester-Mac"; grep -q "MamayParser-Mac:" project.yml && APPS="$APPS MamayParser-Mac"
+          # a failed build shows its errors, not the last three lines (Architect 09.11: `tail -3` hid them)
+          b() { local L="$RUNNER_TEMP/build-$1.log"; if ! "${@:2}" > "$L" 2>&1; then echo "== $1 failed:"; grep -E "error:|fatal" "$L" | sed 's/.*src\/native\///' | sort -u | head -40; exit 1; fi; tail -3 "$L"; }
           for s in $APPS; do
-            xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
-              -derivedDataPath "$DD" CODE_SIGN_IDENTITY=- build | tail -3
+            b "$s" xcodebuild -project MamayNative.xcodeproj -scheme "$s" -configuration Release -destination 'generic/platform=macOS' \
+              -derivedDataPath "$DD" CODE_SIGN_IDENTITY=- build
           done
-          xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
-            -derivedDataPath "$DD" CODE_SIGNING_ALLOWED=NO build | tail -3
+          b iPad xcodebuild -project MamayNative.xcodeproj -scheme Mamay-iPad -configuration Release -destination 'generic/platform=iOS' \
+            -derivedDataPath "$DD" CODE_SIGNING_ALLOWED=NO build
           echo "⏱ build $(( $(date +%s) - T0 )) s"
       - name: Package
         working-directory: src/native
