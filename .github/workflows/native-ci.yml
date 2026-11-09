@@ -107,7 +107,9 @@ jobs:
           GL=""; [ -f "$GITHUB_WORKSPACE/golden-last.json" ] && GL="$GITHUB_WORKSPACE/golden-last.json"
           # fast on every change; golden (heavy) at night or on request
           SKIP=""; [ -n "$HEAVY" ] || SKIP="--skip GoldenTests"
-          MAMAY_GOLDEN_LAST="$GL" MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing --scratch-path "$SP" $SKIP 2>&1 | tee ../../test.log
+          MAMAY_GOLDEN_LAST="$GL" MAMAY_CI_OUT="$GITHUB_WORKSPACE/ci-out" $W swift test -c release -Xswiftc -enable-testing --scratch-path "$SP" $SKIP --skip LatencyTests 2>&1 | tee ../../test.log
+          # the pen's latency alone (09.11: measured while the heavy paint sheets ran beside it, it read the machine's load, not the pen)
+          $W swift test -c release -Xswiftc -enable-testing --scratch-path "$SP" --filter LatencyTests 2>&1 | tee -a ../../test.log
           echo "tests $(( $(date +%s) - T0 )) s${HEAVY:+ (with golden)}" >> "$GITHUB_WORKSPACE/times.txt"
         continue-on-error: true
       - name: Build apps
