@@ -23,7 +23,8 @@ jobs:
           done
           [ -n "$D" ] || { echo "no codons folder found"; ls "$HOME/Library/CloudStorage" || true; exit 1; }
           echo "folder: $D"; ls -la "$D" | head -40
-          git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep
+          rm -rf rep
+          git clone -q --depth 1 --branch native-ci-reports "https://x-access-token:${TOKEN}@github.com/m0k1mo/Formlab.git" rep || { echo "clone failed"; exit 1; }
           mkdir -p rep/codons-night/corpus
           for f in corpus-extra.json genomes.json groups.json state.json pictures-done.tsv report-latest.md; do
             [ -f "$D/$f" ] && cp "$D/$f" rep/codons-night/corpus/ && echo "copied $f ($(wc -c < "$D/$f") bytes)" || echo "no $f"
