@@ -1,6 +1,6 @@
 """50 references on engine v3.2. Each sheet copies the reference's composition with the right medium.
 usage: python3 mkrefs3.py <version> <K> [n,n,...]"""
-import json,sys,math,random,glob
+import json,sys,math,random,glob,os
 sys.path.insert(0,'/home/claude/lab')
 from refkit import *
 from PIL import Image
@@ -590,13 +590,31 @@ from trace import trace
 from autocfg import CFG
 def auto(n):
     cfg=dict(CFG[n]);mk_m=cfg.pop("mass");mk_l=cfg.pop("line")
+    if os.environ.get('FLOW') or n in FLOWSET: cfg['flow']=True
     bg,layers,(gw,gh)=trace(n,**cfg)
     C.H=round(C.W*gh/gw);random.seed(n*7)
     out=[];first=True
-    for li,(hc,kind,items,sz) in enumerate(layers):
+    for li,L_ in enumerate(layers):
+        hc,kind,items,sz=L_[:4]
         if kind=="mass":
-            b=B(f"#{n:02d} L{li} {hc}",mk_m(hc,min(0.15,sz*MS.get(n,1.6))))
-            ss=[st([(x/gw,y/gh) for x,y in it],b,sp=R(450,750),rest=0.2) for it in items if len(it)>=2]
+            nv=VAR.get(n,VARDEF) if len(L_)>4 else 1
+            segc=L_[4] if len(L_)>4 else None
+            if nv>1 and segc is not None and len(items)>=nv*3:
+                from sklearn.cluster import KMeans as _KM
+                from skimage import color as _col
+                import numpy as _np
+                labc=_col.rgb2lab(_np.array(segc)[None])[0]
+                # keep the layer's own colour as the anchor: pull every sub-colour halfway to it
+                km=_KM(nv,n_init=3,random_state=0).fit(labc)
+                base=_np.array([int(hc[i:i+2],16)/255 for i in (1,3,5)])
+                subs=[]
+                for ci in range(nv):
+                    rgb=_col.lab2rgb(km.cluster_centers_[ci][None,None])[0,0];rgb=0.4*base+0.6*rgb
+                    subs.append(B(f"#{n:02d} L{li}.{ci} {hc}",mk_m('#%02x%02x%02x'%tuple(int(max(0,min(1,v))*255) for v in rgb),min(0.15,sz*MS.get(n,1.6)))))
+                ss=[st([(x/gw,y/gh) for x,y in it],subs[km.labels_[j]],sp=R(450,750),rest=0.2) for j,it in enumerate(items) if len(it)>=2]
+            else:
+                b=B(f"#{n:02d} L{li} {hc}",mk_m(hc,min(0.15,sz*MS.get(n,1.6))))
+                ss=[st([(x/gw,y/gh) for x,y in it],b,sp=R(450,750),rest=0.2) for it in items if len(it)>=2]
         else:
             wmax=max(max(wd) for _,wd in items) or 1
             b=B(f"#{n:02d} L{li} {hc} line",mk_l(hc,min(0.08,sz*LS.get(n,1.0))))
@@ -610,8 +628,29 @@ def auto(n):
         out+=ss
     return out,bg
 
+
+# ======================= painterly (Hertzmann) =======================
+from hertz import paint as hpaint
+HZ={}   # n -> dict(params)
+def hz(n):
+    cfg=dict(CFG.get(n,{}));mk=cfg.get("mass");p=dict(HZ[n]);sf=p.pop("sf",1.25)
+    if "crop" in cfg and "crop" not in p: p["crop"]=cfg["crop"]
+    mkp=p.pop("mk",None) or mk
+    bg,layers,pal,(gw,gh),_=hpaint(n,**p)
+    C.H=round(C.W*gh/gw);random.seed(n*7);out=[]
+    for li,(Rn,lst) in enumerate(layers):
+        bs={}
+        for pts,ci in lst:
+            if ci not in bs: bs[ci]=B(f"#{n:02d} H{li} {pal[ci]}",mkp(pal[ci],min(0.16,2*Rn*sf)))
+            out.append(st(pts,bs[ci],pr=[0.9,1,1,0.95,0.75],sp=R(450,700),rest=0.05))
+    return out,bg
+
 # ======================= build =======================
-MANUAL={25,33,35,46,47}
+PID=os.environ.get('PID','refs-v3');FOLDER=os.environ.get('FOLDER','Refs v3')
+MANUAL={25,33,35,46}
+FLOWSET=set(range(1,15))|{24,30,34,37,38,41,45,40}
+WETSET=set(range(1,15))|{24,30,34,37,40,16,29,33,35,46,45}
+VAR={};VARDEF=3
 MS={38:1.0,41:1.0,18:1.1}
 LS={19:0.45,31:0.8,28:0.9,21:0.6}
 def build(ver,K,only=None):
@@ -619,17 +658,19 @@ def build(ver,K,only=None):
     for n in sorted(F):
         if only and n not in only: continue
         setup(n)
-        strokes,bg=auto(n) if (n in CFG and n not in MANUAL) else F[n]()
+        strokes,bg=hz(n) if n in HZ else (auto(n) if (n in CFG and n not in MANUAL) else F[n]())
         title=f"#{n:02d} "+NM[n]
         sheet(n,title,strokes,bg,wet=0.8 if n in (33,35,40,46) else 0)
     out=[]
     for n,(title,s) in sorted(SH.items()):
         main=next(x["brush"] for x in s["strokes"])
-        out.append({"name":title,"recipe":BR[main],"sheet":s});names.append(f"refs v3 · {title}".lower())
+        if os.environ.get('NODRY') or n in WETSET:
+            for x in s["strokes"]: x.pop("dry",None)
+        out.append({"name":title,"recipe":BR[main],"sheet":s});names.append(f"{FOLDER} · {title}".lower())
     out+=[{"name":k,"recipe":v} for k,v in BR.items()]
-    json.dump({"id":"refs-v3","version":ver,"folder":"Refs v3","brushes":out},open('/home/claude/lab/packs/refs-v3.json','w'),ensure_ascii=False)
+    json.dump({"id":PID,"version":ver,"folder":FOLDER,"brushes":out},open(f'/home/claude/lab/packs/{PID}.json','w'),ensure_ascii=False)
     return names
 if __name__=="__main__":
     only=set(int(x) for x in sys.argv[3].split(',')) if len(sys.argv)>3 else None
     names=build(int(sys.argv[1]),int(sys.argv[2]),only)
-    open('/tmp/claude-0/only.txt','w').write(",".join(names));print(len(names),"sheets;",len(BR),"brushes")
+    open(os.environ.get('ONLY','/tmp/claude-0/only.txt'),'w').write(",".join(names));print(len(names),"sheets;",len(BR),"brushes")
