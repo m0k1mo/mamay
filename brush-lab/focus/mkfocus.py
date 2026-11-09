@@ -6,7 +6,7 @@ def lin(h):
 BASE=dict(size=130,stiff=0.8,load=1.0,give=0.8,dryness=0.5,clump=0.8,pickup=0.4,ent=0.9,tip="flat",
           fluid=0.2,body=0.6,opacity=0.95,gloss=0.3,mix=0.5,dilute=0.25,solvent="turpentine",relief=0.0,weave=0.0,push=0.3,depth=0.5,tex="bristles")
 def recipe(c,p):
-    r=dict(size=p["size"],path={"smoothing":0.3,"pressureToSize":0.45,"tremor":0.8},
+    r=dict(size=p["size"],path={"smoothing":p.get("smooth",0.3),"pressureToSize":p.get("p2s",0.45),"tremor":p.get("tremor",0.8)},
       tool={"kind":"hairs","tip":p["tip"],"stiffness":p["stiff"],"load":p["load"],"give":p["give"],"dryness":p["dryness"],"clump":p["clump"],"pickup":p["pickup"],"bristle":1,"entropy":p["ent"]},
       
       material={"color":lin(c),"fluidity":p["fluid"],"body":p["body"],"opacity":p["opacity"],"gloss":p["gloss"],"strength":0.5,"tack":0.4,"mix":p["mix"],"solvent":p["solvent"],"dilute":p["dilute"]},
