@@ -116,7 +116,7 @@ def skeleton_paths(mask,minlen=6):
         p=p[::2] if len(p)>12 else p
         out.append(([(x,y) for y,x in p],[float(dt[y,x]) for y,x in p]))
     return out,dt
-def trace(n,k=6,gw=160,crop=None,bg=None,order="area",line_max=2.6,spacing=0.75,minarea=12,min_frac=0.004,seed=0,merge=8.0,lines_for=None,mass_size=None,dark_last=True,blur=1.2,ang=None,close=2,minrun=None,maxsize=14.0,opn=1,flow=False,flowlen=7.0,bias=0.0):
+def trace(n,k=6,gw=160,crop=None,bg=None,order="area",line_max=2.6,spacing=0.75,minarea=12,min_frac=0.004,seed=0,merge=8.0,lines_for=None,mass_size=None,dark_last=True,blur=1.2,ang=None,close=2,minrun=None,maxsize=14.0,opn=1,flow=False,flowlen=7.0,bias=0.0,contour=True):
     a,_=load(n,gw,crop);h,w=a.shape[:2]
     ab=np.stack([ndi.median_filter(a[...,c],size=3) for c in range(3)],-1) if blur else a
     if blur: ab=np.stack([ndi.gaussian_filter(ab[...,c],blur) for c in range(3)],-1)
@@ -155,6 +155,16 @@ def trace(n,k=6,gw=160,crop=None,bg=None,order="area",line_max=2.6,spacing=0.75,
                     for seg in streams(cm,TH,CO,sz*spacing,minrun or max(sz*1.5,5),sz*flowlen,an,rng,bias=bias): masses.append(seg)
                 else:
                     for seg in rows(cm,an,sz*spacing,minrun or max(sz*1.2,5),jit=0.12,rng=rng): masses.append(seg)
+                if contour:
+                    er=ndi.binary_erosion(cm,iterations=max(1,int(round(sz*0.42))))
+                    for c_ in measure.find_contours(er.astype(float),0.5):
+                        if len(c_)<max(8,sz*1.5): continue
+                        st=max(1,int(sz*0.35));pp=[(float(x),float(y)) for y,x in c_[::st]]+[(float(c_[-1][1]),float(c_[-1][0]))]
+                        # cut long outlines into arm-length gestures
+                        L=max(6,int(sz*9/ (st)));
+                        for q in range(0,len(pp)-1,L): 
+                            g=pp[max(0,q-1):q+L+1]
+                            if len(g)>=3: masses.append(g)
                 msizes.append(sz)
         hc=hexc(cols[i])
         if masses:
