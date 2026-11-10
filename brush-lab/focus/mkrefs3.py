@@ -591,6 +591,7 @@ from autocfg import CFG
 def auto(n):
     cfg=dict(CFG[n]);mk_m=cfg.pop("mass");mk_l=cfg.pop("line")
     if os.environ.get('FLOW') or n in FLOWSET: cfg['flow']=True
+    cfg.setdefault('contour',n in CONTOURSET)
     bg,layers,(gw,gh)=trace(n,**cfg)
     C.H=round(C.W*gh/gw);random.seed(n*7)
     out=[];first=True
@@ -651,6 +652,7 @@ MANUAL={25,33,35,46}
 FLOWSET=set(range(1,15))|{24,30,34,37,38,41,45,40}
 WETSET=set(range(1,15))|{24,30,34,37,40,16,29,33,35,46,45}
 VAR={};VARDEF=3
+CONTOURSET={20,21,22,23,36,38,39,40,41,44,45,47,49}  # outline strokes help these; they flatten texture on the rest
 MS={38:1.0,41:1.0,18:1.1}
 LS={19:0.45,31:0.8,28:0.9,21:0.6}
 def build(ver,K,only=None):
