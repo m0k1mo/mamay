@@ -18,6 +18,10 @@ on:
       generations:
         description: "selection generations at most"
         default: "400"
+      cross:
+        description: "crossing generations at most (empty = the same as selection)"
+        default: ""
+
       seed:
         description: "seed"
         default: "64"
@@ -47,7 +51,7 @@ jobs:
         working-directory: src/native
         run: |
           EXTRA=""; [ -f "$GITHUB_WORKSPACE/rep/codons-night/corpus/corpus-extra.json" ] && EXTRA="--extra $GITHUB_WORKSPACE/rep/codons-night/corpus/corpus-extra.json"
-          .build/release/codons --out "$GITHUB_WORKSPACE/out" $EXTRA --posters ${{ inputs.posters }} --minutes ${{ inputs.minutes }} --generations ${{ inputs.generations }} --seed ${{ inputs.seed }} 2>&1 | tee "$GITHUB_WORKSPACE/run.log" | tail -40
+          .build/release/codons --out "$GITHUB_WORKSPACE/out" $EXTRA --posters ${{ inputs.posters }} --minutes ${{ inputs.minutes }} --generations ${{ inputs.generations }} --seed ${{ inputs.seed }} ${{ inputs.cross && format('--cross-generations {0}', inputs.cross) || '' }} 2>&1 | tee "$GITHUB_WORKSPACE/run.log" | tail -40
       - name: Push the results to the reports branch
         if: always()
         env:
